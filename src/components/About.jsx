@@ -66,7 +66,7 @@ export default function About() {
               major networks to innovative startups.
             </p>
             <p>
-              My work has earned multiple <strong>Emmy awards</strong> and reached tens of millions
+              My work has earned multiple <strong>Emmy awards</strong> and reached hundreds of millions
               of viewers across platforms. But what I'm most proud of is creating content
               that doesn't just perform well, it matters to people.
             </p>
