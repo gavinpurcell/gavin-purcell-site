@@ -102,7 +102,7 @@ export default function Consulting() {
               Whether you're facing a specific challenge or exploring opportunities,
               let's talk about how I can help your team succeed.
             </p>
-            <p className="cta-box-email">gavin@gavinpurcell.com</p>
+            <p className="cta-box-email">gavin AT gavinpurcell.com</p>
             <div className="cta-box-actions">
               <a href="mailto:gavin@gavinpurcell.com" className="btn btn-large">Get In Touch</a>
             </div>
