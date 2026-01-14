@@ -22,7 +22,7 @@ export default function Navigation() {
           <a href="#aifh" className="nav-link">AI For Humans</a>
           <a href="#andthen" className="nav-link">AndThen</a>
           <a href="#consulting" className="nav-link">Work With Me</a>
-          <a href="#contact" className="nav-link nav-link-cta">Get In Touch</a>
+          <a href="#consulting" className="nav-link nav-link-cta">Get In Touch</a>
         </div>
       </div>
     </motion.nav>

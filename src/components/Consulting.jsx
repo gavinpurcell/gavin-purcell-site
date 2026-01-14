@@ -102,8 +102,7 @@ export default function Consulting() {
               let's talk about how I can help your team succeed.
             </p>
             <div className="cta-box-actions">
-              <a href="#contact" className="btn btn-large">Let's Talk</a>
-              <a href="mailto:gavin@gavinpurcell.com" className="btn btn-large btn-secondary">Send an Email</a>
+              <a href="mailto:gavin@gavinpurcell.com" className="btn btn-large">Get In Touch</a>
             </div>
           </div>
         </motion.div>
