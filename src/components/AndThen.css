@@ -1,0 +1,144 @@
+.andthen {
+  background: var(--color-surface);
+  border-top: var(--border-width) var(--border-style);
+  border-bottom: var(--border-width) var(--border-style);
+  padding: var(--space-2xl) 0;
+}
+
+.andthen-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Left Content */
+.andthen-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.andthen-logo-container {
+  margin-bottom: 0;
+}
+
+.andthen-logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-md);
+}
+
+.andthen-tagline {
+  font-size: 2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.andthen-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.andthen-description strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.andthen-backing {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.andthen-backing strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.andthen-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Right Video */
+.andthen-video {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.video-title {
+  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: var(--color-bg);
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .andthen-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .andthen-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .andthen {
+    padding: var(--space-xl) 0;
+  }
+
+  .andthen-logo {
+    max-width: 150px;
+  }
+
+  .andthen-tagline {
+    font-size: 1.5rem;
+  }
+
+  .video-title {
+    font-size: 1.25rem;
+  }
+}
