@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
 Sitemap: https://gavinpurcell.com/sitemap.xml
