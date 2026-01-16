@@ -1,7 +1,28 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers
 User-agent: Claude-SearchBot
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemaps and AI-friendly content
 Sitemap: https://gavinpurcell.com/sitemap.xml
+AI-Content: https://gavinpurcell.com/ai.txt
