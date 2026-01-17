@@ -23,12 +23,6 @@ export default function Hero() {
     setStylePrompt(''); // Clear previous prompt
 
     try {
-      const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-
-      if (!apiKey) {
-        throw new Error('API key not configured');
-      }
-
       // Use unique timestamp to prevent caching
       const uniqueId = `${Date.now()}-${Math.random().toString(36).substring(7)}`;
 
@@ -52,62 +46,32 @@ export default function Hero() {
       const shuffled = [...allExamples].sort(() => Math.random() - 0.5);
       const selectedExamples = shuffled.slice(0, 4).join('\n');
 
-      // Use Gemini text model to generate a creative prompt
-      const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent',
-        {
-          method: 'POST',
-          headers: {
-            'x-goog-api-key': apiKey,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            contents: [{
-              parts: [{
-                text: `[Request ${uniqueId}]
-
-Generate a complete transformation prompt. Start with "Transform this portrait" and describe ONE recognizable artistic style. Keep it under 15 words total. Make it completely different from these examples:
-
-${selectedExamples}
-
-Generate one UNIQUE complete style now:`
-              }]
-            }],
-            generationConfig: {
-              temperature: 1.8,
-              maxOutputTokens: 500,
-              topP: 0.98,
-              topK: 64
-            }
-          })
-        }
-      );
+      // Call our secure serverless function instead of calling Google directly
+      const response = await fetch('/api/generate-prompt', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          uniqueId,
+          selectedExamples
+        })
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
         console.error('API Error:', errorData);
-        throw new Error('Failed to generate prompt');
+        throw new Error(errorData.error || 'Failed to generate prompt');
       }
 
       const data = await response.json();
       console.log('Prompt generation response:', data);
 
-      if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-        let generatedPrompt = data.candidates[0].content.parts[0].text.trim();
-
-        // Remove any quotes that might be wrapping the prompt
-        generatedPrompt = generatedPrompt.replace(/^["']|["']$/g, '');
-
-        console.log('Generated prompt:', generatedPrompt);
-
-        if (generatedPrompt.length < 10) {
-          throw new Error('Generated prompt too short');
-        }
-
-        setStylePrompt(generatedPrompt);
-        return generatedPrompt;
+      if (data.success && data.prompt) {
+        console.log('Generated prompt:', data.prompt);
+        setStylePrompt(data.prompt);
+        return data.prompt;
       } else {
-        console.error('Unexpected response structure:', data);
         throw new Error('No prompt generated');
       }
     } catch (err) {
@@ -165,69 +129,34 @@ Generate one UNIQUE complete style now:`
       // Convert the photo to base64
       const imageBase64 = await convertImageToBase64('/gavin-photo.png');
 
-      const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-
-      if (!apiKey) {
-        throw new Error('API key not configured');
-      }
-
-      // Call Google's Nano Banana (Imagen) API
-      const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent',
-        {
-          method: 'POST',
-          headers: {
-            'x-goog-api-key': apiKey,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            contents: [{
-              parts: [
-                {
-                  text: stylePrompt || 'Transform this portrait in an artistic style'
-                },
-                {
-                  inline_data: {
-                    mime_type: 'image/png',
-                    data: imageBase64
-                  }
-                }
-              ]
-            }]
-          })
-        }
-      );
+      // Call our secure serverless function instead of calling Google directly
+      const response = await fetch('/api/transform-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt: stylePrompt || 'Transform this portrait in an artistic style',
+          imageBase64
+        })
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
         console.error('API Error:', errorData);
-        throw new Error(errorData.error?.message || 'Style transfer failed');
+        throw new Error(errorData.error || 'Style transfer failed');
       }
 
       const data = await response.json();
       console.log('API Response:', data);
 
-      // Extract the generated image
-      if (data.candidates && data.candidates[0]?.content?.parts) {
-        const imagePart = data.candidates[0].content.parts.find(
-          part => part.inlineData || part.inline_data
-        );
-
-        if (imagePart) {
-          const imageData = imagePart.inlineData || imagePart.inline_data;
-          if (imageData && imageData.data) {
-            // Convert base64 to data URL for display
-            const mimeType = imageData.mimeType || imageData.mime_type || 'image/png';
-            const imageDataUrl = `data:${mimeType};base64,${imageData.data}`;
-            setStyledImage(imageDataUrl);
-          } else {
-            throw new Error('No image data in response');
-          }
-        } else {
-          throw new Error('No image generated');
-        }
+      if (data.success && data.imageData) {
+        // Convert base64 to data URL for display
+        const mimeType = data.mimeType || 'image/png';
+        const imageDataUrl = `data:${mimeType};base64,${data.imageData}`;
+        setStyledImage(imageDataUrl);
       } else {
-        throw new Error('Unexpected response format');
+        throw new Error('No image generated');
       }
     } catch (err) {
       console.error('Style transfer error:', err);
