@@ -13,13 +13,13 @@ export default function About() {
       image: '/highlight-2.png',
       title: 'Digital Media Pioneer',
       description: 'Built and led teams at Vox Media, G4, and many more media companies, transforming how audiences engage with digital content',
-      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7299867738263416832/'
+      link: null
     },
     {
       image: '/highlight-3.png',
       title: 'Media Strategist',
       description: 'Guiding companies through media transformation with proven frameworks and hands-on experience',
-      link: null
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7299867738263416832/'
     },
     {
       image: '/highlight-4.png',

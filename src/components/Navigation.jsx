@@ -55,9 +55,9 @@ export default function Navigation() {
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
       </div>
 

@@ -133,20 +133,7 @@
   width: 24px;
   height: 2px;
   background: var(--color-text);
-  transition: all 0.3s ease;
   border-radius: 2px;
-}
-
-.hamburger-line.open:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.hamburger-line.open:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-line.open:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Mobile Menu Backdrop */
