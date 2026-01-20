@@ -111,20 +111,6 @@ export default function Consulting() {
             </div>
           </div>
         </motion.div>
-
-        <motion.div
-          className="consulting-clients"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <p className="clients-label">Experience Across the Industry</p>
-          <div className="clients-note">
-            I've worked with Fortune 500 companies, media organizations, startups, and creators
-            across television, digital media, streaming, gaming, and technology sectors.
-          </div>
-        </motion.div>
       </div>
     </section>
   );
