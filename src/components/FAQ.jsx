@@ -8,30 +8,30 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What services does Gavin Purcell offer?",
-      answer: `Gavin offers four main services:`,
+      answer: "Gavin offers four main services:",
       bullets: [
         'Media & Content Strategy: Building content strategies that resonate across traditional and digital platforms',
         'Digital Transformation: Guiding companies through media evolution with practical, hands-on expertise',
         'AI & Emerging Technology: Implementing AI tools in practical ways that add real value to workflows',
         'Speaking & Workshops: Keynotes and training sessions on media, AI, and digital transformation'
       ],
-      closing: `Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore.`
+      closing: "Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore."
     },
     {
       question: "How does Gavin approach AI consulting differently?",
-      answer: `I've spent 20+ years actually creating content at scale, from The Tonight Show to digital media startups. I'm not a consultant who just reads about AI... I use it every day in production through AI For Humans and AndThen. That keeps me constantly up to date on the newest tools, models, and workflows as they emerge. I know what actually works versus what's just hype, and I focus on practical implementation that adds real value to your workflows, not buzzwords and theoretical frameworks.`
+      answer: "I've spent 20+ years actually creating content at scale, from The Tonight Show to digital media startups. I'm not a consultant who just reads about AI... I use it every day in production through AI For Humans and AndThen. That keeps me constantly up to date on the newest tools, models, and workflows as they emerge. I know what actually works versus what's just hype, and I focus on practical implementation that adds real value to your workflows, not buzzwords and theoretical frameworks."
     },
     {
       question: "What's the typical engagement process?",
-      answer: `We start with a conversation about your specific challenges and goals. If there's a good fit, I'll create a customized approach based on what you actually need, not a one-size-fits-all package. Engagements can range from a focused strategy session to ongoing advisory work. The outcome is always practical guidance that moves your team forward.`
+      answer: "We start with a conversation about your specific challenges and goals. If there's a good fit, I'll create a customized approach based on what you actually need, not a one-size-fits-all package. Engagements can range from a focused strategy session to ongoing advisory work. The outcome is always practical guidance that moves your team forward."
     },
     {
       question: "Is Gavin available for speaking engagements?",
-      answer: `Yes! I speak at conferences, company events, and team offsites on topics like AI in media, digital transformation, and content strategy. My talks focus on making complex topics accessible and actionable, with stories from two decades in the industry. Whether you need a keynote, workshop, or panel discussion, I tailor every presentation to your audience and goals. Reach out to discuss availability and topics.`
+      answer: "Yes! I speak at conferences, company events, and team offsites on topics like AI in media, digital transformation, and content strategy. My talks focus on making complex topics accessible and actionable, with stories from two decades in the industry. Whether you need a keynote, workshop, or panel discussion, I tailor every presentation to your audience and goals. Reach out to discuss availability and topics."
     },
     {
       question: "What industries has Gavin worked with?",
-      answer: `I've worked across a wide range of industries over two decades. Television and streaming (The Tonight Show, major networks), digital media companies (Vox Media, G4), technology startups, gaming, and podcasting. My client experience includes Fortune 500 companies, media organizations, and early-stage startups. The common thread is helping teams create better content and navigate transformation, regardless of sector.`
+      answer: "I've worked across a wide range of industries over two decades. Television and streaming (The Tonight Show, major networks), digital media companies (Vox Media, G4), technology startups, gaming, and podcasting. My client experience includes Fortune 500 companies, media organizations, and early-stage startups. The common thread is helping teams create better content and navigate transformation, regardless of sector."
     }
   ];
 
