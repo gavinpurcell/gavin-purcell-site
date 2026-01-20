@@ -8,14 +8,14 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What services does Gavin Purcell offer?",
-      answer: `Gavin offers four main services:
-
-• Media & Content Strategy: Building content strategies that resonate across traditional and digital platforms
-• Digital Transformation: Guiding companies through media evolution with practical, hands-on expertise
-• AI & Emerging Technology: Implementing AI tools in practical ways that add real value to workflows
-• Speaking & Workshops: Keynotes and training sessions on media, AI, and digital transformation
-
-Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore.`
+      answer: `Gavin offers four main services:`,
+      bullets: [
+        'Media & Content Strategy: Building content strategies that resonate across traditional and digital platforms',
+        'Digital Transformation: Guiding companies through media evolution with practical, hands-on expertise',
+        'AI & Emerging Technology: Implementing AI tools in practical ways that add real value to workflows',
+        'Speaking & Workshops: Keynotes and training sessions on media, AI, and digital transformation'
+      ],
+      closing: `Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore.`
     },
     {
       question: "How does Gavin approach AI consulting differently?",
@@ -80,13 +80,15 @@ Most importantly, I approach all of this with a human-first lens and a good sens
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
                   <div className="faq-answer-content">
-                    {faq.answer.split('\n').map((line, i) => {
-                      // Check if line starts with bullet
-                      if (line.trim().startsWith('•')) {
-                        return <p key={i} className="faq-bullet-item">{line}</p>;
-                      }
-                      return <p key={i}>{line}</p>;
-                    })}
+                    <p>{faq.answer}</p>
+                    {faq.bullets && (
+                      <ul className="faq-bullet-list">
+                        {faq.bullets.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {faq.closing && <p>{faq.closing}</p>}
                   </div>
                 </motion.div>
               )}

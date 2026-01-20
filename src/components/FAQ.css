@@ -103,9 +103,15 @@
   margin-bottom: 0;
 }
 
-.faq-bullet-item {
-  padding-left: var(--space-md);
+.faq-bullet-list {
+  margin: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  list-style-type: disc;
+}
+
+.faq-bullet-list li {
   margin-bottom: var(--space-xs);
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
