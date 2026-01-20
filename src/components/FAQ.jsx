@@ -80,8 +80,8 @@ export default function FAQ() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
                   <div className="faq-answer-content">
-                    <p>{faq.answer}</p>
-                    {faq.bullets && (
+                    {faq.answer && <p>{faq.answer}</p>}
+                    {faq.bullets && faq.bullets.length > 0 && (
                       <ul className="faq-bullet-list">
                         {faq.bullets.map((bullet, i) => (
                           <li key={i}>{bullet}</li>
