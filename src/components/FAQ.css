@@ -20,6 +20,7 @@
   font-size: 1rem;
   color: var(--color-text-light);
   font-weight: 400;
+  text-align: center;
 }
 
 .faq-list {
@@ -102,9 +103,9 @@
   margin-bottom: 0;
 }
 
-/* Preserve bullet points */
-.faq-answer-content p:has(+ p) {
-  white-space: pre-wrap;
+.faq-bullet-item {
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-xs);
 }
 
 @media (max-width: 768px) {

@@ -80,9 +80,13 @@ Most importantly, I approach all of this with a human-first lens and a good sens
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
                   <div className="faq-answer-content">
-                    {faq.answer.split('\n').map((line, i) => (
-                      <p key={i}>{line}</p>
-                    ))}
+                    {faq.answer.split('\n').map((line, i) => {
+                      // Check if line starts with bullet
+                      if (line.trim().startsWith('•')) {
+                        return <p key={i} className="faq-bullet-item">{line}</p>;
+                      }
+                      return <p key={i}>{line}</p>;
+                    })}
                   </div>
                 </motion.div>
               )}
