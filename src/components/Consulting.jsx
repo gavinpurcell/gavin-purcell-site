@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import FAQ from './FAQ';
 import './Consulting.css';
 
 export default function Consulting() {
@@ -87,6 +88,8 @@ export default function Consulting() {
             </motion.div>
           ))}
         </div>
+
+        <FAQ />
 
         <motion.div
           id="contact"

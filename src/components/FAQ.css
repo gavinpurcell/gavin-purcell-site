@@ -1,0 +1,132 @@
+.faq-section {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.faq-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.faq-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-background);
+  border: var(--border-width) var(--border-style);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: var(--color-surface);
+}
+
+.faq-question.active {
+  background: var(--color-surface);
+}
+
+.faq-question-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding-right: var(--space-md);
+  line-height: 1.4;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) var(--border-style);
+  background: var(--color-background);
+}
+
+.faq-answer {
+  overflow: hidden;
+  border-top: var(--border-width) var(--border-style);
+}
+
+.faq-answer-content {
+  padding: var(--space-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.faq-answer-content p {
+  margin: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.faq-answer-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Preserve bullet points */
+.faq-answer-content p:has(+ p) {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 1.75rem;
+  }
+
+  .faq-question-text {
+    font-size: 1rem;
+  }
+
+  .faq-question {
+    padding: var(--space-sm);
+  }
+
+  .faq-answer-content {
+    padding: var(--space-sm);
+  }
+
+  .faq-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 1.3rem;
+  }
+}
