@@ -29,12 +29,14 @@ export default function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="nav-container">
-        <motion.div
-          className="nav-logo"
-          whileHover={{ scale: 1.05 }}
-        >
-          <span className="nav-logo-name">Gavin Purcell</span>
-        </motion.div>
+        <a href="/" className="nav-logo-link">
+          <motion.div
+            className="nav-logo"
+            whileHover={{ scale: 1.05 }}
+          >
+            <span className="nav-logo-name">Gavin Purcell</span>
+          </motion.div>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="nav-links nav-links-desktop">
