@@ -49,7 +49,6 @@ export default function FAQ() {
         transition={{ duration: 0.6 }}
       >
         <h3 className="faq-title">Frequently Asked Questions</h3>
-        <p className="faq-subtitle">Common questions about working together</p>
       </motion.div>
 
       <div className="faq-list">
