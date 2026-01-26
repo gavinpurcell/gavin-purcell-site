@@ -1,28 +1,132 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers
-User-agent: Claude-SearchBot
+# Primary Search Engines
+User-agent: Googlebot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers - OpenAI
 User-agent: GPTBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ChatGPT-User
 Allow: /
 
-User-agent: CCBot
+# AI Crawlers - Anthropic
+User-agent: Claude-Web
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# AI Crawlers - Google
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+# AI Crawlers - Meta/Facebook
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# AI Crawlers - Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# AI Crawlers - Common Crawl
+User-agent: CCBot
+Allow: /
+
+# AI Crawlers - Apple
+User-agent: Applebot
+Allow: /
+
 User-agent: Applebot-Extended
+Allow: /
+
+# AI Crawlers - Cohere
+User-agent: cohere-ai
+Allow: /
+
+# AI Crawlers - Amazon
+User-agent: Amazonbot
+Allow: /
+
+# AI Crawlers - Diffbot
+User-agent: Diffbot
+Allow: /
+
+# AI Crawlers - You.com
+User-agent: YouBot
+Allow: /
+
+# AI Crawlers - Bytedance/TikTok
+User-agent: Bytespider
+Allow: /
+
+# AI Crawlers - AI2/AllenAI
+User-agent: AI2Bot
+Allow: /
+
+# AI Crawlers - ImagesiftBot
+User-agent: ImagesiftBot
+Allow: /
+
+# AI Crawlers - Omgili
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+# AI Crawlers - Webz.io
+User-agent: Webzio-Extended
+Allow: /
+
+# AI Crawlers - Scrapy-based
+User-agent: Timpibot
+Allow: /
+
+# AI Crawlers - Kangaroo
+User-agent: Kangaroo Bot
+Allow: /
+
+# AI Crawlers - ISSCyberRiskCrawler
+User-agent: ISSCyberRiskCrawler
+Allow: /
+
+# AI Crawlers - Webz
+User-agent: webz.io
+Allow: /
+
+# AI Crawlers - PetalBot (Huawei)
+User-agent: PetalBot
+Allow: /
+
+# AI Crawlers - Scrapy
+User-agent: Scrapy
 Allow: /
 
 # Sitemaps and AI-friendly content
 Sitemap: https://gavinpurcell.com/sitemap.xml
 AI-Content: https://gavinpurcell.com/ai.txt
+Policy: https://gavinpurcell.com/llms.txt
