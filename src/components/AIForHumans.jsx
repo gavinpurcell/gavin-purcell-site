@@ -5,6 +5,10 @@ import './AIForHumans.css';
 export default function AIForHumans() {
   const [email, setEmail] = useState('');
 
+  // UPDATE THIS VIDEO ID WHEN YOU POST A NEW EPISODE
+  // Just replace with the new YouTube video ID from the URL
+  const latestEpisodeVideoId = 'y5W26N-Opys';
+
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     if (email) {
@@ -18,34 +22,56 @@ export default function AIForHumans() {
   return (
     <section id="aifh" className="aifh section">
       <div className="container">
+        {/* Split Hero: Logo Left, Video Right */}
         <motion.div
-          className="aifh-hero"
+          className="aifh-hero-split"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="aifh-logo-container">
-            <a href="https://aiforhumans.show" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/aifh-logo.png"
-                alt="AI For Humans Podcast"
-                className="aifh-logo"
-              />
-            </a>
-            <a href="https://aiforhumans.show" target="_blank" rel="noopener noreferrer" className="aifh-website-link">
-              Visit Show Website →
-            </a>
+          <div className="aifh-hero-left">
+            <div className="aifh-logo-container">
+              <a href="https://aiforhumans.show" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/aifh-logo.png"
+                  alt="AI For Humans Podcast"
+                  className="aifh-logo"
+                />
+              </a>
+            </div>
           </div>
 
-          <div className="aifh-intro">
-            <p className="aifh-description">
-              Co-hosted with <strong>Kevin Pereira</strong>, AI For Humans is your weekly
-              guide to understanding artificial intelligence. We cut through the hype, explain
-              the tech, and focus on what actually matters — making AI accessible,
-              entertaining, and useful for everyone.
-            </p>
+          <div className="aifh-hero-right">
+            <div className="aifh-video-wrapper">
+              <iframe
+                src={`https://www.youtube.com/embed/${latestEpisodeVideoId}`}
+                title="Latest AI For Humans Episode"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="aifh-video-iframe"
+              ></iframe>
+            </div>
           </div>
+        </motion.div>
+
+        <motion.div
+          className="aifh-intro"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <a href="https://aiforhumans.show" target="_blank" rel="noopener noreferrer" className="aifh-website-link">
+            Visit Show Website →
+          </a>
+          <p className="aifh-description">
+            Co-hosted with <strong>Kevin Pereira</strong>, AI For Humans is your weekly
+            guide to understanding artificial intelligence. We cut through the hype, explain
+            the tech, and focus on what actually matters — making AI accessible,
+            entertaining, and useful for everyone.
+          </p>
         </motion.div>
 
         <div className="aifh-grid">

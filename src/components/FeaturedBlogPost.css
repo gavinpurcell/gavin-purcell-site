@@ -1,0 +1,200 @@
+/* ============================================
+   FEATURED BLOG POST - NEO-BRUTALIST STYLE
+   ============================================ */
+
+.featured-blog-post {
+  padding: var(--space-2xl) var(--space-md);
+  background: var(--color-bg);
+}
+
+.featured-blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.featured-blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-width) var(--border-style);
+}
+
+.featured-blog-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.view-all-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.view-all-link:hover {
+  transform: translateX(4px);
+}
+
+/* Featured Post Card */
+.featured-post-card {
+  background: var(--color-surface);
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-post-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 16px 16px 0 var(--color-border);
+}
+
+.featured-post-image-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-post-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: var(--color-bg);
+  border-right: var(--border-width) var(--border-style);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.featured-post-card:hover .featured-post-image img {
+  transform: scale(1.02);
+}
+
+/* Content */
+.featured-post-content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.meta-separator {
+  color: var(--color-text-light);
+}
+
+.featured-post-category {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.featured-post-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.featured-post-title a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.featured-post-title a:hover {
+  color: var(--color-primary);
+}
+
+.featured-post-excerpt {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+.featured-post-cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary);
+  color: white;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.featured-post-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .featured-post-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-post-image {
+    border-right: none;
+    border-bottom: var(--border-width) var(--border-style);
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-blog-post {
+    padding: var(--space-xl) var(--space-sm);
+  }
+
+  .featured-blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .featured-post-content {
+    padding: var(--space-md);
+  }
+
+  .featured-post-image {
+    min-height: 240px;
+  }
+}

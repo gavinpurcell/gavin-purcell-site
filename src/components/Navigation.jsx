@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navigation.css';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -14,11 +17,12 @@ export default function Navigation() {
   };
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#aifh', label: 'AI For Humans' },
-    { href: '#andthen', label: 'AndThen' },
-    { href: '#consulting', label: 'Work With Me' },
-    { href: '#contact', label: 'Get In Touch', cta: true }
+    { href: '#about', label: 'About', hash: true },
+    { href: '#aifh', label: 'AI For Humans', hash: true },
+    { href: '#andthen', label: 'AndThen', hash: true },
+    { href: '/blog', label: 'Blog', hash: false },
+    { href: '#consulting', label: 'Work With Me', hash: true },
+    { href: '#contact', label: 'Get In Touch', cta: true, hash: true }
   ];
 
   return (
@@ -29,25 +33,35 @@ export default function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="nav-container">
-        <a href="/" className="nav-logo-link">
+        <Link to="/" className="nav-logo-link">
           <motion.div
             className="nav-logo"
             whileHover={{ scale: 1.05 }}
           >
             <span className="nav-logo-name">Gavin Purcell</span>
           </motion.div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="nav-links nav-links-desktop">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
-            >
-              {link.label}
-            </a>
+            link.hash ? (
+              <a
+                key={link.href}
+                href={isHomePage ? link.href : `/${link.href}`}
+                className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
@@ -97,17 +111,34 @@ export default function Navigation() {
 
               <div className="nav-mobile-links">
                 {navLinks.map((link, index) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
-                    onClick={closeMobileMenu}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    {link.label}
-                  </motion.a>
+                  link.hash ? (
+                    <motion.a
+                      key={link.href}
+                      href={isHomePage ? link.href : `/${link.href}`}
+                      className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
+                      onClick={closeMobileMenu}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      {link.label}
+                    </motion.a>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
+                      onClick={closeMobileMenu}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        {link.label}
+                      </motion.div>
+                    </Link>
+                  )
                 ))}
               </div>
             </motion.div>

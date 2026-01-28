@@ -1,10 +1,9 @@
+import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import AIForHumans from './components/AIForHumans';
-import AndThen from './components/AndThen';
-import Consulting from './components/Consulting';
+import Home from './components/Home';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -12,13 +11,11 @@ function App() {
   return (
     <div className="app">
       <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <AIForHumans />
-        <AndThen />
-        <Consulting />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
       <Footer />
       <Analytics />
     </div>
