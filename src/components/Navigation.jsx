@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navigation.css';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   const toggleMobileMenu = () => {
@@ -14,6 +15,36 @@ export default function Navigation() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    navigate('/');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleHashNavigation = (e, href) => {
+    e.preventDefault();
+    closeMobileMenu();
+
+    if (!isHomePage) {
+      // Navigate to home first, then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   const navLinks = [
@@ -33,14 +64,14 @@ export default function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="nav-container">
-        <Link to="/" className="nav-logo-link">
+        <a href="/" onClick={handleLogoClick} className="nav-logo-link">
           <motion.div
             className="nav-logo"
             whileHover={{ scale: 1.05 }}
           >
             <span className="nav-logo-name">Gavin Purcell</span>
           </motion.div>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="nav-links nav-links-desktop">
@@ -48,7 +79,8 @@ export default function Navigation() {
             link.hash ? (
               <a
                 key={link.href}
-                href={isHomePage ? link.href : `/${link.href}`}
+                href={link.href}
+                onClick={(e) => handleHashNavigation(e, link.href)}
                 className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
               >
                 {link.label}
@@ -114,9 +146,9 @@ export default function Navigation() {
                   link.hash ? (
                     <motion.a
                       key={link.href}
-                      href={isHomePage ? link.href : `/${link.href}`}
+                      href={link.href}
                       className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
-                      onClick={closeMobileMenu}
+                      onClick={(e) => handleHashNavigation(e, link.href)}
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
