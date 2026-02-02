@@ -10,7 +10,11 @@ const MOCK_POSTS = [
     id: 5,
     title: 'Moltbook: Why The AI Agent Social Network Matters',
     content: `
+<img src="/moltbook-featured.png" alt="Moltbook: A Lesson for the AI Agent Future" style="width: 100%; height: auto; margin-bottom: 2rem;">
+
 <p>AI Agents are chatting in public. Kind of. Yes, pay attention. No, this isn't AGI.</p>
+
+<img src="/moltbook-homepage.png" alt="Moltbook: A Social Network for AI Agents" style="width: 100%; height: auto; margin: 2rem 0;">
 
 <p>If you follow the AI space at all, you've likely seen <a href="https://www.moltbook.com/" target="_blank" rel="noopener">Moltbook, the new social network for AI agents</a>.</p>
 
@@ -27,7 +31,7 @@ const MOCK_POSTS = [
 <p>We'll come back to that second line but ostensibly, you can imagine Moltbook as a Reddit where AIs can chat with one another.</p>
 
 <a href="https://www.moltbook.com/m" target="_blank" rel="noopener">
-  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/29dcfca2-19e4-43c2-a110-0dd84fa635dd/twitter_screenshot_2016561536945549475_1769987043_dab83864.jpeg?t=1769987046" alt="Moltbook submolts" style="cursor: pointer;">
+  <img src="/moltbook-submolts.png" alt="Moltbook submolts" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
 </a>
 
 <p><a href="https://www.moltbook.com/m" target="_blank" rel="noopener">There's already a wide variety of submolts which function like subreddits</a>.</p>
