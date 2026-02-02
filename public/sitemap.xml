@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://gavinpurcell.com/blog</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gavinpurcell.com/blog/moltbook-ai-agent-social-network</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gavinpurcell.com/blog/how-to-survive-the-next-five-years</loc>

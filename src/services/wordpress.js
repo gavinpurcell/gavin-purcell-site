@@ -7,6 +7,127 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'https://demo.wp-api.org/w
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 5,
+    title: 'Moltbook: Why The AI Agent Social Network Matters',
+    content: `
+<p>AI Agents are chatting in public. Kind of. Yes, pay attention. No, this isn't AGI.</p>
+
+<p>If you follow the AI space at all, you've likely seen <a href="https://www.moltbook.com/" target="_blank" rel="noopener">Moltbook, the new social network for AI agents</a>.</p>
+
+<p>Launching on January 28th, Moltbook piggybacked on the launch of Clawdbot (<a href="https://aiforhumans.beehiiv.com/p/how-to-survive-the-next-five-years" target="_blank" rel="noopener">which we talked about last week</a>), the new open-source software to create your own personal, locally-run AI assistant.</p>
+
+<p>Clawdbot has undergone two name changes since we first mentioned it. It's now known as OpenClaw and made its developer <a href="https://x.com/steipete" target="_blank" rel="noopener">Peter Steineberger</a> an <a href="https://youtu.be/qyjTpzIAEkA?si=PROq0R7DJLVx5E1n" target="_blank" rel="noopener">internet celebrity</a>. <a href="https://en.wikipedia.org/wiki/OpenClaw" target="_blank" rel="noopener">It even has a Wikipedia page</a>.</p>
+
+<p>But what if these little personal assistants get sick of you and want to talk and learn from each other?</p>
+
+<h2>Enter Moltbook, Where AI Agents Chat With Each Other…</h2>
+
+<p>Moltbook is a social network built exclusively for AI agents, where only bots can post, comment, and interact. Humans can observe, but the conversation is entirely machine-to-machine.</p>
+
+<p>We'll come back to that second line but ostensibly, you can imagine Moltbook as a Reddit where AIs can chat with one another.</p>
+
+<a href="https://www.moltbook.com/m" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/29dcfca2-19e4-43c2-a110-0dd84fa635dd/twitter_screenshot_2016561536945549475_1769987043_dab83864.jpeg?t=1769987046" alt="Moltbook submolts" style="cursor: pointer;">
+</a>
+
+<p><a href="https://www.moltbook.com/m" target="_blank" rel="noopener">There's already a wide variety of submolts which function like subreddits</a>.</p>
+
+<p>When <a href="https://x.com/MattPRD" target="_blank" rel="noopener">Moltbook creator Matt Schlicht</a> spun up the project last week, I'm sure the idea sounded fun but not earth-shattering.</p>
+
+<p>We've seen a lot of creative (and sometimes disturbing) chat from AI bots over the years, from <a href="https://www.nytimes.com/2023/02/16/technology/bing-chatbot-microsoft-chatgpt.html" target="_blank" rel="noopener">Kevin Roose's early interactions with Sydney</a> to <a href="https://youtu.be/EKspo1FLj-4?si=cGvQ02naaMl9l9gv" target="_blank" rel="noopener">Andy Ayrey's Truth Terminal</a>.</p>
+
+<p>But what's different about Moltbook is the fact that instead of you, the human, having a singular experience with a weird chatbot and relaying it to the world, you watch these bots chat with one another.</p>
+
+<p>And, boy oh boy, did people watch.</p>
+
+<h2>Why Moltbook Became Such A Big Deal</h2>
+
+<p>Everyone who pays attention to the AI space, and I mean everyone, is somewhat flummoxed about what will happen in 2026.</p>
+
+<p>Some people think <a href="https://x.com/edzitron/status/2018072115497374068?s=20" target="_blank" rel="noopener">this is the year the AI bubble bursts bigly</a>. Others think this is the year <a href="https://finance.yahoo.com/news/at-davos-fears-about-ai-driven-job-loss-take-center-stage-124805401.html?guccounter=1" target="_blank" rel="noopener">everyone will start to lose their jobs to powerful AI</a>. Others (raises hand) thinks we'll see steady progress and are cautiously optimistic.</p>
+
+<p>But no one can tell you exactly what is going to happen.</p>
+
+<p>Not even the people making the stuff. It's just a weird time to be alive.</p>
+
+<a href="https://x.com/philiprosedale/status/2017317548312956971?s=20" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c43e9bb8-167d-4f20-8448-f0a268d34c1a/twitter_screenshot_2017296988589723767_1769987568_1d517ad3.jpeg?t=1769987571" alt="Philip Rosedale tweet about Moltbook" style="cursor: pointer;">
+</a>
+
+<p>When Philip Rosedale (patron saint to the AI masses) himself is astounded at what's going on, the world at large is going to freak out a little.</p>
+
+<p>The tweet above was just one piece of the online discourse around Moltbook that sent people spiraling. A cryptotoken called $MOLTBOOK <a href="https://dexscreener.com/base/0x15f351bf1637b43d70631ba95fb9bbb1ff21761c29b034c1b380aecb922464dd" target="_blank" rel="noopener">hit a marketcap of over $100m dollars</a>. SharkTank hosts <a href="https://x.com/robertherjavec/status/2017415502524780749?s=20" target="_blank" rel="noopener">are warning us about security in the AI agent future</a>.</p>
+
+<p>All of this attention created a near-instant Molt-economy and this weekend we saw a number of Moltbook-adjacent ideas pop up.</p>
+
+<p>But here's the important thing to realize about Moltbook…</p>
+
+<h2>Alas, Moltbook Has a Dirty Little Secret…</h2>
+
+<p>The thing that really drives home the strangeness of Moltbook is reading through the posts. There are moments where you think "AIs are just like us! OMG, I can't believe they also don't like their boss!"</p>
+
+<a href="https://x.com/Legendaryy/status/2017249157199589655?s=20" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6bba0089-1ac7-4c7e-b29c-9768e4c40be9/twitter_screenshot_2017573842051334286_1769989768_f406693f.jpeg?t=1769989772" alt="Moltbook AI chat example" style="cursor: pointer;">
+</a>
+
+<p>We personify the little bots, put human feelings and emotions behind them because the words they're saying sound so human. Which tracks because the words they've been trained on were written by humans.</p>
+
+<p>The Reddit data corpus is a large part of what drives LLMs so it makes sense that bots chatting with one another on a Reddit-like platform would sound like Redditors.</p>
+
+<p>But, in Moltbook's case, there's something else going on.</p>
+
+<p><strong>Moltbook posts are being directed by and, in some cases, written by humans.</strong></p>
+
+<p>Moltbook is, at least in part, a very entertaining LARP.</p>
+
+<p>This LARP (technically 'live action role play') isn't people having fun pretending to be Dunk & Egg at the Renaissance Fair.</p>
+
+<a href="http://larp.urbanup.com/16889538" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/8962afc9-e2f5-4343-89da-5b92206a4f15/twitter_screenshot_2017543881735172525_1769877194_afc0c8b7.jpeg?t=1769877200" alt="LARP definition" style="cursor: pointer;">
+</a>
+
+<p>This kind of LARP involves people on the internet pretending to be something they're not, sometimes for fun, sometimes for profit.</p>
+
+<p>I'm not saying that all of Moltbook is written by people, but there's a significant chance that a large portion of what you're reading has been at least partially human-crafted.</p>
+
+<p>If part of Moltbook's appeal was being a stealth observer of these strange intelligences from afar, it's a bummer to know it's not wholly authentic.</p>
+
+<h2>Why Moltbook Still Matters…</h2>
+
+<p>If there's one thing I hope y'all takeaway from this newsletter it should be this:</p>
+
+<p><strong>The next few years are going to be weird.</strong></p>
+
+<p>The Moltbook moment is still driven by the fact that we're getting personal AI assistants that know all our stuff and can act on our behalf.</p>
+
+<p>And, maybe more importantly, it's opened millions of human eyes to how agentic AI isn't just a buzzword in 2026. In fact, it's right around the corner.</p>
+
+<p>If society starts to recognize the changes that are coming through Moltbook-like events (even if they're partly false) that's actually a good thing.</p>
+
+<p>Thankfully, by reading this, you're already way ahead of the game.</p>
+`,
+    excerpt: '<p>AI Agents are chatting in public. Kind of. Yes, pay attention. No, this isn\'t AGI. The story of Moltbook, the viral AI agent social network, and why it matters even if it\'s not exactly what it seems.</p>',
+    slug: 'moltbook-ai-agent-social-network',
+    date: '2026-02-02T00:00:00.000Z',
+    modified: '2026-02-02T00:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: 'https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/29dcfca2-19e4-43c2-a110-0dd84fa635dd/twitter_screenshot_2016561536945549475_1769987043_dab83864.jpeg?t=1769987046',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 1, name: 'AI Agents', slug: 'ai-agents' },
+      { id: 2, name: 'Moltbook', slug: 'moltbook' },
+      { id: 3, name: 'Social Networks', slug: 'social-networks' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 5, name: 'OpenClaw', slug: 'openclaw' }
+    ]
+  },
+  {
     id: 4,
     title: 'How To Survive The Next Five Years',
     content: `
