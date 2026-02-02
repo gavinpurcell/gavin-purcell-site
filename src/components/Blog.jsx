@@ -80,6 +80,7 @@ function Blog() {
           name="description"
           content="Read the latest insights on AI, media, and technology from Gavin Purcell, host of AI For Humans podcast."
         />
+        <link rel="canonical" href="https://gavinpurcell.com/blog" />
         <meta property="og:title" content="Blog - Gavin Purcell" />
         <meta property="og:type" content="website" />
       </Helmet>

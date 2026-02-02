@@ -78,6 +78,7 @@ function BlogPost() {
       <Helmet>
         <title>{post.title} - Gavin Purcell</title>
         <meta name="description" content={stripHtml(post.excerpt).substring(0, 155)} />
+        <link rel="canonical" href={`https://gavinpurcell.com/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={stripHtml(post.excerpt).substring(0, 155)} />
         <meta property="og:type" content="article" />
