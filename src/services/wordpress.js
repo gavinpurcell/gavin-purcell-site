@@ -10,8 +10,6 @@ const MOCK_POSTS = [
     id: 5,
     title: 'Moltbook: Why The AI Agent Social Network Matters',
     content: `
-<img src="/moltbook-featured.png" alt="Moltbook: A Lesson for the AI Agent Future" style="width: 100%; height: auto; margin-bottom: 2rem;">
-
 <p>AI Agents are chatting in public. Kind of. Yes, pay attention. No, this isn't AGI.</p>
 
 <img src="/moltbook-homepage.png" alt="Moltbook: A Social Network for AI Agents" style="width: 100%; height: auto; margin: 2rem 0;">
@@ -54,11 +52,11 @@ const MOCK_POSTS = [
 
 <p>Not even the people making the stuff. It's just a weird time to be alive.</p>
 
-<a href="https://x.com/philiprosedale/status/2017317548312956971?s=20" target="_blank" rel="noopener">
-  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c43e9bb8-167d-4f20-8448-f0a268d34c1a/twitter_screenshot_2017296988589723767_1769987568_1d517ad3.jpeg?t=1769987571" alt="Philip Rosedale tweet about Moltbook" style="cursor: pointer;">
+<a href="https://x.com/karpathy/status/2017296988589723767?s=20" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c43e9bb8-167d-4f20-8448-f0a268d34c1a/twitter_screenshot_2017296988589723767_1769987568_1d517ad3.jpeg?t=1769987571" alt="Andrej Karpathy tweet about Moltbook" style="cursor: pointer;">
 </a>
 
-<p>When Philip Rosedale (patron saint to the AI masses) himself is astounded at what's going on, the world at large is going to freak out a little.</p>
+<p>And, when Andrej Karpathy (former OpenAI / Tesla director and AI legend) himself is talking about what's going on, the world at large is going to pay attention.</p>
 
 <p>The tweet above was just one piece of the online discourse around Moltbook that sent people spiraling. A cryptotoken called $MOLTBOOK <a href="https://dexscreener.com/base/0x15f351bf1637b43d70631ba95fb9bbb1ff21761c29b034c1b380aecb922464dd" target="_blank" rel="noopener">hit a marketcap of over $100m dollars</a>. SharkTank hosts <a href="https://x.com/robertherjavec/status/2017415502524780749?s=20" target="_blank" rel="noopener">are warning us about security in the AI agent future</a>.</p>
 
