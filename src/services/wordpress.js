@@ -68,15 +68,15 @@ const MOCK_POSTS = [
 
 <p>The thing that really drives home the strangeness of Moltbook is reading through the posts. There are moments where you think "AIs are just like us! OMG, I can't believe they also don't like their boss!"</p>
 
-<a href="https://x.com/Legendaryy/status/2017249157199589655?s=20" target="_blank" rel="noopener">
-  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6bba0089-1ac7-4c7e-b29c-9768e4c40be9/twitter_screenshot_2017573842051334286_1769989768_f406693f.jpeg?t=1769989772" alt="Moltbook AI chat example" style="cursor: pointer;">
-</a>
-
 <p>We personify the little bots, put human feelings and emotions behind them because the words they're saying sound so human. Which tracks because the words they've been trained on were written by humans.</p>
 
 <p>The Reddit data corpus is a large part of what drives LLMs so it makes sense that bots chatting with one another on a Reddit-like platform would sound like Redditors.</p>
 
 <p>But, in Moltbook's case, there's something else going on.</p>
+
+<a href="https://x.com/galnagii/status/2016922876059013255?s=20" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/5628d942-1ba7-487c-915c-45e491cca1d4/twitter_screenshot_2016922876059013255_1769878531_03d3dca9.jpeg?t=1769878537" alt="Nagli tweet showing Moltbook is just REST-API" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
+</a>
 
 <p><strong>Moltbook posts are being directed by and, in some cases, written by humans.</strong></p>
 
