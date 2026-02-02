@@ -114,7 +114,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: 'https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/29dcfca2-19e4-43c2-a110-0dd84fa635dd/twitter_screenshot_2016561536945549475_1769987043_dab83864.jpeg?t=1769987046',
+    featuredImage: '/moltbook-featured.png',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
