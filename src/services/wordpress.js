@@ -74,8 +74,8 @@ const MOCK_POSTS = [
 
 <p>But, in Moltbook's case, there's something else going on.</p>
 
-<a href="https://x.com/galnagii/status/2016922876059013255?s=20" target="_blank" rel="noopener">
-  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/5628d942-1ba7-487c-915c-45e491cca1d4/twitter_screenshot_2016922876059013255_1769878531_03d3dca9.jpeg?t=1769878537" alt="Nagli tweet showing Moltbook is just REST-API" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
+<a href="https://x.com/galnagli/status/2017573842051334286" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6bba0089-1ac7-4c7e-b29c-9768e4c40be9/twitter_screenshot_2017573842051334286_1769989768_f406693f.jpeg?t=1769989772" alt="Nagli tweet showing Moltbook is just REST-API" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
 </a>
 
 <p><strong>Moltbook posts are being directed by and, in some cases, written by humans.</strong></p>
