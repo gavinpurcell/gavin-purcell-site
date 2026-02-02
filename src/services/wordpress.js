@@ -84,11 +84,13 @@ const MOCK_POSTS = [
 
 <p>This LARP (technically 'live action role play') isn't people having fun pretending to be Dunk & Egg at the Renaissance Fair.</p>
 
+<p>This kind of LARP involves people on the internet pretending to be something they're not, sometimes for fun, sometimes for attention and sometimes, as can be seen on the Moltbook 'most discussed' page, for crypto profit.</p>
+
 <a href="http://larp.urbanup.com/16889538" target="_blank" rel="noopener">
-  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/8962afc9-e2f5-4343-89da-5b92206a4f15/twitter_screenshot_2017543881735172525_1769877194_afc0c8b7.jpeg?t=1769877200" alt="LARP definition" style="cursor: pointer;">
+  <img src="/larp-definition.png" alt="LARP definition from Urban Dictionary" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
 </a>
 
-<p>This kind of LARP involves people on the internet pretending to be something they're not, sometimes for fun, sometimes for profit.</p>
+<p><em>Thank you Urban Dictionary…</em></p>
 
 <p>I'm not saying that all of Moltbook is written by people, but there's a significant chance that a large portion of what you're reading has been at least partially human-crafted.</p>
 
