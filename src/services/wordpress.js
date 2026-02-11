@@ -7,6 +7,222 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'https://demo.wp-api.org/w
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 6,
+    title: 'The AI Takeoff Is Happening. You Know It. Nobody You Love Does.',
+    content: `
+<p>We're in an AI bubble. A big one. But not the one everyone is yapping about.</p>
+
+<p>I don't care <em>that</em> much about the financial AI bubble. <a href="https://x.com/DKThomp" target="_blank" rel="noopener">Some people</a> think it's about to implode. Others... think the risk is maybe off.</p>
+
+<a href="https://x.com/DKThomp/status/2019484169915572452" target="_blank" rel="noopener">
+  <img src="/derekthompsontweet.png" alt="Derek Thompson tweet about AI bubble" style="cursor: pointer;">
+</a>
+
+<p>This coversation is for Wall Street and those lucky enough to hold roles inside the frontier AI companies worried about their IPOs.</p>
+
+<p>The bubble I'm talking about is much more all encompassing.</p>
+
+<p>And we <em>have</em> to break out of it if we're going to save the world.</p>
+
+<p>The bubble I'm talking about is AI twitter and those of us who yammer back and forth about the next big AI feature all day long.</p>
+
+<p>Those of us who actually understand what's happening in the AI space and specifically...</p>
+
+<p><strong>How AI takeoff is happening now and could leave a LOT of people behind.</strong></p>
+
+<h2>Why This Matters Right Now...</h2>
+
+<p>I saw this from OpenAI/Sora researcher <a href="https://x.com/gabrielpetersson" target="_blank" rel="noopener">Gabriel Peterson</a> over the weekend and it made my skin crawl.</p>
+
+<p>Not just in the "<em>ugh, people who work at these AI labs need to be more aware of how they sound</em>" way but in the "<em>oh boy, he might be right</em>" way.</p>
+
+<img src="/takeoff-gabriel-tweet.png" alt="Gabriel Peterson deleted tweet about AI takeoff" style="width: 100%; height: auto; margin: 2rem 0;">
+
+<p><small>(Gabriel has since deleted this tweet... but the internet finds a way.)</small></p>
+
+<p>Gabriel did <a href="https://x.com/gabrielpetersson" target="_blank" rel="noopener">walk this sentiment back</a> but it's coming from a place of honesty.</p>
+
+<p>If you're not steeped in years of AI lingo, you might just quickly scroll by that, not giving it a second glance.</p>
+
+<p>But in the inner circles of AI twitter (and, clearly, amongst the leading AI labs themselves) the conversation about the AI takeoff is very, very loud.</p>
+
+<p>And that's exactly the problem.</p>
+
+<p><strong>It's loud in here. It's silent out there.</strong></p>
+
+<p>So let's fix that. Below, I'm going to explain very directly what AI takeoff is and why it matters.</p>
+
+<p>Not for you but for those people that need to be aware. Friends. Family. Whomever.</p>
+
+<p>Send this to them. Spread the word. It's important we break this out of the AI bubble and into more places to prepare people for what's coming.</p>
+
+<h2>So...What *Exactly* Is AI Takeoff?</h2>
+
+<p>The simplest definition:</p>
+
+<p><strong>AI takeoff is the moment (or period of time) where AI models begin to improve much faster than ever before, mostly because they can work on themselves.</strong></p>
+
+<p>That might sound somewhat charming...</p>
+
+<p><em>"Oh, they're working on themselves! How fun!"</em></p>
+
+<p>But what actually matters here is <u>recursive self-improvement</u> and exponential growth.</p>
+
+<p>Once an AI gets better at making itself better, that improvement compounds back upon itself again and again until it's improving MUCH faster than before. And then faster than that. And then faster than <em>that</em>.</p>
+
+<p>It's a weird concept for us humans to grasp. After all, we kind of have an upper limit to our ability to learn and grow.</p>
+
+<p>We plateau. These systems don't.</p>
+
+<p>One of the great tech explainers of our time, <a href="https://waitbutwhy.com/" target="_blank" rel="noopener">Tim Urban of Wait But Why</a>, <a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank" rel="noopener">wrote a blog post TEN YEARS AGO</a> with a simple illustration that does more to explain this than reading 100 Wikipedia pages.</p>
+
+<img src="/takeoff-wbw-curve.png" alt="Wait But Why - Human Progress exponential curve illustration" style="width: 100%; height: auto; margin: 2rem 0;">
+
+<p><small>Tim is just SO good at this and has been for a long while.</small></p>
+
+<p><a href="https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank" rel="noopener"><strong><u>I highly suggest you read both parts of Tim's AI post.</u></strong></a></p>
+
+<p>In Tim's illustration (especially the second part), you see how the moment before massive change can feel completely normal.</p>
+
+<p>We're sitting right on the edge of it happening. Things feel like they always felt because we can't see the changes coming our way.</p>
+
+<p>Most people are standing on that flat part of the curve, looking around, thinking everything is fine.</p>
+
+<p>Meanwhile, those of us inside the AI world can see the curve starting to bend.</p>
+
+<p>The AI takeoff is the moment where this improvement begins and for most people, it would be nearly impossible to see.</p>
+
+<p>But people inside the AI labs are saying the quiet part out loud now.</p>
+
+<p>For example: Anthropic just dropped a 2.5x faster version of Opus 4.6 days after announcing the new model.</p>
+
+<a href="https://x.com/claudeai/status/2020207322124132504" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/176b81b9-dc49-4268-8a77-055e59be2d21/twitter_screenshot_2020207322124132504_1770572418_2cc72487.jpeg?t=1770572422" alt="Claude tweet about 2.5x faster Opus 4.6" style="cursor: pointer;">
+</a>
+
+<p>The takeoff is happening.</p>
+
+<p>So now what?</p>
+
+<h2>Why This Matters And How The World Actually Changes</h2>
+
+<p>The thing about the <a href="https://aiforhumans.beehiiv.com/p/how-to-survive-the-next-five-years" target="_blank" rel="noopener">Claude Code</a> and <a href="https://aiforhumans.beehiiv.com/p/moltbook-ai-agent-social-network" target="_blank" rel="noopener">OpenClaw/Moltbook</a> moments is that both of them showed more of the human population what these AI tools are capable of <em>right now</em>.</p>
+
+<p>And then, in <a href="https://openai.com" target="_blank" rel="noopener">last week's release of OpenAI's GPT-5.3 Codex</a> model, we got the first official confirmation that one of these models actually worked on itself.</p>
+
+<img src="/takeoff-codex-quote.png" alt="GPT-5.3 Codex working on itself quote" style="width: 100%; height: auto; margin: 2rem 0;">
+
+<p>OpenAI's models now working on themselves. Read that again.</p>
+
+<p>It's not hard to see where we're headed. Yes, these AIs are soon going to be much more capable than ever before and we'll be turning more of our work over to them.</p>
+
+<p>But AI takeoff is actually a bigger idea than that.</p>
+
+<p>And it's kind of scary.</p>
+
+<p>If AI takeoff happens, it's not just about being aware of these tools and using them.</p>
+
+<p>It's about preparing yourself for an entirely different world.</p>
+
+<p>Here's another illustration from Tim Urban that keeps me up at night:</p>
+
+<img src="/takeoff-wbw-reality.png" alt="Wait But Why - AI Takeoff Reality chart showing AI intelligence surpassing humans" style="width: 100%; height: auto; margin: 2rem 0;">
+
+<p><small>(Again, please read Tim's blog post. It's long but great.)</small></p>
+
+<p>It's not just about the idea of catching up.</p>
+
+<p>It's the idea that we might never catch up.</p>
+
+<p>There will be a massive gap (starting now) between the capabilities of humans and these AI systems, and that gap will get wider and wider with each passing day.</p>
+
+<h2>Ok, So... Now What?</h2>
+
+<p>If someone sent you this, it's because they care about you.</p>
+
+<p>The stuff above? The recursive self-improvement, the exponential curve?</p>
+
+<p>Most people aren't talking about it yet.</p>
+
+<p>Not on the news. Not at work. Not at dinner.</p>
+
+<p>But it's happening, and the people who are paying attention are starting to get a little anxious about the gap between what they're seeing and what everyone else is seeing.</p>
+
+<p>So if you're reading this and thinking "<em>Ok, but what am I supposed to actually do with this</em>"...</p>
+
+<p><strong>There are things that you, the normal human, can do right now to start preparing for what a world like this looks like.</strong></p>
+
+<p>You don't have to become an AI expert. You really don't.</p>
+
+<p>But you should know this is happening and start thinking about what makes you valuable in a world where machines can do a LOT of the work we currently do.</p>
+
+<h2>Three big things to think about:</h2>
+
+<p><strong>Lean into your creativity.</strong></p>
+
+<p>Whatever it is... writing, cooking, building things, solving problems at work in ways nobody else would think of.</p>
+
+<p>That kind of original, human creative thinking is going to matter more, not less, as AI gets better. It's the thing these systems are worst at faking.</p>
+
+<p><strong>Invest in your people.</strong></p>
+
+<p>Your relationships, your network, your community. The friend or family member who sent you this.</p>
+
+<p>AI can do a lot of things but it can't be a real person who shows up for another real person. That's going to be worth more than ever.</p>
+
+<p><strong>Make something.</strong></p>
+
+<p>Start a project. Build a thing. Launch a side hustle. Even a small one.</p>
+
+<p>In a world where AI can copy and scale almost anything, the person who starts something, the person who has the original idea and puts it into motion, has a real advantage.</p>
+
+<p>I know this is a lot.</p>
+
+<p>And I know it might sound like the kind of breathless tech hype you've been trained to tune out.</p>
+
+<p>That's fair. I work in this space every day and even I have moments where I think "is this real or are we all just in an echo chamber?"</p>
+
+<p>But then I see the models working on themselves.</p>
+
+<p>And I see the curve starting to bend.</p>
+
+<p>And I think: <strong>I'd rather know about it now than found out later.</strong></p>
+
+<p>If you want to keep up with this stuff in a way that doesn't require a computer science degree, that's kind of what I do and why we made <a href="https://aiforhumans.show" target="_blank" rel="noopener">AI For Humans</a>.</p>
+
+<p>AI For Humans is a weekly podcast and newsletter where we try to make all of this accessible and, honestly, a little fun. You're welcome to stick around.</p>
+
+<p>And if you have thoughts...</p>
+
+<p>If this freaked you out, reassured you, confused you, whatever, I'd genuinely love to hear from you.</p>
+
+<p>Shoot me an email at gavin AT gavinpurcell dot com. I might collect some of the best responses for next week's newsletter.</p>
+
+<p>And thank your friend for sending you this.</p>
+
+<p>Or at least don't immediately call them crazy... <em>again</em>.</p>
+`,
+    excerpt: '<p>We are in an AI bubble. A big one. But not the one everyone is yapping about. AI takeoff is happening now and most people have no idea. Here is what it means and what you can do about it.</p>',
+    slug: 'the-ai-takeoff-is-happening',
+    date: '2026-02-10T00:00:00.000Z',
+    modified: '2026-02-10T00:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/takeoff-featured.png',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 10, name: 'AI Takeoff', slug: 'ai-takeoff' },
+      { id: 6, name: 'AGI', slug: 'agi' },
+      { id: 11, name: 'AI Safety', slug: 'ai-safety' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
     id: 5,
     title: 'Moltbook: Why The AI Agent Social Network Matters',
     content: `
