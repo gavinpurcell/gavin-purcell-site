@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/cart",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-for-humans",
+      "destination": "/#ai-for-humans",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
