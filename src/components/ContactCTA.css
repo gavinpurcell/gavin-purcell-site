@@ -1,55 +1,79 @@
-.contact-cta {
+.cta-section {
+  background: var(--color-bg);
+}
+
+.cta-box {
   background: var(--color-bg-dark);
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary));
+}
+
+.cta-box-inner {
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
   color: var(--color-bg);
 }
 
-.contact-box {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-title {
+.cta-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: var(--space-md);
 }
 
-.contact-text {
+.cta-text {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #ccc;
-  margin-bottom: var(--space-lg);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 550px;
+  margin: 0 auto var(--space-lg);
 }
 
-.contact-email-btn {
+.cta-email-btn {
   display: inline-block;
-  font-size: 1.25rem;
-  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: var(--space-md) var(--space-xl);
   background: var(--color-primary);
   color: white;
   text-decoration: none;
-  font-weight: 700;
   border: var(--border-width) solid var(--color-primary);
-  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.2);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  letter-spacing: 0.01em;
 }
 
-.contact-email-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.2);
+.cta-email-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.12);
   background: var(--color-primary-dark);
 }
 
-.contact-expect {
+.cta-expect {
   margin-top: var(--space-md);
-  font-size: 0.95rem;
-  color: #999;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.35);
   font-style: italic;
 }
 
 @media (max-width: 768px) {
-  .contact-email-btn {
+  .cta-box-inner {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .cta-email-btn {
     font-size: 1rem;
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm) var(--space-lg);
   }
 }

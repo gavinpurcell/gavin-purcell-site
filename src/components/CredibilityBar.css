@@ -1,55 +1,69 @@
-.credibility-bar {
+.credbar {
   border-top: var(--border-width) var(--border-style);
   border-bottom: var(--border-width) var(--border-style);
-  padding: var(--space-md) var(--space-md);
-  background: var(--color-surface);
+  background: var(--color-bg-dark);
+  padding: var(--space-sm) var(--space-md);
+  overflow: hidden;
 }
 
-.credibility-inner {
-  max-width: 1200px;
+.credbar-inner {
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-lg);
+  gap: var(--space-md);
+}
+
+.credbar-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.credbar-logos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
-.credibility-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.credbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  transition: color 0.2s;
+  position: relative;
 }
 
-.credibility-logo img {
-  height: 32px;
-  width: auto;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: opacity 0.2s;
+.credbar-brand:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.credibility-logo img:hover {
-  opacity: 1;
-}
-
-.credibility-text-fallback {
-  display: none;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-text-light);
+.credbar-brand:not(:last-child)::after {
+  content: '/';
+  margin-left: var(--space-sm);
+  color: var(--color-primary);
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {
-  .credibility-inner {
-    justify-content: center;
-    gap: var(--space-md);
+  .credbar-inner {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
   }
 
-  .credibility-logo img {
-    height: 24px;
+  .credbar-logos {
+    justify-content: center;
+  }
+
+  .credbar-brand {
+    font-size: 0.95rem;
   }
 }
