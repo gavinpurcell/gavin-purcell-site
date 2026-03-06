@@ -1,0 +1,68 @@
+.fcco {
+  background: var(--color-bg-dark);
+  color: var(--color-bg);
+}
+
+.fcco-accent {
+  background: var(--color-primary);
+}
+
+.fcco-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.fcco-body {
+  max-width: 700px;
+  margin-bottom: var(--space-xl);
+}
+
+.fcco-lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.fcco-body p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.fcco-body strong {
+  color: var(--color-primary-light);
+}
+
+.fcco-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.fcco-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  padding: var(--space-md);
+}
+
+.fcco-card h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-sm);
+}
+
+.fcco-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .fcco-cards {
+    grid-template-columns: 1fr;
+  }
+}

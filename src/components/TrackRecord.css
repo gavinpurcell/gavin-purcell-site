@@ -1,0 +1,61 @@
+.track-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+.track-intro {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.track-card {
+  background: var(--color-surface);
+  border: var(--border-width) var(--border-style);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.track-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.track-card-stat {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.track-card-role {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-sm);
+}
+
+.track-card-detail {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .track-grid {
+    grid-template-columns: 1fr;
+  }
+}

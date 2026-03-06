@@ -1,19 +1,21 @@
 import Hero from './Hero';
-import About from './About';
-import AIForHumans from './AIForHumans';
-import AndThen from './AndThen';
-import FeaturedBlogPost from './FeaturedBlogPost';
-import Consulting from './Consulting';
+import CredibilityBar from './CredibilityBar';
+import FractionalCCO from './FractionalCCO';
+import TrackRecord from './TrackRecord';
+import CurrentProjects from './CurrentProjects';
+import Services from './Services';
+import ContactCTA from './ContactCTA';
 
 function Home() {
   return (
     <main>
       <Hero />
-      <About />
-      <AIForHumans />
-      <AndThen />
-      <FeaturedBlogPost />
-      <Consulting />
+      <CredibilityBar />
+      <FractionalCCO />
+      <TrackRecord />
+      <CurrentProjects />
+      <Services />
+      <ContactCTA />
     </main>
   );
 }
