@@ -7,7 +7,7 @@ export default function AIForHumans() {
 
   // UPDATE THIS VIDEO ID WHEN YOU POST A NEW EPISODE
   // Just replace with the new YouTube video ID from the URL
-  const latestEpisodeVideoId = '-zDOqBXjlWk';
+  const latestEpisodeVideoId = 'gnJ6SD2734Y';
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
