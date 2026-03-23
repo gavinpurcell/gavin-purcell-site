@@ -127,7 +127,7 @@ export default function Hero() {
 
     try {
       // Convert the photo to base64
-      const imageBase64 = await convertImageToBase64('/gavin-photo.png');
+      const imageBase64 = await convertImageToBase64('/gavinpurcellheadshot.jpeg');
 
       // Call our secure serverless function instead of calling Google directly
       const response = await fetch('/api/transform-image', {
@@ -206,7 +206,7 @@ export default function Hero() {
           <div className="photo-card">
             <div className="photo-container">
               <img
-                src={styledImage || '/gavin-photo.png'}
+                src={styledImage || '/gavinpurcellheadshot.jpeg'}
                 alt="Gavin Purcell"
                 className="photo-main"
               />

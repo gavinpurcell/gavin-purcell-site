@@ -96,7 +96,7 @@ function BlogPost() {
             "@type": "BlogPosting",
             "headline": post.title,
             "description": stripHtml(post.excerpt).substring(0, 155),
-            "image": post.featuredImage || "https://gavinpurcell.com/gavin-photo.png",
+            "image": post.featuredImage || "https://gavinpurcell.com/gavinpurcellheadshot.jpeg",
             "datePublished": post.date,
             "dateModified": post.modified,
             "author": {
