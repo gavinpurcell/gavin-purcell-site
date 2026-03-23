@@ -176,22 +176,23 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="hero-title">
-            I'm
+            Hi, I'm
             <span className="hero-title-name"> Gavin Purcell</span>
           </h1>
 
           <p className="hero-description">
-            I build content organizations at the intersection of <strong>media and AI</strong>.
-            Two decades from <strong>The Tonight Show</strong> to AI startups — I help companies
-            create content strategies, teams, and workflows that actually work.
+            Media executive, creator, and storyteller. I've spent two decades building
+            content that connects with people, from <strong>The Tonight Show</strong> to
+            digital media powerhouses to my own AI start-up. Now I help others understand how AI is reshaping
+            our industry, as the co-host of <strong>AI For Humans</strong>.
           </p>
 
           <div className="hero-actions">
             <a href="#about" className="btn btn-large">
-              See My Work
+              Learn More About Me
             </a>
-            <a href="#contact" className="btn btn-large btn-secondary">
-              Work With Me
+            <a href="#consulting" className="btn btn-large btn-secondary">
+              Work Together
             </a>
           </div>
         </motion.div>
