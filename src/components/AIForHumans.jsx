@@ -7,7 +7,7 @@ export default function AIForHumans() {
 
   // UPDATE THIS VIDEO ID WHEN YOU POST A NEW EPISODE
   // Just replace with the new YouTube video ID from the URL
-  const latestEpisodeVideoId = 'gnJ6SD2734Y';
+  const latestEpisodeVideoId = 'StFRR22POFs';
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -45,11 +45,12 @@ export default function AIForHumans() {
           <div className="aifh-hero-right">
             <div className="aifh-video-wrapper">
               <iframe
-                src={`https://www.youtube.com/embed/${latestEpisodeVideoId}`}
+                src={`https://www.youtube-nocookie.com/embed/${latestEpisodeVideoId}`}
                 title="Latest AI For Humans Episode"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
                 className="aifh-video-iframe"
               ></iframe>
             </div>

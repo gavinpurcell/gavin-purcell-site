@@ -50,11 +50,12 @@ export default function AndThen() {
           <h3 className="video-title">Watch the AndThen Launch Trailer</h3>
           <div className="video-wrapper">
             <iframe
-              src="https://www.youtube.com/embed/VuPIJKa-_Ow"
+              src="https://www.youtube-nocookie.com/embed/VuPIJKa-_Ow"
               title="AndThen Launch Trailer"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              loading="lazy"
               className="video-iframe"
             ></iframe>
           </div>
