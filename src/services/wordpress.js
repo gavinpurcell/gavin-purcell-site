@@ -107,7 +107,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/mythos-controller-tweet.jpg',
+    featuredImage: '/mythos-featured.png',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
@@ -229,7 +229,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/codex-goal-tweet.jpg',
+    featuredImage: '/codex-goal-featured.png',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
