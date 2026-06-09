@@ -22,7 +22,7 @@ export default function AndThen() {
             </a>
           </div>
 
-          <h3 className="andthen-tagline">Play The Conversation</h3>
+          <h2 className="andthen-tagline">Play The Conversation</h2>
 
           <p className="andthen-description">
             As Co-Founder of <strong>AndThen</strong>, I'm building the future of interactive

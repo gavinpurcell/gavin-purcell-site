@@ -62,6 +62,10 @@ function BlogPost() {
   if (error || !post) {
     return (
       <div className="blog-post-container">
+        <Helmet>
+          <title>Post Not Found - Gavin Purcell</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <div className="blog-post-error">
           <h2>404</h2>
           <p>{error || 'Post not found'}</p>
@@ -84,7 +88,12 @@ function BlogPost() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://gavinpurcell.com/blog/${post.slug}`} />
         {post.featuredImage && (
-          <meta property="og:image" content={post.featuredImage} />
+          <meta
+            property="og:image"
+            content={post.featuredImage.startsWith('/')
+              ? `https://gavinpurcell.com${post.featuredImage}`
+              : post.featuredImage}
+          />
         )}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time" content={post.modified} />
@@ -96,7 +105,9 @@ function BlogPost() {
             "@type": "BlogPosting",
             "headline": post.title,
             "description": stripHtml(post.excerpt).substring(0, 155),
-            "image": post.featuredImage || "https://gavinpurcell.com/gavinpurcellheadshot.jpeg",
+            "image": post.featuredImage
+              ? (post.featuredImage.startsWith('/') ? `https://gavinpurcell.com${post.featuredImage}` : post.featuredImage)
+              : "https://gavinpurcell.com/gavinpurcellheadshot.jpeg",
             "datePublished": post.date,
             "dateModified": post.modified,
             "author": {

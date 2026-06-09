@@ -65,10 +65,8 @@ export default function Hero() {
       }
 
       const data = await response.json();
-      console.log('Prompt generation response:', data);
 
       if (data.success && data.prompt) {
-        console.log('Generated prompt:', data.prompt);
         setStylePrompt(data.prompt);
         return data.prompt;
       } else {
@@ -148,7 +146,6 @@ export default function Hero() {
       }
 
       const data = await response.json();
-      console.log('API Response:', data);
 
       if (data.success && data.imageData) {
         // Convert base64 to data URL for display
@@ -219,7 +216,7 @@ export default function Hero() {
             </div>
 
             <div className="style-transfer-ui">
-              <h3 className="style-ui-title">Transform Me with AI</h3>
+              <h2 className="style-ui-title">Transform Me with AI</h2>
               <p className="style-ui-description">
                 Pick a style or write your own prompt and see AI in action
               </p>
@@ -264,7 +261,7 @@ export default function Hero() {
               )}
 
               <p className="style-note">
-                Built with Google's Imagen (aka Nano Banana)
+                Built with Google's Gemini image model (aka Nano Banana)
               </p>
             </div>
           </div>

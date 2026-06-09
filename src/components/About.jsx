@@ -75,7 +75,7 @@ export default function About() {
               we've seen. As co-host of <strong>AI For Humans</strong> with Kevin Pereira,
               I break down artificial intelligence for a mainstream audience, cutting through
               the hype to focus on what's actually useful. And as Co-Founder of <strong>AndThen</strong>,
-              I created my own AI audio start-up focusing on how to put these sorts of tools
+              I'm building my own AI audio start-up focused on putting these sorts of tools
               in a real product that's entertaining and educational.
             </p>
             <p>
@@ -138,8 +138,8 @@ export default function About() {
           </div>
           <div className="stat-divider"></div>
           <div className="stat">
-            <div className="stat-number">100K+</div>
-            <div className="stat-label">Audience Reach</div>
+            <div className="stat-number">100M+</div>
+            <div className="stat-label">Viewers Reached</div>
           </div>
         </motion.div>
       </div>

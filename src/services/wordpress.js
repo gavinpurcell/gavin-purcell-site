@@ -1,11 +1,246 @@
 // WordPress REST API Service
 // This service handles all communication with the WordPress backend
 
-// WordPress API endpoint - update this with your WordPress URL
-const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'https://demo.wp-api.org/wp-json/wp/v2';
+// WordPress API endpoint - only used when USE_MOCK_DATA is false.
+// No default: set VITE_WP_API_URL when a real WordPress backend exists.
+const WP_API_URL = import.meta.env.VITE_WP_API_URL;
 
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
+  {
+    id: 8,
+    title: 'Claude Mythos Is Nearly Here. Are You Ready?',
+    content: `
+<p>If the leaks are right (and the timing tracks), <a href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener">Anthropic's mysterious, "dangerous" Claude Mythos</a> is dropping this week. Maybe GPT-5.6 too.</p>
+
+<p>We don't know yet which version we're going to get. But the leaked SVG game controller builds making the rounds on X this weekend suggest we're in for a <em>big</em> upgrade.</p>
+
+<a href="https://x.com/HarshithLucky3/status/2063311215288606894" target="_blank" rel="noopener">
+  <img src="/mythos-controller-tweet.jpg" alt="Leaked Claude Mythos SVG game controller build tweet" style="cursor: pointer;">
+</a>
+
+<p>How could this change the current AI world? A lot.</p>
+
+<p>Let's get into it.</p>
+
+<h2>Why Those SVG Leaks Actually Matter</h2>
+
+<p>Quick primer in case you haven't seen these before.</p>
+
+<p>SVGs (<a href="https://en.wikipedia.org/wiki/SVG" target="_blank" rel="noopener">scaleable vector graphics</a>) are code-generated images. The model writes actual code, and that code renders the picture.</p>
+
+<p>Which is why they're a really good benchmark for vision and reasoning at the same time. The model has to <em>understand</em> what the thing looks like, then write functional code to draw it.</p>
+
+<p>Early versions of this (think Opus 4 or before) were rough. Blocky. Often wrong.</p>
+
+<a href="https://x.com/adonis_singh/status/1928826622645256376" target="_blank" rel="noopener">
+  <img src="/mythos-early-svg-tweet.jpg" alt="Early blocky SVG generation example tweet" style="cursor: pointer;">
+</a>
+
+<p>The Mythos leaks? Not blocky. Not wrong. <a href="https://x.com/chetaslua/status/2063446113605345596" target="_blank" rel="noopener">Actually... really freaking insane.</a></p>
+
+<p>These almost look like AI image generations they're so good.</p>
+
+<p>Same goes for the new wave of Minecraft builds people are posting:</p>
+
+<a href="https://x.com/Lentils80/status/2062656502238703966" target="_blank" rel="noopener">
+  <img src="/mythos-minecraft-tweet.jpg" alt="Claude Mythos Minecraft build tweet" style="cursor: pointer;">
+</a>
+
+<p>Again, what's cool about this is that it's showing off how well the new model understands how to write the underlying code to get these sorts of things to build.</p>
+
+<h2>What Mythos Means For You (Even If You Don't Code)</h2>
+
+<p>If you're not a coder, you might wonder why any of this matters.</p>
+
+<p>It's because of one VERY important reason:</p>
+
+<p><strong>The future of AI isn't really about <em>you</em> writing code. It's about AI agents writing code in the background to do normal stuff. Without you ever knowing.</strong></p>
+
+<p>A perfect example from Google I/O this year. Their new personal AI agent, Google Spark, wrote a tiny bit of code on the spot to spin up a personal fitness tracker.</p>
+
+<a href="https://x.com/GeminiApp/status/2056792333132460322" target="_blank" rel="noopener">
+  <img src="/spark-fitness-tweet.jpg" alt="Google Spark building a fitness tracker on the spot" style="cursor: pointer;">
+</a>
+
+<p>In the past, this kind of thing was unreliable. WAY more trouble than it was worth. And often wasted time. It wouldn't <em>do</em> the thing you wanted it to do.</p>
+
+<p>But with the coding jump Mythos is showing?</p>
+
+<p>I suspect a lot of this stuff is just going to <em>work</em>.</p>
+
+<p>And that's where it becomes a huge deal.</p>
+
+<h2>The Open Question: Cost & Time</h2>
+
+<p>The big thing we don't know yet is how expensive Mythos is going to be. At first, almost certainly <em>very</em>.</p>
+
+<p>These models always launch pricey, and Mythos has been under restricted access for a reason. Anthropic only just expanded it to 150 enterprise orgs last week.</p>
+
+<p>But costs do come down. Capacity gets better. And once Mythos is sitting inside Claude Code as a default option, every human with a Pro plan is going to be running this stuff for hours a day.</p>
+
+<p>Which means we're about to find out how good "good" really is.</p>
+
+<h2>Bonus: My 80+ Hour Codex Bear Jump Project</h2>
+
+<p>I mentioned Codex's /goal tool last week, and that I'd put 60+ hours into a project with it.</p>
+
+<p>Well, I kept going. It's now 80+ hours in, and you can actually play it.</p>
+
+<a href="https://x.com/gavinpurcell/status/2061639229709652403" target="_blank" rel="noopener">
+  <img src="/bear-jump-tweet.jpg" alt="Gavin's bear jump game project tweet" style="cursor: pointer;">
+</a>
+
+<p>To be clear, this isn't <em>great</em> yet (it may never be) but it's getting pretty good! It's also way too packed with stuff and none of the flows work that well.</p>
+
+<p>The current build is here: <a href="https://bear-jump-port.vercel.app" target="_blank" rel="noopener">bear-jump-port.vercel.app</a></p>
+
+<p>Give it a shot and let me know what you think.</p>
+
+<p>It's not perfect but, again, this is just with steering from me and no real planning or coding at all. But it shows you the <em>power</em> of what these tools can do mostly on their own.</p>
+`,
+    excerpt: '<p>Anthropic\'s mysterious Claude Mythos model is reportedly dropping this week and the leaked SVG and Minecraft demos are wild. Here is why the next gen of AI matters even if you never write a line of code.</p>',
+    slug: 'claude-mythos-is-nearly-here',
+    date: '2026-06-08T14:00:00.000Z',
+    modified: '2026-06-08T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/mythos-controller-tweet.jpg',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
+    id: 7,
+    title: "Codex's /Goal Is For Everyone. Yes, Even You.",
+    content: `
+<p>Nerdy tools have a pattern. They start out buried in a developer's terminal, confusing to those who don't live in a code editor, and then quietly become the way everyone works.</p>
+
+<p><a href="https://fortune.com/2026/01/24/anthropic-boris-cherny-claude-code-non-coders-software-engineers/" target="_blank" rel="noopener">Claude Code had this moment earlier this year.</a></p>
+
+<p>Now, <a href="https://www.howtogeek.com/i-was-a-diehard-claude-code-fanthen-codex-showed-me-what-i-was-missing/" target="_blank" rel="noopener">it's happening again with <strong>Codex</strong></a>, OpenAI's coding-first app that is <em>very clearly</em> positioning itself as something much bigger than a coding tool.</p>
+
+<p>But there's a feature inside Codex right now that I think changes how AI works for you, and I'm not being dramatic.</p>
+
+<p>It's called <strong>/goal</strong>.</p>
+
+<a href="https://x.com/OpenAIDevs/status/2057530209470210453" target="_blank" rel="noopener">
+  <img src="/codex-goal-tweet.jpg" alt="OpenAI Devs tweet announcing the /goal command" style="cursor: pointer;">
+</a>
+
+<p>I've been using it all week and it's vastly changed the scope of what I'm even <em>trying</em> to do with AI.</p>
+
+<h2>What Does /goal Actually Do?</h2>
+
+<p>Ok so here's the quick version.</p>
+
+<p>When you use Codex normally (or Claude Code, or Cursor, or any of these coding agents), you give it a prompt. It does a thing. It comes back and asks you what's next. You give it another prompt. Repeat.</p>
+
+<p>That loop is fine for small tasks. Fix this bug. Write this function. Clean up this file.</p>
+
+<p>But good lord, it is annoying.</p>
+
+<p>But /goal is fundamentally different.</p>
+
+<p>Instead of saying "do this one thing," you're saying <strong>"here's what I want to be true when you're done. Figure out how to get there."</strong></p>
+
+<p>And then it just... goes.</p>
+
+<a href="https://x.com/derrickcchoi/status/2056402681586188745" target="_blank" rel="noopener">
+  <img src="/codex-goal-running-tweet.jpg" alt="Tweet showing Codex /goal running autonomously" style="cursor: pointer;">
+</a>
+
+<p>It plans its own sequence of steps. Executes them. Checks its own output. Corrects course when something fails. And keeps going until the goal is either met or it hits a wall it genuinely can't get past without your help.</p>
+
+<p>If you've heard about the <a href="https://ghuntley.com/loop/" target="_blank" rel="noopener">Ralph Wiggum loop</a> (and if you haven't, you should look it up), /goal is basically the productized version of that idea.</p>
+
+<p>/goal takes that same core idea (keep working, keep iterating, don't stop until the thing is done) and builds it directly into the product. No bash loop needed. No hacky workarounds. You just set a goal and let it run.</p>
+
+<p>And when I say "let it run," I mean it.</p>
+
+<p>I've had a project running now for over 24 hours straight.</p>
+
+<p>I've steered it maybe five times total while it's been working. The rest of the time I've been doing other stuff, checking in on my phone, watching it chug along.</p>
+
+<img src="/codex-bear-jump-screenshot.png" alt="Codex app working on a bear jumping game" style="width: 100%; height: auto; margin: 2rem 0;">
+
+<p><small>Actual screenshot from my Codex app working on a lil' bear jumping game (I didn't say I was using my tokens wisely)</small></p>
+
+<p>It's the first time using an AI agent has felt less like "prompting" and more like "managing."</p>
+
+<p>And, that, dear reader, is what the AI CEOs have been <em>promising</em> forever.</p>
+
+<h2>A Quick Word On Permissions</h2>
+
+<p>Before I get too excited, I should flag something.</p>
+
+<p>/goal running autonomously for hours means it's <em>doing things</em> on your machine (or in a cloud sandbox) for hours. And the <a href="https://developers.openai.com/codex/permissions" target="_blank" rel="noopener">permissions setup in Codex</a> matters a lot here.</p>
+
+<p>Codex has three permission profiles: read-only, workspace (writes only inside your project), and the ominously named "danger-full-access" which removes sandbox restrictions entirely.</p>
+
+<p>If you're running /goal in workspace mode, you're prob fine. If you crank it up to full access, just know that <a href="https://www.promptarmor.com/resources/configuring-codex-securely-across-every-platform-and-use-case" target="_blank" rel="noopener">security researchers have flagged real data exfiltration risks</a> even with the default settings. The Codex Desktop App can read any file on your computer even in the most restrictive mode.</p>
+
+<p>My advice: use the workspace profile, don't give it access to anything you wouldn't show a very enthusiastic but occasionally unpredictable intern, and check in regularly. The autonomy is the feature. The oversight is still your job.</p>
+
+<h2>/goal Isn't Just For Programming. It's The Future Of AI.</h2>
+
+<p>Ok here's where I want to zoom out a little.</p>
+
+<p>If you're reading this and thinking "I don't code, why do I care about some command inside a developer tool," I get it. But bear with me.</p>
+
+<p>What /goal is <em>actually</em> doing is giving you a preview of what <em>all</em> AI interaction is going to look like pretty soon.</p>
+
+<p>Right now, most people use AI in a chat window. You type something, it responds, you type something else.</p>
+
+<p>It's a conversation. And conversations are inherently short-horizon.</p>
+
+<p>You're thinking one message at a time.</p>
+
+<p>/goal is the opposite. It's <strong>long-horizon</strong>. You set an outcome and the AI works backward from it, planning, executing, testing, adjusting, for hours or even days.</p>
+
+<p>It's the clearest early example of what everyone keeps calling "agentic AI," except it's not a demo or a concept video. It's a real thing you can use right now.</p>
+
+<p>And here's the part that makes this moment different from even six months ago: <strong>GPT-5.5 is actually good enough to pull it off.</strong></p>
+
+<p>Don't just take my word for it. <a href="https://youtu.be/2wLJl9A2CnA" target="_blank" rel="noopener">Claire Vo made a good video</a> where she let Codex run for 6 hours to see what happened.</p>
+
+<p>More powerful systems are coming. The models that land later this year are going to make this version of /goal look like training wheels.</p>
+
+<p>But this is the starting gun.</p>
+
+<p>We're moving from a world where you <em>use</em> AI to a world where you <em>manage</em> AI. You set the objective. You check in. You course-correct. The AI does the work.</p>
+
+<p>And you (yes you!) should get comfortable with it.</p>
+`,
+    excerpt: '<p>OpenAI\'s new /goal command turns Codex from a coding tool into something anyone can manage. I have had a project running for over 24 hours straight and it is a preview of how all AI interaction is about to work.</p>',
+    slug: 'codex-goal-is-for-everyone',
+    date: '2026-06-01T14:00:00.000Z',
+    modified: '2026-06-01T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/codex-goal-tweet.jpg',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 13, name: 'Codex', slug: 'codex' },
+      { id: 14, name: 'OpenAI', slug: 'openai' },
+      { id: 1, name: 'AI Agents', slug: 'ai-agents' },
+      { id: 9, name: 'AI Tools', slug: 'ai-tools' }
+    ]
+  },
   {
     id: 6,
     title: 'The AI Takeoff Is Happening. You Know It. Nobody You Love Does.',
@@ -106,7 +341,7 @@ const MOCK_POSTS = [
 
 <h2>Why This Matters And How The World Actually Changes</h2>
 
-<p>The thing about the <a href="https://aiforhumans.beehiiv.com/p/how-to-survive-the-next-five-years" target="_blank" rel="noopener">Claude Code</a> and <a href="https://aiforhumans.beehiiv.com/p/moltbook-ai-agent-social-network" target="_blank" rel="noopener">OpenClaw/Moltbook</a> moments is that both of them showed more of the human population what these AI tools are capable of <em>right now</em>.</p>
+<p>The thing about the <a href="https://aiforhumans.beehiiv.com/p/how-to-survive-the-next-five-years" target="_blank" rel="noopener">Claude Code</a> and <a href="/blog/moltbook-ai-agent-social-network">OpenClaw/Moltbook</a> moments is that both of them showed more of the human population what these AI tools are capable of <em>right now</em>.</p>
 
 <p>And then, in <a href="https://openai.com" target="_blank" rel="noopener">last week's release of OpenAI's GPT-5.3 Codex</a> model, we got the first official confirmation that one of these models actually worked on itself.</p>
 
@@ -628,27 +863,4 @@ function formatPost(post) {
       slug: tag.slug
     })) || []
   };
-}
-
-/**
- * Search posts by keyword
- * @param {string} query - Search query
- * @returns {Promise} Array of matching posts
- */
-export async function searchPosts(query) {
-  try {
-    const response = await fetch(
-      `${WP_API_URL}/posts?search=${encodeURIComponent(query)}&_embed`
-    );
-
-    if (!response.ok) {
-      throw new Error('Search failed');
-    }
-
-    const posts = await response.json();
-    return posts.map(formatPost);
-  } catch (error) {
-    console.error('Error searching posts:', error);
-    throw error;
-  }
 }

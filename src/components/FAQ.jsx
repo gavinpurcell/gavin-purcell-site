@@ -64,15 +64,18 @@ export default function FAQ() {
             <button
               className={`faq-question ${openIndex === index ? 'active' : ''}`}
               onClick={() => toggleFAQ(index)}
+              aria-expanded={openIndex === index}
+              {...(openIndex === index ? { 'aria-controls': `faq-answer-${index}` } : {})}
             >
               <span className="faq-question-text">{faq.question}</span>
-              <span className="faq-icon">{openIndex === index ? '−' : '+'}</span>
+              <span className="faq-icon" aria-hidden="true">{openIndex === index ? '−' : '+'}</span>
             </button>
 
             <AnimatePresence>
               {openIndex === index && (
                 <motion.div
                   className="faq-answer"
+                  id={`faq-answer-${index}`}
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}

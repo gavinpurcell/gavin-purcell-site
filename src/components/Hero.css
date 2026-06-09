@@ -176,7 +176,6 @@
   background: var(--color-bg);
   border: 2px var(--border-style);
   color: var(--color-text);
-  outline: none;
   min-height: 60px;
   resize: vertical;
   line-height: 1.5;

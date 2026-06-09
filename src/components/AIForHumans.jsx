@@ -31,6 +31,7 @@ export default function AIForHumans() {
           transition={{ duration: 0.6 }}
         >
           <div className="aifh-hero-left">
+            <h2 className="visually-hidden">AI For Humans</h2>
             <div className="aifh-logo-container">
               <a href="https://aiforhumans.show" target="_blank" rel="noopener noreferrer">
                 <img
@@ -68,7 +69,7 @@ export default function AIForHumans() {
             Visit Show Website →
           </a>
           <p className="aifh-description">
-            Co-hosted with <strong>Kevin Pereira</strong>, AI For Humans is your weekly
+            Co-hosted with <strong>Kevin Pereira</strong>, AI For Humans is your twice-weekly
             guide to understanding artificial intelligence. We cut through the hype, explain
             the tech, and focus on what actually matters — making AI accessible,
             entertaining, and useful for everyone.
@@ -88,9 +89,9 @@ export default function AIForHumans() {
               <div className="card-accent"></div>
             </div>
             <p className="card-description">
-              Weekly episodes breaking down AI news, tools, and trends. From ChatGPT
-              updates to groundbreaking research, we make it all understandable and
-              entertaining.
+              New episodes every Wednesday and Friday breaking down AI news, tools, and
+              trends. From frontier model updates to groundbreaking research, we make it
+              all understandable and entertaining.
             </p>
             <ul className="card-list">
               <li>In-depth AI news analysis</li>
@@ -130,6 +131,7 @@ export default function AIForHumans() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                aria-label="Email address"
                 className="newsletter-input"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

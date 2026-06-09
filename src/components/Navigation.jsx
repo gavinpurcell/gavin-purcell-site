@@ -102,6 +102,8 @@ export default function Navigation() {
           className="nav-hamburger"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          {...(mobileMenuOpen ? { 'aria-controls': 'mobile-menu' } : {})}
         >
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
@@ -125,6 +127,7 @@ export default function Navigation() {
             {/* Mobile Menu */}
             <motion.div
               className="nav-mobile-menu"
+              id="mobile-menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
