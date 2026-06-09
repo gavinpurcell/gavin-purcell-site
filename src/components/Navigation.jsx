@@ -50,6 +50,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '#about', label: 'About', hash: true },
     { href: '#aifh', label: 'AI For Humans', hash: true },
+    { href: '#fishbowl', label: 'The Fishbowl', hash: true },
     { href: '#andthen', label: 'AndThen', hash: true },
     { href: '/blog', label: 'Blog', hash: false },
     { href: '#consulting', label: 'Work With Me', hash: true },

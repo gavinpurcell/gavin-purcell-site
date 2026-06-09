@@ -38,6 +38,7 @@ export default function Footer() {
                 <ul className="footer-nav">
                   <li><a href="#about">About</a></li>
                   <li><a href="#aifh">AI For Humans</a></li>
+                  <li><a href="#fishbowl">The Fishbowl</a></li>
                   <li><a href="#andthen">AndThen</a></li>
                   <li><a href="#consulting">Work With Me</a></li>
                   <li><a href="#contact">Contact</a></li>
@@ -54,10 +55,12 @@ export default function Footer() {
               </div>
 
               <div className="footer-column">
-                <h4 className="footer-column-title">AndThen</h4>
+                <h4 className="footer-column-title">Projects</h4>
                 <ul className="footer-nav">
-                  <li><a href="https://andthen.chat" target="_blank" rel="noopener noreferrer">Visit AndThen</a></li>
-                  <li><a href="mailto:partnerships@andthen.chat" target="_blank" rel="noopener noreferrer">Partnerships</a></li>
+                  <li><a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer">The Fishbowl</a></li>
+                  <li><a href="https://github.com/gavinpurcell/the-fishbowl" target="_blank" rel="noopener noreferrer">Fishbowl on GitHub</a></li>
+                  <li><a href="https://andthen.chat" target="_blank" rel="noopener noreferrer">AndThen</a></li>
+                  <li><a href="mailto:partnerships@andthen.chat" target="_blank" rel="noopener noreferrer">AndThen Partnerships</a></li>
                 </ul>
               </div>
 
@@ -73,24 +76,6 @@ export default function Footer() {
             </motion.div>
           </div>
 
-          <motion.div
-            className="footer-cta"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="footer-cta-title">Let's Connect</h3>
-            <p className="footer-cta-text">
-              Have a project in mind? Want to discuss media strategy? Looking for a speaker?
-              Reach out and let's start a conversation.
-            </p>
-            <div className="footer-cta-actions">
-              <a href="mailto:gavin@gavinpurcell.com" className="btn btn-large">
-                Get In Touch
-              </a>
-            </div>
-          </motion.div>
         </div>
       </div>
 

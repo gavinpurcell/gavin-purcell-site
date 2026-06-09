@@ -26,6 +26,12 @@ Co-host of AI For Humans with Kevin Pereira. Weekly podcast demystifying artific
 Subscribe: https://www.youtube.com/@AIForHumansShow
 Newsletter: https://aiforhumans.beehiiv.com/
 
+### The Fishbowl
+Creator of The Fishbowl, an AI-powered focus group simulator launched in May 2026. Users assemble a panel of AI experts, submit an idea or pitch deck, and watch the panel debate it live in a pixel-art roundtable scene, ending with an honest written debrief. Built entirely with AI coding agents and released free and open source (MIT).
+
+Website: https://fishbowl.show
+GitHub: https://github.com/gavinpurcell/the-fishbowl
+
 ### AndThen
 Co-Founder of AndThen, an innovative AI-powered audio platform that enables creators to build interactive storytelling experiences. The platform combines artificial intelligence with audio content creation to deliver engaging, personalized content experiences.
 
