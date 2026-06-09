@@ -20,17 +20,39 @@
   gap: var(--space-md);
 }
 
-.fishbowl-logo-container {
-  margin-bottom: 0;
+.fishbowl-logo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.fishbowl-logo-link {
+  flex-shrink: 0;
+  display: block;
 }
 
 .fishbowl-logo {
-  max-width: 120px;
-  width: 100%;
+  display: block;
+  width: 96px;
   height: auto;
   border: var(--border-width) var(--border-style);
   box-shadow: var(--shadow-md);
   image-rendering: pixelated;
+}
+
+.fishbowl-name {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin: 0;
+  line-height: 1;
+}
+
+.fishbowl-name a {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.fishbowl-name a:hover {
+  color: var(--color-primary);
 }
 
 .fishbowl-tagline {
@@ -130,7 +152,7 @@
   }
 
   .fishbowl-logo {
-    max-width: 90px;
+    width: 72px;
   }
 
   .fishbowl-tagline {

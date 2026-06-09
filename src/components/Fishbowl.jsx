@@ -12,17 +12,20 @@ export default function Fishbowl() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="fishbowl-logo-container">
-            <a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer">
+          <div className="fishbowl-logo-row">
+            <a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer" className="fishbowl-logo-link">
               <img
                 src="/fishbowl-icon.png"
-                alt="The Fishbowl"
+                alt=""
                 className="fishbowl-logo"
               />
             </a>
+            <h2 className="fishbowl-name">
+              <a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer">The Fishbowl</a>
+            </h2>
           </div>
 
-          <h2 className="fishbowl-tagline">Your Idea. Four AI Experts. One Honest Conversation.</h2>
+          <p className="fishbowl-tagline">Your Idea. Four AI Experts. One Honest Conversation.</p>
 
           <p className="fishbowl-description">
             <strong>The Fishbowl</strong> is an AI-powered focus group simulator I designed
