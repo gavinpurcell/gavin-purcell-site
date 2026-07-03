@@ -5,7 +5,26 @@
 import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
-import puppeteer from 'puppeteer';
+
+// Locally: full puppeteer with its bundled Chrome.
+// On Vercel: puppeteer-core + @sparticuz/chromium (a Chromium built to run
+// in Amazon Linux build/lambda containers, where puppeteer's own download
+// either isn't cached or can't launch for lack of system libraries).
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const [{ default: chromium }, { default: puppeteerCore }] = await Promise.all([
+      import('@sparticuz/chromium'),
+      import('puppeteer-core'),
+    ]);
+    return puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    });
+  }
+  const { default: puppeteer } = await import('puppeteer');
+  return puppeteer.launch({ headless: true });
+}
 
 const DIST = new URL('../dist', import.meta.url).pathname;
 const PORT = 4517;
@@ -39,7 +58,7 @@ const server = createServer((req, res) => {
 
 await new Promise((resolve) => server.listen(PORT, resolve));
 
-const browser = await puppeteer.launch({ headless: true });
+const browser = await launchBrowser();
 try {
   const page = await browser.newPage();
   // Never let the prerender hit live APIs; the SPA falls back gracefully
