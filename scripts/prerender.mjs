@@ -66,6 +66,11 @@ try {
         .forEach((el) => {
           if (managed.has(identity(el))) el.remove();
         });
+      // Runtime-injected scripts (Vercel analytics) re-inject on load;
+      // baking them into the HTML would duplicate them.
+      document
+        .querySelectorAll('script[src*="/_vercel/insights"]')
+        .forEach((el) => el.remove());
     });
     const html = await page.content();
     const outDir = route === '/' ? DIST : join(DIST, route);
