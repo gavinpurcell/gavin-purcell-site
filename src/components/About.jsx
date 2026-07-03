@@ -4,25 +4,25 @@ import './About.css';
 export default function About() {
   const highlights = [
     {
-      image: '/highlight-1.png',
+      image: '/highlight-1.webp',
       title: 'Emmy-Winning Showrunner',
       description: 'Showrunner for The Tonight Show Starring Jimmy Fallon, creating innovative content that defined late-night digital presence',
       link: null
     },
     {
-      image: '/highlight-2.png',
+      image: '/highlight-2.webp',
       title: 'Digital Media Pioneer',
       description: 'Built and led teams at Vox Media, G4, and many more media companies, transforming how audiences engage with digital content',
       link: null
     },
     {
-      image: '/highlight-3.png',
+      image: '/highlight-3.webp',
       title: 'Media Strategist',
       description: 'Guiding companies through media transformation with proven frameworks and hands-on experience',
       link: 'https://www.linkedin.com/feed/update/urn:li:activity:7299867738263416832/'
     },
     {
-      image: '/highlight-4.png',
+      image: '/highlight-4.webp',
       title: 'Podcast Host',
       description: 'Co-host of AI For Humans with Kevin Pereira, making artificial intelligence accessible to millions',
       link: 'https://www.youtube.com/@AIForHumansShow'
@@ -104,12 +104,12 @@ export default function About() {
                   {item.link ? (
                     <a href={item.link} target="_blank" rel="noopener noreferrer" className="highlight-image-link">
                       <div className="highlight-image-container">
-                        <img src={item.image} alt={item.title} className="highlight-image" />
+                        <img src={item.image} alt={item.title} className="highlight-image" loading="lazy" width="800" height="400" />
                       </div>
                     </a>
                   ) : (
                     <div className="highlight-image-container">
-                      <img src={item.image} alt={item.title} className="highlight-image" />
+                      <img src={item.image} alt={item.title} className="highlight-image" loading="lazy" width="800" height="400" />
                     </div>
                   )}
                   <h4 className="highlight-title">{item.title}</h4>

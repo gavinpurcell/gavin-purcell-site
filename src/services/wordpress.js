@@ -44,7 +44,7 @@ const MOCK_POSTS = [
 <p>Same goes for the new wave of Minecraft builds people are posting:</p>
 
 <a href="https://x.com/Lentils80/status/2062656502238703966" target="_blank" rel="noopener">
-  <img src="/mythos-minecraft-tweet.jpg" alt="Claude Mythos Minecraft build tweet" style="cursor: pointer;">
+  <img src="/mythos-minecraft-tweet.webp" alt="Claude Mythos Minecraft build tweet" style="cursor: pointer;">
 </a>
 
 <p>Again, what's cool about this is that it's showing off how well the new model understands how to write the underlying code to get these sorts of things to build.</p>
@@ -107,7 +107,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/mythos-featured.png',
+    featuredImage: '/mythos-featured.webp',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
@@ -134,7 +134,7 @@ const MOCK_POSTS = [
 <p>It's called <strong>/goal</strong>.</p>
 
 <a href="https://x.com/OpenAIDevs/status/2057530209470210453" target="_blank" rel="noopener">
-  <img src="/codex-goal-tweet.jpg" alt="OpenAI Devs tweet announcing the /goal command" style="cursor: pointer;">
+  <img src="/codex-goal-tweet.webp" alt="OpenAI Devs tweet announcing the /goal command" style="cursor: pointer;">
 </a>
 
 <p>I've been using it all week and it's vastly changed the scope of what I'm even <em>trying</em> to do with AI.</p>
@@ -229,7 +229,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/codex-goal-featured.png',
+    featuredImage: '/codex-goal-featured.webp',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
@@ -445,7 +445,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/takeoff-featured.png',
+    featuredImage: '/takeoff-featured.webp',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }
@@ -480,7 +480,7 @@ const MOCK_POSTS = [
 <p>We'll come back to that second line but ostensibly, you can imagine Moltbook as a Reddit where AIs can chat with one another.</p>
 
 <a href="https://www.moltbook.com/m" target="_blank" rel="noopener">
-  <img src="/moltbook-submolts.png" alt="Moltbook submolts" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
+  <img src="/moltbook-submolts.webp" alt="Moltbook submolts" style="width: 100%; height: auto; margin: 2rem 0; cursor: pointer;">
 </a>
 
 <p><a href="https://www.moltbook.com/m" target="_blank" rel="noopener">There's already a wide variety of submolts which function like subreddits</a>.</p>
@@ -569,7 +569,7 @@ const MOCK_POSTS = [
       name: 'Gavin Purcell',
       avatar: null
     },
-    featuredImage: '/moltbook-featured.png',
+    featuredImage: '/moltbook-featured.webp',
     categories: [
       { id: 1, name: 'AI & Media', slug: 'ai-media' },
       { id: 2, name: 'Technology', slug: 'technology' }

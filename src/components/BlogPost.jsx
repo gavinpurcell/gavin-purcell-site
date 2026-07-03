@@ -121,7 +121,7 @@ function BlogPost() {
               "url": "https://gavinpurcell.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://gavinpurcell.com/gavin-photo.png"
+                "url": "https://gavinpurcell.com/gavin-photo-og.jpg"
               }
             },
             "mainEntityOfPage": {
@@ -187,7 +187,7 @@ function BlogPost() {
 
           {post.featuredImage && (
             <div className="blog-post-featured-image">
-              <img src={post.featuredImage} alt={post.title} />
+              <img src={post.featuredImage} alt={post.title} width="1600" height="1067" />
             </div>
           )}
 

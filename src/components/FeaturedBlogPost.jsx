@@ -70,7 +70,7 @@ function FeaturedBlogPost() {
           {post.featuredImage && (
             <Link to={`/blog/${post.slug}`} className="featured-post-image-link">
               <div className="featured-post-image">
-                <img src={post.featuredImage} alt={post.title} />
+                <img src={post.featuredImage} alt={post.title} loading="lazy" width="1600" height="1067" />
               </div>
             </Link>
           )}
