@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import FAQ from './FAQ';
+import IntakeForm from './IntakeForm';
 import './Consulting.css';
 
 export default function Consulting() {
@@ -100,13 +101,10 @@ export default function Consulting() {
           <div className="cta-box">
             <h3 className="cta-box-title">Ready to Start a Conversation?</h3>
             <p className="cta-box-text">
-              Whether you're facing a specific challenge or exploring opportunities,
-              let's talk about how I can help your team succeed.
+              Tell me what you're working on. The budget question just helps me
+              point you at the right offer.
             </p>
-            <p className="cta-box-email">gavin AT gavinpurcell.com</p>
-            <div className="cta-box-actions">
-              <a href="mailto:gavin@gavinpurcell.com" className="btn btn-large">Get In Touch</a>
-            </div>
+            <IntakeForm />
           </div>
         </motion.div>
       </div>

@@ -1,0 +1,120 @@
+.intake-form {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.intake-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.intake-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.intake-field span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.intake-field input,
+.intake-field select,
+.intake-field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 2px var(--border-style);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 0;
+  width: 100%;
+}
+
+.intake-field textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.intake-field input:focus,
+.intake-field select:focus,
+.intake-field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 3px 3px 0 var(--color-border);
+}
+
+.intake-submit {
+  margin-top: var(--space-xs);
+  align-self: center;
+  min-width: 280px;
+}
+
+.intake-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.intake-error {
+  font-size: 0.9375rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--color-border);
+  padding: var(--space-xs) var(--space-sm);
+  text-align: center;
+  margin: 0;
+}
+
+.intake-error a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.intake-alt {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin: 0;
+}
+
+.intake-alt a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.intake-sent {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intake-sent h4 {
+  color: #fff;
+  margin-bottom: var(--space-xs);
+}
+
+.intake-sent p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.125rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .intake-row {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-submit {
+    width: 100%;
+    min-width: 0;
+  }
+}
