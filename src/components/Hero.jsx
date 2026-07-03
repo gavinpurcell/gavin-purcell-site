@@ -3,28 +3,24 @@ import './Hero.css';
 
 const rundown = [
   {
-    tag: 'On Air',
     title: 'AI For Humans',
     detail: 'Twice-weekly AI show with Kevin Pereira. New episodes Wednesday and Friday.',
     href: 'https://www.aiforhumans.show',
     cta: 'Watch',
   },
   {
-    tag: 'Shipped',
     title: 'The Fishbowl',
     detail: 'AI focus-group simulator. Designed, built, and shipped solo with AI coding agents.',
     href: 'https://fishbowl.show',
     cta: 'Try it',
   },
   {
-    tag: 'Co-founded',
     title: 'AndThen',
     detail: 'Interactive audio storytelling startup. Backed by a16z Speedrun.',
     href: 'https://andthen.chat',
     cta: 'Play it',
   },
   {
-    tag: 'Receipts',
     title: 'The Tonight Show',
     detail: 'Emmy-winning showrunner. Two decades in TV and digital, 100M+ viewers reached.',
     href: '#about',
@@ -64,38 +60,52 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="rundown-card" id="rundown">
-            <div className="rundown-header">
-              <span className="rundown-header-title">The Rundown</span>
-              <span className="rundown-header-note">Proof of work</span>
-            </div>
-            <ol className="rundown-list">
-              {rundown.map((item, i) => (
-                <li key={item.title} className="rundown-item">
-                  <div className="rundown-item-meta">
-                    <span className="rundown-item-index">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="rundown-item-tag">{item.tag}</span>
-                  </div>
-                  <div className="rundown-item-body">
-                    <h3 className="rundown-item-title">{item.title}</h3>
-                    <p className="rundown-item-detail">{item.detail}</p>
-                  </div>
-                  <a
-                    className="rundown-item-link"
-                    href={item.href}
-                    {...(item.href.startsWith('http')
-                      ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
-                  >
-                    {item.cta}
-                    <span aria-hidden="true"> →</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
+          <div className="hero-photo-card">
+            <img
+              src="/gavinpurcellheadshot.jpeg"
+              alt="Gavin Purcell"
+              className="hero-photo"
+              width="800"
+              height="1000"
+            />
           </div>
         </motion.div>
       </div>
+
+      <motion.div
+        className="hero-rundown"
+        id="rundown"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <div className="rundown-card">
+          <div className="rundown-header">
+            <span className="rundown-header-title">The Rundown</span>
+            <span className="rundown-header-note">Proof of work</span>
+          </div>
+          <ul className="rundown-list">
+            {rundown.map((item) => (
+              <li key={item.title} className="rundown-item">
+                <div className="rundown-item-body">
+                  <h3 className="rundown-item-title">{item.title}</h3>
+                  <p className="rundown-item-detail">{item.detail}</p>
+                </div>
+                <a
+                  className="rundown-item-link"
+                  href={item.href}
+                  {...(item.href.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                >
+                  {item.cta}
+                  <span aria-hidden="true"> →</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
     </section>
   );
 }
