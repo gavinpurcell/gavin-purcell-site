@@ -757,16 +757,11 @@ const USE_MOCK_DATA = true; // Set to false when you have WordPress connected
  * @returns {Promise} Array of post objects
  */
 export async function fetchPosts(page = 1, perPage = 10) {
-  // Use mock data for demo purposes
   if (USE_MOCK_DATA) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          posts: MOCK_POSTS,
-          totalPages: 1
-        });
-      }, 500); // Simulate network delay
-    });
+    return {
+      posts: MOCK_POSTS,
+      totalPages: 1
+    };
   }
 
   try {
@@ -799,18 +794,12 @@ export async function fetchPosts(page = 1, perPage = 10) {
  * @returns {Promise} Post object
  */
 export async function fetchPostBySlug(slug) {
-  // Use mock data for demo purposes
   if (USE_MOCK_DATA) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const post = MOCK_POSTS.find(p => p.slug === slug);
-        if (post) {
-          resolve(post);
-        } else {
-          reject(new Error('Post not found'));
-        }
-      }, 500); // Simulate network delay
-    });
+    const post = MOCK_POSTS.find(p => p.slug === slug);
+    if (post) {
+      return post;
+    }
+    throw new Error('Post not found');
   }
 
   try {
