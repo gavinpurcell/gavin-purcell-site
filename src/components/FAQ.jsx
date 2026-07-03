@@ -8,14 +8,17 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What services does Gavin Purcell offer?",
-      answer: "Gavin offers four main services:",
+      answer: "There are three ways to work with me:",
       bullets: [
-        'Media & Content Strategy: Building content strategies that resonate across traditional and digital platforms',
-        'Digital Transformation: Guiding companies through media evolution with practical, hands-on expertise',
-        'AI & Emerging Technology: Implementing AI tools in practical ways that add real value to workflows',
-        'Speaking & Workshops: Keynotes and training sessions on media, AI, and digital transformation'
+        'The AI Jumpstart: a half-day or full-day hands-on workshop where your creative team builds working AI workflows on real projects',
+        'Fractional AI Creative Officer: ongoing monthly advisory for media and creative orgs that want senior AI leadership without the full-time hire',
+        'Keynotes and Speaking: practical, funny, zero-hype talks on AI and creativity for conferences and company events'
       ],
       closing: "Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore."
+    },
+    {
+      question: "What does an engagement cost?",
+      answer: "It depends on scope, so I don't publish rates. Workshops, ongoing advisory, and keynotes are all priced differently. The budget range you pick in the contact form isn't a commitment; it just helps me point you at the right option (or tell you honestly if I'm not the right fit) in my first reply."
     },
     {
       question: "How does Gavin approach AI consulting differently?",

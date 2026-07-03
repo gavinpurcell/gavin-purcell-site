@@ -28,6 +28,23 @@
   margin-bottom: var(--space-xl);
 }
 
+.offers-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.offer-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-bg);
+  background: var(--color-bg-dark);
+  padding: 4px 10px;
+  margin-bottom: var(--space-sm);
+}
+
 .service-card {
   background: var(--color-surface);
   border: var(--border-width) var(--border-style);
@@ -179,7 +196,8 @@
 }
 
 @media (max-width: 1024px) {
-  .services-grid {
+  .services-grid,
+  .offers-grid {
     grid-template-columns: 1fr;
   }
 }
