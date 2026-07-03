@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './IntakeForm.css';
 
-// PLACEHOLDER: create a form at formspree.io and replace this ID before deploying
-const FORM_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
+// Formspree project form "intake" (defined in formspree.json, deployed via CLI)
+const FORM_ENDPOINT = 'https://formspree.io/p/3037991238692241264/f/intake';
 
 const INTERESTS = [
   'AI Jumpstart workshop',
