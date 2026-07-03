@@ -1,13 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './AIForHumans.css';
 
+// Fallback if /api/latest-episode is unreachable (plain vite dev, feed outage)
+const FALLBACK_EPISODE_ID = 'OCnssLZbt9E';
+
 export default function AIForHumans() {
   const [email, setEmail] = useState('');
+  const [latestEpisodeVideoId, setLatestEpisodeVideoId] = useState(FALLBACK_EPISODE_ID);
 
-  // UPDATE THIS VIDEO ID WHEN YOU POST A NEW EPISODE
-  // Just replace with the new YouTube video ID from the URL
-  const latestEpisodeVideoId = 'nx3Q6XiZX0g';
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/api/latest-episode')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.videoId) setLatestEpisodeVideoId(data.videoId);
+      })
+      .catch(() => {}); // keep fallback
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
