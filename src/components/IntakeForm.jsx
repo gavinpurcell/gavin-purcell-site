@@ -95,7 +95,8 @@ export default function IntakeForm() {
         {status === 'sending' ? 'Sending…' : 'Start the Conversation'}
       </button>
       <p className="intake-alt">
-        Prefer email? <a href="mailto:gavin@gavinpurcell.com">gavin@gavinpurcell.com</a>
+        I read every inquiry myself and reply within two business days. Prefer email?{' '}
+        <a href="mailto:gavin@gavinpurcell.com">gavin@gavinpurcell.com</a>
       </p>
     </form>
   );
