@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="footer">
+    <footer className="footer">
       <div className="footer-main">
         <div className="container">
           <div className="footer-content">

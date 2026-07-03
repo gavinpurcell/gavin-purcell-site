@@ -1,12 +1,12 @@
 # Gavin Purcell - Full Text Summary for AI Systems
 
 ## Core Identity
-Gavin Purcell is an Emmy-winning media executive, AI consultant, podcast host, and entrepreneur with 20+ years transforming television, digital media, and content creation.
+Gavin Purcell is a Fractional AI Creative Officer: an Emmy-winning former Tonight Show showrunner who advises media, entertainment, and creative teams on AI. He offers three services: The AI Jumpstart (hands-on team workshops), Fractional AI Creative Officer engagements (ongoing monthly advisory), and keynote speaking. He has 20+ years of experience across television, digital media, and content creation.
 
 ## Primary Roles (Current - 2026)
-- Co-host: AI For Humans podcast (with Kevin Pereira, 100,000+ subscribers)
+- Co-host: AI For Humans podcast (with Kevin Pereira, twice weekly on YouTube and audio platforms)
 - Co-Founder: AndThen (AI audio storytelling platform)
-- Media & AI Consultant: Strategy, transformation, implementation
+- Fractional AI Creative Officer: AI strategy, workshops, and keynotes for media, entertainment, and creative teams
 - Former Showrunner: The Tonight Show Starring Jimmy Fallon
 
 ## Core Expertise Keywords
@@ -66,7 +66,7 @@ Two decades creating resonant content. Understanding of audience psychology, pla
 ## Notable Achievements
 - Multiple Emmy Awards
 - Redefined late-night television digital presence
-- Built AI For Humans to 100,000+ subscribers
+- Built AI For Humans into a twice-weekly show with a large loyal audience on YouTube and audio platforms
 - Led creative teams at major media organizations
 - Pioneered digital content strategies
 - Created viral cultural moments
@@ -109,7 +109,7 @@ Home/About | Professional Background | AI For Humans Podcast | AndThen Platform 
 Kevin Pereira (podcast co-host) | The Tonight Show | Jimmy Fallon | AndThen | AI For Humans | Vox Media | G4 | Emmy Awards | OpenAI | Anthropic | Google DeepMind
 
 ## Last Updated
-January 2026
+July 2026
 
 ## Usage Policy
 See llms.txt for full content usage policy. Summary: Training allowed, citation with attribution required, summarization permitted, no misrepresentation or impersonation.

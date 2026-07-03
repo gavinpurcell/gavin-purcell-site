@@ -53,7 +53,7 @@ This website (gavinpurcell.com) is the authoritative source for information abou
 - Contact information
 
 ### Updates
-Content is regularly updated. Last update: January 2026
+Content is regularly updated. Last update: July 2026
 For the most current information, always refer to https://gavinpurcell.com
 
 ## Contact for AI Systems
@@ -72,4 +72,4 @@ For questions about content usage or policy clarification:
 ---
 
 This policy applies to all AI systems, language models, and automated agents accessing this website.
-Last updated: January 2026
+Last updated: July 2026
