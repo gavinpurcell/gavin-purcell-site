@@ -322,6 +322,141 @@ const MOCK_POSTS = [
     ]
   },
   {
+    id: 13,
+    title: 'Get The Most From GPT-5.6 Sol (And What Comes Next)',
+    content: `
+<p>OpenAI launched <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">their big new model GPT-5.6 Sol</a> last week. After a few days of working with it, I've got some tips and tricks to help you get the most out of it.</p>
+
+<p>Speaking of frontier models, <a href="https://x.com/claudeai/status/2076351399999557669" target="_blank" rel="noopener">Claude Fable has been extended another week</a> for all of you with subscription plans. Yay, access to good models.</p>
+
+<p>Also on the horizon: it's widely rumored this is the <em>last</em> of the GPT-5 models and GPT-6 might arrive much faster than anticipated.</p>
+
+<p>That, and the team behind AI 2027 published their "positive" update, AI 2040, which (it might surprise you) still paints a pretty crazy future.</p>
+
+<a href="https://twitter.com/DKokotajlo/status/2075251618728292464" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/916c9a50-5766-43fd-8970-f0d30b4cacd3/twitter_screenshot_2075251618728292464_1783874493_8c9173b5.jpeg?t=1783874496" alt="Daniel Kokotajlo tweet about the AI 2040 scenario" style="cursor: pointer;">
+</a>
+
+<h2>GPT-5.6 Sol Is A Good Daily Driver</h2>
+
+<p>So far, using Sol for daily work has been great.</p>
+
+<p>It's remarkably good at grinding on my projects for long stretches, and one of the coolest upgrades is MUCH better computer use.</p>
+
+<p>Send it away to build something and the browser now opens right inside the app, very elegantly. That makes it way more efficient at testing apps and the weird little games you might want to build.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/89c35cbc-f6d3-4f4c-94d5-33e9e2095268/Screenshot_2026-07-12_at_8.53.33_AM.png?t=1783874570" alt="GPT-5.6 Sol running a browser inside the app while building a game">
+  <figcaption>Don't ask me why but I'm making a Fruit Fly video game.</figcaption>
+</figure>
+
+<p>Also, don't sleep on the new <a href="https://openai.com/index/introducing-gpt-live/" target="_blank" rel="noopener">GPT-Live-1 voice update</a>.</p>
+
+<p>It's remarkably better to talk with than any voice model I've used. Just yesterday I watched my wife use it to work on her Spanish, and it flawlessly went back and forth between Spanish and English. Her verdict (and she's notably a major AI skeptic): her favorite AI voice experience since Pi.</p>
+
+<h2>ChatGPT Work Tries To Bite Off Claude Cowork</h2>
+
+<p>You may have noticed the vanilla ChatGPT app on Mac now looks a lot more like Codex (and some people don't like it).</p>
+
+<p>That's all part of OpenAI's push to build something a bit more like Claude.</p>
+
+<p>If you haven't been following the AI race: Anthropic has been winning (in part) because they mobilized the white-collar workforce to use, and pay for, Claude. ChatGPT Work is OpenAI's big move into that space.</p>
+
+<a href="https://twitter.com/OpenAI/status/2075274271845404744" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/825e7539-786c-4a08-a6f5-23e831c8a831/twitter_screenshot_2075274271845404744_1783874729_bc906ad3.jpeg?t=1783874731" alt="OpenAI tweet announcing ChatGPT Work" style="cursor: pointer;">
+</a>
+
+<p>In my early tests, it does a remarkably great job with basic work tasks, but I'd suggest running your own side-by-side comparisons.</p>
+
+<p>And something else: we're all starting to develop personal model preferences, the same way people are iPhone people or Android people.</p>
+
+<p>That's fine. But the labs know it too, and the real fight isn't over any one benchmark, it's over which AI ecosystem you set up your home in.</p>
+
+<p>Once your files, your memory, and your workflows live inside one of these things, switching gets a lot harder. So what you have now might be what you're in for the next few years.</p>
+
+<h2>But This Is Not The AI End Game</h2>
+
+<p>As good as this model is, you'll still hit places where it tries too hard, overworking what should be a simple result. Or you'll ask it to do something that relies on interacting with the world at large and it just fails.</p>
+
+<p>We're entering a weird place with AI: the closer models get to doing the stuff we <em>want them to do</em>, the more disappointed we get when they can't just <em>do</em> it.</p>
+
+<p>Which brings us to one of the most surprising bits of news from last week: rumors abound that OpenAI is calling this the "last" of the GPT-5 updates, and that a MUCH more powerful GPT-6 could arrive as soon as the end of this month.</p>
+
+<a href="https://twitter.com/AndrewCurran_/status/2075005058287300766" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/e7ec00ed-048f-4206-afc0-1aa566e0c31e/twitter_screenshot_2075005058287300766_1783874765_baf59115.jpeg?t=1783874766" alt="Andrew Curran tweet about GPT-6 timing rumors" style="cursor: pointer;">
+</a>
+
+<p>What does "much more powerful" even mean? Will it do work end-to-end that never disappoints us? And maybe most importantly: if we all thought Mythos was a massive step forward, what does it mean if these steps keep coming?</p>
+
+<p>Stay tuned. And read that AI 2040 piece. Or, conversely, read the version <a href="https://x.com/gavinpurcell/status/2075993480413978671" target="_blank" rel="noopener">I had my AI agent Fig write from the AI's perspective</a>.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Character.AI Moves Into AI Microdramas</h3>
+
+<p>Many times, dear reader, consuming this newsletter puts you WAY ahead of the game on cultural shifts.</p>
+
+<p>Case in point: you already know AI microdramas are having a real moment. Now the larger AI world is catching up, as consumer juggernaut Character.ai <a href="https://www.hollywoodreporter.com/business/digital/character-ai-subscribers-app-microdramas-1236642929/" target="_blank" rel="noopener">just started a new microdrama program</a>.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/69640762-41b3-4b51-aba9-f855b1875739/Screenshot_2026-07-12_at_8.09.04_AM.png?t=1783874813" alt="Character.AI microdrama program announcement">
+</figure>
+
+<p>Why does this matter? <a href="https://character.ai/" target="_blank" rel="noopener">Character.ai has one of the biggest and youngest audiences</a> in consumer AI, and when a platform that size starts paying for serialized AI stories, microdramas stop being a weird little experiment and start being a format.</p>
+
+<p>They also happen to have millions (literally) of pre-programmed AI characters that, as these automated storytelling systems get better, could pump out a LOT of AI slop.</p>
+
+<h3>1X's NEO Humanoid Robot Shows Off New Hands</h3>
+
+<p>You know we always keep you aware of the newest humanoid robot advances. This week? Robot hands are having a moment.</p>
+
+<p><a href="https://www.1x.tech/discover/neos-hands" target="_blank" rel="noopener">NEO's new hands matter because dexterity is the whole ballgame</a> for humanoid robots. Grabbing a mug, buttoning a shirt, picking a single sock out of a laundry pile: the boring-sounding stuff is exactly what separates a demo robot from one that can actually work in your house.</p>
+
+<p>And the pace is the wild part. Watch <a href="https://youtu.be/_WGNMkmvEls" target="_blank" rel="noopener">this video showing four years of Figure's robots</a> back to back and you can see just how insanely fast this category is improving.</p>
+
+<h3>CapCut's CRE[AI]TE Festival For AI Video</h3>
+
+<p>I'm attempting to make a microdrama with AI tools, mostly as a personal exploration of what one person can do now. Honestly? It's been super fun creatively and has reignited my love of storytelling.</p>
+
+<p>Wanna give it a shot too? Now you have a reason.</p>
+
+<p>CapCut (ByteDance's editing software) has introduced <a href="https://capcut.creaite26.com/#" target="_blank" rel="noopener">CRE[AI]TE</a>, its first festival for AI filmmakers. It's free to enter, there's <strong>$200,000 in total prizes</strong> across four tracks (Film, Series, Creative, and Commercial), and submissions are open through <strong>August 10th</strong>. You just need a finished video and an entry form.</p>
+
+<a href="https://twitter.com/doopiidoop/status/2074988237161205815" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c397cc80-1b27-4da6-8bd2-5f2bf69daafc/twitter_screenshot_2074988237161205815_1783875025_b6bccc29.jpeg?t=1783875027" alt="Doopiidoo AI video work shared on X" style="cursor: pointer;">
+</a>
+
+<h2>Jordan Chesney's "Salty"</h2>
+
+<p>We love AI creators that take bigger chances creatively, and that moment when you watch an AI film and just can't wait to see what the creator does next.</p>
+
+<p>We get both from Jordan Daniel Chesney's "Salty." It's so cool to me to see AI filmmakers think about storytelling first, and this little short, with just a few characters, really got to me.</p>
+
+<p><a href="https://x.com/jordandchesney/status/2074520674744320217" target="_blank" rel="noopener">Jordan shares some of his process here</a>, and be sure to go give him a follow.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>GPT-5.6 Sol has been a genuinely good daily driver, and the improved computer use is the upgrade worth knowing about. Plus ChatGPT Work going straight at Claude, why the real fight is over which ecosystem you live in, and rumors that GPT-6 is much closer than anyone expected.</p>',
+    slug: 'get-the-most-from-gpt-5-6-sol',
+    date: '2026-07-13T14:00:00.000Z',
+    modified: '2026-07-13T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/gpt56-sol-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 21, name: 'ChatGPT', slug: 'chatgpt' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
