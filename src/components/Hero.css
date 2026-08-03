@@ -43,6 +43,17 @@
   font-weight: 400;
 }
 
+/* The eyebrow now sits inside the h1 so the name is part of the heading.
+   It was a block-level <p> wrapping an inline-block, so it needs display:block
+   to keep its own line, and width:fit-content so the border-bottom still hugs
+   the text instead of stretching the full column. line-height is pinned
+   because it would otherwise inherit the h1's 1.1. */
+.hero-title .hero-eyebrow {
+  display: block;
+  width: fit-content;
+  line-height: 1.4;
+}
+
 .hero-title-em {
   color: var(--color-primary);
   font-style: italic;

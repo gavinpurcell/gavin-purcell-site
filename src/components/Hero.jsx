@@ -38,8 +38,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="hero-eyebrow">Gavin Purcell · Fractional AI Creative Officer</p>
+          {/* The eyebrow lives INSIDE the h1 so "Gavin Purcell" is part of the
+              page's one top-level heading. This site has to rank for his own
+              name, and the h1 previously didn't contain it. Nesting it costs
+              nothing visually (see .hero-title .hero-eyebrow in Hero.css) and
+              avoids saying the name twice in a row. */}
           <h1 className="hero-title">
+            <span className="hero-eyebrow">Gavin Purcell · Fractional AI Creative Officer</span>
             Your AI strategy needs <span className="hero-title-em">a showrunner.</span>
           </h1>
           <p className="hero-description">

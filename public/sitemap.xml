@@ -42,22 +42,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://gavinpurcell.com/ai.txt</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://gavinpurcell.com/llms.txt</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://gavinpurcell.com/llms-full-text.txt</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <!--
+    ai.txt, llms.txt and llms-full-text.txt are deliberately NOT listed here.
+
+    A sitemap is a list of pages you want indexed as search results. Those three
+    are text/plain, so Google crawls them, decides they aren't search results,
+    and files them under "Crawled - currently not indexed" in Search Console,
+    which is what was happening as of Aug 2 2026 (4 pages in that bucket, and
+    only 7 real pages on the site).
+
+    They are already advertised the correct way, in robots.txt, via the
+    AI-Content: and Policy: directives. Don't add them back.
+  -->
 </urlset>
