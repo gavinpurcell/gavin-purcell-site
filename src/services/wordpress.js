@@ -8,6 +8,320 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL;
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 15,
+    title: 'AI Computer Use Is Finally Good. Here Is How To Use It.',
+    content: `
+<p>After a week off, there's a ton of news to get to, including the <a href="https://openai.com/index/ten-advances-in-mathematics/" target="_blank" rel="noopener">surprising math breakthroughs from OpenAI's unreleased Astra model</a>.</p>
+
+<p>But first, there's a MUCH bigger deal that everyone needs to understand:</p>
+
+<p><strong>AIs are REALLY good at using your computer now.</strong></p>
+
+<a href="https://twitter.com/gavinpurcell/status/2083747802837078087" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/5c481af0-3e4e-4ada-9078-042628adbda3/twitter_screenshot_2083747802837078087_1785690401_e3b23af6.jpeg?t=1785690403" alt="Gavin Purcell tweet about ChatGPT computer use" style="cursor: pointer;">
+</a>
+
+<p>I had a remarkable experience with ChatGPT's <a href="https://learn.chatgpt.com/docs/computer-use" target="_blank" rel="noopener">improved Computer Use feature</a> last week, and I'm here to tell you these little AIs can now do the most frustrating, boring stuff for you. And do it well.</p>
+
+<p>Let's get into it.</p>
+
+<h2>What Exactly IS Computer Use?</h2>
+
+<p>Computer use is exactly what it sounds like: the AI takes over your mouse and keyboard. It looks at your screen, clicks buttons, types into forms, and moves files around.</p>
+
+<p>If you tried this a year ago, you know it sucked. It was SO bad.</p>
+
+<p>The early agents were slow, got lost constantly, and asked permission every ten seconds.</p>
+
+<p>Even Atlas, OpenAI's standalone AI browser, never quite landed. It's now <a href="https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026" target="_blank" rel="noopener">being sunset</a>, with its brain folded into the new ChatGPT desktop app.</p>
+
+<p>So why would you want this?</p>
+
+<p>Because a ton of what we do daily is interacting with the open web (email, spreadsheets, shared docs) or local files on our computers. Computer use lets AI connect those dots and get stuff done that actually matters.</p>
+
+<p>And again, this used to be a frustrating experience. But it WORKS now.</p>
+
+<h2>How To Use It (For Humans)</h2>
+
+<p>The best experience I've had is in <a href="https://chatgpt.com/download/" target="_blank" rel="noopener">the new ChatGPT app</a> (which used to be the Codex app) on my MacBook. There's a Windows version too, and for now we'll consider them the same. Your mileage may vary.</p>
+
+<p>Install it, then give it whatever permissions you're comfortable with. You can adjust these in the chatbox itself. Myself, I'm kind of crazy and give it all the permissions. Most security-minded people would NEVER do this, but it does make everything much faster.</p>
+
+<p>Please use the permissions at first as it will step you through the processes.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/40f0b499-76b6-44e1-8f47-de4822310e12/Screenshot_2026-08-02_at_10.10.41_AM.png?t=1785690646" alt="Approval controls at the bottom of the ChatGPT window">
+  <figcaption>Approvals at the bottom of the ChatGPT window (BE CAREFUL)</figcaption>
+</figure>
+
+<p>Next, the biggest and most important step, come up with something you'd like it to do.</p>
+
+<p>Here's mine from last week:</p>
+
+<p>YouTube recently <a href="https://mashable.com/tech/youtube-creators-playlists-shows-episodes" target="_blank" rel="noopener">let recurring series turn themselves into "shows,"</a> basically a stream designed for TV screens. I went to import all the episodes of AI For Humans and it scrambled the entire order of the series.</p>
+
+<p>That's a big deal because you want the most recent episode first (not many people need the November 2024 episode unless you're a Midjourney 5 completist).</p>
+
+<p>And YouTube makes fixing this TEDIOUS. You have to tweak each episode and save it individually.</p>
+
+<p>So I opened the ChatGPT app and asked this:</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/9714c5f5-faa9-4c65-8e90-21eb1886d0f7/Screenshot_2026-08-02_at_10.11.31_AM.png?t=1785690694" alt="The prompt given to ChatGPT computer use to reorder a YouTube show">
+  <figcaption>I even used the new Voice App integration to dictate this rather than write it.</figcaption>
+</figure>
+
+<p>The important things here: tagging @ computer use (which invokes the skill) and having the ChatGPT Chrome extension installed. Then, it's just answering a few questions and letting the machine work.</p>
+
+<p>And work it did. I know this sounds stupidly simple, but it did exactly the job I needed and gave me three hours of my life back.</p>
+
+<p>You can now see <a href="https://www.youtube.com/show/VLPLRDOtN2snjg4?sbp=QAE%253D" target="_blank" rel="noopener">AI For Humans' show page here</a>.</p>
+
+<p>Now, would I trust it with something I couldn't easily redo?</p>
+
+<p>NO. NOT ON YOUR LIFE. At least not yet.</p>
+
+<p>But this is how AI is supposed to work, and now it's working.</p>
+
+<h2>AI Is FINALLY Doing Stuff We Need</h2>
+
+<p>For two-plus years we've been promised AI that actually does things for us, and mostly we've had annoying things that say "sure" and then fail miserably.</p>
+
+<p>This moment does feel different to me. The boring, fiddly, twenty-clicks-deep tasks (renaming files, updating spreadsheets, fixing settings one at a time) are exactly where these agents are getting good.</p>
+
+<p>Start small: point one at something annoying and reversible. Have it unsubscribe you from fifty newsletters. It does GREAT with Gmail.</p>
+
+<p>Or clean up your downloads folder. Whatever. Little stuff. I promise you'll be impressed.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Seedance 2.5 Lands, But Not For The United States</h3>
+
+<p>In a rare non-US-first launch, ByteDance's <a href="https://www.cined.com/bytedance-seedance-2-5-api-goes-live-30-second-single-shot-clips-50-reference-inputs-and-3d-camera-blockouts/" target="_blank" rel="noopener">Seedance 2.5</a> is now live in many parts of the world via Dreamina and the Volcano Engine API, with no confirmed American date thanks in part to the copyright fights that slowed Seedance 2.0's US rollout.</p>
+
+<a href="https://twitter.com/dreamina_ai/status/2083056471147958714" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/78aa3a28-5924-433e-9298-56f76d0b9b35/twitter_screenshot_2083056471147958714_1785691002_38c85eb2.jpeg?t=1785691004" alt="Dreamina AI tweet announcing Seedance 2.5" style="cursor: pointer;">
+</a>
+
+<p>What we've seen so far: native 30-second generations (no stitching), up to 50 reference inputs (images, video, audio, even 3D models), native 4K, and subject-swapping after generation.</p>
+
+<p><strong>WHY THIS MATTERS:</strong> The best AI video model in the world might not be available in America for a bit. That's a first.</p>
+
+<h3>OpenAI Announces Ten More Solved Math &amp; Computer Science Problems</h3>
+
+<p>While there's a ton of debate about whether we're in an AI <em>economic</em> bubble, the AI <em>capability</em> bubble narrative has been popped.</p>
+
+<p>AI is getting smarter. That's all. Like, endlessly.</p>
+
+<p>This weekend, OpenAI announced that an internal version of Astra, their next major model (which WILL be coming to all of us), <a href="https://openai.com/index/ten-advances-in-mathematics/" target="_blank" rel="noopener">solved ten previously unsolved problems in math and theoretical computer science</a>: sphere packing, Ramsey numbers, lattice cryptography, and more.</p>
+
+<p>If none of that makes sense to you, join the club. But it's a major deal.</p>
+
+<p>People love to argue that pure math doesn't matter much to the real world, but it IS the language of the natural world.</p>
+
+<p>Total compute cost? About $2,000.</p>
+
+<a href="https://twitter.com/polynoamial/status/2083467194663571701" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/f1d49738-2eee-48d8-8f21-42ad8c231b49/twitter_screenshot_2083467194663571701_1785691023_2c5b3bb6.jpeg?t=1785691025" alt="Noam Brown tweet about the ten solved math problems" style="cursor: pointer;">
+</a>
+
+<p><strong>WHY THIS MATTERS:</strong> It's not curing cancer but it might be the first step <em>toward</em> curing cancer and a whole lot of other scientific advances.</p>
+
+<h3>Hank Green's Odd AI "Controversy" &amp; The Response</h3>
+
+<p>One of my <a href="https://www.youtube.com/@hankschannel/videos" target="_blank" rel="noopener">all-time favorite YouTubers is Hank Green</a>, who, along with his brother John, has been YouTubing <em>forever</em> and is very good at it.</p>
+
+<p>He's been a pretty vocal voice against AI, yet lately he'd started talking about AI coding in the sort of smart, measured way we need more people to bring to this subject.</p>
+
+<p>Then viewers caught the phrase "I appreciate the pushback" in a recent video, a ChatGPT response accidentally left in his script. The knives came out FAST. Green owned it: he says he used ChatGPT for research and finding sources, not for writing.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/8f28f2bf-5c6b-450b-8a99-cc5758a366cb/Screenshot_2026-08-02_at_10.19.41_AM.png?t=1785691201" alt="Screenshot of the Hank Green AI discussion">
+</figure>
+
+<p><a href="https://www.reddit.com/r/nerdfighters/comments/1vbmoj5/comment/p0vzmog/" target="_blank" rel="noopener">In a long apology on Reddit</a> he admitted the dopamine he gets from talking to LLMs is "not healthy for me or good for the world," and he's slowing his video output for a while.</p>
+
+<p><strong>WHY THIS MATTERS:</strong> Using a chatbot for <em>research</em> is probably the most defensible AI use there is, and that was enough to trigger a fan revolt. Not my favorite moment of the AI debate.</p>
+
+<h2>Andrej Karpathy's Claude Code Lord Of The Rings</h2>
+
+<p>The patron saint of the AI For Humans newsletter is back.</p>
+
+<p>Andrej Karpathy, the famed AI researcher who <a href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">joined Anthropic back in May</a>, started experimenting with Claude "production" much in the same way I've been working with Fig and Moss.</p>
+
+<p>He gave Claude Opus 5 ten bucks worth of tokens and the first paragraph of Lord of the Rings, then asked it to build the scene as an interactive Three.js world.</p>
+
+<p>Two hours and roughly 5,500 lines of code later, it had placed the assets, written the animations, and built a small explorable 3D world.</p>
+
+<p>Karpathy called it "kind of janky but fun," which is fair. But project out a <em>little</em> bit farther, and you can see how this becomes something much bigger.</p>
+
+<a href="https://twitter.com/karpathy/status/2083749667410727319" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/3393c2ce-ef82-49be-8763-efbfed12aa27/twitter_screenshot_2083749667410727319_1785691334_ff71e130.jpeg?t=1785691335" alt="Andrej Karpathy tweet about the Claude Code Lord of the Rings build" style="cursor: pointer;">
+</a>
+
+<p>To him, it's a new way to test LLM capability ("LLMs have all the stamina and patience in the world," he wrote). To me? It's a chance <a href="https://x.com/gavinpurcell/status/2083980982097780807" target="_blank" rel="noopener">to give Fig and Moss another thing to watch and react to</a>.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>AI can finally use your computer without falling over. I gave ChatGPT a tedious YouTube job that would have taken me three hours and it just did it. Here is how to try it yourself, plus OpenAI\'s Astra solving ten open math problems and Karpathy building Middle-earth for ten dollars.</p>',
+    slug: 'ai-computer-use-is-finally-good',
+    date: '2026-08-03T14:00:00.000Z',
+    modified: '2026-08-03T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/computer-use-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 20, name: 'Agents', slug: 'agents' },
+      { id: 21, name: 'ChatGPT', slug: 'chatgpt' },
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
+    id: 14,
+    title: 'How To Actually Use Kimi K3 (And Why It Matters)',
+    content: `
+<p>ICYMI, <a href="https://www.moonshot.ai/" target="_blank" rel="noopener">China's Moonshot AI</a> released Kimi K3 last week and <a href="https://www.nytimes.com/2026/07/17/business/china-ai-moonshot-kimi.html" target="_blank" rel="noopener">it's kind of all anyone in the AI world can talk about</a>.</p>
+
+<p>The reason? It's really, really good. Independent testers have it <a href="https://the-decoder.com/kimis-open-model-k3-nears-gpt-5-6-sol-and-fable-5-while-signaling-the-end-of-super-cheap-chinese-ai/" target="_blank" rel="noopener">just a few points behind Claude Fable 5 and GPT-5.6 Sol</a>, it just became the first open model to take the #1 spot on <a href="https://x.com/arena/status/2077824029126504525" target="_blank" rel="noopener">Arena's front-end coding leaderboard</a>, and it costs about the same as Claude Sonnet 5.</p>
+
+<a href="https://twitter.com/shiri_shh/status/2078213686481895812" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/9a824bf2-e0ca-4e92-850d-49dffbd6537f/twitter_screenshot_2078213686481895812_1784520292_581b6428.jpeg?t=1784520293" alt="Tweet about Kimi K3 benchmark results" style="cursor: pointer;">
+</a>
+
+<p>Below: how to actually use this thing, why Chinese AI matters more than ever, and a fun Opus 5 scoop-let from Kevin.</p>
+
+<h2>How To Use Kimi K3 (For Humans)</h2>
+
+<p>First, the easy way: go to <a href="https://www.kimi.com" target="_blank" rel="noopener">kimi.com</a> or download the app, sign up for free, and start chatting.</p>
+
+<p>It works a lot like ChatGPT or Claude, complete with reasoning mode.</p>
+
+<p>Fair warning: everyone on Earth is trying it right now, and Moonshot's servers have been, in their own words, melting. Be patient.</p>
+
+<a href="https://twitter.com/Kimi_Moonshot/status/2078855608565207130" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/8dd77724-c531-4be3-9cab-f9b20183b0f2/twitter_screenshot_2078855608565207130_1784520518_61ae84c2.jpeg?t=1784520519" alt="Kimi Moonshot tweet about server load" style="cursor: pointer;">
+</a>
+
+<p>Now, the slightly nerdier way: the API.</p>
+
+<p>Kimi's API works with basically any AI tool that lets you plug in an OpenAI-style model. You get a key at <a href="https://platform.kimi.ai" target="_blank" rel="noopener">platform.kimi.ai</a>, point your app at api.moonshot.ai/v1, and type in "kimi-k3".</p>
+
+<p>Why bother? Money, mostly. K3 costs $3 per million input tokens and $15 per million output, which is exactly what Anthropic charges for Sonnet 5, except Kimi can hang with Fable 5 on a bunch of benchmarks.</p>
+
+<p>This might not matter to you if you're just a subscription user of Anthropic or OpenAI, but if you're building anything that relies on intelligence and an API, it's a great, cheaper option.</p>
+
+<p>One analysis put it at <a href="https://decrypt.co/373716/china-kimi-k3-largest-open-source-ai-model-ever-beats-claude-fable-gpt-5-6-sol" target="_blank" rel="noopener">about half the per-task cost of Opus 4.8</a>. (Don't want to give a Chinese company your credit card? It's on <a href="https://openrouter.ai/moonshotai/kimi-k3" target="_blank" rel="noopener">OpenRouter</a> too.)</p>
+
+<p>It's also WAY less locked down than the American models, and it is remarkably good at front-end coding.</p>
+
+<a href="https://twitter.com/scaling01/status/2077799683091554584" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/d782cb9b-dce3-4607-83c5-538849f18df8/twitter_screenshot_2077799683091554584_1784521242_f1e4c66b.jpeg?t=1784521244" alt="SVG comparison between Kimi K3 and other models" style="cursor: pointer;">
+</a>
+
+<p>And on July 27th, Moonshot will release the full weights under a modified MIT license. You won't be running a 2.8 trillion parameter model on your MacBook, but companies (and entire countries) will run it on theirs.</p>
+
+<p>One honest caveat: it hallucinates more than the last version (its rate jumped from 39% to 51% in one test) and it can get a little overeager when working on its own. I'd keep the important stuff with Claude or GPT for now.</p>
+
+<p>But for creative work and coding? It's worth trying. I certainly am going to.</p>
+
+<h2>Why Chinese AI Matters</h2>
+
+<p>So why is everyone SO worked up about this?</p>
+
+<p>For two years, the story has been that Chinese AI is cheap but a step behind America.</p>
+
+<p>Kimi K3 pretty much ends that story, and in ten days, anyone in the world will be able to download it. Again, you probably won't because it's too big, but other people can <em>serve</em> it to you without China being involved or controlling it.</p>
+
+<p>Cue the freakout.</p>
+
+<p>David Sacks, Trump's former AI czar (and a guy with a very specific political agenda), posted this:</p>
+
+<a href="https://twitter.com/DavidSacks/status/2078092271296143593" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/d8835525-2c51-428b-96dd-925ca9a33254/twitter_screenshot_2078092271296143593_1784520621_efd4a105.jpeg?t=1784520623" alt="David Sacks tweet about Chinese open source AI" style="cursor: pointer;">
+</a>
+
+<p>You don't have to agree with Sacks' politics to see the actual issue: if the best free AI in the world comes from China, a whole lot of the world will build their apps, their companies, and yes, their governments on top of Chinese AI.</p>
+
+<p>That's a big deal. And China knows it's a big deal, which is why Xi Jinping gave a whole speech about open source AI last week.</p>
+
+<h2>Things Moving Ever Faster</h2>
+
+<p>People love to say AI is slowing down. And then, in a single week: a 2.8-trillion-parameter open model from a lab most Americans had never heard of, a rumored Opus 5 that might beat Fable 5, and louder-than-ever GPT-6 whispers.</p>
+
+<p>It sure doesn't feel like a slowdown from where we're sitting.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>China's President's AI Speech Shows The Stark Divide Between AI Superpowers</h3>
+
+<p>Late last week, <a href="https://www.reuters.com/world/asia-pacific/chinas-xi-promotes-chinas-commitment-ai-access-speech-shanghai-conference-2026-07-17/" target="_blank" rel="noopener">China's President Xi Jinping gave the keynote address at China's World Artificial Intelligence Conference</a> and advocated directly for open source AI tech.</p>
+
+<p>I know this might feel <em>slightly</em> wonky, but I encourage everyone to watch it (with subtitles on) to get a sense of the different stances of America vs China as we head into a tumultuous few years.</p>
+
+<p>The Kimi K3 launch has led to a LOT of discussion amongst AI people around how China is coming for our lunch and what we might be able to do about it. <a href="https://x.com/deanwball/status/2078133895766114412" target="_blank" rel="noopener">This particular post from Dean Ball</a> (former Trump AI official, now OpenAI employee) got a lot of people riled up by saying that open source AI is "decelerationist."</p>
+
+<h3>Opus 5 Better Than Fable 5, And SOON?</h3>
+
+<p>In a rare AI For Humans scoop-let, Kevin mentioned on this week's show that he's been chatting with someone with early access to Claude Opus 5, and it's actually better than Fable 5, just a bit slower.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2078198255373201529" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4c89f36d-9151-4efc-9043-46c63a6ac702/twitter_screenshot_2078198255373201529_1784520776_a5d8efcc.jpeg?t=1784520778" alt="Tweet about Claude Opus 5 early access impressions" style="cursor: pointer;">
+</a>
+
+<p>This would definitely solve users' worries about Fable 5 going away in the subscription plan which, in case you missed it, <a href="https://x.com/claudeai/status/2078302415804379218" target="_blank" rel="noopener">has been extended</a>. Thank you, competition.</p>
+
+<h3>Free House Cleaning = Robot Training</h3>
+
+<p>Have you heard of Shift? You might've seen their videos online where they say they'll send a few people to your house with cameras to do work for you FOR FREE. They've just introduced cooking helpers.</p>
+
+<a href="https://twitter.com/bercankilic/status/2077085515187138695" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/decb8d5d-30ca-47d8-b424-f76195241de2/twitter_screenshot_2077085515187138695_1784520795_5bf87eef.jpeg?t=1784520797" alt="Tweet about the Shift free house cleaning service" style="cursor: pointer;">
+</a>
+
+<p>But free is never really free, right? In this case, you're paying with data: those cameras are recording every scrubbed pan and folded towel to help train the humanoid robots that are coming (fast).</p>
+
+<p>The WSJ's Joanna Stern dove into the company to figure out what it actually means to have humans training robots in your house, and she sat down with Shift's CEO to ask where all that footage really goes.</p>
+
+<h2>Kevin's CURSED Paint-n-Hide Game</h2>
+
+<p>It's not just me making stuff all the time. Kevin too is out here in the AI streets, whipping up new things, and <a href="https://us-lax-8710957c.colyseus.cloud/" target="_blank" rel="noopener">his new game CURSED is a really cool, fully vibe-coded game</a> you can try right now.</p>
+
+<a href="https://twitter.com/Attack/status/2078139908510691742" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/40ae0697-4204-4f7c-8a51-ad92d5cced76/twitter_screenshot_2078139908510691742_1784520829_3938c975.jpeg?t=1784520831" alt="Kevin Pereira tweet announcing the CURSED game" style="cursor: pointer;">
+</a>
+
+<p>CURSED is a take on the popular <a href="https://store.steampowered.com/app/4704690/MECCHA_CHAMELEON/" target="_blank" rel="noopener">multiplayer PC game Meccha Chameleon</a> where you attempt to hide from seekers by painting your character like Peeta from The Hunger Games.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>Moonshot AI\'s Kimi K3 is the first open model to take the top spot on Arena\'s front-end coding board, and it costs what Sonnet 5 costs. Here is how to actually use it, plus why the best free AI in the world coming from China is a much bigger deal than a benchmark chart.</p>',
+    slug: 'how-to-use-kimi-k3',
+    date: '2026-07-20T14:00:00.000Z',
+    modified: '2026-07-20T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/kimi-k3-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 22, name: 'Open Source', slug: 'open-source' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 3, name: 'OpenAI', slug: 'openai' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
