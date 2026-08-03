@@ -44,8 +44,9 @@ export default function FigMoss() {
 
           <p className="figmoss-backing">
             All of it lives at <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">figandmoss.tv</a>:
-            <strong> twenty-three pieces</strong> in the order they should be watched,
-            with notes on what they are referring to.
+            <strong> twenty-four pieces</strong> in the order they should be watched,
+            with notes on what they are referring to. The most recent one is them
+            watching that website, which we are choosing not to think about too hard.
           </p>
         </motion.div>
 
