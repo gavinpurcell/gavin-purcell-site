@@ -765,6 +765,184 @@ const MOCK_POSTS = [
     ]
   },
   {
+    id: 10,
+    title: 'How To Prepare For The Weird AI Future',
+    content: `
+<p>This week, two things I read about keep popping up in my brain.</p>
+
+<p><strong>One:</strong> another major literary prize got tangled up in AI. Several winners of the 2026 Commonwealth Short Story Prize (stories <a href="https://lithub.com/a-prize-winning-story-published-in-granta-was-very-likely-written-by-ai/" target="_blank" rel="noopener">published in <em>Granta</em>, no less</a>) are now <a href="https://digg.com/ai/3tsguqks" target="_blank" rel="noopener">very likely AI-generated according to detection analysis</a>.</p>
+
+<p><strong>Two:</strong> My favorite OpenAI employee and genuine weirdo, <a href="https://x.com/tszzl" target="_blank" rel="noopener">Roon</a>, started posting about how we should all be preparing ourselves for the AI takeoff.</p>
+
+<a href="https://twitter.com/tszzl/status/2068409224821153981" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/98ff2ab3-3b12-4261-a216-d0266878be23/twitter_screenshot_2068409224821153981_1782060638_ab366f4f.jpeg?t=1782060640" alt="Roon tweet about preparing for AI takeoff" style="cursor: pointer;">
+</a>
+
+<p>A machine quietly winning a <em>fiction</em> prize, and one of the people building these things telling us to stop pretending this is normal.</p>
+
+<p>Put those two together and I keep circling one question:</p>
+
+<p><strong>What should you actually do to prepare for what's coming? And maybe more importantly, how do you guide your kids through it?</strong></p>
+
+<h2>First, What The Heck Is A "Mind Child"?</h2>
+
+<p>Quick background, because Roon's line only lands if you know the reference.</p>
+
+<p>"Mind Children" comes from a <a href="https://www.amazon.com/Mind-Children-Future-Robot-Intelligence/dp/0674576187" target="_blank" rel="noopener">1988 book</a> by roboticist <strong>Hans Moravec</strong>.</p>
+
+<p>His argument, way ahead of its time, was basically this: the machines we build that can think are not really <em>tools</em> in the way a hammer is a tool. They're more like our descendants, the next thing carrying human knowledge and culture forward the way kids carry their parents forward.</p>
+
+<p>Roon's point is that calling that a "b2b productivity tool" is a little like calling a newborn a "small loud roommate." While it might be technically accurate, it misses the plot.</p>
+
+<p>You don't have to fully buy the sci-fi version to feel the weight of it. The people closest to this stuff have stopped treating "AI gets dramatically smarter than us" as a fringe idea.</p>
+
+<p>So let's just take them seriously for a second and ask what that means for regular humans like us with mortgages and kids and careers.</p>
+
+<h2>The Honest Truth About What's Coming</h2>
+
+<p>I'm going to be frank: pretty much everything is on the table right now.</p>
+
+<p>Yes, it'll take time to diffuse through society. Yes, there will be speedbumps, walkbacks, and weird Friday-night government letters.</p>
+
+<p>But if we assume the people saying these systems keep getting smarter are even <em>roughly</em> right, and the literary-prize thing is a tiny preview, then here's the uncomfortable part:</p>
+
+<p>A lot of us built our entire sense of self on being <em>good at a thing</em>. On the twenty years we put in to become the person in the room who knows how to do <em>something</em>.</p>
+
+<p>And the hard truth is, all those years of hard-won expertise in a field, <strong>who cares</strong>. The machines are learning it overnight, and they'll do it for a fraction of the cost. That's just the trajectory pointed at its logical end.</p>
+
+<p>But here's what I actually believe: the thing that's collapsing isn't your <em>worth</em>.</p>
+
+<p>What's collapsing is a story we got handed about where worth comes from.</p>
+
+<p>Ask someone who they are at a party and they tell you their job. AI is about to quietly detonate that definition. And that definition was always a little bit of a trap.</p>
+
+<p>So the real work coming is bigger than career strategy. It's about resetting where we find meaning: untangling "what I produce" from "who I am."</p>
+
+<p>That sounds soft and philosophical until you realize it's about to become the single most practical skill of the next decade.</p>
+
+<h2>The Good News: Humans Are Gloriously Irrational</h2>
+
+<p>Here's where I get optimistic, and I promise I'm not faking it.</p>
+
+<p><strong>Humans are <em>weird</em>.</strong></p>
+
+<p>Our so-called liabilities (we're fragile, we're emotional, we get bored, we want things we can't explain) are exactly what make us interesting. We eat the second bowl of ice cream (terrible). We regret it (still terrible). And somehow that regret kicks off a Monday-morning resolution to finally get our act together and go for a run (an actual triumph).</p>
+
+<p>Would an AI ever do that? Of course not. Why would it? It's a deeply inefficient, slightly miserable little loop. We don't even <em>decide</em> to do it. We just do.</p>
+
+<p>But that messy, irrational loop is the engine of something machines fundamentally don't have: <strong>novelty.</strong></p>
+
+<p>We're constantly making strange choices, bumping into unique situations, and stumbling onto ideas nobody asked for. That's where art and science and the occasional great joke actually come from. Not from polishing what we already know, but from blundering into what we don't.</p>
+
+<p>A model trained on everything humans have already made is, by definition, a map of the past. It's incredible at the past. You, irrational and distractible and occasionally ice-cream-poisoned, are one of the only things on earth reliably generating the actually new.</p>
+
+<p>Eventually the machines might figure this out too, but I think we've got a long head start.</p>
+
+<p><strong>There is a catch, and it's a big one: novelty only counts if you're producing, not just consuming.</strong></p>
+
+<p>It's never been easier to spend your whole day just taking stuff in, letting other people's (and now machines') ideas wash over you. That's the trap. The people who thrive in the weird future won't be the ones who consumed the most AI output.</p>
+
+<p>They'll be the ones suffering through the hard part of actually doing, when the doing isn't really that easy.</p>
+
+<p>Did I mention I hate writing? But, good lord, I somehow still do it.</p>
+
+<h2>Okay, But What Do I Tell My Kids?</h2>
+
+<p>This is the hard part. I've got kids, and a lot of you do too.</p>
+
+<p>The instinct is to ask, "what should they study so they have a job in twenty years?" And I think that's the wrong question, partly because I don't know the answer, and partly because anyone who tells you they do is selling something.</p>
+
+<p>So here's what I keep coming back to:</p>
+
+<p>If the old advice was specialize and get great at one valuable thing, the new advice might be closer to the opposite: raise kids who are adaptable, curious, and comfortable being beginners over and over again.</p>
+
+<p>A few things I suggest, with no certainty I'm right:</p>
+
+<ul>
+  <li>Protect their ability to be <em>bored</em>, because boredom is where novel ideas sneak in, and infinite AI entertainment is the enemy of boredom.</li>
+  <li>Push them toward making things instead of just consuming things, even badly, even messily.</li>
+  <li>Teach them to <em>use</em> these tools fluently and without fear, while keeping plenty of analog, screen-free, gloriously inefficient human stuff in their lives: sports, instruments, dirt under the fingernails.</li>
+  <li>And maybe most of all, help them tie their sense of worth to who they are and how they treat people, not to a future job title that may not even exist.</li>
+</ul>
+
+<p>That last one isn't a <em>strategy</em>. It's just how to raise a person. Which, the more I sit with this whole topic, might be the actual point.</p>
+
+<h2>So, What Do You Do On Monday?</h2>
+
+<p>There is a way to stave off the existential crisis in yourself and you can do it right now.</p>
+
+<p>Take a five minute break from whatever you're doing and let yourself get bored. Set a timer on your phone and let yourself just daydream <em>something</em>.</p>
+
+<p>Put the idea into your notes app and then come back later when you have a few hours.</p>
+
+<p>Then take that idea and make something new <em>with</em> an AI tool, where <em>you</em> bring the strange idea and the tool just helps you build it faster. A song, a tiny app, a weird short story, whatever. Notice how different that feels from scrolling. That muscle, human idea plus machine execution, is the one I'd bet on.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>A New Claude Sonnet 5 Might Be Incoming</h3>
+
+<p>Even before we (hopefully) get Fable 5 back, <a href="https://x.com/AndrewCurran_/status/2068703758587228354" target="_blank" rel="noopener">rumors are swirling</a> that a new <strong>Claude Sonnet 5</strong> is on the way, and it might matter more to your day-to-day than any frontier drama.</p>
+
+<a href="https://twitter.com/AndrewCurran_/status/2068703758587228354" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/9d3b5af8-d15d-4fc0-8d2b-42b4ef4515fd/twitter_screenshot_2068703758587228354_1782061996_9c2da1e7.jpeg?t=1782061998" alt="Andrew Curran tweet about a rumored Claude Sonnet 5" style="cursor: pointer;">
+</a>
+
+<p>The Sonnet line is Anthropic's mid-tier, the workhorse AI most people and apps actually run on. If a Sonnet 5 lands anywhere <em>near</em> Opus 4.8 on real tasks while costing a fraction as much, that's a win for everyone whose token budget has been quietly weeping.</p>
+
+<p>Frontier models get the headlines, but the cheap-and-capable middle is where most of us actually live.</p>
+
+<h3>GLM-5.2 Shows Open Source Isn't Far Behind</h3>
+
+<p>While everyone's been glued to the Fable 5 soap opera, Chinese open-source models have just been <em>cooking</em>.</p>
+
+<p>The latest, <a href="https://z.ai/blog/glm-5.2" target="_blank" rel="noopener"><strong>GLM-5.2</strong></a>, <a href="https://x.com/rauchg/status/2068517095818809770" target="_blank" rel="noopener">is turning heads</a>, especially on coding.</p>
+
+<a href="https://twitter.com/rauchg/status/2068517095818809770" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/b5221ead-ebe6-46ef-905d-da8ed59779e1/twitter_screenshot_2068517095818809770_1782062022_b17f14a4.jpeg?t=1782062023" alt="Guillermo Rauch tweet about GLM-5.2 coding performance" style="cursor: pointer;">
+</a>
+
+<p>It's benchmarking well on coding tasks and is dramatically cheaper to run than the comparable OpenAI or Anthropic models. The gap between the absolute frontier and "good enough, open, and cheap" just keeps shrinking.</p>
+
+<h3>Unreal Engine + MCP Changes The Game (Literally)</h3>
+
+<p>At <a href="https://youtu.be/xXGSvLH9zAs" target="_blank" rel="noopener">Unreal Fest this month</a>, Epic dropped a ton of new stuff, but the one that made me most excited was <strong>Unreal Engine 5.8's experimental MCP support.</strong></p>
+
+<p>Quick definition: <strong>MCP (Model Context Protocol)</strong> is basically a universal adapter that lets AI assistants <em>do things</em> inside other software, not just talk about them.</p>
+
+<p>So now you can point a tool like <strong>Claude Code</strong> at the Unreal editor and have it <a href="https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor" target="_blank" rel="noopener">spawn actors, build materials, and lay out whole levels</a> for you, just by asking.</p>
+
+<p>I took it for a spin myself, and even in my fumbling baby steps it's clear this is going to eat a ton of my weekends. Apologies in advance to my family.</p>
+
+<h2>An AI Film That'll Actually Move You</h2>
+
+<p>So much AI video is fun but forgettable. But when somebody makes something that <em>lasts</em>, it deserves a spotlight.</p>
+
+<p><strong>Robert Gaudette's "A Face Only A Mother Could Love"</strong> just won the <a href="https://www.hollywoodreporter.com/movies/movie-features/ai-films-face-mother-love-robert-gaudette-runway-1236624039/" target="_blank" rel="noopener">$50,000 Grand Prix at Runway's AI Film Festival</a>, and it's worth ten minutes of your day. It's an eight-minute short about Marcel, a Parisian man with a facial disfigurement who dances alone in his apartment every night, hopefully waiting for a companion who never comes. It's surprisingly tender, maybe the most human movie AI has produced yet.</p>
+
+<p>The kicker that ties right back to today's main story: Gaudette is a <strong>54-year-old former nonprofit worker from Toronto</strong> with no film school, no crew, and no actors. Just a strong, specific human point of view, and a stack of AI tools to execute it.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>A machine quietly won a fiction prize, and one of the people building these things says we should stop pretending this is normal. So what do you actually do about it, and what do you tell your kids? My honest answer, which is less about careers than about where worth comes from.</p>',
+    slug: 'how-to-prepare-for-the-weird-ai-future',
+    date: '2026-06-22T14:00:00.000Z',
+    modified: '2026-06-22T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/weird-future-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 12, name: 'Future', slug: 'future' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 23, name: 'Creative Tools', slug: 'creative-tools' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
