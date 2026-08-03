@@ -943,6 +943,175 @@ const MOCK_POSTS = [
     ]
   },
   {
+    id: 9,
+    title: 'Claude Fable 5 Vs The Government, Explained',
+    content: `
+<p>For a brief, beautiful four-day stretch, we (the general, non-enterprise public) got our hands on the newest, most cutting edge AI model.</p>
+
+<p><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener">Claude Fable 5</a> was, in a word, <em>incredible</em>.</p>
+
+<p>And then, on Friday evening, all of that changed.</p>
+
+<a href="https://twitter.com/AnthropicAI/status/2065597531644743999" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/77bcad91-f2e2-4c40-abbc-7f500779f3a8/twitter_screenshot_2065597531644743999_1781459158_005c9763.jpeg?t=1781459161" alt="Anthropic tweet announcing suspended access to Fable 5 and Mythos 5" style="cursor: pointer;">
+</a>
+
+<p>The US government, citing national security authorities, ordered Anthropic to <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">suspend all access to Fable 5 and Mythos 5</a> for any foreign national, inside <em>or</em> outside the country, including Anthropic's own foreign-born employees.</p>
+
+<p>The only way to comply? Pull the model for <em>everyone</em>.</p>
+
+<p>So how did the most powerful model the public has ever touched vanish in 96 hours? And what happens next?</p>
+
+<h2>What The Heck Just Happened?</h2>
+
+<p>Quick primer, because there's an AI-centric word at the center of this whole thing you need to understand: <a href="https://en.wikipedia.org/wiki/Jailbreak_(computer_science)" target="_blank" rel="noopener"><strong>jailbreak</strong></a>.</p>
+
+<p>A "jailbreak" is when someone tricks an AI model into doing something its safety training is supposed to prevent.</p>
+
+<p>Think of it like talking your way past a bouncer. The rules are still technically there, you've just found a sentence that gets you through the door anyway.</p>
+
+<p>Every model has them. It's a constant cat-and-mouse game between the labs and the people poking at their systems.</p>
+
+<p>And this entire kerfuffle with Claude Fable 5 is because of a supposed jailbreak.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/76fc9fd2-6ede-4068-9e88-ea8f3786ddb3/Screenshot_2026-06-14_at_11.12.34_AM.png?t=1781460788" alt="Axios reporting on the Anthropic export control order">
+  <figcaption><a href="https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" target="_blank" rel="noopener">From Axios' story here.</a></figcaption>
+</figure>
+
+<p>Below is a rough timeline of how this all went down:</p>
+
+<ul>
+  <li><strong>June 9:</strong> Anthropic releases <strong>Fable 5</strong>, the first public, general-use version of its "too dangerous to release" <strong>Mythos</strong> model. It immediately tops the Chatbot Arena leaderboard and <a href="https://thenextweb.com/news/anthropic-fable-5-vs-openai-gpt-5-5-benchmark-comparison" target="_blank" rel="noopener">smokes GPT-5.5 on coding benchmarks</a>, 80.3% to 58.6% on SWE-Bench Pro. A genuine leap.</li>
+  <li><strong>Thursday night:</strong> Amazon (yes, Anthropic's own <a href="https://www.axios.com/2026/04/21/anthropic-amazon-compute-wars" target="_blank" rel="noopener">major investor</a>) calls administration officials with a report showing they'd jailbroken Fable to access parts of Mythos that, they argued, pose a national security threat. <a href="https://www.axios.com/2026/06/13/anthropic-amazon-white-house" target="_blank" rel="noopener">Per Axios</a>, at least five other companies started ringing up senior officials too.</li>
+  <li><strong>Friday 1pm ET:</strong> The government calls Anthropic and gives them <em>90 minutes</em> to take Fable and Mythos down over a "national security threat." No further details.</li>
+  <li><strong>Friday ~5:21pm ET:</strong> Anthropic receives a formal letter from Commerce Secretary Howard Lutnick placing both models under sweeping export controls.</li>
+  <li><strong>Friday ~10pm ET:</strong> Access goes dark for everyone.</li>
+</ul>
+
+<p>That is a <em>wild</em> 24 hours.</p>
+
+<h2>The Two Sides (And A Little History)</h2>
+
+<p>This isn't a simple story and there's a lot going on in the background. There are two sides at play here, and how you feel probably depends on how much you trust each player.</p>
+
+<p><strong>The government's side</strong>, laid out by AI czar <a href="https://x.com/DavidSacks/status/2065853007619588171" target="_blank" rel="noopener">David Sacks</a>: Anthropic spent <em>years</em> telling everyone Mythos was so dangerous it needed government-level regulation.</p>
+
+<p>So when a "highly credible trusted partner" found a jailbreak that unlocked its cyber capabilities, and the administration asked Dario Amodei to fix it or pull it, he refused. To them, that's a safety company suddenly choosing its consumer product over the safety it built its whole brand on.</p>
+
+<p><strong>Anthropic's side:</strong> they reviewed the demo and found it surfaced a "small number of previously known, minor vulnerabilities," stuff <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener">other public models, including GPT-5.5, can already find</a> without any bypass at all.</p>
+
+<a href="https://twitter.com/simonw/status/2066147375119556735" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4ca0f39a-2bf5-4096-bc91-8043c0d7cb4c/twitter_screenshot_2066147375119556735_1781460612_4b6f5ef6.jpeg?t=1781460615" alt="Simon Willison tweet analyzing the Fable 5 takedown" style="cursor: pointer;">
+</a>
+
+<p>Their sharpest line: <em>"If this standard was applied across the industry, we believe it would essentially halt all new model deployments."</em></p>
+
+<p>Worth knowing this didn't happen in a vacuum. Anthropic and this White House have been <a href="https://dnyuz.com/2026/06/14/trump-administration-reignites-its-feud-with-anthropic-over-latest-a-i-models/" target="_blank" rel="noopener">circling each other for a while</a>. Sacks has previously accused the company of running "a sophisticated regulatory capture strategy based on fearmongering."</p>
+
+<p>So depending on your read, this is either a real safety incident or the latest round of a long-simmering beef finally boiling over. (There are also <a href="https://www.semafor.com/article/06/13/2026/white-house-move-to-limit-anthropic-linked-to-concerns-about-chinese-access-to-mythos" target="_blank" rel="noopener">reports the export move was tied to suspicions a China-linked group accessed Mythos</a>, which, if true, reframes a lot of this.)</p>
+
+<p>The simplest "why" we know right now? Anthropic was told to fix or pause, said the issue wasn't serious, and didn't move fast enough. As one source put it to Axios: <em>"they were overly confident."</em></p>
+
+<h2>So What Happens Next?</h2>
+
+<p>A few things I'm fairly confident about, though this is a situation in major flux.</p>
+
+<p>First, <strong>I suspect we get Fable 5 back, and reasonably soon.</strong></p>
+
+<p>Even Anthropic has signaled this specific jailbreak capability likely exists in GPT-5.5 too, which makes a permanent, Anthropic-only ban hard to justify.</p>
+
+<p>The administration itself has said it doesn't view other models as threats <em>yet</em>, only things at "Mythos level or above." This reads more like a pressure tactic than a death sentence.</p>
+
+<p>But this is MUCH bigger than one model: <strong>this cracks open the AI nationalization conversation like we haven't really seen before.</strong></p>
+
+<p>One source described the export letter to Axios as a <em>"de-facto licensing regime."</em></p>
+
+<p>If you've read essays like <a href="https://ai-2027.com/" target="_blank" rel="noopener">AI 2027</a> or Leopold Aschenbrenner's <a href="https://situational-awareness.ai/" target="_blank" rel="noopener">Situational Awareness</a>, this is the exact inflection point they keep circling: the moment the state decides these systems are too strategically important to leave fully in private hands.</p>
+
+<h2>Why This One Actually Matters</h2>
+
+<p>I don't think this slows down AI progress one bit. However, it might actually slow down when <em>you</em> get access to that AI progress.</p>
+
+<p>For the last couple of years, AI has mostly lived in apps and chat windows and our little creative experiments.</p>
+
+<p>This is the first time the most powerful version of it got treated like what the labs have been <em>telling</em> us it is the whole time: critical national infrastructure that governments fight over.</p>
+
+<p>This is roughly what "the technology is getting smarter than us" looks like in practice.</p>
+
+<p>Not a dramatic robot uprising, just a quiet 5:21pm letter and your access revoked right before dinner.</p>
+
+<p>We'll be talking about this Friday-night takedown for a long time.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Dario Amodei's Post-Fable Interview Is A Must-Watch</h3>
+
+<p>If you watch one long-form interview with an AI CEO this week, make it <a href="https://youtu.be/v1wZwxY3CMg" target="_blank" rel="noopener">this one from Bloomberg's Emily Chang</a>.</p>
+
+<p>It's broad, but it's packed with good nuggets and gives you a real sense of how Anthropic's leadership actually thinks. And given everything above, it's a ton of useful context for the whole Fable situation, straight from the guy at the center of it.</p>
+
+<h3>Watch Out For Viral AI Slop, It's Tricky</h3>
+
+<p>A post about <a href="https://x.com/japan_nobunaga/status/2065362475172892886" target="_blank" rel="noopener">a Japanese visitor coming to the States for the World Cup</a> went viral this weekend for its "amazing writing" until you click the account and find an endless fountain of nearly identical content.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2065854386954477917" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/ec1582d9-bac6-40a4-863c-7d16136cf329/twitter_screenshot_2065854386954477917_1781459874_7c37566d.jpeg?t=1781459877" alt="Gavin Purcell tweet about viral AI-written content" style="cursor: pointer;">
+</a>
+
+<p>This one fooled a <em>ton</em> of people into thinking it was a real, human anecdote. Go to the handle, though, and it's clear <em>something</em> is just pumping these out on a loop.</p>
+
+<p>Is the writing itself terrible? Eh, not really. But it's not a real story, and I'll be honest, I kind of hate watching this stuff quietly take over the genuinely human corners of the internet.</p>
+
+<h3>Fable 5's Real Superpower Was Making Stuff</h3>
+
+<p>The saddest part of (hopefully temporarily) losing Fable is just how good it was at <em>making things</em>.</p>
+
+<p>There were a ton of great examples, but this <a href="https://x.com/itsnicholash/status/2065189876035629322" target="_blank" rel="noopener">quickie demo connecting an Unreal Engine character model to a world you can fly around in</a> is a perfect one. So is <a href="https://x.com/wongmjane/status/2064916044268052489" target="_blank" rel="noopener">this SF simulator</a> that lets Claude make a bunch of the creative choices itself.</p>
+
+<a href="https://twitter.com/wongmjane/status/2064916044268052489" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c3b2356c-e084-4fdb-ad86-9a1d0e1b4154/twitter_screenshot_2064916044268052489_1781459956_a46681a9.jpeg?t=1781459961" alt="Jane Manchun Wong tweet showing an SF simulator built with Fable 5" style="cursor: pointer;">
+</a>
+
+<p>I <a href="https://x.com/gavinpurcell/status/2064884021428187162" target="_blank" rel="noopener">made a little game with it too</a>. Once this comes back, I really think we're finally going to see that whole prompt-to-game thing blossom to entirely new levels.</p>
+
+<h2>1970s AI TV Shows</h2>
+
+<p>AI creators are proliferating fast, and the tricky part is that so much of the work starts to look the same.</p>
+
+<p>That is absolutely <em>not</em> the case with <strong>Captain HaHa</strong>.</p>
+
+<p>He's been locked in on a very specific aesthetic, recreating a weird, hazy '60s and '70s vibe, and recently landed on something close to a sci-fi Sid &amp; Marty Krofft style that's genuinely unlike anything else in my feed.</p>
+
+<a href="https://twitter.com/CaptainHaHaa/status/2065442538216169891" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/d0079cd5-5a61-4b0d-8c92-f3325cb55f5f/twitter_screenshot_2065442538216169891_1781459996_a16ddb6f.jpeg?t=1781460003" alt="Captain HaHa tweet showing 1970s-style AI video" style="cursor: pointer;">
+</a>
+
+<p>In a world drowning in same-y AI output, a real point of view matters more than ever. And if that POV is weird 1970s puppets, all the better.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>For four days the public had the most powerful AI model ever released. Then a 5:21pm Friday letter from the Commerce Secretary took it away from everyone. Here is the full timeline, both sides of the argument, and why this is really a story about AI nationalization.</p>',
+    slug: 'claude-fable-5-vs-the-government',
+    date: '2026-06-15T14:00:00.000Z',
+    modified: '2026-06-15T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/fable5-govt-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 24, name: 'Policy', slug: 'policy' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
