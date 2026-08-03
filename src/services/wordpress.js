@@ -617,6 +617,154 @@ const MOCK_POSTS = [
     ]
   },
   {
+    id: 11,
+    title: 'You Can\'t Use OpenAI\'s GPT-5.6. Do This Instead.',
+    content: `
+<p>On Friday, <a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">OpenAI announced GPT-5.6 Sol</a>. Then it didn't release it.</p>
+
+<p>The short version: the smartest AI models on earth are stuck in a weird kind of limbo right now, tangled up with the US government and the ongoing Anthropic Mythos drama. Thankfully, Claude Fable 5 <a href="https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html" target="_blank" rel="noopener">might finally be back next week</a>.</p>
+
+<p>So I <em>could</em> spend this whole issue retelling that saga. <strong>But I'd rather just show you something useful.</strong></p>
+
+<p>Because while everyone's refreshing their feeds waiting for the frontier to reopen, I spent the weekend going deep on a new tool that <em>significantly</em> upgraded something I do often, and I think it'll help you too.</p>
+
+<p>It's something you can use right now, today, no government approval required.</p>
+
+<h2>HeyGen's HyperFrames Makes You A Motion Graphics Designer</h2>
+
+<p>I talk a lot about doing little experiments to figure out what AI can really do.</p>
+
+<p>And I mean it: you can read every thread and watch every demo, but until you sit down and <em>make</em> the thing yourself, you don't actually get it.</p>
+
+<p>HeyGen just updated <strong>HyperFrames</strong>, their skill for AI coding agents, with a bunch of really useful sub-skills and presets.</p>
+
+<a href="https://twitter.com/HeyGen/status/2070557221340196913" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4a1546eb-520e-457c-a8e5-9e1b2517c71c/twitter_screenshot_2070557221340196913_1782668421_03c6fb5f.jpeg?t=1782668422" alt="HeyGen tweet announcing the HyperFrames update" style="cursor: pointer;">
+</a>
+
+<p>The HyperFrames tl;dr? An AI agent builds real videos and motion graphics by writing HTML, CSS, and JavaScript, then rendering them into an actual MP4 right on your machine. You describe what you want and the agent codes it into existence.</p>
+
+<p>Sounds insanely nerdy, I know, but this has real-world practical use cases for almost anyone.</p>
+
+<p><em>My</em> first instinct was "oh cool, I can add visuals to my short-form videos." But most of you aren't posting to TikTok or Reels every week.</p>
+
+<p>I would assume nearly all of you have to make a presentation at some point. A deck, a pitch, a report you're walking a room through. This is exactly the kind of thing that makes that stuff pop, the gap between a flat slide and something that looks like a real motion graphic.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/7b567a4e-56e6-4dc1-b414-ff56622bf9bb/Screenshot_2026-06-28_at_11.02.17_AM.png?t=1782669744" alt="An animated motion graphic generated inside Claude Code with HyperFrames">
+  <figcaption>This was fully generated within Claude Code, and it's animated.</figcaption>
+</figure>
+
+<p>Like most agentic AI stuff, HyperFrames does not work perfectly out of the box.</p>
+
+<p>And weirdly, that's the part I find most interesting. A big skill all of us have to build as these agents become our co-workers is learning how to coax the thing in your head <em>out</em> of them. It's not always as easy as you'd want it to be.</p>
+
+<p>But I got a motion graphic I was really happy with after about 30 minutes of back-and-forth with Claude Code. For my own work, that's a major step up.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2070946589733228759" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/fdb51c5e-6ba0-4ce5-afc0-8732fd14a303/twitter_screenshot_2070946589733228759_1782668486_d9505d1a.jpeg?t=1782668498" alt="Gavin Purcell tweet showing the finished HyperFrames motion graphic" style="cursor: pointer;">
+</a>
+
+<h2>Step-By-Step: Installing HyperFrames</h2>
+
+<p><strong>1. Get a coding agent.</strong> For most of you, the easiest way in is the Claude or Codex desktop app. (If you're super nerdy, the terminal works too.) You'll need a paid account with Anthropic or OpenAI. One note for Claude: make sure you're on the "Coding" tab of the desktop app.</p>
+
+<p><strong>2. Ask it to install the skill.</strong> Say something like <em>"can you find and install HeyGen's HyperFrames skill?"</em> It should go out, find it, and set it up for you. If it needs a nudge, point it at <a href="https://hyperframes.heygen.com/" target="_blank" rel="noopener">hyperframes.heygen.com</a>.</p>
+
+<p><strong>3. Use the <a href="https://www.hyperframes.dev/design" target="_blank" rel="noopener">HyperFrames design agent</a> first.</strong> Expert hint: let it give your project a <em>look</em> before you start (even your own brand's look), so it's not guessing in the dark.</p>
+
+<figure>
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/e7aec35c-7676-4117-89e9-39122f5c200a/Screenshot_2026-06-28_at_10.42.56_AM.png?t=1782668593" alt="The HyperFrames design agent creating a visual look for a project">
+  <figcaption><a href="https://www.hyperframes.dev/design" target="_blank" rel="noopener">You can help it create a design look for you specifically here.</a></figcaption>
+</figure>
+
+<p><strong>4. Give it something to build.</strong> My graphic came out of a stat I'd heard, that the movie <em>Obsession</em> actually <a href="https://screenrant.com/obsession-box-office-record-highest-grossing-original-horror-movie-near/" target="_blank" rel="noopener">climbed at the box office in its first two weeks</a>. I didn't have the numbers. I just told the agent to go find them.</p>
+
+<p><strong>5. Go back and forth.</strong> Tell it what to fix until you're happy with it.</p>
+
+<p>That's really it. It can feel intimidating, but it's <em>very</em> simple once you start thinking of the agent as a little co-worker you send off to handle the thing you need.</p>
+
+<p>It'll get frustrating when it doesn't do what you pictured. But that back-and-forth is the skill. Practice and push through.</p>
+
+<h2>Getting AI To Work For You Is The Whole Game</h2>
+
+<p>While the smartest models sit behind government letters and limited previews, the tools already on your laptop and in the cloud can do stuff that would've been impossible a year ago.</p>
+
+<p>The promise of AI was never really about the biggest model. It's about you getting your work done faster and better than you could yesterday. That's available right now, and almost nobody is using it anywhere near its potential.</p>
+
+<p>So don't sit around waiting for the frontier to reopen. Go make something this week.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI's GPT-5.6 Sol Is Here (Kind Of)</h3>
+
+<p>On Friday, OpenAI <a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">previewed GPT-5.6</a>, a new model family with three flavors: <strong>Sol</strong> (the flagship), <strong>Terra</strong> (the balanced middle), and <strong>Luna</strong> (the fast, cheap one). Early word is <a href="https://www.reddit.com/r/ArtificialInteligence/comments/1ugdxq3/gpt56_sol_preview_is_out_and_the_benchmark_gap_is/" target="_blank" rel="noopener">Sol sets a new bar on coding benchmarks like Terminal-Bench 2.1</a>.</p>
+
+<p>But here's the catch, and it's the same catch as everything else right now: it's a limited preview for around <a href="https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump" target="_blank" rel="noopener">20 government-approved companies</a>. The rest of us get it "in the coming weeks." Sound familiar?</p>
+
+<a href="https://twitter.com/sama/status/2070607488274358364" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/0b19400b-d2ea-44d1-a130-9ed81b544c71/twitter_screenshot_2070607488274358364_1782668706_122a8a74.jpeg?t=1782668707" alt="Sam Altman tweet previewing GPT-5.6" style="cursor: pointer;">
+</a>
+
+<p>Two labs, two of the most powerful models ever built, both gated behind Washington. That's the modern state of the AI industry for you.</p>
+
+<h3>China Says It's Matched Mythos On Cybersecurity</h3>
+
+<p>This one makes the whole Fable 5 shutdown look even messier. Per <a href="https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2" target="_blank" rel="noopener">a new WSJ report</a>, Chinese models have now matched Anthropic's Mythos at finding security bugs, which is the <em>exact</em> capability the US government pulled Fable over.</p>
+
+<p>China's Zhipu AI hit it on benchmarks, and security firm 360 says its <a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/" target="_blank" rel="noopener">new Tulongfeng tool is comparable to Mythos for bug-hunting</a>.</p>
+
+<p>If the capability the export controls were meant to bottle up is already out there elsewhere, you have to ask what we're actually protecting.</p>
+
+<h3>Google + A24's $75M AI Deal Is Getting Roasted</h3>
+
+<p>A24, the indie studio film nerds adore, just signed a <a href="https://www.indiewire.com/news/analysis/a24-google-deepmind-workflow-ai-1235201651/" target="_blank" rel="noopener">$75 million research partnership with Google DeepMind</a>, and the fan backlash has been rough.</p>
+
+<a href="https://twitter.com/DEADLINE/status/2070616297382064323" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4194e859-17fb-40b8-8a7f-b153fad1af76/twitter_screenshot_2070616297382064323_1782668772_f781fb34.jpeg?t=1782668774" alt="Deadline tweet about the A24 and Google DeepMind partnership" style="cursor: pointer;">
+</a>
+
+<p>A24's defense: they'd "rather have a seat at the table than on the sidelines." <em>Backrooms</em> director Kane Parsons went the opposite way, calling generative AI "a symptom of broader cultural and economic rot."</p>
+
+<p>This is the fault line cutting through every creative industry right now. The studio most tied to handmade, deeply human filmmaking just bet that being in the room beats yelling from outside it. A lot of their fans feel sold out.</p>
+
+<p>What can we learn from this? That we're still in the messy middle, and likely will be for a good while.</p>
+
+<h2>Anime Microdramas With Seedance</h2>
+
+<p>I've gotten a little obsessed with AI microdramas taking over TikTok and Chinese social media lately. So I'm challenging <em>myself</em> to make one over the next few weeks.</p>
+
+<p>I really didn't want to make "Revenge Of The Pregnant Seahorse 2" (an <a href="https://www.tiktok.com/@shapeofdesirexstories/video/7650101739147775233" target="_blank" rel="noopener">actual microdrama series with millions of views</a>), so I built my own look instead, a 90s anime vibe I'm pretty into.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2070937492858208540" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/17cb9923-3a63-4271-b2bb-96f136dcdf69/twitter_screenshot_2070937492858208540_1782668861_17404cd5.jpeg?t=1782668863" alt="Gavin Purcell tweet showing the anime microdrama pilot" style="cursor: pointer;">
+</a>
+
+<p>That's a two-minute pilot I put together in about six hours with a grab-bag of tools.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>OpenAI announced GPT-5.6 Sol and then did not release it, so the two best models on earth are both gated behind Washington. Rather than retell that saga: here is a tool you can use today that turned me into a motion graphics designer in about thirty minutes.</p>',
+    slug: 'you-cant-use-gpt-5-6-do-this-instead',
+    date: '2026-06-29T14:00:00.000Z',
+    modified: '2026-06-29T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/gpt56-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 23, name: 'Creative Tools', slug: 'creative-tools' },
+      { id: 20, name: 'Agents', slug: 'agents' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
