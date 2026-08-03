@@ -9,6 +9,12 @@ const rundown = [
     cta: 'Watch',
   },
   {
+    title: 'Fig & Moss',
+    detail: 'Four shows made by an AI who lives in my laptop. He writes, animates, and scores all of it.',
+    href: 'https://figandmoss.tv',
+    cta: 'Meet them',
+  },
+  {
     title: 'The Fishbowl',
     detail: 'AI focus-group simulator. Designed, built, and shipped solo with AI coding agents.',
     href: 'https://fishbowl.show',

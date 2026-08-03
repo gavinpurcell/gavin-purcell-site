@@ -57,6 +57,7 @@ export default function Footer() {
               <div className="footer-column">
                 <h4 className="footer-column-title">Projects</h4>
                 <ul className="footer-nav">
+                  <li><a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">Fig &amp; Moss</a></li>
                   <li><a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer">The Fishbowl</a></li>
                   <li><a href="https://github.com/gavinpurcell/the-fishbowl" target="_blank" rel="noopener noreferrer">Fishbowl on GitHub</a></li>
                   <li><a href="https://andthen.chat" target="_blank" rel="noopener noreferrer">AndThen</a></li>
