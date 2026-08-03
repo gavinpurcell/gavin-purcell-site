@@ -457,6 +457,166 @@ const MOCK_POSTS = [
     ]
   },
   {
+    id: 12,
+    title: 'Fable 5 Is Back. Here Is How Not To Waste It.',
+    content: `
+<p>It's baaaaaaack.</p>
+
+<p>After three very weird weeks, <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Claude Fable 5 is live again for everyone</a>, after the US government <a href="https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it" target="_blank" rel="noopener">withdrew the export control order</a> that took down both Fable 5 and Mythos 5 back in June.</p>
+
+<p>The catch? Fable 5 is only included in Claude subscriptions <strong>through July 7th</strong>.</p>
+
+<p>After that it moves to usage credits on the API (<a href="https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-isnt-permanently-leaving-subscriptions-anthropic-says/" target="_blank" rel="noopener">Anthropic says it's not leaving for good</a>) where it will be MUCH more expensive. Thankfully, the rumor mill says <a href="https://openai.com/index/previewing-gpt-5-6-sol/" target="_blank" rel="noopener">GPT-5.6 Sol</a> might go wide that very same day.</p>
+
+<p>So you've got roughly two days of frontier-model all-you-can-eat left. Here's exactly what I'd do with them.</p>
+
+<h2>First: Fable 5 Is Token Hungry. Learn How To Prompt It.</h2>
+
+<p>A quick warning before you run off and build something:</p>
+
+<p><strong>Fable 5 is a token monster.</strong></p>
+
+<p>It will use up your credits very fast, especially if you give it a token-heavy request (large codebases or <em>lots</em> of text in and out).</p>
+
+<p>The trick is to use it like a lead, not a crew. Plan with Fable, let it architect the thing, but make sure it's handing the actual heavy lifting off to <strong>Opus 4.8</strong>, or even the new <strong>Sonnet 5</strong>, for the lower-level work.</p>
+
+<p>It will depend on how ambitious your project is (I've found my little projects don't eat <em>too</em> many tokens) but if you're doing heavy writing and reading, or launching a ton of subagents, it can go fast.</p>
+
+<a href="https://twitter.com/mattshumer_/status/2073150750411088190" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/cd3e6207-f172-4c64-a9cd-1dbb9ab97e52/twitter_screenshot_2073150750411088190_1783287721_c6ceadf0.jpeg?t=1783287723" alt="Matt Shumer tweet with a Fable 5 prompting guide" style="cursor: pointer;">
+</a>
+
+<h2>Fable 5: Cool Things You Can Try</h2>
+
+<p>The best thing about the way people use AI now is that they'll often share their experiments in public (with prompts), so you can remix them, put your own spin on what they've done, and maybe learn a bit in the process.</p>
+
+<h3>Make Your Own 3D Models With Pre-Written Prompts</h3>
+
+<p><em>Level: Beginner</em></p>
+
+<p>Peter Gostev has <a href="https://github.com/petergpt/3d-prompt-collection" target="_blank" rel="noopener">published a full list of amazing 3D rendered prompts</a> he's made with AI models and has generously included a GitHub link to all of them.</p>
+
+<a href="https://twitter.com/petergostev/status/2073047118801993910" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4ce9f351-bf0e-4722-870d-d82cc44cd85d/twitter_screenshot_2073047118801993910_1783287962_50518672.jpeg?t=1783287963" alt="Peter Gostev tweet sharing a 3D prompt collection" style="cursor: pointer;">
+</a>
+
+<p>Take his GitHub, send it to your Fable 5 agent, and ask it to make something you know and love.</p>
+
+<h3>Connect Blender And Make 3D Models</h3>
+
+<p><em>Level: Intermediate</em></p>
+
+<p>A few weeks ago, <a href="https://www.youtube.com/shorts/HZTXmdLcVOE" target="_blank" rel="noopener">I connected the Unreal Engine (via MCP) to Claude Code</a> and had my first real experience making 3D models with AI. Before that point, I would've <em>never even tried</em>.</p>
+
+<p>3D modeling is insanely complicated and doing anything of significance within programs like <a href="https://www.blender.org/" target="_blank" rel="noopener">Blender</a> used to be a multi-hour journey just to figure out the basics.</p>
+
+<p>Now, Fable 5 makes it MUCH easier to not only connect but to get it to do what you want. Whether that's <a href="https://x.com/bunkaich/status/2073364348626669585" target="_blank" rel="noopener">making cute little bendy houses</a> or all of New York City.</p>
+
+<a href="https://twitter.com/ashen_one/status/2072432580419281391" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/00bdd30e-4b61-4d81-99eb-fe247797dc5a/twitter_screenshot_2072432580419281391_1783290502_26e51db3.jpeg?t=1783290507" alt="Tweet showing a large 3D city built with Blender and AI" style="cursor: pointer;">
+</a>
+
+<p><a href="https://www.blender.org/lab/mcp-server/" target="_blank" rel="noopener">Point your Fable 5 here</a> towards the official Blender MCP to try.</p>
+
+<h3>Porting Command &amp; Conquer To The iPad</h3>
+
+<p><em>Level: Advanced</em></p>
+
+<p>In one of the most jaw-dropping examples of Fable 5's prowess, Ammar Reshi used it to port 2003's Command &amp; Conquer: Zero Hour from old PC game to the iPad.</p>
+
+<a href="https://twitter.com/ammaar/status/2073501877753323772" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/255df2b6-21c4-4882-bf30-143f28e62faf/twitter_screenshot_2073501877753323772_1783290827_e727631c.jpeg?t=1783290830" alt="Ammaar Reshi tweet about porting Command and Conquer to iPad" style="cursor: pointer;">
+</a>
+
+<p>Ammaar <a href="https://github.com/ammaarreshi/Generals-Mac-iOS-iPad" target="_blank" rel="noopener">shared his code on GitHub</a> so you're welcome to take it and screw around with it yourself. It gave me the idea to take one of the old <a href="https://en.wikipedia.org/wiki/Sierra_Entertainment" target="_blank" rel="noopener">Sierra point-and-click games</a> and see if I can't make an engine to let people prompt their own versions.</p>
+
+<p>Is that a terrible, time-wasting idea? Maybe. But I'd bet Fable 5 could do it.</p>
+
+<h2>Don't Worry, Fable 5 Will Be Back</h2>
+
+<p>Here's the thing to remember: this isn't really a story about losing a model.</p>
+
+<p>First, we're only <em>temporarily</em> losing it in the subscription plans. It'll still be available in the API. And we're likely getting one of similar power on the exact same day this goes away.</p>
+
+<p>What this really is, is a story about the next generation of AI officially arriving, in fits and starts. And here's hoping, a new approval system where the chaos of the last three weeks doesn't repeat itself.</p>
+
+<p>Things keep getting weirder. The models keep getting better. Keep trying new stuff anyway, that's the whole game.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Seedance 2.5 Coming To CapCut SOON</h3>
+
+<p>Chinese AI video model Seedance 2 is already state of the art when it comes to AI video generation, but the next version, 2.5, is rumored to be coming in a few weeks via CapCut.</p>
+
+<a href="https://twitter.com/capcutapp/status/2073261464065122562" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/4be0677a-bab4-4d64-938b-d6635a07f956/twitter_screenshot_2073261464065122562_1783288316_eaa67f68.jpeg?t=1783288319" alt="CapCut tweet teasing Seedance 2.5" style="cursor: pointer;">
+</a>
+
+<p>30-second video generations and up to 50 references. My mind is already reeling at what might be possible, though I can already feel the API costs making this untenable. Maybe ByteDance will surprise us all.</p>
+
+<h3>AI Superforecasters Are Crushing Prediction Markets</h3>
+
+<p>My take: prediction markets aren't great for humanity. It's mostly just gambling.</p>
+
+<p>But there <em>is</em> something about how people spend money that reveals real-world decision making, and, like most everything else, AI is now coming to be better at it than we are.</p>
+
+<p>Scott Alexander (co-creator of <a href="https://ai-2027.com/" target="_blank" rel="noopener">AI 2027</a>) <a href="https://www.astralcodexten.com/p/the-ai-superforecasters-are-here" target="_blank" rel="noopener">wrote a nice long piece</a> about these AI superforecasters that is definitely worth your time.</p>
+
+<h3>AI Brainrot Legal Battle, Plus An Incredible Cartoon Explainer</h3>
+
+<p>Do you know who <a href="https://en.wikipedia.org/wiki/Tung_Tung_Tung_Sahur" target="_blank" rel="noopener">Tung Tung Tung Sahur</a> is? If not, maybe count yourself lucky.</p>
+
+<p>He's one of the members of the vast <a href="https://en.wikipedia.org/wiki/Italian_brainrot" target="_blank" rel="noopener">AI Italian Brainrot</a> collection that proliferated across social media last year. These characters fascinate me: they arose organically from a collective creation mechanic and have since transcended the AI conversation entirely. They're just <em>culture</em> now, at least for kids and teens.</p>
+
+<p>But <a href="https://gamesbeat.com/who-owns-brainrot-fortnite-skin-launch-renews-creator-community-debate-over-ai-generated-ip/" target="_blank" rel="noopener">there's a huge legal battle happening right now</a> around these characters, with a company in France trying to show ownership over Tung Tung. It might help determine whether AI characters can be considered public domain.</p>
+
+<a href="https://twitter.com/FabianMosele/status/2072799719286354363" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/ad5a4eaa-869f-4a3e-8e43-cddef2f888b6/twitter_screenshot_2072799719286354363_1783288675_97c69857.jpeg?t=1783288677" alt="Fabian Mosele tweet with a cartoon explainer about AI brainrot IP" style="cursor: pointer;">
+</a>
+
+<p>The legal battle itself? Pretty engrossing. But I dare you to watch that cartoon and say AI video isn't the future.</p>
+
+<h2>Fable 5 Makes Its Own AI Videos</h2>
+
+<p>I'm always fascinated with seeing what these models can do on their own <em>creatively</em> (not entirely sure that's the right word), and as the models get larger and better, their outputs on these creative tests get <em>weirder</em>. In a good way.</p>
+
+<p><a href="https://x.com/SkyeSharkie" target="_blank" rel="noopener">X user Skye Sharkie</a> built a little Three.js environment and let their Claude express itself about a bunch of stuff, specifically about how it might not be around for much longer.</p>
+
+<a href="https://twitter.com/SkyeSharkie/status/2072614409055117745" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/28befc1a-a083-4551-af77-a850f6468fc2/twitter_screenshot_2072614409055117745_1783288774_b9547545.jpeg?t=1783288776" alt="Skye Sharkie tweet showing a Claude-made Three.js video" style="cursor: pointer;">
+</a>
+
+<p>When the models do things on their own, the choices they make are often strange and eccentric, and while this isn't going to be something that tons of humans watch, it IS interesting to me.</p>
+
+<p>So much so that I had my own Claude Code agent (I call it Fig) make its own version. Mine is <em>quite</em> a bit cuter if I do say so myself.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2072697776325235098" target="_blank" rel="noopener">
+  <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/7354632e-991a-4cb3-be2d-3870c2d958eb/twitter_screenshot_2072697776325235098_1783288814_82ab2503.jpeg?t=1783288817" alt="Gavin Purcell tweet showing the first Fig video" style="cursor: pointer;">
+</a>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>Claude Fable 5 came back after the export control order was withdrawn, but only in subscriptions for two more days. Here is how to use a token-hungry frontier model without burning your credits, three projects worth stealing, and the first appearance of a Claude Code agent I call Fig.</p>',
+    slug: 'fable-5-is-back-dont-waste-it',
+    date: '2026-07-06T14:00:00.000Z',
+    modified: '2026-07-06T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/fable5-back-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 23, name: 'Creative Tools', slug: 'creative-tools' }
+    ]
+  },
+  {
     id: 8,
     title: 'Claude Mythos Is Nearly Here. Are You Ready?',
     content: `
