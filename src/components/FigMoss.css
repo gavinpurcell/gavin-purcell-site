@@ -1,0 +1,167 @@
+/* Mirrors Fishbowl.css so the two project sections read as a matched pair.
+   Only deliberate difference: no pixelated image-rendering, because the Fig
+   icon is a smooth 3D render rather than pixel art. */
+.figmoss {
+  background: var(--color-bg);
+  padding: var(--space-2xl) 0;
+}
+
+.figmoss-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Left Content */
+.figmoss-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.figmoss-logo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.figmoss-logo-link {
+  flex-shrink: 0;
+  display: block;
+}
+
+.figmoss-logo {
+  display: block;
+  width: 96px;
+  height: auto;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-md);
+}
+
+.figmoss-name {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin: 0;
+  line-height: 1;
+}
+
+.figmoss-name a {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.figmoss-name a:hover {
+  color: var(--color-primary);
+}
+
+.figmoss-tagline {
+  font-size: 2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.figmoss-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.figmoss-description strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.figmoss-backing {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.figmoss-backing strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.figmoss-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Right Visual */
+.figmoss-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.figmoss-visual-title {
+  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.figmoss-screenshot-link {
+  display: block;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-bg-dark);
+  transition: all 0.2s ease;
+}
+
+.figmoss-screenshot-link:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.figmoss-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figmoss-caption {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .figmoss-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .figmoss-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .figmoss {
+    padding: var(--space-xl) 0;
+  }
+
+  .figmoss-logo {
+    width: 72px;
+  }
+
+  .figmoss-tagline {
+    font-size: 1.5rem;
+  }
+
+  .figmoss-visual-title {
+    font-size: 1.25rem;
+  }
+}

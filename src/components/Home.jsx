@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Hero from './Hero';
 import About from './About';
 import AIForHumans from './AIForHumans';
+import FigMoss from './FigMoss';
 import Fishbowl from './Fishbowl';
 import AndThen from './AndThen';
 import FeaturedBlogPost from './FeaturedBlogPost';
@@ -17,6 +18,7 @@ function Home() {
       <Hero />
       <About />
       <AIForHumans />
+      <FigMoss />
       <Fishbowl />
       <AndThen />
       <FeaturedBlogPost />

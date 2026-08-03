@@ -38,6 +38,7 @@ export default function Footer() {
                 <ul className="footer-nav">
                   <li><a href="#about">About</a></li>
                   <li><a href="#aifh">AI For Humans</a></li>
+                  <li><a href="#figmoss">Fig &amp; Moss</a></li>
                   <li><a href="#fishbowl">The Fishbowl</a></li>
                   <li><a href="#andthen">AndThen</a></li>
                   <li><a href="#consulting">Work With Me</a></li>
