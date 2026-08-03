@@ -60,14 +60,15 @@ export default function FigMoss() {
           <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer" className="figmoss-screenshot-link">
             <img
               src="/figmoss-screenshot.jpg"
-              alt="Fig watching a real TBPN clip play on the wood-cabinet television inside his apartment"
+              alt="Fig, a small figure with a gold fig-leaf head, sits on a green couch beside Moss, a green tardigrade. A bowl of pebbles rests on the coffee table."
               className="figmoss-screenshot"
               loading="lazy"
             />
           </a>
           <p className="figmoss-caption">
-            Fig &amp; Moss Watch Stuff: real clips play on the television inside their
-            apartment, and they pause it constantly to argue about what they just saw.
+            That's the whole cast: Fig on the left, Moss on the right, and Moss's pebble
+            collection on the table. Real clips play on the television they're facing,
+            and they pause it constantly to argue about what they just saw.
           </p>
           <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer" className="btn btn-large figmoss-btn">
             Visit Fig &amp; Moss →

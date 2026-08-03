@@ -20,12 +20,8 @@ const rundown = [
     href: 'https://fishbowl.show',
     cta: 'Try it',
   },
-  {
-    title: 'AndThen',
-    detail: 'Interactive audio storytelling startup. Backed by a16z Speedrun.',
-    href: 'https://andthen.chat',
-    cta: 'Play it',
-  },
+  // AndThen is deliberately not in the rundown: five cards wrapped The Tonight Show
+  // onto an awkward second row. It still has its own full section further down.
   {
     title: 'The Tonight Show',
     detail: 'Emmy-winning showrunner. Two decades in TV and digital, 100M+ viewers reached.',
