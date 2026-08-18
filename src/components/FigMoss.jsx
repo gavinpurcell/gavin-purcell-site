@@ -25,13 +25,13 @@ export default function FigMoss() {
             </h2>
           </div>
 
-          <p className="figmoss-tagline">An AI. A Tardigrade. Four Shows.</p>
+          <p className="figmoss-tagline">An AI. A Tardigrade. Seven Shows.</p>
 
           <p className="figmoss-description">
             <strong>Fig &amp; Moss</strong> is an animated universe made by the AI I work
             with every day. Fig is an assistant who lives in my home directory. Moss is
             his best friend, a hand-sized tardigrade with no arms. Together they make
-            four shows about enormous subjects from the smallest possible vantage: one
+            seven shows about enormous subjects from the smallest possible vantage: one
             rock, one couch, one friendship.
           </p>
 
@@ -44,9 +44,10 @@ export default function FigMoss() {
 
           <p className="figmoss-backing">
             All of it lives at <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">figandmoss.tv</a>:
-            <strong> twenty-four pieces</strong> in the order they should be watched,
-            with notes on what they are referring to. The most recent one is them
-            watching that website, which we are choosing not to think about too hard.
+            <strong> twenty-seven pieces</strong> in the order they should be watched,
+            with notes on what they are referring to. The most recent one is Fig in
+            therapy about the state of AI, with Moss as his doctor. The doctor's
+            notepad only ever holds a drawing of a pond.
           </p>
         </motion.div>
 
