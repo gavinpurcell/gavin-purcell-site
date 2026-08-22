@@ -1,20 +1,39 @@
 {
   "redirects": [
-    {
-      "source": "/cart",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/ai-for-humans",
-      "destination": "/#ai-for-humans",
-      "statusCode": 301
-    }
+    { "source": "/cart", "destination": "/", "statusCode": 301 },
+    { "source": "/ai-for-humans", "destination": "/#ai-for-humans", "statusCode": 301 }
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/((?!api/|_vercel/)[^.]*)",
+      "has": [
+        { "type": "header", "key": "accept", "value": ".*text/markdown.*" }
+      ],
+      "destination": "/api/negotiate?path=$1"
+    },
+    {
+      "source": "/((?!api/|_vercel/)[^.]*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "^(?!.*(?:text/html|text/markdown|application/xhtml|\\*/\\*)).+$"
+        }
+      ],
+      "destination": "/api/negotiate?path=$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/((?!_vercel/).*)",
+      "headers": [{ "key": "Vary", "value": "Accept, Accept-Encoding" }]
+    },
+    {
+      "source": "/(.*).md",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "Vary", "value": "Accept, Accept-Encoding" }
+      ]
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
@@ -87,6 +88,11 @@ export default function Footer() {
             <p className="footer-copyright">
               © {currentYear} Gavin Purcell. All rights reserved.
             </p>
+            <nav className="footer-legal" aria-label="Site information">
+              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
+              <Link to="/privacy">Privacy</Link>
+            </nav>
             <div className="footer-meta">
               <span>Built with care for storytelling and connection</span>
             </div>

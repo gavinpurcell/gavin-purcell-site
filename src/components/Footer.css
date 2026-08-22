@@ -136,3 +136,23 @@
     text-align: center;
   }
 }
+
+/* Standalone info pages, linked from the bottom bar so both people and agents
+   can find them from any page on the site. */
+.footer-legal {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

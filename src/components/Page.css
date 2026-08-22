@@ -1,0 +1,135 @@
+/* Shared layout for the standalone content pages (about, contact, privacy).
+   Same neo-brutalist tokens as the rest of the site: DM Serif Display headings,
+   Outfit body, 3px borders, hard offset shadows, no soft edges. */
+
+.page {
+  padding: calc(var(--space-xl) + 4rem) 0 var(--space-xl);
+  min-height: 60vh;
+}
+
+.page-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.page-eyebrow {
+  display: block;
+  width: fit-content;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+}
+
+.page-lede {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.page-rule {
+  width: 80px;
+  height: var(--border-width);
+  background: var(--color-primary);
+  border: none;
+  margin: 0 0 var(--space-md);
+}
+
+.page-body h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin: var(--space-md) 0 var(--space-xs);
+  color: var(--color-text);
+}
+
+.page-body h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: var(--space-sm) 0 var(--space-xs);
+  color: var(--color-text);
+}
+
+.page-body p,
+.page-body li {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.page-body p {
+  margin: 0 0 var(--space-sm);
+}
+
+.page-body ul {
+  margin: 0 0 var(--space-sm);
+  padding-left: 1.3rem;
+}
+
+.page-body li {
+  margin-bottom: 0.4rem;
+}
+
+.page-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.page-body a:hover {
+  color: var(--color-primary-dark);
+}
+
+.page-card {
+  border: var(--border-width) var(--border-style);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  margin: 0 0 var(--space-md);
+}
+
+.page-card h2 {
+  margin-top: 0;
+}
+
+.page-cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  background: var(--color-primary);
+  color: #fff;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-sm);
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.page-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(26, 24, 22, 0.15);
+}

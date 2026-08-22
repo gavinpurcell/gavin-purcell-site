@@ -3,6 +3,7 @@
 // writes the hydrated HTML back into dist/ so crawlers and AI search engines
 // get real content instead of an empty <div id="root">.
 import { createServer } from 'node:http';
+import { domToMarkdownSource } from './dom-to-markdown.js';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
@@ -98,8 +99,52 @@ try {
       join(outDir, 'index.html'),
       html.startsWith('<!DOCTYPE') || html.startsWith('<!doctype') ? html : '<!doctype html>\n' + html
     );
-    console.log(`prerendered ${route} (${(html.length / 1024).toFixed(0)}KB)`);
+    // Markdown twin, served to agents that send Accept: text/markdown.
+    const md = await page.evaluate(
+      (src, canonical) => new Function('return ' + src)()(canonical),
+      domToMarkdownSource().toString(),
+      `https://gavinpurcell.com${route}`
+    );
+    writeFileSync(join(outDir, 'index.md'), md);
+    console.log(`prerendered ${route} (${(html.length / 1024).toFixed(0)}KB html, ${(md.length / 1024).toFixed(1)}KB md)`);
   }
+
+  // A real 404 body. Vercel serves dist/404.html with an HTTP 404 status for any
+  // path that does not match a file, which is what replaces the old SPA rewrite
+  // that answered 200 for literally every URL.
+  await page.goto(`http://localhost:${PORT}/__not_found__`, { waitUntil: 'networkidle0', timeout: 30000 });
+  await page.waitForSelector('#root > *', { timeout: 10000 });
+  await page.evaluate(() => {
+    document.querySelectorAll('script[src*="/_vercel/insights"]').forEach((el) => el.remove());
+  });
+  const notFoundHtml = await page.content();
+  writeFileSync(
+    join(DIST, '404.html'),
+    notFoundHtml.startsWith('<!DOCTYPE') || notFoundHtml.startsWith('<!doctype')
+      ? notFoundHtml
+      : '<!doctype html>\n' + notFoundHtml
+  );
+  // Markdown 404 that points agents at the machine-readable entry points, so a
+  // probe that misses still learns how the site is laid out.
+  writeFileSync(
+    join(DIST, '404.md'),
+    [
+      '# 404 Not Found',
+      '> That path does not exist on gavinpurcell.com.',
+      'This URL is not a page on this site. Nothing was moved or removed here, the path simply never existed.',
+      '## Where to go instead',
+      '- Sitemap: https://gavinpurcell.com/sitemap.xml',
+      '- Content policy for AI systems: https://gavinpurcell.com/llms.txt',
+      '- Full site summary: https://gavinpurcell.com/llms-full-text.txt',
+      '- Background and expertise: https://gavinpurcell.com/ai.txt',
+      '- Homepage: https://gavinpurcell.com/',
+      '- Writing: https://gavinpurcell.com/blog',
+      '- About: https://gavinpurcell.com/about',
+      '- Contact: https://gavinpurcell.com/contact',
+      '',
+    ].join('\n\n')
+  );
+  console.log('wrote 404.html + 404.md');
 } finally {
   await browser.close();
   server.close();
