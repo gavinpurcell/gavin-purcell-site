@@ -3,7 +3,7 @@
 // honored. This covers the decision logic behind all four.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { preferredType, parseAccept } from '../api/_accept.js';
+import { preferredType, parseAccept } from '../lib/accept.js';
 
 test('serves markdown when markdown is asked for', () => {
   assert.equal(preferredType('text/markdown'), 'text/markdown');
