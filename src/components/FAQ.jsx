@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './FAQ.css';
 
 export default function FAQ() {
@@ -68,36 +68,42 @@ export default function FAQ() {
               className={`faq-question ${openIndex === index ? 'active' : ''}`}
               onClick={() => toggleFAQ(index)}
               aria-expanded={openIndex === index}
-              {...(openIndex === index ? { 'aria-controls': `faq-answer-${index}` } : {})}
+              aria-controls={`faq-answer-${index}`}
             >
               <span className="faq-question-text">{faq.question}</span>
               <span className="faq-icon" aria-hidden="true">{openIndex === index ? '−' : '+'}</span>
             </button>
 
-            <AnimatePresence>
-              {openIndex === index && (
-                <motion.div
-                  className="faq-answer"
-                  id={`faq-answer-${index}`}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                >
-                  <div className="faq-answer-content">
-                    {faq.answer && <p>{faq.answer}</p>}
-                    {faq.bullets && faq.bullets.length > 0 && (
-                      <ul className="faq-bullet-list">
-                        {faq.bullets.map((bullet, i) => (
-                          <li key={i}>{bullet}</li>
-                        ))}
-                      </ul>
-                    )}
-                    {faq.closing && <p>{faq.closing}</p>}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* The answer stays mounted whether or not the item is open. It used
+                to be conditionally rendered, which meant the text did not exist in
+                the DOM until someone clicked, so it never reached the prerendered
+                HTML and no crawler or AI search system could read it. These
+                answers are the most citation-worthy copy on the site. Collapsing
+                is now purely visual. */}
+            <motion.div
+              className="faq-answer"
+              id={`faq-answer-${index}`}
+              initial={false}
+              animate={{
+                height: openIndex === index ? 'auto' : 0,
+                opacity: openIndex === index ? 1 : 0,
+              }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              style={{ overflow: 'hidden' }}
+              aria-hidden={openIndex !== index}
+            >
+              <div className="faq-answer-content">
+                {faq.answer && <p>{faq.answer}</p>}
+                {faq.bullets && faq.bullets.length > 0 && (
+                  <ul className="faq-bullet-list">
+                    {faq.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+                {faq.closing && <p>{faq.closing}</p>}
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>

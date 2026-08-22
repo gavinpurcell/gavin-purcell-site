@@ -9,6 +9,12 @@ User-agent: Bingbot
 Allow: /
 
 # AI Crawlers - OpenAI
+# OAI-SearchBot surfaces pages inside ChatGPT search, and is a different agent
+# from GPTBot. Both already fall through to the `User-agent: *` rule above; these
+# groups are explicit so an auditor grepping for them finds them.
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
