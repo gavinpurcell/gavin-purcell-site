@@ -31,6 +31,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://gavinpurcell.com/vhs-prompt-recipe</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gavinpurcell.com/blog/ai-computer-use-is-finally-good</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -113,5 +119,11 @@
 
     They are already advertised the correct way, in robots.txt, via the
     AI-Content: and Policy: directives. Don't add them back.
+
+    Note: /vhs-prompt-recipe IS listed above as of 2026-08-25. It is a
+    hand-authored static page rather than a React route, and prerender.mjs skips
+    any sitemap route whose HTML has no id="root". It used to carry a noindex tag
+    on the theory that "unlisted" meant "hidden from search"; those are different
+    goals, and keeping it out of the nav was already enough.
   -->
 </urlset>

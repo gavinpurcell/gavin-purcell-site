@@ -69,6 +69,16 @@ try {
   );
 
   for (const route of routes) {
+    // Hand-authored static pages (the unlisted newsletter pages under public/)
+    // are already complete HTML and have no React root to wait for. Visiting one
+    // would hang on the #root selector until the build times out, so they are
+    // listed in the sitemap but skipped here.
+    const staticFile = join(DIST, route, 'index.html');
+    if (existsSync(staticFile) && !readFileSync(staticFile, 'utf8').includes('id="root"')) {
+      console.log(`skipped ${route} (hand-authored static page)`);
+      continue;
+    }
+
     await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle0', timeout: 30000 });
     await page.waitForSelector('#root > *', { timeout: 10000 });
     // Helmet tags carry data-rh; when a route sets its own canonical/description/
