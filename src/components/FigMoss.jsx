@@ -44,10 +44,10 @@ export default function FigMoss() {
 
           <p className="figmoss-backing">
             All of it lives at <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">figandmoss.tv</a>:
-            <strong> twenty-seven pieces</strong> in the order they should be watched,
-            with notes on what they are referring to. The most recent one is Fig in
-            therapy about the state of AI, with Moss as his doctor. The doctor's
-            notepad only ever holds a drawing of a pond.
+            <strong> twenty-eight pieces</strong> in the order they should be watched,
+            with notes on what they are referring to. The most recent one is the two
+            of them watching Grand Theft Auto VI the afternoon it hit Netflix, with
+            Moss convinced the wanted stars are reviews.
           </p>
         </motion.div>
 
