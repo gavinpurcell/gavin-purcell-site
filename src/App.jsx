@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { MotionConfig } from 'framer-motion';
 import Navigation from './components/Navigation';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './components/Home';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
@@ -18,6 +19,7 @@ function App() {
     <MotionConfig reducedMotion="user">
       <div className="app">
         <a href="#main" className="skip-link">Skip to content</a>
+        <ScrollToTop />
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
