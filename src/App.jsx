@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import AboutPage from './components/AboutPage';
+import WorkPage from './components/WorkPage';
 import ContactPage from './components/ContactPage';
 import PrivacyPage from './components/PrivacyPage';
 import NotFound from './components/NotFound';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/work" element={<WorkPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="*" element={<NotFound />} />

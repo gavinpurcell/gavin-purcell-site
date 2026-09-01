@@ -6,10 +6,10 @@ export default function AboutPage() {
   return (
     <main id="main" className="page">
       <Helmet>
-        <title>About Gavin Purcell | Emmy-Winning Showrunner &amp; Fractional AI Creative Officer</title>
+        <title>About Gavin Purcell | Emmy-Winning Showrunner &amp; Creative Technologist</title>
         <meta
           name="description"
-          content="Gavin Purcell is an Emmy-winning former showrunner of The Tonight Show Starring Jimmy Fallon who now works as a Fractional AI Creative Officer, advising media and entertainment teams on AI strategy."
+          content="Gavin Purcell is an Emmy-winning former showrunner of The Tonight Show Starring Jimmy Fallon who now works as a creative technologist, turning new AI models into working shows, characters, tools, and production workflows."
         />
         <link rel="canonical" href="https://gavinpurcell.com/about" />
       </Helmet>
@@ -20,14 +20,16 @@ export default function AboutPage() {
         <hr className="page-rule" />
 
         <p className="page-lede">
-          Emmy-winning showrunner turned Fractional AI Creative Officer. I help media,
+          Emmy-winning showrunner turned creative technologist. I help media,
           entertainment, and creative teams actually use AI, not just talk about it.
         </p>
 
         <div className="page-body">
           <h2>What I do now</h2>
           <p>
-            I work as a <strong>Fractional AI Creative Officer</strong>. That means I embed with
+            I work as a <strong>creative technologist</strong>: I turn new AI models into
+            working shows, characters, tools, and production workflows. On advisory
+            engagements that means I embed with
             a company for three to six months and build the AI workflows their teams will
             genuinely use, rather than handing over a deck and disappearing. The work usually
             starts with a hands-on workshop, moves into rebuilding one or two real production

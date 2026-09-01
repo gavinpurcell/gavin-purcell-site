@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const rundown = [
@@ -46,7 +47,7 @@ export default function Hero() {
               nothing visually (see .hero-title .hero-eyebrow in Hero.css) and
               avoids saying the name twice in a row. */}
           <h1 className="hero-title">
-            <span className="hero-eyebrow">Gavin Purcell · Fractional AI Creative Officer</span>
+            <span className="hero-eyebrow">Gavin Purcell · Creative Technologist</span>
             Your AI strategy needs <span className="hero-title-em">a showrunner.</span>
           </h1>
           <p className="hero-description">
@@ -57,7 +58,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#consulting" className="btn btn-large">Work With Me</a>
-            <a href="#rundown" className="btn btn-large btn-secondary">See the Work</a>
+            <Link to="/work" className="btn btn-large btn-secondary">See the Work</Link>
           </div>
         </motion.div>
 

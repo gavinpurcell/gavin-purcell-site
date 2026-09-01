@@ -49,10 +49,8 @@ export default function Navigation() {
 
   const navLinks = [
     { href: '#about', label: 'About', hash: true },
+    { href: '/work', label: 'The Work', hash: false },
     { href: '#aifh', label: 'AI For Humans', hash: true },
-    { href: '#figmoss', label: 'Fig & Moss', hash: true },
-    { href: '#fishbowl', label: 'The Fishbowl', hash: true },
-    { href: '#andthen', label: 'AndThen', hash: true },
     { href: '/blog', label: 'Blog', hash: false },
     { href: '#consulting', label: 'Work With Me', hash: true },
     { href: '#contact', label: 'Get In Touch', cta: true, hash: true }

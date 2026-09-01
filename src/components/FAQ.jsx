@@ -11,7 +11,7 @@ export default function FAQ() {
       answer: "There are three ways to work with me:",
       bullets: [
         'The AI Jumpstart: a half-day or full-day hands-on workshop where your creative team builds working AI workflows on real projects',
-        'Fractional AI Creative Officer: ongoing monthly advisory for media and creative orgs that want senior AI leadership without the full-time hire',
+        'Fractional Creative Technologist: ongoing monthly advisory for media and creative orgs that want senior AI leadership without the full-time hire',
         'Keynotes and Speaking: practical, funny, zero-hype talks on AI and creativity for conferences and company events'
       ],
       closing: "Most importantly, I approach all of this with a human-first lens and a good sense of humor... because navigating change shouldn't feel like a chore."

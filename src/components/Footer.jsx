@@ -19,11 +19,11 @@ export default function Footer() {
             >
               <h3 className="footer-logo">Gavin Purcell</h3>
               <p className="footer-tagline">
-                Media Executive | Content Creator | Strategic Consultant
+                Creative Technologist | AI-Native Showrunner | Emmy Winner
               </p>
               <p className="footer-description">
-                Helping organizations and creators navigate media transformation
-                with two decades of hands-on experience building content that connects.
+                I turn new AI models into working shows, characters, tools, and production
+                workflows for media and entertainment teams.
               </p>
             </motion.div>
 
@@ -38,10 +38,8 @@ export default function Footer() {
                 <h4 className="footer-column-title">Navigate</h4>
                 <ul className="footer-nav">
                   <li><a href="#about">About</a></li>
+                  <li><Link to="/work">The Work</Link></li>
                   <li><a href="#aifh">AI For Humans</a></li>
-                  <li><a href="#figmoss">Fig &amp; Moss</a></li>
-                  <li><a href="#fishbowl">The Fishbowl</a></li>
-                  <li><a href="#andthen">AndThen</a></li>
                   <li><a href="#consulting">Work With Me</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>

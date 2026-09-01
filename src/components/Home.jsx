@@ -12,7 +12,7 @@ function Home() {
   return (
     <main id="main">
       <Helmet>
-        <title>Gavin Purcell | Fractional AI Creative Officer, AI Speaker for Media & Entertainment</title>
+        <title>Gavin Purcell | Creative Technologist, AI Speaker for Media & Entertainment</title>
         <link rel="canonical" href="https://gavinpurcell.com/" />
       </Helmet>
       <Hero />

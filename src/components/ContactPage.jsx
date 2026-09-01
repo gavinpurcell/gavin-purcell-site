@@ -8,7 +8,7 @@ export default function ContactPage() {
         <title>Contact Gavin Purcell | AI Consulting, Workshops &amp; Keynotes</title>
         <meta
           name="description"
-          content="Contact Gavin Purcell about AI strategy consulting, hands-on AI workshops, fractional AI Creative Officer engagements, and keynote speaking for media and entertainment teams."
+          content="Contact Gavin Purcell about AI strategy consulting, hands-on AI workshops, fractional creative technologist engagements, and keynote speaking for media and entertainment teams."
         />
         <link rel="canonical" href="https://gavinpurcell.com/contact" />
       </Helmet>

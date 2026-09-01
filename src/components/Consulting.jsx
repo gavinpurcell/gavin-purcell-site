@@ -19,7 +19,7 @@ export default function Consulting() {
     },
     {
       tag: 'Ongoing Advisory',
-      title: 'Fractional AI Creative Officer',
+      title: 'Fractional Creative Technologist',
       description:
         'Senior AI leadership for your creative org without the full-time hire. A typical engagement runs three to six months: recurring working sessions with your team where we ship real workflows, not decks. Limited to a few teams at a time.',
       includes: [

@@ -6,7 +6,7 @@ const FORM_ENDPOINT = 'https://formspree.io/p/3037991238692241264/f/intake';
 
 const INTERESTS = [
   'AI Jumpstart workshop',
-  'Fractional AI Creative Officer (ongoing advisory)',
+  'Fractional Creative Technologist (ongoing advisory)',
   'Keynote or speaking',
   'Something else',
 ];
