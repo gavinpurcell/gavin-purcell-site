@@ -9,11 +9,13 @@ const rundown = [
     href: 'https://www.aiforhumans.show',
     cta: 'Watch',
   },
+  // Fig & Moss rotated out of the rundown 9/14/26 to make room for King of the
+  // Prompts. It still has its own full section further down and a footer link.
   {
-    title: 'Fig & Moss',
-    detail: 'Four shows made by an AI who lives in my laptop. He writes, animates, and scores all of it.',
-    href: 'https://figandmoss.tv',
-    cta: 'Meet them',
+    title: 'King of the Prompts',
+    detail: 'Live game show. Two players, thirty seconds to write a video prompt, AI films both, the crowd picks the winner.',
+    href: 'https://kingoftheprompts.com',
+    cta: 'Play',
   },
   {
     title: 'The Fishbowl',
