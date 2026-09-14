@@ -65,9 +65,10 @@ export default function KingOfThePrompts() {
             />
           </a>
           <p className="kotp-caption">
-            The cue was "The Museum of Humble Brags." That's me on the left beating the
-            House two rounds to nothing, and the card asking whether I want to defend
-            the crown or abdicate the throne. Abdicate is a real button.
+            The end of a match. Both players wrote to the same cue, "The Museum of Humble
+            Brags," and each five-second film plays side by side while the crowd votes.
+            The scoreboard tracks the best-of-three, and the winner gets the option to
+            stay on and defend the crown against the next challenger in the queue.
           </p>
           <a href="https://kingoftheprompts.com" target="_blank" rel="noopener noreferrer" className="btn btn-large kotp-btn">
             Play King of the Prompts →
