@@ -1,0 +1,167 @@
+/* Mirrors FigMoss.css / Fishbowl.css so the project sections read as a matched set.
+   Only deliberate difference: no pixelated image-rendering, because the crest
+   is a flat vector rather than pixel art. */
+.kotp {
+  background: var(--color-bg);
+  padding: var(--space-2xl) 0;
+}
+
+.kotp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Left Content */
+.kotp-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kotp-logo-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.kotp-logo-link {
+  flex-shrink: 0;
+  display: block;
+}
+
+.kotp-logo {
+  display: block;
+  width: 96px;
+  height: auto;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-md);
+}
+
+.kotp-name {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin: 0;
+  line-height: 1;
+}
+
+.kotp-name a {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.kotp-name a:hover {
+  color: var(--color-primary);
+}
+
+.kotp-tagline {
+  font-size: 2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.kotp-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.kotp-description strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.kotp-backing {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.kotp-backing strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.kotp-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Right Visual */
+.kotp-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.kotp-visual-title {
+  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.kotp-screenshot-link {
+  display: block;
+  border: var(--border-width) var(--border-style);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-bg-dark);
+  transition: all 0.2s ease;
+}
+
+.kotp-screenshot-link:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.kotp-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.kotp-caption {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .kotp-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .kotp-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .kotp {
+    padding: var(--space-xl) 0;
+  }
+
+  .kotp-logo {
+    width: 72px;
+  }
+
+  .kotp-tagline {
+    font-size: 1.5rem;
+  }
+
+  .kotp-visual-title {
+    font-size: 1.25rem;
+  }
+}

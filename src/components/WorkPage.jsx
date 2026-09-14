@@ -18,7 +18,7 @@ const caseStudies = [
     lesson:
       'The film is not the show. The show is a person trying to type a good idea in thirty seconds while everyone watches.',
     image: '/kotp-screenshot.jpg',
-    imageAlt: 'The King of the Prompts landing page: a royal Admit One ticket with Watch the Show and Play for the Crown buttons',
+    imageAlt: 'A finished King of the Prompts match: two AI films side by side, gavin beat The House two rounds to none, and a card reads You won. Defend your crown.',
     vitals: [
       { label: 'Role', value: 'Solo build' },
       { label: 'Stack', value: 'Next.js, WebSockets, fal video models' },
