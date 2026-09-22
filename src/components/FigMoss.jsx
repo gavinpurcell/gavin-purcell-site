@@ -44,7 +44,7 @@ export default function FigMoss() {
 
           <p className="figmoss-backing">
             All of it lives at <a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">figandmoss.tv</a>:
-            <strong> twenty-nine pieces</strong> in the order they should be watched,
+            <strong> thirty-one pieces</strong> in the order they should be watched,
             with notes on what they are referring to. The most recent one is the two
             of them watching Grand Theft Auto VI the afternoon it hit Netflix, with
             Moss convinced the wanted stars are reviews.
