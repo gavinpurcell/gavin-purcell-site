@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './AIForHumans.css';
+import latestEpisode from '../data/latest-episode.json';
 
-// Fallback if /api/latest-episode is unreachable (plain vite dev, feed outage)
-const FALLBACK_EPISODE_ID = 'OCnssLZbt9E';
+// Baked in at build time by scripts/fetch-latest-episode.mjs. Shown on first paint
+// and whenever /api/latest-episode is unreachable (plain vite dev, feed outage).
+const FALLBACK_EPISODE_ID = latestEpisode.videoId;
 
 export default function AIForHumans() {
   const [email, setEmail] = useState('');
