@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://gavinpurcell.com/" />
     <meta property="og:title" content="Gavin Purcell | Creative Technologist" />
     <meta property="og:description" content="Emmy-winning Tonight Show showrunner turned creative technologist. AI strategy, workshops, and keynotes for media, entertainment, and creative teams." />
-    <meta property="og:image" content="https://gavinpurcell.com/gavin-photo-og.jpg" />
+    <meta property="og:image" content="https://gavinpurcell.com/og-signal.jpg" />
     <meta property="og:site_name" content="Gavin Purcell" />
 
     <!-- Twitter Card -->
@@ -33,30 +33,52 @@
     <meta name="twitter:creator" content="@gavinpurcell" />
     <meta name="twitter:title" content="Gavin Purcell | Creative Technologist" />
     <meta name="twitter:description" content="Emmy-winning Tonight Show showrunner turned creative technologist. AI strategy, workshops, and keynotes for media and entertainment. Co-host of AI For Humans." />
-    <meta name="twitter:image" content="https://gavinpurcell.com/gavin-photo-og.jpg" />
+    <meta name="twitter:image" content="https://gavinpurcell.com/og-signal.jpg" />
 
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gavin Purcell",
-      "url": "https://gavinpurcell.com",
-      "image": "https://gavinpurcell.com/gavin-photo-og.jpg",
-      "sameAs": [
-        "https://x.com/gavinpurcell",
-        "https://www.linkedin.com/in/gavin-purcell/",
-        "https://www.youtube.com/@AIForHumansShow"
-      ],
-      "jobTitle": "Creative Technologist, AI Keynote Speaker",
-      "description": "Gavin Purcell is a creative technologist and AI-native showrunner: an Emmy-winning former Tonight Show showrunner who prototypes and ships interactive media systems, advises media and entertainment teams on AI strategy, runs hands-on AI workshops, and delivers keynotes. He co-hosts the twice-weekly show AI For Humans and co-founded AndThen, an a16z Speedrun-backed startup.",
-      "knowsAbout": ["Artificial Intelligence", "Media Strategy", "Content Creation", "Digital Transformation", "Podcasting", "Television Production"],
-      "alumniOf": "The Tonight Show Starring Jimmy Fallon",
-      "award": "Emmy Award",
-      "colleague": [
+      "@graph": [
         {
           "@type": "Person",
-          "name": "Kevin Pereira"
+          "@id": "https://gavinpurcell.com/#person",
+          "name": "Gavin Purcell",
+          "url": "https://gavinpurcell.com",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://gavinpurcell.com/gavin-photo-og.jpg",
+            "width": 1200,
+            "height": 630,
+            "caption": "Gavin Purcell"
+          },
+          "sameAs": [
+            "https://x.com/gavinpurcell",
+            "https://www.linkedin.com/in/gavin-purcell/",
+            "https://www.youtube.com/@AIForHumansShow",
+            "https://www.aiforhumans.show",
+            "https://aiforhumans.beehiiv.com/"
+          ],
+          "jobTitle": "Creative Technologist",
+          "description": "Gavin Purcell is a creative technologist and Emmy-winning former showrunner of The Tonight Show Starring Jimmy Fallon. He advises media and entertainment teams on AI, runs hands-on AI workshops, and gives keynotes. He co-hosts the twice-weekly show AI For Humans with Kevin Pereira, co-founded the a16z Speedrun-backed startup AndThen, and builds AI projects including King of the Prompts, The Fishbowl, and Fig & Moss.",
+          "knowsAbout": ["Artificial intelligence", "Generative AI", "AI video", "Media strategy", "Television production", "Podcasting", "Creative technology"],
+          "award": "Emmy Award",
+          "hasOccupation": [
+            { "@type": "Occupation", "name": "Creative Technologist" },
+            { "@type": "Occupation", "name": "Television Showrunner" },
+            { "@type": "Occupation", "name": "Podcast Host" }
+          ],
+          "worksFor": { "@type": "Organization", "name": "AndThen", "url": "https://andthen.chat" },
+          "colleague": { "@type": "Person", "name": "Kevin Pereira" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://gavinpurcell.com/#website",
+          "url": "https://gavinpurcell.com",
+          "name": "Gavin Purcell",
+          "alternateName": "gavinpurcell.com",
+          "publisher": { "@id": "https://gavinpurcell.com/#person" },
+          "inLanguage": "en-US"
         }
       ]
     }
@@ -64,7 +86,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>

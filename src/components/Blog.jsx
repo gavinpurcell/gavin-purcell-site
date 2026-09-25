@@ -49,7 +49,7 @@ function Blog() {
 
   if (loading) {
     return (
-      <div className="blog-container">
+      <div id="main" className="blog-container">
         <div className="blog-loading">
           <div className="loading-spinner"></div>
           <p>Loading posts...</p>
@@ -60,7 +60,7 @@ function Blog() {
 
   if (error) {
     return (
-      <div className="blog-container">
+      <div id="main" className="blog-container">
         <div className="blog-error">
           <h2>Oops!</h2>
           <p>{error}</p>
@@ -85,7 +85,7 @@ function Blog() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <div className="blog-container">
+      <div id="main" className="blog-container">
         <motion.div
           className="blog-header"
           initial={{ opacity: 0, y: 20 }}

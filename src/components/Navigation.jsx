@@ -1,185 +1,91 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import './Navigation.css';
+
+const navLinks = [
+  { href: '#about', label: 'About', hash: true },
+  { href: '/work', label: 'Work', hash: false },
+  { href: '#aifh', label: 'AI For Humans', hash: true },
+  { href: '/blog', label: 'Writing', hash: false },
+  { href: '#contact', label: 'Get in touch', cta: true, hash: true },
+];
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [overHero, setOverHero] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  // Over the blue hero the nav is white type on nothing; past it, blue on paper.
+  useEffect(() => {
+    if (!isHomePage) return undefined;
+    const onScroll = () => setOverHero(window.scrollY < window.innerHeight - 80);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isHomePage]);
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const handleLogoClick = (e) => {
     e.preventDefault();
+    closeMobileMenu();
     navigate('/');
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
   const handleHashNavigation = (e, href) => {
     e.preventDefault();
     closeMobileMenu();
-
+    const go = () => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     if (!isHomePage) {
-      // Navigate to home first, then scroll to section
       navigate('/');
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      setTimeout(go, 150);
     } else {
-      // Already on home page, just scroll
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      go();
     }
   };
 
-  const navLinks = [
-    { href: '#about', label: 'About', hash: true },
-    { href: '/work', label: 'The Work', hash: false },
-    { href: '#aifh', label: 'AI For Humans', hash: true },
-    { href: '/blog', label: 'Blog', hash: false },
-    { href: '#consulting', label: 'Work With Me', hash: true },
-    { href: '#contact', label: 'Get In Touch', cta: true, hash: true }
-  ];
+  const renderLink = (link, className) =>
+    link.hash ? (
+      <a key={link.href} href={`/${link.href}`} onClick={(e) => handleHashNavigation(e, link.href)} className={className}>
+        {link.label}
+      </a>
+    ) : (
+      <Link key={link.href} to={link.href} onClick={closeMobileMenu} className={className}>
+        {link.label}
+      </Link>
+    );
+
+  const onBlue = isHomePage && overHero && !mobileMenuOpen;
 
   return (
-    <motion.nav
-      className="nav"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <nav className={`nav ${onBlue ? 'nav-on-blue' : 'nav-on-paper'} ${mobileMenuOpen ? 'nav-open' : ''}`}>
       <div className="nav-container">
-        <a href="/" onClick={handleLogoClick} className="nav-logo-link">
-          <motion.div
-            className="nav-logo"
-            whileHover={{ scale: 1.05 }}
-          >
-            <span className="nav-logo-name">Gavin Purcell</span>
-          </motion.div>
+        <a href="/" onClick={handleLogoClick} className="nav-logo">
+          Gavin Purcell
         </a>
 
-        {/* Desktop Navigation */}
         <div className="nav-links nav-links-desktop">
-          {navLinks.map((link) => (
-            link.hash ? (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleHashNavigation(e, link.href)}
-                className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`nav-link ${link.cta ? 'nav-link-cta' : ''}`}
-              >
-                {link.label}
-              </Link>
-            )
-          ))}
+          {navLinks.map((link) => renderLink(link, `nav-link ${link.cta ? 'nav-link-cta' : ''}`))}
         </div>
 
-        {/* Mobile Hamburger Button */}
         <button
-          className="nav-hamburger"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          className="nav-toggle"
+          onClick={() => setMobileMenuOpen((open) => !open)}
           aria-expanded={mobileMenuOpen}
-          {...(mobileMenuOpen ? { 'aria-controls': 'mobile-menu' } : {})}
+          aria-controls="mobile-menu"
         >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
+          {mobileMenuOpen ? 'Close' : 'Menu'}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              className="nav-mobile-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeMobileMenu}
-            />
-
-            {/* Mobile Menu */}
-            <motion.div
-              className="nav-mobile-menu"
-              id="mobile-menu"
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            >
-              <div className="nav-mobile-header">
-                <span className="nav-mobile-title">Menu</span>
-                <button
-                  className="nav-mobile-close"
-                  onClick={closeMobileMenu}
-                  aria-label="Close menu"
-                >
-                  ✕
-                </button>
-              </div>
-
-              <div className="nav-mobile-links">
-                {navLinks.map((link, index) => (
-                  link.hash ? (
-                    <motion.a
-                      key={link.href}
-                      href={link.href}
-                      className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
-                      onClick={(e) => handleHashNavigation(e, link.href)}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      {link.label}
-                    </motion.a>
-                  ) : (
-                    <Link
-                      key={link.href}
-                      to={link.href}
-                      className={`nav-mobile-link ${link.cta ? 'nav-mobile-link-cta' : ''}`}
-                      onClick={closeMobileMenu}
-                    >
-                      <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        {link.label}
-                      </motion.div>
-                    </Link>
-                  )
-                ))}
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      {mobileMenuOpen && (
+        <div className="nav-mobile" id="mobile-menu">
+          {navLinks.map((link) => renderLink(link, 'nav-mobile-link'))}
+        </div>
+      )}
+    </nav>
   );
 }

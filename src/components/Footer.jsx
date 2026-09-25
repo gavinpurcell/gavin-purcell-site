@@ -1,102 +1,76 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+const columns = [
+  {
+    title: 'Site',
+    links: [
+      { label: 'About', href: '/#about' },
+      { label: 'Work', to: '/work' },
+      { label: 'Writing', to: '/blog' },
+      { label: 'Work with me', href: '/#consulting' },
+      { label: 'Contact', to: '/contact' },
+    ],
+  },
+  {
+    title: 'Projects',
+    links: [
+      { label: 'King of the Prompts', href: 'https://kingoftheprompts.com' },
+      { label: 'Fig & Moss', href: 'https://figandmoss.tv' },
+      { label: 'The Fishbowl', href: 'https://fishbowl.show' },
+      { label: 'Fishbowl on GitHub', href: 'https://github.com/gavinpurcell/the-fishbowl' },
+      { label: 'AndThen', href: 'https://andthen.chat' },
+      { label: 'AndThen partnerships', href: 'mailto:partnerships@andthen.chat' },
+    ],
+  },
+  {
+    title: 'AI For Humans',
+    links: [
+      { label: 'The show', href: 'https://aiforhumans.show' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@AIForHumansShow' },
+      { label: 'Newsletter', href: 'https://aiforhumans.beehiiv.com/' },
+    ],
+  },
+  {
+    title: 'Elsewhere',
+    links: [
+      { label: 'X', href: 'https://x.com/gavinpurcell' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gavin-purcell/' },
+      { label: 'Email', href: 'mailto:gavin@gavinpurcell.com' },
+    ],
+  },
+];
 
+function FooterLink({ link }) {
+  if (link.to) return <Link to={link.to}>{link.label}</Link>;
+  const external = link.href.startsWith('http');
+  return (
+    <a href={link.href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+      {link.label}
+    </a>
+  );
+}
+
+export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-main">
-        <div className="container">
-          <div className="footer-content">
-            <motion.div
-              className="footer-brand"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="footer-logo">Gavin Purcell</h3>
-              <p className="footer-tagline">
-                Creative Technologist | AI-Native Showrunner | Emmy Winner
-              </p>
-              <p className="footer-description">
-                I turn new AI models into working shows, characters, tools, and production
-                workflows for media and entertainment teams.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="footer-links"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="footer-column">
-                <h4 className="footer-column-title">Navigate</h4>
-                <ul className="footer-nav">
-                  <li><a href="#about">About</a></li>
-                  <li><Link to="/work">The Work</Link></li>
-                  <li><a href="#aifh">AI For Humans</a></li>
-                  <li><a href="#consulting">Work With Me</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-              </div>
-
-              <div className="footer-column">
-                <h4 className="footer-column-title">AI For Humans</h4>
-                <ul className="footer-nav">
-                  <li><a href="https://www.youtube.com/@AIForHumansShow" target="_blank" rel="noopener noreferrer">Podcast</a></li>
-                  <li><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
-                  <li><a href="#aifh">Subscribe</a></li>
-                </ul>
-              </div>
-
-              <div className="footer-column">
-                <h4 className="footer-column-title">Projects</h4>
-                <ul className="footer-nav">
-                  <li><a href="https://kingoftheprompts.com" target="_blank" rel="noopener noreferrer">King of the Prompts</a></li>
-                  <li><a href="https://figandmoss.tv" target="_blank" rel="noopener noreferrer">Fig &amp; Moss</a></li>
-                  <li><a href="https://fishbowl.show" target="_blank" rel="noopener noreferrer">The Fishbowl</a></li>
-                  <li><a href="https://github.com/gavinpurcell/the-fishbowl" target="_blank" rel="noopener noreferrer">Fishbowl on GitHub</a></li>
-                  <li><a href="https://andthen.chat" target="_blank" rel="noopener noreferrer">AndThen</a></li>
-                  <li><a href="mailto:partnerships@andthen.chat" target="_blank" rel="noopener noreferrer">AndThen Partnerships</a></li>
-                </ul>
-              </div>
-
-              <div className="footer-column">
-                <h4 className="footer-column-title">Connect</h4>
-                <ul className="footer-social">
-                  <li><a href="https://x.com/gavinpurcell" target="_blank" rel="noopener noreferrer" className="social-link">Twitter/X</a></li>
-                  <li><a href="https://www.linkedin.com/in/gavin-purcell/" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a></li>
-                  <li><a href="https://www.youtube.com/@AIForHumansShow" target="_blank" rel="noopener noreferrer" className="social-link">YouTube</a></li>
-                  <li><a href="mailto:gavin@gavinpurcell.com" className="social-link">Email</a></li>
-                </ul>
-              </div>
-            </motion.div>
+      <nav className="footer-grid" aria-label="Footer">
+        {columns.map((col) => (
+          <div key={col.title} className="footer-col">
+            <h2>{col.title}</h2>
+            <ul>
+              {col.links.map((link) => (
+                <li key={link.label}>
+                  <FooterLink link={link} />
+                </li>
+              ))}
+            </ul>
           </div>
-
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <div className="container">
-          <div className="footer-bottom-content">
-            <p className="footer-copyright">
-              © {currentYear} Gavin Purcell. All rights reserved.
-            </p>
-            <nav className="footer-legal" aria-label="Site information">
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
-              <Link to="/privacy">Privacy</Link>
-            </nav>
-            <div className="footer-meta">
-              <span>Built with care for storytelling and connection</span>
-            </div>
-          </div>
-        </div>
+        ))}
+      </nav>
+      <div className="footer-base">
+        <p>© {new Date().getFullYear()} Gavin Purcell. Creative technologist, Emmy-winning showrunner.</p>
+        <Link to="/privacy">Privacy</Link>
       </div>
     </footer>
   );

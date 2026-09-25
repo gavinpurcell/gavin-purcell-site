@@ -3,21 +3,26 @@
    ============================================ */
 
 :root {
-  /* Color System - Warm & Bold */
-  --color-primary: #E65C2A; /* Burnt orange */
-  --color-primary-light: #FF7F50;
-  --color-primary-dark: #C74619;
-  --color-accent: #F4A261; /* Amber */
-  --color-bg: #FAF7F3; /* Warm cream */
-  --color-bg-dark: #2B2826; /* Deep charcoal */
-  --color-text: #1A1816;
-  --color-text-light: #5A5654;
-  --color-border: #1A1816;
-  --color-surface: #FFFFFF;
+  /* Two inks: ultramarine and white. Nothing else. */
+  --blue: #1A33E0;
+  --blue-deep: #0E1F9E;
+  --blue-wash: #EEF0FD;
+  --white: #FFFFFF;
 
-  /* Typography */
-  --font-display: 'DM Serif Display', serif;
-  --font-body: 'Outfit', sans-serif;
+  --color-primary: var(--blue);
+  --color-primary-light: #3D55F0;
+  --color-primary-dark: var(--blue-deep);
+  --color-accent: var(--blue);
+  --color-bg: var(--white);
+  --color-bg-dark: var(--blue);
+  --color-text: var(--blue);
+  --color-text-light: rgba(26, 51, 224, 0.72);
+  --color-border: var(--blue);
+  --color-surface: var(--white);
+
+  /* Typography: one family, the width axis does the work */
+  --font-display: 'Mona Sans', system-ui, sans-serif;
+  --font-body: 'Mona Sans', system-ui, sans-serif;
 
   /* Spacing System */
   --space-xs: 0.5rem;
@@ -27,13 +32,15 @@
   --space-xl: 6rem;
   --space-2xl: 8rem;
 
-  /* Shadows - Hard & Structural */
-  --shadow-sm: 4px 4px 0 var(--color-border);
-  --shadow-md: 8px 8px 0 var(--color-border);
-  --shadow-lg: 12px 12px 0 var(--color-border);
+  --gutter: clamp(16px, 4vw, 56px);
+
+  /* No drop shadows in a two-ink system */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 
   /* Borders */
-  --border-width: 3px;
+  --border-width: 1px;
   --border-style: solid var(--color-border);
 }
 
@@ -57,7 +64,8 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: 18px;
-  line-height: 1.6;
+  font-weight: 430;
+  line-height: 1.55;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -67,14 +75,15 @@ body {
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 760;
+  font-stretch: 112%;
   line-height: 1.1;
   margin-bottom: var(--space-md);
 }
 
 h1 {
   font-size: clamp(3rem, 8vw, 7rem);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 h2 {
@@ -139,9 +148,10 @@ a:hover {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--color-primary-dark);
-  outline-offset: 2px;
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 /* Layout Utilities */
@@ -156,43 +166,45 @@ textarea:focus-visible {
   position: relative;
 }
 
-/* Button Styles */
+/* Button Styles: chunky studio switch-panel buttons */
+/* Buttons: flat ink */
 .btn {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.95rem 1.5rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  /* primary-dark passes AA for white button text; #E65C2A does not */
-  background: var(--color-primary-dark);
-  color: white;
-  border: var(--border-width) var(--border-style);
+  font-weight: 650;
+  font-stretch: 108%;
+  letter-spacing: 0;
+  background: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 0;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+  transition: background 0.18s ease, color 0.18s ease;
 }
 
 .btn:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--color-border);
-  color: white;
-}
-
-.btn:active {
-  transform: translate(4px, 4px);
-  box-shadow: none;
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
+  color: var(--white);
 }
 
 .btn-secondary {
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: transparent;
+  color: var(--blue);
+}
+
+.btn-secondary:hover {
+  background: var(--blue);
+  color: var(--white);
 }
 
 .btn-large {
-  padding: var(--space-md) var(--space-lg);
-  font-size: 1.125rem;
+  padding: 1.1rem 1.8rem;
+  font-size: 1.05rem;
 }
 
 /* Card Component */
@@ -205,8 +217,7 @@ textarea:focus-visible {
 }
 
 .card:hover {
-  transform: translate(4px, 4px);
-  box-shadow: 4px 4px 0 var(--color-border);
+  transform: translateY(-2px);
 }
 
 /* Decorative Elements */

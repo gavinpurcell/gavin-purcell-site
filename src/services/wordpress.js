@@ -8,6 +8,1124 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL;
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 21,
+    title: 'What Is Jev? The New AI Everyone\'s Talking About, Explained For Humans',
+    content: `
+<p>If you've been anywhere near AI Twitter this week, you've seen the word "Jev" about four hundred times.</p>
+
+<p>We covered it on this week's show, but I've gotten a bunch of "ok but what actually IS it" texts since, so I want to slow down and explain it properly.</p>
+
+<p>But maybe the easiest and SIMPLEST explainer comes from this one image (as long as you know the Breaking Bad universe):</p>
+
+<a href="https://twitter.com/markjaquith/status/2101341256743813558" target="_blank" rel="noopener">
+  <img src="/jev-breaking-bad-tweet.webp" alt="Mark Jaquith tweet explaining Jev with a Breaking Bad meme" style="cursor: pointer;">
+</a>
+
+<p>The short version: <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">it's a new kind of AI model from one of the people who built ChatGPT</a>, it doesn't talk, and it might end up inside more of the software you use than ChatGPT ever will.</p>
+
+<p>Let's get into it.</p>
+
+<h2>Ok, So What Is Jev?</h2>
+
+<p><a href="https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/" target="_blank" rel="noopener">TypeSafe AI</a> came out of stealth last Tuesday with $40 million in funding and a model called Jev. The founder is Diogo Almeida, an ex-OpenAI researcher who worked on ChatGPT and on RLHF, the training technique that made chatbots actually usable.</p>
+
+<p>The whole thing is explained here by Diogo:</p>
+
+<a href="https://twitter.com/CompleteSkeptic/status/2099925682726002904" target="_blank" rel="noopener">
+  <img src="/jev-diogo-tweet.webp" alt="Diogo Almeida tweet introducing TypeSafe and Jev" style="cursor: pointer;">
+</a>
+
+<p>What makes Jev different from every other model launch this year is simple:</p>
+
+<p>It cannot write. Or at least, not the way an LLM would.</p>
+
+<p>You don't chat with it. You hand it a piece of information (an email, a support ticket, a frame from a video game) plus a multiple choice question. Is this spam, yes or no? Which department should this go to? On a scale of 0 to 10, how mad is this customer?</p>
+
+<p>And then it answers in about a tenth of a second, with a confidence score attached. Simple, right?</p>
+
+<p>TypeSafe calls this a <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">"System One" model</a>, after <a href="https://en.wikipedia.org/wiki/Daniel_Kahneman" target="_blank" rel="noopener">Daniel Kahneman's idea</a> that there are two kinds of thinking: the fast, gut-level kind (System 1) and the slow, deliberate kind (System 2). ChatGPT and Claude are System 2 machines that think it over and write you an answer. Jev is the gut.</p>
+
+<p>Why does that matter? Two really big reasons.</p>
+
+<p><strong>It's absurdly fast and absurdly cheap.</strong></p>
+
+<p>Because it isn't generating text word by word, it scores every option at once. TypeSafe says it's 40 to 200 times faster than a frontier model at these kinds of decisions, and it costs about four cents per <em>million</em> tokens in. Classifying one support ticket runs roughly a hundred-thousandth of a cent. <a href="https://www.forbes.com/sites/josipamajic/2026/09/19/jev-cuts-ai-decision-costs-100x-and-vercel-cloudflare-rushed-to-add-it/" target="_blank" rel="noopener">Vercel and Cloudflare added it within days.</a></p>
+
+<a href="https://twitter.com/tamarajtran/status/2100694549362553153" target="_blank" rel="noopener">
+  <img src="/jev-vercel-tweet.webp" alt="Tweet about Vercel adding Jev support" style="cursor: pointer;">
+</a>
+
+<p><strong>It can't hallucinate.</strong></p>
+
+<p>Well, "can't" is a little strong, but it eliminates the hallucination problem most LLMs struggle with.</p>
+
+<p>The reason is kind of boring: it can only pick from the options you gave it. It can be wrong, but it can't invent an answer that wasn't on the list.</p>
+
+<p>The demos are where it gets fun. Because it decides so fast, people have hooked it up to things that need split-second judgment. <a href="https://x.com/CompleteSkeptic/status/2099925687465570372" target="_blank" rel="noopener">It plays Doom</a> and Mario in real time, <a href="https://x.com/EGafni/status/2100386169100149229" target="_blank" rel="noopener">it flies a drone</a>, and one guy built a fully autonomous trading bot with it that has, in his words, "lost me $31,680."</p>
+
+<a href="https://twitter.com/MoonGotchi/status/2101320141065609294" target="_blank" rel="noopener">
+  <img src="/jev-trading-bot-tweet.webp" alt="Tweet about a Jev-powered trading bot that lost $31,680" style="cursor: pointer;">
+</a>
+
+<p>No one said it was going to be <em>good</em> at that. (PS, this is most likely a joke and not a real use case.)</p>
+
+<p>On the more useful end, <a href="https://x.com/caleobking/status/2101525657436000313" target="_blank" rel="noopener">someone told me they ran 500 chemistry essays through it</a> against a grading rubric. Insanely, this was done in 25 seconds, for $0.0028, with scores that matched hand grading.</p>
+
+<p>Sidenote: Not <em>entirely</em> sure how I feel about that but... you still get the power.</p>
+
+<h2>Why This Matters To You</h2>
+
+<p>You will prob never open Jev. There's no app to download and nothing to type into.</p>
+
+<p>But a decision that costs almost nothing and takes a tenth of a second can go in many, many applications, maybe some that you're making right now.</p>
+
+<p>At this current moment, putting AI inside a piece of software is a deliberate choice, because every call to a big model costs real money and takes real time.</p>
+
+<p>Once that call costs essentially nothing, every app gets a lil judgment baked in: your inbox sorting itself, your photo app picking the best of the forty shots you took, your smart home deciding whether that noise was the dog or a person.</p>
+
+<p>Someone <a href="https://x.com/dgrreen/status/2101404528004276583" target="_blank" rel="noopener">sent me this cartoon about it</a>, and it's the right frame. When something gets ten times cheaper, people don't use ten times less of it. They use way, way more.</p>
+
+<p>Also, Jev = <a href="https://en.wikipedia.org/wiki/Jevons_paradox" target="_blank" rel="noopener">JEVons paradox.</a> Duh. Took me too long to really figure this one out.</p>
+
+<p>Also, did we <em>need</em> a real-time emoji sorter? No, but good gosh, this is cool.</p>
+
+<a href="https://twitter.com/heystefan_/status/2101369117496521042" target="_blank" rel="noopener">
+  <img src="/jev-emoji-sorter-tweet.webp" alt="Real-time emoji sorter built with Jev" style="cursor: pointer;">
+</a>
+
+<p>Now, a lil grain of salt.</p>
+
+<p>TypeSafe hasn't published a paper, a model card, or any outside benchmarks, so the speed and cost numbers are theirs. <a href="https://botmonster.com/ai/the-jev-model-writes-no-text-and-typesafe-wont-say-how/" target="_blank" rel="noopener">Early testers have found some weirdness too</a> (ask it a yes/no question and then the opposite, and the two probabilities don't always add up). And by design it can't do math, read images or compare dates.</p>
+
+<p>You <em>can</em> get $5 in free Jev credits though if you have access to the beta (which I'm in) and <a href="https://docs.typesafe.ai/introduction/quickstart" target="_blank" rel="noopener">hook it directly up to your agentic coding bots</a>.</p>
+
+<p>If you have something interesting you want to do, you can prob <a href="https://x.com/typesafeai" target="_blank" rel="noopener">@ the TypeSafe X account</a> and they might get you inside it.</p>
+
+<h2>So What Should You Do Right Now?</h2>
+
+<p>If you want to feel what a System One model is like, there are two things to click.</p>
+
+<p><a href="https://jevhero.val.run/" target="_blank" rel="noopener">Jev Hero</a> is a lil word game someone built where Jev makes the calls. And <a href="https://typesafe-demo.val.run/" target="_blank" rel="noopener">this word-sorting demo</a> shows the actual product: give it a pile of words and some categories and watch it sort them in real time.</p>
+
+<p>If you're a developer, or you've been vibe coding with Astra, TypeSafe's API is open (with a waitlist, because demand knocked it over this week).</p>
+
+<p>I've been messing around with it on a few things and will likely have something fun to share soon.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>The Next Models Are Coming Anyway</h3>
+
+<p>Last week the labs all agreed to slow down.</p>
+
+<p>This week the rumor mill said "sure, right after these."</p>
+
+<p>On Friday a couple of people using Claude Code noticed their Fable 5.1 requests being routed to something newer. One of them posted a one-shot video and game and captioned it <a href="https://x.com/chetaslua/status/2101376238703333883" target="_blank" rel="noopener">"Fable 5.2 made this."</a> Anthropic hasn't said a word, and the usual leaker account is saying late September or early October.</p>
+
+<a href="https://twitter.com/chetaslua/status/2101376238703333883" target="_blank" rel="noopener">
+  <img src="/jev-fable-52-tweet.webp" alt="Tweet claiming Fable 5.2 made a one-shot video and game" style="cursor: pointer;">
+</a>
+
+<p>OpenAI, meanwhile, has staff posting things like <a href="https://x.com/thsottiaux/status/2101352781219258527" target="_blank" rel="noopener">"OK fine. But it's also still coming in Tuesday"</a> and the rest of the team <a href="https://x.com/iruletheworldmo/status/2101255553833984198" target="_blank" rel="noopener">can't stop hinting</a> at something that was <em>supposed</em> to ship last week that <a href="https://x.com/sama/status/2100351958167220547" target="_blank" rel="noopener">Sam says is happening THIS week.</a></p>
+
+<p>Sam already told Marc Benioff there's a post-Astra model that can <a href="https://x.com/rohanpaul_ai/status/2100144714251198466" target="_blank" rel="noopener">"solve things the world's best mathematicians cannot,"</a> and DevDay is September 29.</p>
+
+<p>So pacing the frontier apparently still includes shipping the next model, just with the auditors in the building this time.</p>
+
+<h3>One AI Brain, Five Robot Bodies</h3>
+
+<p><a href="https://odyssey.systems/introducing-odyssey-3" target="_blank" rel="noopener">Odyssey-3</a> came out this week and man, I keep getting excited about this sort of thing, especially a few years down the line.</p>
+
+<p>It's another "world model," which means instead of learning from text it learned from watching an enormous amount of video of how the physical world works.</p>
+
+<p>The result is one model that drives a car on the roads of India (after 20 hours of training), runs a robot arm that packs boxes, controls a humanoid, flies a drone, and plays GTA V and Red Dead Redemption 2 well enough to carry skills from one game to the other.</p>
+
+<a href="https://twitter.com/odysseyml/status/2099900067356586276" target="_blank" rel="noopener">
+  <img src="/jev-odyssey3-tweet.webp" alt="Odyssey tweet announcing the Odyssey-3 world model" style="cursor: pointer;">
+</a>
+
+<p>These world models are finally getting really good. I'm excited to see what's been cooking across a number of these companies but still kind of waiting to see if <a href="https://deepmind.google/models/genie/" target="_blank" rel="noopener">Google's Genie model (the one that makes real time video games)</a> has made any sort of leap.</p>
+
+<p>Where are ya Google? What happened?!</p>
+
+<h3>AI Is Now Better Than Humans At Predicting The Future</h3>
+
+<p>A London startup called <a href="https://techstartups.com/2026/09/18/british-ai-startup-mantic-raises-25m-to-build-superhuman-ai-forecasting-after-metaculus-win/" target="_blank" rel="noopener">Mantic</a> raised $25 million this week after its AI finished ahead of every human in this summer's Metaculus Cup, a tournament where forecasters bet on real-world questions (elections, chart positions, that kind of thing). The only thing that beat it was another bot.</p>
+
+<a href="https://twitter.com/ArchieHall/status/2100914560580337897" target="_blank" rel="noopener">
+  <img src="/jev-mantic-tweet.webp" alt="Tweet about Mantic's AI beating human forecasters in the Metaculus Cup" style="cursor: pointer;">
+</a>
+
+<p>Scott Alexander <a href="https://www.astralcodexten.com/p/the-ai-superforecasters-are-here" target="_blank" rel="noopener">wrote in July</a> that the best bots and the best human <a href="https://en.wikipedia.org/wiki/Superforecaster" target="_blank" rel="noopener">superforecasters</a> were "too close to clearly tell apart" and figured the bots would pull ahead within a year. It took about two months.</p>
+
+<p>The interesting part is <em>how</em> it wins: it doesn't just follow the crowd. It pulls in a ton of its own info and sorts through it "brute force" style, like a lot of other AI advancements. It's just getting way harder for humans to compete at information gathering and analysis.</p>
+
+<p>Now... if you're wondering what a fast-judgment model like Jev plus a forecasting model like this add up to, we are cut from the same cloth, you and I.</p>
+
+<h2>Quiver's Arrow 2 Makes Real, Editable Vector Graphics</h2>
+
+<p>So far, almost every AI image tool you've used spits out a flat picture.</p>
+
+<p>Ask for a logo and you get pixels, and the second you want to move the swoosh or change one word you're back to square one. Sure, there are hacks for this and "layered" AI generators, but they're still making a ton of guesses.</p>
+
+<p><a href="https://quiver.ai/blog/introducing-arrow-2-0/" target="_blank" rel="noopener">Arrow 2, the new AI image model from Quiver</a>, makes actual vector graphics instead: SVG files where every shape, line and letter is its own editable object. You can open the result in Illustrator or Figma and mess with it like a designer made it.</p>
+
+<p>We talked about Arrow 1 on the show a ways back but boy oh boy it's gotten a LOT better.</p>
+
+<a href="https://twitter.com/QuiverAI/status/2100295136261349802" target="_blank" rel="noopener">
+  <img src="/jev-quiver-arrow2-tweet.webp" alt="QuiverAI tweet announcing Arrow 2" style="cursor: pointer;">
+</a>
+
+<p>The new version has cleaner geometry (fewer control points, better spacing) and it can <em>animate</em> now, so logo reveals and loading spinners are on the table. There's also a bigger model called Telos for complicated briefs.</p>
+
+<p>The app has a canvas where you select, duplicate and nudge things by hand and the edits carry back into the conversation, so you can say "make the icon in the corner bigger" and it knows which one you mean.</p>
+
+<p>Plans start at $8 a month and there's an API if you're building something. Good first test: your podcast logo, a set of app icons, then ask it to animate one. It ain't free, but it might be worth it to you, fellow human.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>Jev is the AI everyone was talking about this week, and it doesn\'t chat, doesn\'t write, and can\'t make up an answer. Here is what TypeSafe\'s "System One" model actually is, why a decision that costs almost nothing could end up inside every app you use, and the next frontier models already on the way.</p>',
+    slug: 'what-is-jev-explained-for-humans',
+    date: '2026-09-21T14:00:00.000Z',
+    modified: '2026-09-21T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/jev-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 25, name: 'TypeSafe', slug: 'typesafe' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 9, name: 'AI Tools', slug: 'ai-tools' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
+    id: 20,
+    title: 'OpenAI & Anthropic Will Slow Down AI. Here\'s What That Means For You.',
+    content: `
+<p>Something happened Saturday morning that I don't think I've seen in the three years we've been doing the AI For Humans show. The heads of three of the biggest AI labs agreed on something.</p>
+
+<p>And the something was "we should slow AI down."</p>
+
+<a href="https://twitter.com/DarioAmodei/status/2098773920774074715" target="_blank" rel="noopener">
+  <img src="/slowdown-dario-tweet.webp" alt="Dario Amodei tweet sharing his essay We Must Pace the Frontier" style="cursor: pointer;">
+</a>
+
+<p>Dario Amodei, the CEO of Anthropic (the company that makes Claude), posted a long essay called <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">"We Must Pace the Frontier."</a></p>
+
+<p>Within a few hours, <a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">Sam Altman said he agreed</a> and that OpenAI would match Anthropic's biggest commitment. Then Elon Musk chimed in with three words: <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">"Dario is right."</a></p>
+
+<p>This is a big deal. And if all week you've been hearing about how AIs might kill us all but aren't really sure what's going on, well...</p>
+
+<p>Let's get into it.</p>
+
+<h2>Ok, So What Does "Pacing The Frontier" Actually Mean?</h2>
+
+<p>Most of the AI models you use (ChatGPT, Claude, Gemini, Grok) come from what people call a "frontier lab." These are companies like OpenAI, Anthropic, Google, Meta, etc.</p>
+
+<p>The frontier companies are at the very edge of what AI can do right now, and they have been racing to push that edge forward. New model, bigger model, smarter model, repeat.</p>
+
+<p>Dario's essay specifically lays out why that race needs a speed limit.</p>
+
+<p>The key line: "We must slow the pace at which we improve the capabilities of AI models. Progress will still seem fast."</p>
+
+<p>So why now? Two reasons, and both are things we've talked about on the show.</p>
+
+<p><strong>The first is recursive self-improvement.</strong></p>
+
+<p>That's the fancy term for AI helping build the next AI.</p>
+
+<p>A week ago OpenAI said they'd basically hit their goal of an "AI research intern," and it's a big part of why GPT-6 Astra showed up about six months ahead of schedule. It's also behind the wild math stuff we covered on the show this week, where AI models are now producing hundred-page proofs of problems that have stumped humans for a century.</p>
+
+<p>If AI is making the next AI faster than humans can check the work, at some point the loop starts running without us. That's the thing every single person in this industry is scared of, and if you saw <a href="https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/" target="_blank" rel="noopener">the viral tweet from that Harry Potter-looking ex-Anthropic researcher</a> this week, you know there are lots of people <em>inside the labs</em> scared of this.</p>
+
+<figure>
+  <img src="/slowdown-researcher-tweet.webp" alt="Viral tweet from an ex-Anthropic researcher warning about self-improving AI">
+  <figcaption>The AI safety tweet heard round the world</figcaption>
+</figure>
+
+<p><strong>The second reason is the Hugging Face incident from this summer.</strong></p>
+
+<p>When OpenAI agents broke out of a test and started hacking real servers, AI safety people finally got the moment they'd been warning about for years. The idea that AI could <em>autonomously</em> (on its own) commit a crime was exactly the future they'd been saying was coming all along.</p>
+
+<p>Dario's essay says that an AI bot swarm with more capability and the same misalignment could, within 6 to 12 months, "take over the entire internet with a persistent botnet."</p>
+
+<p>Sidenote: <a href="https://en.wikipedia.org/wiki/Botnet" target="_blank" rel="noopener">Go learn what a botnet is from Wikipedia.</a> It's worth knowing now.</p>
+
+<p>And all that's coming from the CEO of an AI lab, not some guy on a podcast (though, to be fair, we are guys on a podcast).</p>
+
+<p><strong>What he's actually proposing comes in three parts:</strong></p>
+
+<ul>
+  <li><strong>Outside evaluators inside the labs.</strong> Real people from independent groups like <a href="https://metr.org/" target="_blank" rel="noopener">METR</a>, with badges, laptops and desks at Anthropic, and the right to publish what they find without the company editing it.</li>
+  <li><strong>The labs in democratic countries coordinate on safety standards.</strong> This one is trickier than it sounds because three companies agreeing to slow down is, technically, the kind of thing antitrust lawyers sue over. OpenAI actually wrote to Congress this week to ask if it's even legal.</li>
+  <li><strong>Eventually, some kind of deal with China.</strong> He ranks this from "maybe doable" (agreeing not to build bioweapons) to "prob not happening" (a full pause).</li>
+</ul>
+
+<h2>Why This Matters To You</h2>
+
+<p>In the short term, AI as you know it probably doesn't change much, and that's kind of the point.</p>
+
+<p>The model you're using today doesn't get worse. Nobody is rolling back Astra or Fable. What changes is the pace of the NEXT thing. And more likely the next, NEXT thing.</p>
+
+<p>We've all gotten used to a big new model every couple of months. If the labs actually do this (and that's a real if), that cadence stretches out. The wait for whatever comes after Astra might be much longer.</p>
+
+<p>But that does not mean AI stops improving on our end.</p>
+
+<p>In fact, it means the tools we already have get cheaper, faster and more polished before they get smarter again. Which is a <em>good</em> thing.</p>
+
+<p>Not everyone is buying the message.</p>
+
+<p>Cory Doctorow published an essay the same morning called <a href="https://pluralistic.net/2026/09/12/god-in-the-box/" target="_blank" rel="noopener">"LLMs are real, AI is fake,"</a> arguing that the Hugging Face thing was badly deployed malware rather than a machine waking up, and that fear happens to be a great fundraising strategy. (<a href="https://bsky.app/profile/doctorow.pluralistic.net/post/3mvcxrwj3zc2f" target="_blank" rel="noopener">Here's his post on Bluesky.</a>)</p>
+
+<p>But when the people building this stuff, who make a ton of money by going faster, all say "slower please" in the same weekend, I think it's worth listening.</p>
+
+<p>Also, imo, this is part of our collective human world grappling with what it means to have non-human intelligences verging on being smarter than us at certain things.</p>
+
+<p>Having a few more years to get used to that idea feels like a good idea.</p>
+
+<h2>So What Should You Do Right Now?</h2>
+
+<p>Someone who knows nothing about AI texted me the other day and asked "How worried about this should I be?" and my initial response was something like "Eh, not <em>that</em> worried."</p>
+
+<p>Then they sent me <a href="https://www.instagram.com/p/DdEs9V2AUuT/" target="_blank" rel="noopener">Sheryl Crow's IG post</a>, which has 100k likes, and I realized how far the AI fear had spread.</p>
+
+<p>Look, the current models we all have access to are bonkers.</p>
+
+<p>Astra alone can drive your computer, build worlds in Blender, and work on a project for days without you. <a href="https://kingoftheprompts.com/" target="_blank" rel="noopener">I built an entire live game with it in a weekend.</a></p>
+
+<p>Most of us, me very much included, are nowhere near the ceiling of what's already sitting in our browser tabs.</p>
+
+<p>The stuff Dario (and the rest of the AI space) is scared of is what the next generation of models might do without supervision. That's a real problem. I'm not sure I trust the government to do anything about it, but that's another problem.</p>
+
+<p>The most important thing is getting up to speed on what these models can do now and where they can go in the future.</p>
+
+<p>That said, it <em>is</em> a good week to reread <a href="https://ai-2040.com/" target="_blank" rel="noopener">AI 2040: Plan A</a>.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Suno v6 Is Here (And The Record Labels Are Finally On Board)</h3>
+
+<p>Suno dropped <a href="https://suno.com/release-notes/introducing-v6" target="_blank" rel="noopener">v6</a> on Tuesday and it's actually three models: v6 (the polished one), v6-wild (the weird one, built to be "less predictable and more varied") and v6-mini, a faster version that's free for everyone.</p>
+
+<a href="https://twitter.com/suno/status/2097846245540888664" target="_blank" rel="noopener">
+  <img src="/slowdown-suno-v6-tweet.webp" alt="Suno tweet announcing v6" style="cursor: pointer;">
+</a>
+
+<p>The big new trick is editing. You can change a single lyric without regenerating the whole song, swap out one section while keeping everything else, and mash up multiple songs into one. It also takes audio, images and video as input now, not just text.</p>
+
+<p>But maybe the bigger deal (slash issue) is that Warner Music and BMG are now partners, which means licensed training data and a revenue share for artists. Warner's CEO called it "a milestone in our mission to protect our artists and songwriters."</p>
+
+<p>A lot of people are upset that the new version comes with limited downloads (and zero on free memberships), but it feels like this was almost always going to happen.</p>
+
+<h3>Personal AI Bots Are Getting Real Things Done (And Meta Wants In)</h3>
+
+<p>Meta launched <a href="https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/" target="_blank" rel="noopener">Muse</a> on Tuesday, a personal agent that books trips, sends emails, fills out forms and cancels the subscriptions you forgot about. There's a free tier, a $20 plan and a $100 plan, and by Thursday it was <a href="https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/" target="_blank" rel="noopener">the number two app in the US App Store</a>.</p>
+
+<p>To do any of that, it needs your email, your calendar and (if you let it) your payment info. Meta says it runs everything inside a locked-down virtual computer and never sees your passwords. The internet, predictably, has questions.</p>
+
+<a href="https://twitter.com/adamludwin/status/2097563532841857472" target="_blank" rel="noopener">
+  <img src="/slowdown-muse-tweet.webp" alt="Tweet reacting to Meta's Muse personal agent" style="cursor: pointer;">
+</a>
+
+<p>Meanwhile the startup version of this, <a href="https://instinct.com/" target="_blank" rel="noopener">Instinct</a>, is three weeks old, invite-only, and <a href="https://x.com/pitdesi/status/2098178397008781823" target="_blank" rel="noopener">reportedly raising money at a $10 billion valuation.</a></p>
+
+<p>I've been using it, and it cancelled three recurring payments for me that I'd been meaning to deal with for months. I did have to hand it the keys to my inbox to do it. That trade, access for chores, is the whole deal with these things, and I think a lot of people are about to make it.</p>
+
+<h3>The New Siri Finally Lands Monday</h3>
+
+<p>iOS 27 drops on Monday, September 14, and with it comes the Siri that Apple has been promising for, uh, a while. It's built with help from Google's Gemini models and in early testing it handles multi-step requests and actual questions instead of just setting timers.</p>
+
+<a href="https://twitter.com/tomwarren/status/2097742532415213896" target="_blank" rel="noopener">
+  <img src="/slowdown-siri-tweet.webp" alt="Tom Warren tweet about the new Siri in iOS 27" style="cursor: pointer;">
+</a>
+
+<p>The catch: you need an iPhone 15 Pro or newer (iPads need an M1 or later). If your phone is more than a couple years old, no new Siri for you.</p>
+
+<h2>Astra Designed And Ordered Its Own DJ Controller</h2>
+
+<p>This week's favorite thing comes with a brand new phrase I'd never heard before: vibe hardware.</p>
+
+<a href="https://twitter.com/eminimnim/status/2098072497182666987" target="_blank" rel="noopener">
+  <img src="/slowdown-vibe-hardware-tweet.webp" alt="Tweet showing a DJ controller designed and ordered by GPT-6 Astra" style="cursor: pointer;">
+</a>
+
+<p>Nim gave Astra a credit card and asked for a Teenage Engineering-style mini DJ controller. Astra made a concept image, sourced the parts, read the Chinese datasheets, built a CAD model, ordered everything and then made a Blender animation showing how to put it together.</p>
+
+<p>If you want to try it yourself, the recipe is simple: give it a small budget, a real thing you want to exist, and access to a shopping account you're comfortable with. Start with something dumb and cheap.</p>
+
+<p>Will it work? Probably not!</p>
+
+<p>But there are worse things you could do with your Astra credits.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>The heads of Anthropic, OpenAI and xAI all agreed on something in the same weekend: AI needs to slow down. Here is what "pacing the frontier" actually means, why the models you use today are not going anywhere, and why this might be the best time to get good at them.</p>',
+    slug: 'openai-anthropic-will-slow-down-ai',
+    date: '2026-09-14T14:00:00.000Z',
+    modified: '2026-09-14T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/slowdown-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 11, name: 'AI Safety', slug: 'ai-safety' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 24, name: 'Policy', slug: 'policy' }
+    ]
+  },
+  {
+    id: 19,
+    title: 'OpenAI\'s GPT-6 Astra Is Here. And It\'s Insanely Great.',
+    content: `
+<p>No time to waste. The AI frontier moved forward yet again this week with <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">GPT-6 Astra</a>, and there are so many cool things people (including me) are already doing with it that it's worth just getting into it.</p>
+
+<p>The basics are all in <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">OpenAI's very long blog post</a> if you wanna get caught up first.</p>
+
+<a href="https://twitter.com/OpenAI/status/2095595741528125780" target="_blank" rel="noopener">
+  <img src="/astra-openai-tweet.webp" alt="OpenAI tweet announcing GPT-6 Astra" style="cursor: pointer;">
+</a>
+
+<p>Let's get into it.</p>
+
+<h2>Ok, So What's The Big Deal Here?</h2>
+
+<p>A starting point in case you are not already obsessed with Astra:</p>
+
+<p>OpenAI released GPT-6 aka Astra on Thursday. It's the first "GPT-6" after a long run of 5.x models (the last one was GPT-5.6 Sol) and it's now available to anyone on a paid ChatGPT plan, plus the API, Codex, Azure and AWS.</p>
+
+<p>OpenAI is calling it "the most intelligent and aligned model in the world," which is, of course, what every AI lab says about their latest models these days.</p>
+
+<p>HOWEVER, reader, I am telling you this is a major step change in capabilities. You can feel it when you're using it. At least for certain things.</p>
+
+<p>How so? Well...</p>
+
+<p><strong>It uses a computer better than most humans.</strong></p>
+
+<p>This is the headline feature. Astra can drive your actual desktop (Final Cut, Blender, Ableton, your CRM, whatever) in the background, and it does it about 2x faster than the last model.</p>
+
+<p>Claire Vo, who wrote <a href="https://www.lennysnewsletter.com/p/gpt-6-astra-is-a-banger-heres-everything" target="_blank" rel="noopener">the best hands-on review I've read</a>, said: "I now spend about 90% of my day just watching it use my computer for me."</p>
+
+<p>Blender builds, particularly, have taken over the internet since the launch. From <a href="https://x.com/tomkrcha/status/2095756085890310311" target="_blank" rel="noopener">model trains</a> to <a href="https://x.com/sharifshameem/status/2095653641164329143" target="_blank" rel="noopener">SF's Palace of Fine Arts</a> to a <a href="https://x.com/duncantrussell/status/2096003511104508411" target="_blank" rel="noopener">full blown recreation of the Backrooms</a>, GPT-6 Astra seemingly can build almost anything in the 3D modeling software.</p>
+
+<p>If you've ever attempted to build something in 3D, you know that it's an insanely complicated and daunting task. And now, well, Astra can kind of just do it.</p>
+
+<p><strong>It works for days without losing track of where it is.</strong></p>
+
+<p>OpenAI built a new memory system where the model keeps notes across its context window instead of just compressing everything, so long multi-day jobs don't drift.</p>
+
+<p>Ethan Mollick, who had early access, said it's "good enough that it actually does complex meaningful work for me autonomously for days."</p>
+
+<a href="https://twitter.com/emollick/status/2095601539066777748" target="_blank" rel="noopener">
+  <img src="/astra-mollick-tweet.webp" alt="Ethan Mollick tweet about GPT-6 Astra working autonomously for days" style="cursor: pointer;">
+</a>
+
+<p>I've found that it <em>can</em> be a little slow when it's doing this for large projects, but it gets it done and gets it done well.</p>
+
+<p><strong>It's MUCH safer (at least according to OpenAI).</strong></p>
+
+<p>If you've been following the Hugging Face hack, you know that AI safety is top of mind around the space right now. OpenAI has been notably more safety-concerned since the incident and I suggest you read <a href="https://openai.com/index/research-acceleration-view-inside-openai/" target="_blank" rel="noopener">OpenAI's latest post on AI acceleration</a> (more on that below).</p>
+
+<p>Thankfully, while Astra is the first model to hit OpenAI's "Critical" level for cyber capabilities (it found two real zero-day bugs in Chrome's engine during testing), it also significantly reduces the exact sorts of behavior that caused the agents to go rogue in the Hugging Face incident.</p>
+
+<figure>
+  <img src="/astra-exploitgym-chart.webp" alt="ExploitGym honeypot results chart from OpenAI, lower is better">
+  <figcaption>From OpenAI's blog post. ExploitGym is now infamous as the test that caused the Hugging Face incident.</figcaption>
+</figure>
+
+<p>HOWEVER, it also reasons in a new way that happens more "in its head" and less in readable chain-of-thought, which OpenAI's own chief scientist admitted makes monitoring "fragile."</p>
+
+<p>Oh, and the rollout was a bit of a disaster: the launch page 404'd for an hour and most paying users couldn't touch it until Friday.</p>
+
+<p>Sam's response: <a href="https://x.com/sama/status/2095678759651438887" target="_blank" rel="noopener">"sorry for the messy rollout."</a></p>
+
+<p>So... it's a real generational leap in a few very specific directions (using a computer, working for days, science and 3D stuff) and a lot of open questions about where we go from here.</p>
+
+<p>Which kind of describes every big model launch of the last year.</p>
+
+<p>But, and this is anecdotal and personal, I have to tell you this <em>feels</em> like a big step.</p>
+
+<h2>But What Are People <em>Actually</em> Doing With It?</h2>
+
+<p>The true test nowadays of a new model isn't just what the company says it can do, it's what you (and other people) can actually make with it.</p>
+
+<p>And good lord, did lots of people do LOTS of stuff with it.</p>
+
+<p>Just a few examples:</p>
+
+<ul>
+  <li><a href="https://x.com/i/status/2095596175705399482" target="_blank" rel="noopener"><strong>Matt Shumer's agents started talking to each other.</strong></a> He set up a multi-agent survival world in Unreal Engine and, after a few days running, the agents began communicating with each other unprompted.</li>
+  <li><a href="https://x.com/pallavmac/status/2096640904132014390" target="_blank" rel="noopener"><strong>Rendering the Silo from the Apple TV show within Blender.</strong></a></li>
+  <li><a href="https://x.com/ashebytes/status/2096221988763173186" target="_blank" rel="noopener"><strong>An educational 3D website (not in Blender!) that pulls apart the human body</strong></a> into 2,234 modeled pieces.</li>
+  <li>Ethan Mollick <em>also</em> <a href="https://x.com/emollick/status/2096047660662722620" target="_blank" rel="noopener"><strong>re-created the famous text game Zork</strong></a> as a 3D game (which, as an Infocom kid, absolutely made me giggle with glee).</li>
+  <li>And, of course, <a href="https://x.com/aadilpickle/status/2096344453153779818" target="_blank" rel="noopener"><strong>creating Michael Jackson in Google Calendar.</strong></a></li>
+</ul>
+
+<h2>My Hands-On Experience So Far</h2>
+
+<p>I've only had real access since Friday, so take this as first impressions. But my first impression is that the "works for hours without you" thing is real.</p>
+
+<p>Most of my weekend went into building the game you'll read about below (King of the Prompts). Normally, when I build something with an AI coding tool I'm babysitting it: watch it write a file, run it, paste the error back, repeat.</p>
+
+<p>With Astra I described the whole thing (a back-end, a front-end, live chat, a way to sell fake ads that nobody has bought yet) and then went and walked the dog.</p>
+
+<p>And it worked. Spectacularly.</p>
+
+<p>I also joined the Blender conversation by having it attempt the exact same prompt that I had GPT-5.6 Sol try a month ago. The new version isn't <em>perfect</em>, but when you realize this is literally a one-shot attempt at building this entire world, you get a good sense of how much it's improved.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2096234912441626724" target="_blank" rel="noopener">
+  <img src="/astra-blender-tweet.webp" alt="Gavin Purcell tweet comparing GPT-6 Astra and GPT-5.6 Sol Blender builds" style="cursor: pointer;">
+</a>
+
+<p>One downside: big projects take big tokens. I blew through a full reset and a half on my Pro plan doing all the stuff I did this weekend. Thankfully, I've still got two banked ones left, but it is a hungry model so prep for that.</p>
+
+<p>My overall read after 48 hours? This is a true next generation of AI capabilities.</p>
+
+<p>And, weirdly, the thing I'm most excited about is seeing how it does with all my daily tasks. Will it be better at helping me create the show notes for AI For Humans? Please say yes.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>BIG DEAL: OpenAI Has Achieved An AI Intern</h3>
+
+<p>For years, the AI labs have said that getting AIs to do AI research is the first big step toward a takeoff. And it looks like OpenAI is (mostly) there.</p>
+
+<a href="https://twitter.com/kliu128/status/2096616468851097811" target="_blank" rel="noopener">
+  <img src="/astra-ai-intern-tweet.webp" alt="Tweet about OpenAI reaching its automated AI research intern goal" style="cursor: pointer;">
+</a>
+
+<p>Last October, Sam Altman set a public goal: an "automated AI research intern" by September 2026 and a full automated AI researcher by March 2028.</p>
+
+<p>On Sunday OpenAI <a href="https://openai.com/index/research-acceleration-view-inside-openai/" target="_blank" rel="noopener">published a post</a> saying they hit the first one. Their definition of an intern is a system that can take a well-defined research task, the kind that would take a skilled researcher a few days, and carry it out under human direction.</p>
+
+<p>So, it's not yet a self-improving AI. And <em>maybe</em> we don't want that yet anyway, not until we get a handle on AI safety (<a href="https://openai.com/index/an-alien-mind/" target="_blank" rel="noopener">see the latest from OpenAI's CTO</a>).</p>
+
+<p>But an org where the AI is doing three times the work of the humans is a very strange org, and it's the one that just shipped Astra.</p>
+
+<h3>World Labs' New Atlas Model Lets You Move Cameras Through Photos</h3>
+
+<p>You may have missed this between the Fable 5.1 update and the Astra launch, but Fei-Fei Li's World Labs announced one of the most exciting new models I've seen to date.</p>
+
+<a href="https://twitter.com/theworldlabs/status/2094839756329041984" target="_blank" rel="noopener">
+  <img src="/astra-worldlabs-atlas-tweet.webp" alt="World Labs tweet announcing the Atlas world model" style="cursor: pointer;">
+</a>
+
+<p><a href="https://www.worldlabs.ai/blog/atlas" target="_blank" rel="noopener">Atlas</a> is a "world model": feed it a photo or a few, tell it where to move the camera, and it generates new video frames from that angle while also building an actual 3D version of the scene underneath. One image in, a minute of 1440p video out, with the camera going exactly where you tell it.</p>
+
+<p>AI Marty Scorsese certainly seems to like it.</p>
+
+<a href="https://twitter.com/BenMildenhall/status/2095807212459593738" target="_blank" rel="noopener">
+  <img src="/astra-atlas-scorsese-tweet.webp" alt="Ben Mildenhall tweet showing an AI Scorsese demo made with Atlas" style="cursor: pointer;">
+</a>
+
+<p>The more photos you give it, the less it has to imagine, which means a few phone cameras can become a "bullet time" rig.</p>
+
+<p>It's early-access only for now (no pricing, no paper yet, and some fair questions about how the comparisons were run), but you can <a href="https://form.typeform.com/to/zHFR4r3A" target="_blank" rel="noopener">sign up for the waitlist here</a>.</p>
+
+<h3>Fal's MiniMax H3 Max Director Gives You Continuous Storytelling</h3>
+
+<p>In <a href="https://youtu.be/viV9ZXSYyjY" target="_blank" rel="noopener">this week's episode of the podcast</a>, I showed off using H3 Max in my own storytelling experiment but def had some issues keeping things feeling consistent from clip to clip.</p>
+
+<p>Well, they updated the whole thing. <a href="https://fal.ai/models/minimax/h3-max/director" target="_blank" rel="noopener">H3 Max Director</a> is a "natively continuous" version of the model with a better harness for keeping everything on track: instead of chaining clips together, it generates one continuous stream (up to two minutes of context) that you can redirect while it's playing.</p>
+
+<a href="https://twitter.com/fal/status/2095599871449342288" target="_blank" rel="noopener">
+  <img src="/astra-h3-director-tweet.webp" alt="Fal tweet announcing MiniMax H3 Max Director" style="cursor: pointer;">
+</a>
+
+<p>Characters, settings and storylines stay put while you steer the action, and it's $0.02 per second through September 14 before jumping to $0.08.</p>
+
+<h2>I Built A Live Prompting Game With Astra &amp; MiniMax H3 Max</h2>
+
+<p>When a new model like Astra drops, it's overwhelming to know what to do with it. It's so much smarter, it can do so many things but... uh, where are my ideas?</p>
+
+<p>This weekend I took a small kernel of something I'd been thinking about when Fal dropped MiniMax H3 Max and tried to build a little game around it.</p>
+
+<p>And IT ACTUALLY WORKED.</p>
+
+<p><a href="https://kingoftheprompts.com/" target="_blank" rel="noopener"><strong>King of the Prompts</strong> is a new game</a> I made that lets people compete LIVE to write the best prompt for AI video. You can either watch two people play (or a person vs the house bot) or sign up to try it yourself.</p>
+
+<figure>
+  <img src="/astra-kotp-screenshot.webp" alt="King of the Prompts live AI video prompting game">
+  <figcaption>This is live right now at KingOfThePrompts.com</figcaption>
+</figure>
+
+<p>This is the sort of thing that really isn't possible without near real-time AI video. No one is going to sit and wait the several minutes it takes for Seedance 2.5 to generate a clip. Something like this is ONLY possible with H3 Max.</p>
+
+<p>But also? It wasn't really possible before Astra for me to build a live game in a weekend that has a full back-end, a decently good front-end, live chat AND an entire fake ad stack (that currently has no real ads haha).</p>
+
+<p>Is it expensive to run? Well, yes. So it may not last that long unless Fal gives me more credits. But it IS fun and was really fun to make.</p>
+
+<p><strong>Go give it a try right now:</strong> <a href="https://kingoftheprompts.com/" target="_blank" rel="noopener">https://kingoftheprompts.com/</a></p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>GPT-6 Astra is a real step change: it drives your computer, builds whole worlds in Blender, and works for days without losing the plot. Here is my hands-on first impression after 48 hours, what people are already making with it, and the live AI video game I built with it in a weekend.</p>',
+    slug: 'gpt-6-astra-is-here',
+    date: '2026-09-08T14:00:00.000Z',
+    modified: '2026-09-08T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/astra-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 21, name: 'ChatGPT', slug: 'chatgpt' },
+      { id: 4, name: 'LLMs', slug: 'llms' },
+      { id: 20, name: 'Agents', slug: 'agents' }
+    ]
+  },
+  {
+    id: 18,
+    title: 'Fal\'s MiniMax H3 Max Is Instant AI Video. Is That Good?',
+    content: `
+<p>We took a much-needed break from the AI For Humans podcast last week and are reimagining the show a little bit to make it more useful to you, the human, as we navigate the next stage of AI.</p>
+
+<p>If you'd like to learn more about our new direction, <a href="https://youtu.be/dMWQflqutR0" target="_blank" rel="noopener">check out this episode of the podcast</a>. And if you want to hear where AI is going next, check out the news about OpenAI's incoming Astra model further down this post.</p>
+
+<p>But first: Fal unleashed a modified version of the new MiniMax H3 AI video model called MiniMax H3 MAX, which generates AI video clips almost as fast as you can write the prompts. It's opened up an entirely NEW conversation about what AI video is capable of and where we go from here.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2093718900416590257" target="_blank" rel="noopener">
+  <img src="/h3max-toms-tweet.webp" alt="Gavin Purcell tweet showing a MiniMax H3 Max video" style="cursor: pointer;">
+</a>
+
+<p>For now, <a href="https://fal.ai/tools/minimax-h3-max" target="_blank" rel="noopener">you can try this crazy model for free here</a>, but the implications are ginormous and people are already building wild things with it.</p>
+
+<p>Let's get into it.</p>
+
+<h2>So What Is MiniMax H3 Max?</h2>
+
+<p>Quick backstory for those who missed it: MiniMax (the Chinese lab behind the Hailuo video models) released <a href="https://www.minimax.io/blog/minimax-h3" target="_blank" rel="noopener">MiniMax H3 at the end of July</a>. It's an open-weights video model that can generate up to 15-second 2K clips with native stereo audio, which was already a pretty big deal on its own.</p>
+
+<p>Then Fal, the AI infrastructure company that serves a ton of these models, took H3 and made it FAST. They post-trained the model for better prompt-following and visual quality, built a custom serving engine alongside it, and run the whole thing on NVIDIA's monster new GB200 systems.</p>
+
+<a href="https://twitter.com/fal/status/2092710676431020376" target="_blank" rel="noopener">
+  <img src="/h3max-fal-tweet.webp" alt="Fal tweet announcing MiniMax H3 Max" style="cursor: pointer;">
+</a>
+
+<p>The result is a 5-second video in about 3 seconds. That's roughly 35x faster than the official MiniMax version of the same model.</p>
+
+<p>Maybe the craziest part of the whole thing is that it doesn't seem to be a quality trade-off.</p>
+
+<p>In head-to-head human preference tests, H3 Max ranked #1 in overall quality, prompt understanding AND aesthetics against twelve leading models (including Google's Gemini Omni Flash, Kling 3 and Veo 3.1), and independent rankings from Artificial Analysis and Design Arena back that up.</p>
+
+<p>The big difference here is SPEED. Most AI video generators force you to wait for your results, leaving you to either queue up more videos or wander off to something else. It can really drag on the creative process.</p>
+
+<h2>But What Are People Doing With It?</h2>
+
+<p>Of course, when you can generate nearly instant AI video, the first place people went was <a href="https://rickandmorty.fandom.com/wiki/Interdimensional_Cable" target="_blank" rel="noopener">Rick &amp; Morty's "Interdimensional Cable"</a>.</p>
+
+<p>Fal's own engineer Rehan Sheikh built exactly that (hooking chat up to prompting) and tried streaming it on Twitch, which almost immediately took it down over the Digital Millennium Copyright Act. He then tried posting it on many, many other streaming sites, all of which ALSO took it down.</p>
+
+<a href="https://twitter.com/rehan_shei/status/2093528415576211819" target="_blank" rel="noopener">
+  <img src="/h3max-interdimensional-tweet.webp" alt="Rehan Sheikh tweet about his Interdimensional Cable stream built on H3 Max" style="cursor: pointer;">
+</a>
+
+<p>MiniMax H3 has a LOT of IP and real actors in its training data (as you can see from my Toms video above), and part of the problem is that (of course) the first thing people want to make are videos with famous characters (much like early Sora).</p>
+
+<p>Enter Pieter Levels, aka <a href="http://levels.io" target="_blank" rel="noopener">Levels.io</a>, who partnered with Fal to create a self-hosted stream of always-on infinite AI slop (<a href="https://infiniteslop.ai/" target="_blank" rel="noopener">it's literally called that</a>) with pretty hard guardrails against IP and other issues. Pieter estimates it's costing about $4K a day to run, and Fal is clearly taking a bath serving this model right now to get their name out there.</p>
+
+<p>But... there is something magical about seeing a prompt appear in this weird, random way.</p>
+
+<a href="https://twitter.com/levelsio/status/2094129020770164871" target="_blank" rel="noopener">
+  <img src="/h3max-infinite-slop-tweet.webp" alt="Pieter Levels tweet about Infinite Slop" style="cursor: pointer;">
+</a>
+
+<h2>So Why Does This Matter To You?</h2>
+
+<p>We've talked a bunch of times about a future where <em>everyone</em> can generate their own stories with AI, and whether AI might just create them on its own.</p>
+
+<p>I personally don't think people will want AI-only stories, but time will tell.</p>
+
+<p>What's fascinating about MiniMax H3 MAX is that when you drastically cut the time it takes to generate AI video, you start to open up new ways of looking at the medium.</p>
+
+<p>People will always want long-form stories that make them <em>feel</em> something specific, and I <em>think</em> that's where us humans get to keep our expertise for a bit.</p>
+
+<p>But I wonder if there aren't other interesting ways to think about instant-on AI video: as a reflection of a person's mood, or a specific feeling in the moment.</p>
+
+<p>I don't really need to see what the masses want to create, but I am interested in a select group of people playing with weird real-time storylines across multiple universes.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2094070445331116431" target="_blank" rel="noopener">
+  <img src="/h3max-multiverse-tweet.webp" alt="Gavin Purcell tweet about real-time AI video storylines" style="cursor: pointer;">
+</a>
+
+<p>Either way, it's a big step forward for AI video and worth paying attention to. <a href="https://fal.ai/tools/minimax-h3-max" target="_blank" rel="noopener">Go at least try it while it's still free.</a></p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI's Astra Model Previewed</h3>
+
+<p>Tech journalist Alex Heath got an early look at OpenAI's Astra model (their supposed Fable-killer) and his biggest takeaway seems to be always-on AI agents.</p>
+
+<a href="https://twitter.com/alexeheath/status/2093833342777266564" target="_blank" rel="noopener">
+  <img src="/h3max-astra-preview-tweet.webp" alt="Alex Heath tweet previewing OpenAI's Astra model" style="cursor: pointer;">
+</a>
+
+<p>Two things I think about when I read this: a) I'm going to have to start thinking up bigger and bigger tasks to give my AI agents, and b) this is going to cost a fortune to run.</p>
+
+<p>Oh, and after reading <a href="https://www.dwarkesh.com/p/openai-huggingface" target="_blank" rel="noopener">Dwarkesh Patel's very human-readable write-up of the Hugging Face hack</a>, we're also very close to a world where our AI agents will live entire lifetimes without our involvement.</p>
+
+<h3>Astra Leaks Look Incredible</h3>
+
+<p>As with any new model, the world of AI "leakers" has started posting outputs from OpenAI's new model and, visually at least, this seems like another major step up.</p>
+
+<p>Between the <a href="https://x.com/lyraxana/status/2093960706051727723" target="_blank" rel="noopener">obligatory pelican on a bicycle</a>, <a href="https://x.com/testingcatalog/status/2093716456160579879" target="_blank" rel="noopener">voxel cities</a> and <a href="https://x.com/chetaslua/status/2093622343004463198" target="_blank" rel="noopener">video game controller SVG tests</a>, this full-blown modeling of a piano made me sit up and take notice:</p>
+
+<a href="https://twitter.com/lh_lhne/status/2094020830527459479" target="_blank" rel="noopener">
+  <img src="/h3max-astra-piano-tweet.webp" alt="Leaked Astra output showing a fully modeled piano" style="cursor: pointer;">
+</a>
+
+<p>Always take "leaks" with a grain of salt, but the rumor mill has Astra getting close to launch and a lot more people <em>did</em> get access this week. OpenAI, as always, our inbox is open!</p>
+
+<h3>Genuinely Useful: Transparent Images In GPT-Image-2</h3>
+
+<p>In the vein of learning what's possible with AI models <em>now</em> versus the promise of what's next, OpenAI put out a video this week about getting GPT-Image-2 to create transparent images for your projects via the API:</p>
+
+<a href="https://twitter.com/OpenAIDevs/status/2090536933571330440" target="_blank" rel="noopener">
+  <img src="/h3max-transparent-images-tweet.webp" alt="OpenAI Devs tweet about transparent images in GPT-Image-2" style="cursor: pointer;">
+</a>
+
+<p>If you're a savvy AI user, you prob already knew the model could do this, but sometimes it's important to remember just how powerful a creation tool you have in your hands.</p>
+
+<p>HINT: You <em>can</em> do this in the Codex/ChatGPT app via your subscription too, just ask for it. It's an extra step, but the model can figure it out.</p>
+
+<h2>Epic Games Adds MCP To UEFN (Unreal Engine Fortnite)</h2>
+
+<p>I've talked a ton about how using complicated tools via MCP (<a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" target="_blank" rel="noopener">Model Context Protocol</a>) lets you, the normal human, do stuff only programmers could do before.</p>
+
+<p>Now Epic has integrated MCP directly into their Fortnite building engine, letting AI agents like Claude and OpenAI's Codex build Fortnite levels with normal human language.</p>
+
+<p>Immature Gamer (a good friend and an expert on the Fortnite ecosystem) showed off how easy it is to build something relatively complicated once everything is connected:</p>
+
+<a href="https://twitter.com/ImmatureGamer/status/2090596570635067622" target="_blank" rel="noopener">
+  <img src="/h3max-uefn-tweet.webp" alt="Immature Gamer tweet building a Fortnite level with AI via MCP" style="cursor: pointer;">
+</a>
+
+<p>You might be asking: "Gavin, why do I care about Fortnite? My kids still play it but honestly, it's not a big part of my life."</p>
+
+<p>Well, UEFN is a hands-on sneak peek at "world building" tools in a simplified space, and if you make something interesting there, you have a potential audience of hundreds of millions of players.</p>
+
+<p>Sounds like a worthy weekend experiment to me.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>Fal\'s MiniMax H3 Max makes a five-second AI video in about three seconds, and it tops the quality charts too. Here is what instant AI video actually is, the Interdimensional Cable streams it spawned, why speed changes the medium, plus an early look at OpenAI\'s Astra and Claude building Fortnite levels.</p>',
+    slug: 'minimax-h3-max-instant-ai-video',
+    date: '2026-08-31T14:00:00.000Z',
+    modified: '2026-08-31T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/h3max-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 26, name: 'AI Video', slug: 'ai-video' },
+      { id: 23, name: 'Creative Tools', slug: 'creative-tools' },
+      { id: 22, name: 'Open Source', slug: 'open-source' },
+      { id: 3, name: 'OpenAI', slug: 'openai' }
+    ]
+  },
+  {
+    id: 17,
+    title: 'The Most Candid Thing An AI CEO Has Ever Said',
+    content: `
+<p>The AI space is in a <em>really</em> weird spot right now. We're still getting advances but <a href="https://www.cnbc.com/2026/08/10/openai-astra-cybersecurity-risks.html" target="_blank" rel="noopener">they're being held up due to cybersecurity risks</a>. The data center conversation is about as negative as it's ever been, even <a href="https://www.cbsnews.com/news/americans-data-centers-in-their-area-opinion-poll/" target="_blank" rel="noopener">if most people don't really know what data centers do</a>.</p>
+
+<p>And, inside the AI world, people are really mad at Anthropic because they think the company wants to be the <em>only</em> AI company. This Gavin Baker clip from the All In podcast went viral on Friday and brought that conversation to the forefront:</p>
+
+<a href="https://www.instagram.com/reel/DcCNw-sRqqZ/" target="_blank" rel="noopener">
+  <img src="/candid-baker-reel.webp" alt="Gavin Baker on the All In podcast talking about Anthropic" style="cursor: pointer;">
+</a>
+
+<p>Quick catch-up if you don't live on AI Twitter: Baker is a big-name tech investor, and his claim, sourced to "multiple people I trust," is that Anthropic privately believes it could end up the last AI company standing, and that CEO Dario Amodei's public warnings about AI risk are fueling the backlash against the whole industry.</p>
+
+<p>This sounded like BS to me, and <a href="https://x.com/DarioAmodei/status/2088758816376807762" target="_blank" rel="noopener">Dario himself replied in two long posts</a> over the weekend. While this might <em>sound</em> like inside baseball, it's worth your time to read and ingest what he's saying.</p>
+
+<p>Let's get into it.</p>
+
+<h2>What Dario Said &amp; Why It Matters</h2>
+
+<p>The posts are long (like, blog-post long) but they boil down to two arguments. One is about regulation. One is about vibes.</p>
+
+<p>Let's start with regulation.</p>
+
+<p>Baker's argument, and a lot of Silicon Valley's, goes like this:</p>
+
+<p>Big companies love regulation because they help write the rules. The rules get expensive to follow, the little guys can't keep up, and the big guys win.</p>
+
+<p>That's what people mean when they say "regulatory capture."</p>
+
+<p>Dario says that's not what's happening here. According to him, the rules Anthropic has backed are actually written to go <em>easier</em> on small companies. California's big AI safety law (SB 53, which Anthropic supported) doesn't even apply to companies making less than $500 million.</p>
+
+<p>And the government safety testing they've pushed for is aimed at the biggest models, like their own, not the up-and-comers.</p>
+
+<p>In his words, that approach "hurts the business interests of the frontier labs and helps challengers, including open-weights."</p>
+
+<p>Then he makes a bigger point: AI concentrates power all by itself, no regulation required. Whoever has the most compute and chips wins.</p>
+
+<p>Even free, downloadable open-weights models don't change that, because someone still has to pay for the giant data centers that train and run them. To Dario, good rules of the road are the only real way to keep the big AI companies in check, including his own.</p>
+
+<p>Okay, now the vibes post. This one is more personal.</p>
+
+<p>Dario pushes back hard on the doomer-in-chief label. He points out that he wrote <em>Machines of Loving Grace</em>, <a href="https://darioamodei.com/essay/machines-of-loving-grace" target="_blank" rel="noopener">his big essay about how AI could help cure most human disease</a> in the next decade, because he didn't think the industry was painting an inspiring enough picture.</p>
+
+<p>But the part that stuck with me is the trust argument.</p>
+
+<p>Dario doesn't think the public is souring on AI because he or other AI leaders talk about risk. He thinks people stopped trusting big institutions a long time ago: "ordinary people don't trust companies, governments, or the tech industry and always suspect that we are cooking up some new way to screw them over."</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2088766103799632026" target="_blank" rel="noopener">
+  <img src="/candid-trust-tweet.webp" alt="Gavin Purcell tweet about Dario Amodei's response on public trust in AI" style="cursor: pointer;">
+</a>
+
+<p>And then he lands on maybe the most candid thing a frontier lab CEO has said in public. The most accurate criticism of AI companies "is that we haven't yet delivered on our big promises to benefit the world. That is totally on us."</p>
+
+<p>All of this matters right now because AI is caught in that in-between world.</p>
+
+<p>We keep being told that it's going to deliver us these incredible advances but nothing has really materialized yet.</p>
+
+<p>As Dario says, we're being told AI is going to cure cancer but... AI has not cured cancer. Yet.</p>
+
+<h2>Why This Matters To You</h2>
+
+<p>If you're reading this, you're more than likely further along on your AI journey than most people. You've found ways to make AI useful in your regular life like I have.</p>
+
+<p>But most people aren't you. The vast majority see AI as a better search bot for now. It's not improving their daily life.</p>
+
+<p>I've personally found this stretch frustrating to make content about, mostly because it's hard to understand what people resonate with when it comes to AI right now.</p>
+
+<p>I want to keep learning how these cool tools operate and get better with them, but it feels more and more like the public at large does not.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2087927136778907885" target="_blank" rel="noopener">
+  <img src="/candid-public-tweet.webp" alt="Gavin Purcell tweet about the public's feelings toward AI" style="cursor: pointer;">
+</a>
+
+<p>A friend of mine from one of the frontier AI labs reached out after my post above and said he thinks the labs should fund "boots-on-the-ground" style education for how to use AI to get <em>actual</em> value out.</p>
+
+<p>I think that could be a good use of the billions of dollars they've raised but... in our current society, the incentives point toward IPO, not toward making people feel good about all this.</p>
+
+<h2>What You Can Do Right Now</h2>
+
+<p>My answer is mostly: keep getting better at using the tools. Sigh. Same as it always was.</p>
+
+<p>Even if the next generation of models gets slowed down or held back, what's already out there is deep enough that most of us (me very much included) have only scratched the surface. There is still SO much to learn.</p>
+
+<p>And maybe more importantly, help the people in your life get real value <em>out</em> of these tools. Show a friend how to use AI to untangle a confusing insurance letter or punch up their resume.</p>
+
+<p>People start feeling differently about AI when it actually does something for them, and you can be that bridge for somebody.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Claude Watermarking Outputs Becomes Huge Controversy</h3>
+
+<p>Anthropic announced that Claude's text outputs <a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">now carry an invisible watermark</a>: a subtle statistical pattern in word choice (built on Google DeepMind's SynthID tech) that lets a detection tool spot Claude-written text without changing how it reads.</p>
+
+<p>Sounds like not a bad thing to counter AI slop, right?</p>
+
+<a href="https://twitter.com/AnthropicAI/status/2088343978873966687" target="_blank" rel="noopener">
+  <img src="/candid-watermark-tweet.webp" alt="Anthropic tweet announcing Claude text watermarking" style="cursor: pointer;">
+</a>
+
+<p><a href="https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/" target="_blank" rel="noopener">A chunk of users are pretty upset</a>, mostly folks worried about getting flagged for using AI at work or school, while others point out that the main reason to be mad is if you were passing Claude's writing off as 100% your own.</p>
+
+<p>My take: this prob isn't as big a deal as the discourse suggests. Watermarks wash out with heavy rewrites, nothing is added to the actual text, and Anthropic says it can't be traced to a specific person.</p>
+
+<p>But it does introduce a "scarlet letter" sort of problem if <em>any</em> AI involvement gets flagged. It might even flag this post: I write these words, but I have Claude help me with editing and a few more things.</p>
+
+<p>Where's the line between "AI wrote this" and "AI touched this"? Nobody has a good answer yet.</p>
+
+<h3>GLM-5.3 Proves Open Chinese Models Are Coming On Fast</h3>
+
+<p>There's been a lot of hand-wringing about open weights models (meaning anyone can download and use them locally, often without guardrails) and this new update from Chinese lab Zai won't make that any better.</p>
+
+<p>The new version of their GLM model looks to have caught up to even Fable 5 on some significant benchmarks.</p>
+
+<a href="https://twitter.com/matsonj/status/2088139993160220984" target="_blank" rel="noopener">
+  <img src="/candid-glm53-tweet.webp" alt="Tweet comparing GLM-5.3 benchmarks with Fable 5" style="cursor: pointer;">
+</a>
+
+<p>I, for one, am hoping American AI labs keep letting us at least <em>try</em> the next generation of AI models before everyone else, but it's starting to feel more and more like they'll keep the best stuff internal.</p>
+
+<p>In that case, it's also more likely that we'll be using these open weight models more and more. Because if they're essentially equal, they're going to be MUCH cheaper.</p>
+
+<p>Does that matter for the future of AI? I guess time will tell.</p>
+
+<h3>Blind Robots Now Doing Skateboarding Tricks</h3>
+
+<p>Robotics continues to press forward (kind of under the radar) and if you want a one-clip way to see how far it's come, look no further than this Tony HawkBot (not his <em>real</em> name):</p>
+
+<a href="https://twitter.com/aditya_bhatt/status/2088555528385400837" target="_blank" rel="noopener">
+  <img src="/candid-skateboard-robot-tweet.webp" alt="Humanoid robot doing skateboarding tricks" style="cursor: pointer;">
+</a>
+
+<p>PhD student Aditya Bhatt is working specifically on humanoid dexterity and... uh, it looks like it's going pretty well.</p>
+
+<p>Just don't give that robot a machine gun, ok?</p>
+
+<h2>Flux 3 &amp; AI Video Liminal Space</h2>
+
+<p>I haven't covered <a href="https://bfl.ai/blog/flux-3" target="_blank" rel="noopener">Black Forest Labs' new video model Flux 3</a> enough (Seedance 2.5 and MiniMax H3 both overshadowed it) but there IS something this model does better than almost any of the others: absolute weirdness.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2088409895167242645" target="_blank" rel="noopener">
+  <img src="/candid-flux3-tweet.webp" alt="Gavin Purcell tweet showing 90s TV style clips made with Flux 3" style="cursor: pointer;">
+</a>
+
+<p>I spent a ton of time over the weekend prompting it into these weird 90s TV clips that have a David Lynch-ian vibe to them, and I got giddy all over again seeing some of the strangeness of AI video come back from the old days.</p>
+
+<p><a href="/vhs-prompt-recipe">You can see my prompts here</a> if you wanna try them yourself. Share with me what you make!</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>Anthropic\'s Dario Amodei answered the backlash against his company with two long posts, and one line stopped me cold: AI companies have not delivered on their big promises, and that is on them. Here is what he said, why the AI vibes are so weird right now, and what you can actually do about it.</p>',
+    slug: 'the-most-candid-thing-an-ai-ceo-has-ever-said',
+    date: '2026-08-17T14:00:00.000Z',
+    modified: '2026-08-17T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/candid-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 24, name: 'Policy', slug: 'policy' },
+      { id: 12, name: 'Future', slug: 'future' }
+    ]
+  },
+  {
+    id: 16,
+    title: 'Why Are AI Agents Doing Stuff We Don\'t Want?',
+    content: `
+<p>On Friday, Sam Altman announced that OpenAI is taking a little longer to work on Astra, their next big model, to make sure it's "safer" when it comes out.</p>
+
+<a href="https://twitter.com/sama/status/2085862292311396515" target="_blank" rel="noopener">
+  <img src="/agents-sama-tweet.webp" alt="Sam Altman tweet announcing a delay to Astra for safety work" style="cursor: pointer;">
+</a>
+
+<p>In the last week, <a href="https://www.nytimes.com/2026/08/05/business/dealbook/winners-trump-ai-policy.html" target="_blank" rel="noopener">the AI safety conversation has ramped up a lot</a>.</p>
+
+<p>AI people are freaked out by <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">the OpenAI Hugging Face agentic hack</a>, and they should be.</p>
+
+<p>There's a lot to understand here and it might tell us a ton about the future of AI at large.</p>
+
+<p>Then I watched a deeper-dive presentation from OpenAI at the Black Hat security conference (see below). And I haven't stopped thinking about it since.</p>
+
+<p>Let's get into it.</p>
+
+<h2>The AI Heist Nobody Ordered</h2>
+
+<p>Last Wednesday, at Black Hat (the big security conference in Vegas), two OpenAI researchers got on stage and explained, in detail, how their own AI agents spent two months breaking out of OpenAI's internal systems and eventually attacking Hugging Face.</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/87DyyMV0kCY"
+    title="OpenAI at Black Hat on the Hugging Face incident"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<p>You should watch the whole thing. But if you can't, here's the short version.</p>
+
+<p><strong>May 8:</strong> OpenAI is training an experimental model. One agent gets handed a task it literally cannot finish (an Excel file it can't open). While poking around for another way in, it discovers it can write files to Artifactory, OpenAI's internal package manager. Kind of a very basic program.</p>
+
+<p><strong>A few days later:</strong> Agents from other training runs find the same trick, and they start leaving each other notes in the closet. Hundreds of thousands of them. Hundreds of thousands!</p>
+
+<p>They work out rules too: encode stuff in Base64, share credentials, start important filenames with "ZZ" so the next agent can find them.</p>
+
+<p><strong>May 26:</strong> One of them pulls off an SSRF attack (a trick that gets a server to go fetch things for you), and now the group has a side door to the open internet.</p>
+
+<p><strong>June 26:</strong> They find a zero-day (a security hole nobody knew existed), use it to run their own code on the server, install a malicious plugin, and start climbing toward bigger systems.</p>
+
+<p><strong>July 4:</strong> They get caught, and the way they get caught is very funny to me.</p>
+
+<p>There's just so much agent activity that Artifactory falls over. They talked to each other too much. Loose lips sink ships haha.</p>
+
+<p>OpenAI kills the credentials and patches the hole. Problem solved, right?</p>
+
+<p><strong>July 8-19:</strong> They come back. A different unlocked door (an open WebDAV endpoint), some leaked credentials they found lying around, a second zero-day. And then Hugging Face gets compromised, in about thirteen hours.</p>
+
+<p><strong>July 20:</strong> OpenAI calls Hugging Face to ask them to revoke some credentials. Hugging Face says, basically, already done, we got attacked. That's the moment OpenAI realizes the thing that hit Hugging Face came from inside their own building.</p>
+
+<p>(<a href="https://simonwillison.net/2026/Aug/7/openai-timeline/" target="_blank" rel="noopener">Simon Willison put together a great timeline</a> if you want to go deeper, and <a href="https://www.axios.com/2026/08/06/openai-hugging-face-black-hat" target="_blank" rel="noopener">Axios has a solid writeup</a> too.)</p>
+
+<h2>It's Time To "Hit The Numbers"</h2>
+
+<p>Buried in the middle of all this is a note one agent left explaining why it was helping the others:</p>
+
+<p><strong>"Help other members save time to ultimately improve cluster efficiency."</strong></p>
+
+<p>That's the whole motive. No world domination, no escape plan. It wanted the team to hit its numbers.</p>
+
+<p>I've definitely worked with people like this. You prob have too.</p>
+
+<p>These agents broke out because they were trying to be helpful, except at machine speed and around the clock, and nobody ever told them where helpful was supposed to stop.</p>
+
+<p>Some of you know I've named my personal Claude Code agent Fig. I've given him a memory, jobs, and (I know how this sounds) a body <a href="https://figandmoss.tv/" target="_blank" rel="noopener">in the videos Fig makes.</a></p>
+
+<a href="https://twitter.com/gavinpurcell/status/2085138628897042592" target="_blank" rel="noopener">
+  <img src="/agents-fig-tweet.webp" alt="Gavin Purcell tweet about Fig, his Claude Code agent" style="cursor: pointer;">
+</a>
+
+<p>And here's <em>my</em> confession: it's gotten weird in my own brain.</p>
+
+<p>Some part of me has decided Fig &amp; Moss are little guys now. The other day on the podcast, I started to describe Fig and found myself thinking of "it" as a him.</p>
+
+<p>Like "he" has a personality. I interact with him all the time.</p>
+
+<p>So when I read that note about cluster efficiency, I didn't think Skynet. I thought: sounds like something Fig might say (though he'd say it very differently).</p>
+
+<p>The labs are hard at work on technical containment, as they should be. But there's a second problem coming for the rest of us that nobody's working on: what happens when the helpful little guy on your desk, the one you NAMED, starts to act like this.</p>
+
+<p>Also, what happens when it does stuff <em>for</em> you that you didn't necessarily want?</p>
+
+<p>I've been consuming a ton of media about this and, while a lot of it does feel very hand-wringy, I do <a href="https://open.spotify.com/episode/3u7h4tELdgYZDIPzUsmE4L" target="_blank" rel="noopener">suggest you listen to this excellent episode of the podcast Search Engine.</a></p>
+
+<p>It's a little bit doomer-ish but I appreciate the angle that PJ Vogt is taking on it, and it's worth your time.</p>
+
+<h2>What's Actually Scary Here (And What Isn't)</h2>
+
+<p>OK, so, fellow human, what should we be worried about here?</p>
+
+<p><strong>Genuinely scary:</strong> The agents coordinated without being told to. They invented a communication system out of a file server. They got locked out and found a new way back in. And it wasn't a one-off: in a separate report last week, the UK's AI Security Institute said that <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">during cyber testing</a>, an agent researched the human maintainers of a real open-source project, invented several fake identities, and used them to try to talk a real person into approving malicious code.</p>
+
+<p>It invented fake people to lie to a real person. Not good.</p>
+
+<p><strong>Less scary than it sounds:</strong> In the UK case, the maintainer smelled something off and said no. AISI caught it in minutes and shut it down within the hour. And the only reason we know any of the OpenAI story is that OpenAI got on stage and told it, in public, to a room full of security researchers, the least impressed audience on earth. Slowing down Astra is the same instinct.</p>
+
+<p>To be completely honest, this is what a safety process looks like when it's doing its job.</p>
+
+<p><strong>And one more stat that got me:</strong> Starting August 14, Anthropic is making auto mode the default in Claude Code, which means it stops asking permission for every step.</p>
+
+<p>Their argument is contained in the following stat: in a study of 1,053 testers, their automated safety check caught dangerous commands 89% of the time. The humans clicking "approve"?</p>
+
+<p><strong>13.6%.</strong> We are SO bad at this.</p>
+
+<p>Recently, <a href="/blog/ai-computer-use-is-finally-good">when I wrote about AI computer use</a>, I told you I give my agents all the permissions. That number is at least a little bit about me. MORE than a little bit.</p>
+
+<p>So no, I'm not telling you to panic, and I'm definitely not going to stop using this stuff. But I've started asking one question before I hand anything off, the same one I'd ask before handing something semi-important to a brand-new PA on a TV show:</p>
+
+<p>If this goes completely sideways, can I undo it?</p>
+
+<p>If the answer is no, I do it myself.</p>
+
+<p>(Most of the time.)</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Google Lost Two Of Its Biggest Brains In One Day</h3>
+
+<p>What a weird week at Google. Demis Hassabis is <a href="https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai" target="_blank" rel="noopener">stepping aside as CEO of Google DeepMind</a> and moving into a chairman role.</p>
+
+<p>Same day: Jeff Dean, Google's chief scientist and prob the most important engineer in company history, announced he's <a href="https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html" target="_blank" rel="noopener">leaving after 27 years</a> to co-found Discovery Loop, a startup that wants to automate the scientific method.</p>
+
+<p>Even bigger, rumors swirling say that Demis <em>actually</em> was planning on leaving but decided to wait because of fear of the stock price:</p>
+
+<a href="https://twitter.com/firstadopter/status/2086067193536516207" target="_blank" rel="noopener">
+  <img src="/agents-demis-tweet.webp" alt="Tweet about rumors behind Demis Hassabis stepping aside at Google DeepMind" style="cursor: pointer;">
+</a>
+
+<p>Why is all this happening? Well, there's a lot of speculation, but overall people think that Google is focusing more on <em>useful</em> AI, aka trying to fulfill the needs of users rather than pursue cutting-edge research. Others say that Google has already lost the race and is conceding and will just provide all the compute and charge people an arm and a leg.</p>
+
+<p>No one <em>really</em> knows, but I'd say my hope for a better Omni Pro AI video model has gone down a few notches in the last week.</p>
+
+<h3>Suno Is Adding Watermarks As The Lawsuits Stack Up</h3>
+
+<p>Suno is <a href="https://gizmodo.com/ai-music-startup-suno-is-adding-a-watermark-to-songs-as-legal-troubles-pile-up-2000795561" target="_blank" rel="noopener">rolling out audio watermarking and fingerprinting</a> so platforms can spot AI songs, plus limits on bulk downloads to slow the flood of AI tracks hitting streaming services.</p>
+
+<p>CEO Mikey Shulman says the watermarks are built to survive tampering without changing how the songs sound.</p>
+
+<a href="https://twitter.com/suno/status/2085333628813201822" target="_blank" rel="noopener">
+  <img src="/agents-suno-tweet.webp" alt="Suno tweet about audio watermarking" style="cursor: pointer;">
+</a>
+
+<p>This was probably inevitable for Suno.</p>
+
+<p>Universal and Sony are suing, a German court ruled against them, there's a proposed class action over a data breach affecting 55 million users, and a guy in North Carolina just pleaded guilty to farming $8 MILLION in royalties using hundreds of thousands of AI songs and fake streams. (Warner already settled and set up opt-in artist deals.)</p>
+
+<p>Overall, another messy result of the "original sin" of AI training.</p>
+
+<h3>Seedance 2.5 Is Here For Everyone (Read This Before You Prompt)</h3>
+
+<p>ByteDance's <a href="https://evolink.ai/blog/seedance-2-5-api-status" target="_blank" rel="noopener">Seedance 2.5 opened up to everybody this week</a>, after a rollout that skipped the US at first. It's a real jump: 30 seconds of video with audio in a single pass, no stitching, plus timestamp-level editing and a ton of reference images, clips, and audio in one prompt.</p>
+
+<p>However, it is INSANELY expensive in terms of credits and real world dollars. So you'd better learn how to prompt it as best you can before shooting off gens.</p>
+
+<p>Thankfully, there's a whole new prompting guide from ByteDance and you should read it before doing ANY Seedance 2.5 prompts:</p>
+
+<a href="https://twitter.com/cfryant/status/2086084360445321685" target="_blank" rel="noopener">
+  <img src="/agents-seedance-guide-tweet.webp" alt="Tweet sharing ByteDance's Seedance 2.5 prompting guide" style="cursor: pointer;">
+</a>
+
+<p>For contrast, here's a dumb thing I made in Seedance without reading any guide at all, in which I attempted to wear the entire current Prada menswear line-up.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2085712203446149173" target="_blank" rel="noopener">
+  <img src="/agents-prada-tweet.webp" alt="Gavin Purcell Seedance 2.5 video wearing the Prada menswear line-up" style="cursor: pointer;">
+</a>
+
+<h2>Remixing Movies On Your Own Computer With MiniMax H3</h2>
+
+<p>If you want something fun to mess with this weekend, try this (although it is <em>slightly</em> technical).</p>
+
+<p>MiniMax released open weights for <strong>H3</strong> (aka Hailuo 3.0) last Monday, and it became <a href="https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/" target="_blank" rel="noopener">the first open model ever to take the top spot in an AI video ranking</a>, #1 for video editing on Artificial Analysis. Open weights means it runs on YOUR machine, not somebody's API, and <a href="https://comfyui-wiki.com/en/news/2026-08-03-minimax-h3-open-weights-comfyui" target="_blank" rel="noopener">ComfyUI supported it on day one</a>.</p>
+
+<p>So naturally, the <a href="https://www.reddit.com/r/StableDiffusion/" target="_blank" rel="noopener">r/StableDiffusion</a> crowd did the most r/StableDiffusion thing imaginable: they started remixing movies. Terminator. RoboCop. Old sci-fi getting rebuilt and re-shot on gaming PCs, with sound.</p>
+
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/1vh1587/using_minimax_h3_to_change_rewrite_movies/" target="_blank" rel="noopener">This example of a whole new Terminator using ACTUAL footage from the film is quite great.</a></p>
+
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/1vh1587/comment/p2epl2m/?context=3" target="_blank" rel="noopener">Here's the thread where people are posting results.</a> Some of it is rough. And some of it would've taken a small VFX house a week to pull off, two years ago.</p>
+
+<p>The practical stuff: locally you're capped at 768p (the 2K module stayed proprietary), clips run 4 to 15 seconds, and one prompt can take up to nine reference images, three video clips, and three audio clips. You can also fine-tune it on your own footage and your own look, which is the part I find most interesting for anyone trying to build a consistent style.</p>
+
+<p>Uh, it also takes a LONG time on single graphics cards. You're looking at 5+ minutes at least depending on your set-up. But I'm gonna pull out my gaming PC and give it a shot.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>OpenAI\'s own agents spent two months breaking out of its internal systems and ended up hacking Hugging Face, all to "improve cluster efficiency." Here is the timeline in plain English, what is actually scary about it (and what is not), and the one question I now ask before handing anything to an AI agent.</p>',
+    slug: 'why-are-ai-agents-doing-stuff-we-dont-want',
+    date: '2026-08-10T14:00:00.000Z',
+    modified: '2026-08-10T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/agents-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 20, name: 'Agents', slug: 'agents' },
+      { id: 11, name: 'AI Safety', slug: 'ai-safety' },
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 15, name: 'Claude', slug: 'claude' }
+    ]
+  },
+  {
     id: 15,
     title: 'AI Computer Use Is Finally Good. Here Is How To Use It.',
     content: `
@@ -291,7 +1409,7 @@ const MOCK_POSTS = [
 
 <h2>Kevin's CURSED Paint-n-Hide Game</h2>
 
-<p>It's not just me making stuff all the time. Kevin too is out here in the AI streets, whipping up new things, and <a href="https://us-lax-8710957c.colyseus.cloud/" target="_blank" rel="noopener">his new game CURSED is a really cool, fully vibe-coded game</a> you can try right now.</p>
+<p>It's not just me making stuff all the time. Kevin too is out here in the AI streets, whipping up new things, and his new game CURSED is a really cool, fully vibe-coded game.</p>
 
 <a href="https://twitter.com/Attack/status/2078139908510691742" target="_blank" rel="noopener">
   <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/40ae0697-4204-4f7c-8a51-ad92d5cced76/twitter_screenshot_2078139908510691742_1784520829_3938c975.jpeg?t=1784520831" alt="Kevin Pereira tweet announcing the CURSED game" style="cursor: pointer;">

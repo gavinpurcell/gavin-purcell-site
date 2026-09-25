@@ -29,8 +29,8 @@
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--color-primary);
   margin: 0 0 0.3rem;
 }
@@ -115,8 +115,8 @@
   font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--color-text-light);
   white-space: nowrap;
 }

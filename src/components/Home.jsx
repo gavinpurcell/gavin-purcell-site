@@ -1,13 +1,21 @@
 import { Helmet } from 'react-helmet-async';
-import Hero from './Hero';
-import About from './About';
-import AIForHumans from './AIForHumans';
-import KingOfThePrompts from './KingOfThePrompts';
-import FigMoss from './FigMoss';
-import Fishbowl from './Fishbowl';
-import AndThen from './AndThen';
-import FeaturedBlogPost from './FeaturedBlogPost';
-import Consulting from './Consulting';
+import DiffusionHero from './signal/DiffusionHero';
+import WorkIndex from './signal/WorkIndex';
+import { AIForHumansBlock, Consulting, Contact, Intro, Writing } from './signal/Sections';
+import './signal/signal.css';
+
+// The homepage is Gavin's profile page; the Person and WebSite nodes it
+// points at are defined once in index.html.
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://gavinpurcell.com/#profile',
+  url: 'https://gavinpurcell.com/',
+  name: 'Gavin Purcell | Creative Technologist',
+  isPartOf: { '@id': 'https://gavinpurcell.com/#website' },
+  mainEntity: { '@id': 'https://gavinpurcell.com/#person' },
+  dateModified: '2026-09-25',
+};
 
 function Home() {
   return (
@@ -15,16 +23,15 @@ function Home() {
       <Helmet>
         <title>Gavin Purcell | Creative Technologist, AI Speaker for Media & Entertainment</title>
         <link rel="canonical" href="https://gavinpurcell.com/" />
+        <script type="application/ld+json">{JSON.stringify(profileSchema)}</script>
       </Helmet>
-      <Hero />
-      <About />
-      <AIForHumans />
-      <KingOfThePrompts />
-      <FigMoss />
-      <Fishbowl />
-      <AndThen />
-      <FeaturedBlogPost />
+      <DiffusionHero />
+      <Intro />
+      <WorkIndex />
+      <AIForHumansBlock />
+      <Writing />
       <Consulting />
+      <Contact />
     </main>
   );
 }

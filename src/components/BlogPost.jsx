@@ -50,7 +50,7 @@ function BlogPost() {
 
   if (loading) {
     return (
-      <div className="blog-post-container">
+      <div id="main" className="blog-post-container">
         <div className="blog-post-loading">
           <div className="loading-spinner"></div>
           <p>Loading post...</p>
@@ -61,7 +61,7 @@ function BlogPost() {
 
   if (error || !post) {
     return (
-      <div className="blog-post-container">
+      <div id="main" className="blog-post-container">
         <Helmet>
           <title>Post Not Found - Gavin Purcell</title>
           <meta name="robots" content="noindex" />
@@ -133,7 +133,7 @@ function BlogPost() {
         </script>
       </Helmet>
 
-      <article className="blog-post-container">
+      <article id="main" className="blog-post-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
