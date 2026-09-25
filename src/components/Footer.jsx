@@ -5,7 +5,7 @@ const columns = [
   {
     title: 'Site',
     links: [
-      { label: 'About', href: '/#about' },
+      { label: 'About', to: '/about' },
       { label: 'Work', to: '/work' },
       { label: 'Writing', to: '/blog' },
       { label: 'Work with me', href: '/#consulting' },

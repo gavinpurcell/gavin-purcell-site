@@ -7,7 +7,12 @@
     },
     {
       "source": "/ai-for-humans",
-      "destination": "/#ai-for-humans",
+      "destination": "/#aifh",
+      "statusCode": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
       "statusCode": 301
     }
   ],

@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navigation.css';
 
 const navLinks = [
-  { href: '#about', label: 'About', hash: true },
+  { href: '/about', label: 'About', hash: false },
   { href: '/work', label: 'Work', hash: false },
   { href: '#aifh', label: 'AI For Humans', hash: true },
   { href: '/blog', label: 'Writing', hash: false },

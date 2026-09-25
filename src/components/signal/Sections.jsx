@@ -24,6 +24,7 @@ export function Intro() {
         I've spent twenty years making things people watch, from network television to
         digital media to podcasting. These days I build with AI every day, and help
         creative teams do the same without the hype.
+        <Link to="/about" className="intro-more">The longer version</Link>
       </p>
       <dl className="facts">
         {facts.map((f) => (
