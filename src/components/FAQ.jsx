@@ -44,26 +44,13 @@ export default function FAQ() {
 
   return (
     <div className="faq-section">
-      <motion.div
-        className="faq-header"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h3 className="faq-title">Frequently Asked Questions</h3>
-      </motion.div>
+      <div className="faq-header">
+        <h3 className="faq-title">Frequently asked questions</h3>
+      </div>
 
       <div className="faq-list">
         {faqs.map((faq, index) => (
-          <motion.div
-            key={index}
-            className="faq-item"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
+          <div key={index} className="faq-item">
             <button
               className={`faq-question ${openIndex === index ? 'active' : ''}`}
               onClick={() => toggleFAQ(index)}
@@ -104,7 +91,7 @@ export default function FAQ() {
                 {faq.closing && <p>{faq.closing}</p>}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

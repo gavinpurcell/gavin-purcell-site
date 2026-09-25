@@ -9,7 +9,9 @@ export default async function handler(req, res) {
     // First <yt:videoId> in the feed is the newest upload
     const match = xml.match(/<yt:videoId>([\w-]+)<\/yt:videoId>/);
     if (!match) throw new Error('no video id in feed');
-    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
+    // 15 min at the edge, stale for at most an hour while refreshing (was 1h / 1 day,
+    // which let a new Wednesday episode lag behind for most of the day).
+    res.setHeader('Cache-Control', 's-maxage=900, stale-while-revalidate=3600');
     res.status(200).json({ videoId: match[1] });
   } catch {
     res.status(502).json({ error: 'feed unavailable' });
