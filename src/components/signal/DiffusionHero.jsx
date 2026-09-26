@@ -9,6 +9,10 @@ const PORTRAIT_RATIO = 490 / 443; // h / w of the cropped cutout
 const STEPS = 48;
 const SAMPLE_MS = 2600;
 const WHITE = 0xffffffff;
+// Must match the hero's small-screen media query in signal.css: on a phone
+// held upright the portrait stacks above the type; anywhere wider (or a phone
+// on its side) it sits on the right.
+const STACKED_QUERY = '(max-width: 899px) and (orientation: portrait)';
 
 // The hero is a tiny diffusion sampler. It opens on pure static and walks
 // 48 steps, coarse to fine, down to a 1-bit portrait. The cursor paints
@@ -16,6 +20,8 @@ const WHITE = 0xffffffff;
 export default function DiffusionHero() {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
+  const contentRef = useRef(null);
+  const statementRef = useRef(null);
   const captionRef = useRef(null);
   const rangeRef = useRef(null);
   const hintRef = useRef(null);
@@ -23,6 +29,8 @@ export default function DiffusionHero() {
   useEffect(() => {
     const section = sectionRef.current;
     const canvas = canvasRef.current;
+    const content = contentRef.current;
+    const statement = statementRef.current;
     const caption = captionRef.current;
     const range = rangeRef.current;
     const hint = hintRef.current;
@@ -66,22 +74,45 @@ export default function DiffusionHero() {
       const target = new Uint8Array(cols * rows);
 
       if (portrait) {
-        // Desktop: tall portrait on the right, cropped by the bottom edge.
-        // Phones: across the top, under the nav.
+        // Wide: tall portrait on the right, cropped by the bottom edge.
+        // Stacked (upright phone): the portrait gets exactly the room between
+        // the nav and the statement, measured from the real layout, so the
+        // type can never land on the face no matter the viewport height.
         let bw;
         let bh;
         let bx;
         let by;
-        if (W >= 900) {
+        if (!window.matchMedia(STACKED_QUERY).matches) {
           bh = H * 0.9;
           bw = bh / PORTRAIT_RATIO;
+          if (W < 900 && content) {
+            // A phone on its side: keep the portrait clear of the type column.
+            let textRight = 0;
+            for (const el of content.children) {
+              textRight = Math.max(textRight, el.offsetLeft + el.offsetWidth);
+            }
+            const room = W - W * 0.03 - textRight - 16;
+            if (bw > room) {
+              bw = Math.max(0, room);
+              bh = bw * PORTRAIT_RATIO;
+            }
+          }
           bx = W - bw - W * 0.03;
           by = H - bh;
         } else {
-          bw = W * 1.05;
-          bh = Math.min(bw * PORTRAIT_RATIO, H * 0.62);
+          const navH = document.querySelector('.nav')?.offsetHeight || 68;
+          // offsetTop ignores the pre-resolve translateY on the statement.
+          const textTop = content && statement ? content.offsetTop + statement.offsetTop : H * 0.6;
+          const top = navH + 6;
+          const bottom = textTop - 4;
+          bh = Math.max(120, bottom - top);
+          bw = bh / PORTRAIT_RATIO;
+          if (bw > W * 1.05) {
+            bw = W * 1.05;
+            bh = bw * PORTRAIT_RATIO;
+          }
           bx = (W - bw) / 2;
-          by = 40;
+          by = bottom - bh;
         }
         const pc = Math.round(bw / cell);
         const pr = Math.round(bh / cell);
@@ -258,6 +289,8 @@ export default function DiffusionHero() {
       .catch(() => {});
 
     ro.observe(section);
+    // The type reflows when Mona Sans lands; the portrait has to follow it.
+    if (statement) ro.observe(statement);
     section.addEventListener('pointermove', onMove);
     section.addEventListener('pointerleave', onLeave);
     section.addEventListener('pointerdown', onDown);
@@ -290,11 +323,11 @@ export default function DiffusionHero() {
         role="img"
         aria-label="Portrait of Gavin Purcell, drawn in dithered pixels that resolve out of static"
       />
-      <div className="hero-content">
+      <div className="hero-content" ref={contentRef}>
         <h1 className="hero-name">
           <span>Gavin</span> <span>Purcell</span>
         </h1>
-        <p className="hero-statement">
+        <p className="hero-statement" ref={statementRef}>
           Emmy-winning showrunner turned creative technologist. I help media and entertainment
           teams actually ship with AI.
         </p>

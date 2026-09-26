@@ -194,10 +194,15 @@
   opacity: 0.8;
 }
 
-@media (max-width: 899px) {
+/* Upright phones stack the portrait over the type. Keep this query in sync
+   with STACKED_QUERY in DiffusionHero.jsx: the canvas fits the portrait into
+   whatever room the layout leaves between the nav and the statement. */
+@media (max-width: 899px) and (orientation: portrait) {
   .hero-content {
     max-width: none;
-    padding-top: 0;
+    /* Reserves the minimum portrait area (nav + ~200px). On a short viewport
+       the hero grows past 100svh instead of the type climbing onto the face. */
+    padding-top: 280px;
   }
 
   .hero-name {

@@ -20,7 +20,11 @@ export default function Navigation() {
   // Over the blue hero the nav is white type on nothing; past it, blue on paper.
   useEffect(() => {
     if (!isHomePage) return undefined;
-    const onScroll = () => setOverHero(window.scrollY < window.innerHeight - 80);
+    // The hero can run taller than the viewport on short phones, so measure it.
+    const onScroll = () => {
+      const heroH = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
+      setOverHero(window.scrollY < heroH - 80);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
