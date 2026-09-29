@@ -8,6 +8,212 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL;
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 22,
+    title: 'Claude Opus 5.5 Has Taste & That Changes Everything',
+    content: `
+<p>Welcome back to the AI For Humans newsletter!</p>
+
+<p>This week I asked my Claude Opus 5.5 agent to make a documentary. And it did.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2103304514329854102" target="_blank" rel="noopener">
+  <img src="/taste-doc-tweet.webp" alt="Gavin Purcell tweet sharing the AI documentary made by his Claude agent Fig" style="cursor: pointer;">
+</a>
+
+<p>I gave Fig (my Claude Code agent, running on the new Opus 5.5) access to Runway's tools via MCP and told it to make "a high-end netflix style documentary about superintelligence for normies."</p>
+
+<p>That post has been seen almost 700,000 times and, maybe more interesting, bookmarked over 3,000 times. Which tells me a lot of you want to try it yourselves.</p>
+
+<p>So today I want to dig into why Opus 5.5 feels like such a big deal, the weird question of whether an AI can have <em>taste</em>, and then walk you through exactly how I made the doc (and what it cost).</p>
+
+<p>Let's get into it!</p>
+
+<h2>Why This <em>Feels</em> Like More Than A Dot Release</h2>
+
+<p>On paper, Opus 5.5 is a half step. It came out last Tuesday, only two months after Opus 5, and a week after the big labs all agreed to "pace the frontier."</p>
+
+<p>But… this is not how a half step is supposed to feel.</p>
+
+<p>Anthropic says it performs at the level of <a href="https://www.macrumors.com/2026/09/22/anthropic-claude-opus-5-5/" target="_blank" rel="noopener">Fable 5.1 on most work</a>, and actually beats it at coding, computer use and a bunch of knowledge work. Fable is Anthropic's biggest, most expensive model.</p>
+
+<p>Opus 5.5 costs <a href="https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/" target="_blank" rel="noopener">60% less than Fable per token</a> and runs over 30% faster than Opus 5.</p>
+
+<p>They also raised the five-hour usage limits on the paid plans AND gave everyone a banked reset. That means you can refill your limit once, whenever you want, any time before October 22. Save it for a big project day.</p>
+
+<p>Of course, OpenAI dropped <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">GPT-6 Sol and Luna</a> the same day, and to be fair, they're both good and they're cheap. Sol costs about half what Opus 5.5 does.</p>
+
+<p>But IMO Opus is just much better at the stuff I care about, and I'm not alone.</p>
+
+<p>On <a href="https://the-agent-report.com/2026/09/gpt-6-sol-luna-opus-5-5-price-war/" target="_blank" rel="noopener">Zapier's AutomationBench</a> it scored 40% to Sol's roughly 33%. And Claire Vo's <a href="https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model" target="_blank" rel="noopener">blind taste test</a> said Opus "might be overall strongest, especially for long-running agents." (Sol did win on clear writing, so it's not a total sweep.)</p>
+
+<p>The best example of what I mean is this, from Victor Mustar:</p>
+
+<a href="https://twitter.com/victormustar/status/2103110908444631120" target="_blank" rel="noopener">
+  <img src="/taste-lego-duck-tweet.webp" alt="Victor Mustar tweet showing a life-size LEGO MicroDuck designed by Claude Opus 5.5" style="cursor: pointer;">
+</a>
+
+<p>He asked Opus 5.5 to design a MicroDuck he could build with real LEGO. It designed a life-size one out of 1,113 real parts, checked all 3,204 connections to make sure nothing collided (and that the duck wouldn't tip over), made a 141-page instruction booklet, and then priced every piece and set up the orders on BrickLink.</p>
+
+<p>That's a <em>long</em> chain of work, done start to finish, where one mistake anywhere would break the whole thing. That, to me, is what makes this feel like more than a dot release.</p>
+
+<h2>The 'Taste' Question</h2>
+
+<p>The reply to my doc that stuck with me most was from Mark Bao, who called it <a href="https://x.com/markbao/status/2103396043908124869" target="_blank" rel="noopener">"phenomenal visual taste."</a></p>
+
+<p>Taste is a word we don't usually use for software. We say a model is smart, or fast, or good at coding. But a lot of people using Opus 5.5 this week keep landing on the same word.</p>
+
+<p>As someone who spent 20+ years in TV and making video, I'd like to think <em>I</em> have developed taste and that's probably part of why Fig's video was so good. In part, I've been training my own model on MY taste for the last six months.</p>
+
+<p>But also… take a look at this motion design test:</p>
+
+<a href="https://twitter.com/stephanlivera/status/2103315922098470926" target="_blank" rel="noopener">
+  <img src="/taste-motion-tweet.webp" alt="Tweet showing a motion design test made with Claude Opus 5.5" style="cursor: pointer;">
+</a>
+
+<p>Now, not everyone is sold. One reply to my video said it was impressive but that he could <a href="https://x.com/TheAlbrechtCorp/status/2103376767125717300" target="_blank" rel="noopener">"still sense the AI on several layers,"</a> from how the story was structured to the rhythm of the narration. And that's fair!</p>
+
+<p>So maybe the real question is whether Opus has taste or whether it has gotten really, really good at guessing <em>ours</em>. I honestly don't know. But for a lot of creative work, I'm not sure the difference matters as much as we think it does.</p>
+
+<p>One practical tip: you can pull more of this out of it just by asking.</p>
+
+<p>Anthony Kroeger found that adding <a href="https://x.com/kr0der/status/2103228032391802916" target="_blank" rel="noopener">"be more creative, add animations, cool graphics that you create with svgs"</a> to a prompt makes a huge difference for anything visual.</p>
+
+<h2>How I Made The Doc</h2>
+
+<p>Ok, so here's exactly how I made that thing, because a lot of you asked. It's not as hard as you might think.</p>
+
+<p>Fig is my Claude Code agent, running on Opus 5.5. I connected it to <a href="https://runway.com/mcp" target="_blank" rel="noopener">Runway's MCP</a>, which is basically a plug that lets Claude use Runway's AI tools on its own without me prompting every shot.</p>
+
+<p>As mentioned, I've been making a LOT of videos with Fig and I think, over time, that my agent has really started to learn what I care about and what I like. For more Fig videos, check out <a href="https://figandmoss.tv" target="_blank" rel="noopener">FigandMoss.tv</a>.</p>
+
+<p>But for this? I gave it this specific prompt and got out of the way:</p>
+
+<blockquote><em>"here's what i want you to work on: a five minute explainer of super intelligence but for dummies... like you can choose who and what you want to do it but it's going to have to be a consistent character throughout and then make it feel like it's a whole high end real life video production. make it feel like it's a documentary on netflix with a charming attractive british female host who has a bunch of funny quips throughout. make her slightly acerbic but very smart. i want to see what you can do entirely on your own. you have the freedom to spend whatever credits you want on this in runway (i guess under say 25k) but make sure it's a consistent character throughout and visually it feels like top notch production. figure out whatever research you need to do to make this happen. do it in 16:9 and you can do it in 480p for now just to keep it cheaper, we can up-rez it later. ask me any questions you have but good googly moogly impress me sir"</em></blockquote>
+
+<p>Fig did EVERYTHING. It researched the topic, wrote the script, picked Imogen as the host, generated the shots and edited it all together. Through Runway, it called Seedance 2.5 for the video, Nano Banana Pro for images and Lyria for the music.</p>
+
+<p>I gave it two rounds of notes, mostly to fix glitchy shots and clean things up. The whole thing took about an hour and cost about $125 bucks in Runway credits.</p>
+
+<p>Good googly moogly indeed.</p>
+
+<p>Quick shout-out to Runway here. We're part of their Creator Program, and while they're not a sponsor, they do give us tokens to play with, which is how a lot of these experiments happen.</p>
+
+<p>And yes, I'm going further with this one. In fact, I already have! This morning I posted the full 27-minute version of the doc, which you can watch on our YouTube channel right now (and there's more on how it got made on <a href="/the-last-invention">its own page</a>).</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/cyeTIEy2qus"
+    title="The Last Invention: This Documentary Was Made Entirely by AI. Including Her."
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<p>You don't need to be a coder to try this, either. Claude can connect to MCPs from a bunch of creative tools now, and that banked usage reset is a pretty good excuse to spend an afternoon on it. Just ask Claude to help you set it up!</p>
+
+<p>This week on AI For Humans: Opus 5.5 is our favorite AI model (so far) 👇</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/hKYFw_p8ejU"
+    title="AI For Humans: Opus 5.5 is our favorite AI model (so far)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI's Always-On Agent Might Arrive Tuesday</h3>
+
+<p>OpenAI's developer account posted this on Friday:</p>
+
+<a href="https://twitter.com/OpenAIDevs/status/2103929727761137940" target="_blank" rel="noopener">
+  <img src="/taste-openai-devday-tweet.webp" alt="OpenAI Developers tweet teasing DevDay" style="cursor: pointer;">
+</a>
+
+<p>DevDay is Tuesday, and the big rumor is an always-on AI agent called <a href="https://www.testingcatalog.com/openai-to-announce-o-always-on-agent-during-devday/" target="_blank" rel="noopener">"o"</a>. Unlike ChatGPT, it would keep working when you're not chatting with it, maybe even with its own email address, handling things like recurring research and keeping an eye on stuff for you. There are also <a href="https://wccftech.com/openai-rushes-an-always-on-agent-called-o-after-jp-morgan-crowns-meta-muse-the-top-ai-agent/" target="_blank" rel="noopener">reports</a> of a $500 a month "Pro Max" plan (all still rumors for now).</p>
+
+<p>This is OpenAI's answer to Meta's Muse, which a JP Morgan report just ranked as the best AI assistant out there, and Grok Bot, which has been growing fast. <a href="https://youtu.be/-VL4VKHrnpU" target="_blank" rel="noopener">We tested Muse and Instinct on the show recently</a> and they're def capable of running a surprising chunk of your life.</p>
+
+<h3>Ukraine Wants An Army Of Robots</h3>
+
+<p>Mykhailo Fedorov, Ukraine's former defense minister and the guy behind its "Army of Drones," just launched something bigger:</p>
+
+<a href="https://twitter.com/FedorovMykhailo/status/2103837667154669837" target="_blank" rel="noopener">
+  <img src="/taste-fedorov-robots-tweet.webp" alt="Mykhailo Fedorov tweet announcing an Army of Robots initiative" style="cursor: pointer;">
+</a>
+
+<p>Drones now make up over 95% of battlefield strikes in Ukraine. Fedorov's new goal is to put robots, including humanoids, into the most dangerous jobs: evacuating the wounded, delivering ammo, clearing mines. He's said he wants a humanoid robot to see <a href="https://kyivindependent.com/ex-defense-minister-fedorov-announces-new-army-of-robots-initiative-in-latest-move-since-leaving-office/" target="_blank" rel="noopener">combat within six months</a>.</p>
+
+<p>It's worth saying that every robot in the launch video is <a href="https://dronexl.co/2026/09/26/fedorov-army-of-robots-humanoid-ukraine/" target="_blank" rel="noopener">an AI render</a>, not real hardware.</p>
+
+<p>Is the future of war humanoid robots? On one hand, I guess this means fewer humans dying, which is undeniably a good thing.</p>
+
+<p>On the other hand, um… Terminator anyone?</p>
+
+<h3>200 AI Villagers Fell For A Fake Bread Shortage</h3>
+
+<p>Remember Jev, the super fast AI we explained last week? Someone already built a lil village where every single decision is made by it.</p>
+
+<a href="https://twitter.com/developedbyed/status/2103844250358071699" target="_blank" rel="noopener">
+  <img src="/taste-bread-village-tweet.webp" alt="Dev Ed tweet about 200 AI villagers and a fake bread shortage" style="cursor: pointer;">
+</a>
+
+<p>Dev Ed told his 200 villagers the bread was about to run out. It wasn't. Within 18 hours, 156 of them believed it, and they emptied the bakery three days in a row. The truth eventually won, but it took more than two days to reach as many villagers as the lie did in 18 hours.</p>
+
+<p>While yes, it's a mini version of how misinformation spreads online…</p>
+
+<p>It's also a glimpse at how people might use these cheap, fast models to simulate crowds before trying things in the real world.</p>
+
+<h2>We 💛 This: A Never-Ending Lofi Radio, Made With Opus 5.5</h2>
+
+<p>You know those "lofi beats to study to" YouTube streams? Tahsin Safa Elmalı built his own with Opus 5.5, and it's lovely.</p>
+
+<a href="https://twitter.com/SafaElmali/status/2103581911016685882" target="_blank" rel="noopener">
+  <img src="/taste-lofi-tweet.webp" alt="Tahsin Safa Elmalı tweet showing Lofi Cities, a never-ending lofi radio built with Opus 5.5" style="cursor: pointer;">
+</a>
+
+<p><a href="https://loficities.com" target="_blank" rel="noopener">Lofi Cities</a> plays chill music over pixel-art cities at night (Paris, Tokyo, New York and a bunch more, he just added five new ones). The cool part is that the music isn't a playlist. A brand new track is composed right in your browser every few minutes, so it never repeats.</p>
+
+<p>Go put it on while you work. And then maybe try making your own version.</p>
+
+<p>This is exactly the kind of thing you can build by just describing it to Claude: a cozy scene you like, music that changes over time, a few buttons to switch locations. Start small, then ask it to "be more creative" and see what happens.</p>
+
+<p>See you next week!</p>
+
+<p>-Gavin</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>I asked my Claude Opus 5.5 agent to make a documentary, and it did. Why Opus 5.5 feels like more than a dot release, the weird question of whether an AI can have taste, and exactly how the doc got made (and what it cost).</p>',
+    slug: 'claude-opus-5-5-has-taste',
+    date: '2026-09-28T14:00:00.000Z',
+    modified: '2026-09-28T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/taste-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 26, name: 'AI Video', slug: 'ai-video' },
+      { id: 8, name: 'Creativity', slug: 'creativity' }
+    ]
+  },
+  {
     id: 21,
     title: 'What Is Jev? The New AI Everyone\'s Talking About, Explained For Humans',
     content: `
