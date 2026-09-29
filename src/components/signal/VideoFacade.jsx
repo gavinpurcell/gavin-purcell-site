@@ -6,7 +6,7 @@ const CELL = 5;
 // The latest episode sits on the page as a 1-bit print of its thumbnail.
 // Hover resolves it to color; click swaps in the real player. YouTube's
 // iframe (and its half-megabyte of script) only loads when someone asks.
-export default function VideoFacade({ videoId, title }) {
+export default function VideoFacade({ videoId, title, label = 'Play the latest episode', frameTitle }) {
   const boxRef = useRef(null);
   const canvasRef = useRef(null);
   const [playing, setPlaying] = useState(false);
@@ -50,7 +50,7 @@ export default function VideoFacade({ videoId, title }) {
       <div className="aifh-video">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
-          title={title ? `AI For Humans: ${title}` : 'Latest AI For Humans episode'}
+          title={frameTitle || (title ? `AI For Humans: ${title}` : 'Latest AI For Humans episode')}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
@@ -64,7 +64,7 @@ export default function VideoFacade({ videoId, title }) {
       <canvas ref={canvasRef} aria-hidden="true" />
       <span className="facade-play">
         <span className="facade-icon" aria-hidden="true" />
-        <span>Play the latest episode</span>
+        <span>{label}</span>
       </span>
     </button>
   );

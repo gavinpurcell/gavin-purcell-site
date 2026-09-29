@@ -5,6 +5,31 @@ import './WorkPage.css';
 
 const caseStudies = [
   {
+    id: 'thelastinvention',
+    tag: 'Showrunner · AI documentary',
+    name: 'The Last Invention',
+    tagline: 'Five questions about AI. One host who doesn\u2019t exist.',
+    problem:
+      'Everyone has the same five questions about AI and most explainers answer them badly. I also wanted to know something for myself: can an AI agent make a real, long-form TV show if I only do the job I actually know, which is showrunning?',
+    built:
+      'A 27-minute documentary, hosted by a wickedly dry British presenter named Dr Imogen Ashby who does not exist. It is a (mostly) autonomous TV show I co-created with my AI agent, Fig (Claude Opus 5.5). Fig wrote the scripts, designed the host, directed every shot by prompt, checked every line by ear, cut the film in code, and built the graphics. Every shot and every word of her voice was generated with Seedance 2.5 on Runway, with a Lyria 3 score.',
+    shipped:
+      'Released on the AI For Humans YouTube channel on September 28, 2026, after four days of production: Thursday evening to Sunday night. Five short films became one long cut with a cold open and chapters.',
+    lesson:
+      'The tools can make almost anything now. Knowing what\u2019s good is still the work, and that part stayed mine.',
+    image: '/last-invention-thumb.jpg',
+    imageAlt: 'Dr Imogen Ashby, the AI-generated host of The Last Invention, at a library desk under the words I\u2019m Not Real.',
+    vitals: [
+      { label: 'Role', value: 'Showrunner, with Fig as director' },
+      { label: 'Stack', value: 'Claude Opus 5.5, Seedance 2.5 on Runway, Lyria 3' },
+      { label: 'Status', value: 'Out now, 27 minutes' },
+    ],
+    links: [
+      { label: 'About the film', href: '/the-last-invention' },
+      { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=cyeTIEy2qus' },
+    ],
+  },
+  {
     id: 'kingoftheprompts',
     tag: 'Solo build · Live game show',
     name: 'King of the Prompts',
@@ -107,7 +132,7 @@ const jsonLd = {
     '@type': 'CreativeWork',
     name: c.name,
     description: c.built,
-    url: c.links[0].href,
+    url: c.links[0].href.startsWith('/') ? `https://gavinpurcell.com${c.links[0].href}` : c.links[0].href,
     creator: { '@type': 'Person', name: 'Gavin Purcell' },
   })),
 };
@@ -119,7 +144,7 @@ export default function WorkPage() {
         <title>Work | Gavin Purcell, Creative Technologist</title>
         <meta
           name="description"
-          content="Case studies from Gavin Purcell, creative technologist: King of the Prompts, The Fishbowl, Fig & Moss, and AndThen. What the problem was, what got built, and what shipped."
+          content="Case studies from Gavin Purcell, creative technologist: The Last Invention, King of the Prompts, The Fishbowl, Fig & Moss, and AndThen. What the problem was, what got built, and what shipped."
         />
         <link rel="canonical" href="https://gavinpurcell.com/work" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -162,8 +187,7 @@ export default function WorkPage() {
                       <a
                         key={link.href}
                         href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(link.href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                         className="page-cta work-card-link"
                       >
                         {link.label} →
@@ -175,8 +199,7 @@ export default function WorkPage() {
                 <div className="work-card-visual">
                   <a
                     href={study.links[0].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(study.links[0].href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                     className="work-card-image-link"
                   >
                     <img

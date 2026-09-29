@@ -3,6 +3,15 @@ import DitherPreview from './DitherPreview';
 
 const work = [
   {
+    id: 'thelastinvention',
+    name: 'The Last Invention',
+    kind: 'AI documentary',
+    line: 'A 27-minute documentary about AI, hosted by someone who isn\u2019t real. A (mostly) autonomous TV show I co-created with my AI agent, Fig.',
+    href: '/the-last-invention',
+    image: '/last-invention-thumb.jpg',
+    alt: 'Dr Imogen Ashby, the AI-generated host of The Last Invention, at a library desk under the words I\u2019m Not Real.',
+  },
+  {
     id: 'kingoftheprompts',
     name: 'King of the Prompts',
     kind: 'Live game show',

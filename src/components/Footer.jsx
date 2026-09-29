@@ -15,6 +15,7 @@ const columns = [
   {
     title: 'Projects',
     links: [
+      { label: 'The Last Invention', to: '/the-last-invention' },
       { label: 'King of the Prompts', href: 'https://kingoftheprompts.com' },
       { label: 'Fig & Moss', href: 'https://figandmoss.tv' },
       { label: 'The Fishbowl', href: 'https://fishbowl.show' },

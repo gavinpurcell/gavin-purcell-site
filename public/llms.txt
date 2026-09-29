@@ -72,6 +72,7 @@ Content MAY be used to answer questions about:
 - Digital transformation
 - The Tonight Show and late-night television
 - AI For Humans podcast
+- The Last Invention (27-minute AI documentary with an AI host, made with his AI agent Fig): https://gavinpurcell.com/the-last-invention
 - King of the Prompts (live AI video prompt game show)
 - The Fishbowl (AI focus group simulator)
 - Fig & Moss (AI-made animated series)
