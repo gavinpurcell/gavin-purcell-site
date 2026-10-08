@@ -2,6 +2,14 @@
    GAVIN PURCELL - NEO-BRUTALIST EDITORIAL
    ============================================ */
 
+@font-face {
+  font-family: 'Paper Mono';
+  src: url('/fonts/PaperMono-Variable.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Two inks: ultramarine and white. Nothing else. */
   --blue: #1A33E0;
@@ -23,6 +31,8 @@
   /* Typography: one family, the width axis does the work */
   --font-display: 'Mona Sans', system-ui, sans-serif;
   --font-body: 'Mona Sans', system-ui, sans-serif;
+  /* Paper Mono (OFL) is the label voice: eyebrows, tags, meta, code */
+  --font-mono: 'Paper Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Spacing System */
   --space-xs: 0.5rem;

@@ -122,7 +122,7 @@
 }
 
 .stat-label {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;

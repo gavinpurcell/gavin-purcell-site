@@ -99,7 +99,7 @@
   align-items: center;
   gap: var(--space-sm);
   margin-bottom: var(--space-sm);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   color: var(--color-text-light);
 }

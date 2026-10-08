@@ -57,6 +57,7 @@
 }
 
 .blog-post-meta {
+  font-family: var(--font-mono);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -200,7 +201,7 @@
 }
 
 .blog-post-content code {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono);
   background: var(--color-bg);
   padding: 0.2rem 0.4rem;
   border: 1px solid var(--color-border);

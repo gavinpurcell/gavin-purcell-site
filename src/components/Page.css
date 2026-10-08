@@ -16,7 +16,7 @@
 .page-eyebrow {
   display: block;
   width: fit-content;
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0;
@@ -133,6 +133,7 @@
 }
 
 .page-meta {
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   color: var(--color-text-light);
   margin-top: var(--space-md);

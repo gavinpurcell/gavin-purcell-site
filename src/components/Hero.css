@@ -24,7 +24,7 @@
 }
 
 .hero-eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -128,6 +128,7 @@
 }
 
 .rundown-header-note {
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -174,6 +175,7 @@
 }
 
 .rundown-item-link {
+  font-family: var(--font-mono);
   align-self: flex-start;
   white-space: nowrap;
   font-size: 0.875rem;

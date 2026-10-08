@@ -12,10 +12,10 @@
 }
 
 .footer-col h2 {
+  font-family: var(--font-mono);
   margin: 0 0 14px;
   font-size: 0.95rem;
   font-weight: 700;
-  font-stretch: 108%;
   letter-spacing: 0;
   color: var(--white);
 }
