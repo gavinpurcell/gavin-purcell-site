@@ -49,6 +49,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gavinpurcell.com/blog/claude-sent-the-cops-a-fake-murder-tip</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gavinpurcell.com/blog/openai-dots-are-they-worth-it</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gavinpurcell.com/blog/claude-opus-5-5-has-taste</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>

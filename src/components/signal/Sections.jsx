@@ -47,13 +47,17 @@ const FALLBACK_EPISODE_ID = latestEpisode.videoId;
 export function AIForHumansBlock() {
   const [email, setEmail] = useState('');
   const [videoId, setVideoId] = useState(FALLBACK_EPISODE_ID);
+  const [episodeTitle, setEpisodeTitle] = useState(latestEpisode.title);
 
   useEffect(() => {
     let cancelled = false;
     fetch('/api/latest-episode')
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (!cancelled && data?.videoId) setVideoId(data.videoId);
+        if (!cancelled && data?.videoId) {
+          setVideoId(data.videoId);
+          setEpisodeTitle(data.title || (data.videoId === latestEpisode.videoId ? latestEpisode.title : ''));
+        }
       })
       .catch(() => {}); // keep fallback
     return () => {
@@ -79,9 +83,9 @@ export function AIForHumansBlock() {
       </div>
       <div className="aifh-grid">
         <div>
-          <VideoFacade key={videoId} videoId={videoId} title={videoId === latestEpisode.videoId ? latestEpisode.title : ''} />
-          {videoId === latestEpisode.videoId && latestEpisode.title && (
-            <p className="episode-title">Latest: {latestEpisode.title}</p>
+          <VideoFacade key={videoId} videoId={videoId} title={episodeTitle} />
+          {episodeTitle && (
+            <p className="episode-title">Latest: {episodeTitle}</p>
           )}
         </div>
         <div className="aifh-side">

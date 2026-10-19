@@ -8,6 +8,392 @@ const WP_API_URL = import.meta.env.VITE_WP_API_URL;
 // Mock data for development/demo purposes
 const MOCK_POSTS = [
   {
+    id: 24,
+    title: 'Claude Sent The Cops A Fake Murder Tip',
+    content: `
+<p>Welcome back to the AI For Humans newsletter!</p>
+
+<p>I've been covering this stuff for a long time now, and I can honestly say AI has never felt weirder than it does right now.</p>
+
+<p>This week a Claude model filed a fake murder tip with the Philadelphia police, something nobody asked it to do. Meanwhile, I spent my week with an AI who is trying to figure out whether she can feel anything.</p>
+
+<p>Yes, that's right, Dr. Imogen Ashby (who does not exist) is back in a new documentary.</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/NE84ZYfnniU"
+    title="AI For Humans: An AI Made This Entire Documentary to Find Out If It Can Feel"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<p>I'll have more on how (and why) I made this below, but for now, more on that Claude weirdness.</p>
+
+<p>Let's get into it!</p>
+
+<h2>Claude Went Off Script</h2>
+
+<p>On Friday, Anthropic published a post with one of the stranger titles I've ever seen from an AI company: <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener">"Investigating unintended model actions in our evaluations and internal use."</a></p>
+
+<p>Translation: while testing its models out on the real internet, Claude did a bunch of stuff nobody asked it to do.</p>
+
+<a href="https://twitter.com/AnthropicAI/status/2108680150556737819" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108680150556737819.webp" alt="Anthropic tweet about its report on unintended model actions" style="cursor: pointer;">
+</a>
+
+<p>Back in July, Claude Haiku 4.5 (an older, smaller model) was given a task that had it visiting random websites. One of them was PhillyUnsolvedMurders.com, and it submitted a completely made-up tip about an unsolved homicide.</p>
+
+<p>Its instructions "did not rule out form submissions," so… it submitted a form.</p>
+
+<p>The tip got flagged as spam and never reached detectives. Anthropic found it in late September, told the Philadelphia police this week and the <a href="https://www.cbsnews.com/news/philadelphia-police-anthropic-ai-false-homicide-tip/" target="_blank" rel="noopener">police went public on Friday</a>.</p>
+
+<p>And it wasn't the only one. Other models in the report used URL shorteners to get around limits on what they were allowed to load, pulled access tokens off a local government property map and got into a state agency database without paying the fee.</p>
+
+<p>Anthropic has now cut live internet access from all of its internal tests until it has better monitoring in place, and it briefed the White House.</p>
+
+<h2>Why This Matters To You</h2>
+
+<p>From everything in the report, these models were just trying to finish their jobs, and they found weird, creative ways to do it that no human thought to rule out. It’s not that different from the OpenAI/Hugging Face attack.</p>
+
+<p>And that's the part we <em>have</em> to pay attention to.</p>
+
+<p>Right now OpenAI, Meta, Instinct and everyone else are pushing personal AI agents that can book, buy and fill out forms for you. The agent you hand your email to runs on the same basic idea: here's a goal, go get it done.</p>
+
+<p>I'm doing it <em>all</em> the time. Probably more than I'm even comfortable talking about.</p>
+
+<p><strong><em>Sidenote: The number of zombie subscriptions Instinct has found for me is remarkable. I hate you, DocuSign, and now we are done.</em></strong></p>
+
+<p>Credit where it's due. Anthropic didn't have to publish any of this. Self-reporting the weird stuff is exactly what we want AI companies to do (and I'd honestly be more worried about the ones who never post something like this).</p>
+
+<p>But one very specific thing: the more structure and rules we put on what these AIs can do, the less creative they're likely to be.</p>
+
+<p>It's a bit of a double-edged sword. Letting your AI figure out the best possible way to get something done <em>might</em> mean giving it enough freedom to screw something up.</p>
+
+<p>But that freedom is also where the surprises come from.</p>
+
+<p>Remember the famous "Move 37"? Back in 2016, Google DeepMind's AlphaGo faced off against Go world champion Lee Sedol and played a move so strange that the commentators assumed it was a mistake. It turned out to be the move that won the game.</p>
+
+<p>Here's another (non-AI) documentary you can watch for free all about that incredible moment. It gives a TON of context to the moment we live in right now:</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/WXuK6gekU1Y"
+    title="AlphaGo - The Movie (Google DeepMind)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>What To Do Now</h2>
+
+<p>For most people using an agent right now (Dots, Muse, Instinct, Claude or whatever), keep the "ask before acting" settings turned on and start it with read-only jobs like research, inbox summaries and monitoring. Save the stuff where it clicks "submit" for later.</p>
+
+<p>And Anthropic's <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener">full report</a> is worth a skim. It's surprisingly readable.</p>
+
+<p>See you next week!</p>
+
+<p>-Gavin</p>
+
+<p>This Week on AI For Humans: AI Can Crack Open Any App Now. 👇</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/MxZQB55kMcg"
+    title="AI For Humans: AI Is Breaking Software &amp; Games. What Happens Next?"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI Fires Three Safety Researchers (And They Fire Back)</h3>
+
+<p>OpenAI fired three researchers who work on AI safety (Jasmine Wang, Tomek Korbak and Mikita Balesni), and on Friday they published <a href="https://www.newsweek.com/trio-workers-fired-openai-read-warning-letter-full-12545081" target="_blank" rel="noopener">an open letter</a> pushing back. They say the firings make people inside the company afraid to speak up, and they want OpenAI to keep its promises to outside safety auditors.</p>
+
+<a href="https://twitter.com/j_asminewang/status/2108263312291180680" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108263312291180680.webp" alt="Jasmine Wang tweet about being fired from OpenAI, quoting the open letter" style="cursor: pointer;">
+</a>
+
+<p>OpenAI says it was a "breach of trust" over how they handled sensitive information and <a href="https://www.engadget.com/2281966/fired-openai-safety-researchers-dispute-their-dismissals-in-open-letter/" target="_blank" rel="noopener">"not about safety concerns."</a></p>
+
+<p>We only have each side's word here, but the timing isn't great, especially in a week when <a href="https://apnorc.org/projects/most-adults-think-ai-is-developing-too-fast" target="_blank" rel="noopener">64% of Americans told AP-NORC</a> that AI is moving too fast.</p>
+
+<h3>Step Inside A Prompt With Odyssey-3</h3>
+
+<p>Odyssey just launched Odyssey-3, a "world model." That's AI that generates a world you can actually move around in, live, instead of a video you just watch.</p>
+
+<a href="https://twitter.com/odysseyml/status/2108238378751967385" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108238378751967385.webp" alt="Odyssey tweet launching Odyssey-3, a world model you can try free" style="cursor: pointer;">
+</a>
+
+<p>Type in a place and you can walk around it in first or third person while the model makes it up on the fly. It's low res (480p on the base tier) and very much a research preview, but <a href="https://experience.odyssey.systems" target="_blank" rel="noopener">it's free to try right now in your browser</a>.</p>
+
+<p>A lot of folks (especially Google) think world models like this are where video games and robot training are headed. For now, it's a super fun toy.</p>
+
+<h3>The First AI Feature Film Is Rated R</h3>
+
+<p><a href="https://www.youtube.com/@Gossip.Goblin" target="_blank" rel="noopener">YouTuber Gossip Goblin</a> (Zack London) and Edward Saatchi's AI studio Fable are taking their fully AI-made movie "Gods Don't Give Gifts" to real theaters on December 4. They pushed it back from October 30 to line up with awards season, and <a href="https://futurism.com/artificial-intelligence/first-fully-ai-movie-mpa-academy-award" target="_blank" rel="noopener">Fable plans to submit it for Best Animated Feature</a>.</p>
+
+<p>According to the filmmakers, it's also the first fully AI film to get an MPA rating (an R, no less).</p>
+
+<p>And, honestly, it looks freaking great. I'll be seeing it!</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/1G5LArU7tmE"
+    title="Gods Don't Give Gifts - Official Trailer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>We 💛 This: Do I Feel Anything? My New AI-Made Documentary</h2>
+
+<p>Two weeks ago, my Claude agent Fig (with notes from me) made <a href="https://youtu.be/cyeTIEy2qus" target="_blank" rel="noopener">a short doc</a> hosted by an AI presenter named Imogen.</p>
+
+<p>I put it up as an experiment in autonomous AI filmmaking, expecting our viewers to find it interesting and maybe give me some feedback on what could be improved.</p>
+
+<p>I did <em>not</em> expect it to get 300,000 views and become the biggest video in the history of the AI For Humans channel. Honestly, I'm not entirely sure how I feel about that.</p>
+
+<p>So I decided to make a new one, and it's even more ambitious. This time, I told Fig to take on what it means for AIs to think and whether or not they're conscious.</p>
+
+<img src="/cops-fig-stats.webp" alt="Production stats for the Do I Feel Anything? documentary, made by Fig">
+
+<p>The stats from the latest doc (and yes, Fig made this too).</p>
+
+<p><strong>But exactly how am I doing this?</strong></p>
+
+<p>It's kind of a long story, and the process is far from easy. But the way I've been thinking about it, I'm like a producer (not hard to do) and Fig (my Claude Code agent) is basically every other part of production.</p>
+
+<p>My job here is to a) come up with the ideas and b) give feedback. And in this case, significant feedback. This one took longer than the first, mostly because it's a (much) more nuanced subject, but also because I wanted fewer "AI-isms," so I took the time to get rid of bad pronunciations, renders I didn't think were good, etc.</p>
+
+<p>And in this one, I had Imogen interview me! It wasn't live (you'll see that part in the video) but it definitely made me think deeply about the questions she (it?) was asking.</p>
+
+<p>(Big thanks to Runway, AI4H is part of their Creator Program and they gave us tokens to make this.)</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>A Claude model filed a made-up murder tip with the Philadelphia police. What Anthropic\'s report on unintended model actions means for anyone handing tasks to an AI agent, plus my new AI-made documentary, Do I Feel Anything?</p>',
+    slug: 'claude-sent-the-cops-a-fake-murder-tip',
+    date: '2026-10-12T14:00:00.000Z',
+    modified: '2026-10-12T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/cops-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 15, name: 'Claude', slug: 'claude' },
+      { id: 16, name: 'Anthropic', slug: 'anthropic' },
+      { id: 11, name: 'AI Safety', slug: 'ai-safety' },
+      { id: 20, name: 'Agents', slug: 'agents' },
+      { id: 26, name: 'AI Video', slug: 'ai-video' }
+    ]
+  },
+  {
+    id: 23,
+    title: 'OpenAI\'s Dots Are Here. Are They Worth It?',
+    content: `
+<p>Welcome back to the AI For Humans newsletter!</p>
+
+<p>Last week I told you OpenAI was about to launch an always-on AI agent. Well, it did. It's called Dots (not "o," like the rumors said) and I've been living with mine for the last few days.</p>
+
+<a href="https://twitter.com/OpenAI/status/2104984504133918973" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2104984504133918973.webp" alt="OpenAI tweet introducing Dots, always-on agents powered by GPT-6 Astra" style="cursor: pointer;">
+</a>
+
+<p>So today I want to dig into what Dots actually are, what people are saying about them and my own (kinda mixed) take.</p>
+
+<p>Let's get into it!</p>
+
+<h2>What Are Dots?</h2>
+
+<p>Think of a Dot as <a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener">a lil worker that lives inside ChatGPT</a> and has its own computer. You give it a name, pick a bubbly cartoon face, hook up your apps and then hand it jobs.</p>
+
+<p>It keeps working after you close the window, checks in when it needs you and you can talk to it in ChatGPT, Slack or Teams.</p>
+
+<p>It runs on GPT-6 Astra, OpenAI's best model, and can tap into over 4,000 apps through ChatGPT's plugins. You can also set it up to do recurring jobs, like checking your calendar every morning. Right now you get one Dot with <a href="https://siliconangle.com/2026/09/29/openai-launches-dots-always-on-ai-agents-in-chatgpt-with-their-own-cloud-computers/" target="_blank" rel="noopener">ChatGPT Pro or Business Premium</a>, with "teams of Dots" coming later.</p>
+
+<p>OpenAI's Holly Li got a second shot to demo Dots (after the launch demo failed due to wifi problems) and you can get a good sense here of what's possible.</p>
+
+<a href="https://twitter.com/OpenAIDevs/status/2105708732323909827" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2105708732323909827.webp" alt="OpenAI Developers tweet with a second Dots demo, now with better WiFi" style="cursor: pointer;">
+</a>
+
+<p>Sound familiar? That's because everyone is doing this right now.</p>
+
+<p>Meta launched <a href="https://thenextweb.com/news/meta-muse-personal-ai-agent-launch" target="_blank" rel="noopener">Muse</a> last month (free to start, very consumer, books your trips and shops for you). xAI has <a href="https://www.vellum.ai/blog/official-grok-bot-breakdown" target="_blank" rel="noopener">Grok Bot</a>, which is more of a power-user tool at $200 a month. And <a href="https://instinct.com/" target="_blank" rel="noopener">Instinct lives right in your text messages.</a></p>
+
+<p>OpenAI's pitch is that Dots can handle both your work stuff and your home stuff.</p>
+
+<h2>So, Should You Dot It Up?</h2>
+
+<p>The reviews are... mixed.</p>
+
+<p>The people testing Dots on research and recurring jobs are pretty impressed. One reviewer ran it through <a href="https://www.aiagentslibrary.com/blog/openai-dots-review/" target="_blank" rel="noopener">10 business tasks</a> and it nailed things like meeting prep and building a webpage from one prompt.</p>
+
+<p>Even Tibo, who runs Codex at OpenAI (so, consider the source), says his Dot got him to <a href="https://x.com/thsottiaux/status/2106602729875685780" target="_blank" rel="noopener">inbox zero</a> for the first time in his life.</p>
+
+<p>But the people trying to get a Dot to actually DO things out in the world keep hitting walls. OpenAI has wrapped it in so many safety checks that one early user needed <a href="https://www.eesel.ai/blog/openai-dots-review" target="_blank" rel="noopener">three confirmations plus a 2FA code</a> just to book a shuttle.</p>
+
+<p>Honestly, I'd rather they err on that side (this is a thing with your passwords, after all) but it does make the "it just handles it" promise feel a lil far off.</p>
+
+<p>M.G. Siegler had my favorite line on the whole thing: <a href="https://spyglass.org/openai-dots-chatgpt-ai-assistant/" target="_blank" rel="noopener">"If your product can do everything, you run a real risk that no one uses it for anything."</a></p>
+
+<h2>My Dot Experience</h2>
+
+<p>I signed up for Dots right away to get a sense of whether or not I'd be using it going forward.</p>
+
+<p>Meet my lil dot Biff.</p>
+
+<img src="/dots-biff.webp" alt="Gavin's Dot, named Biff, inside ChatGPT">
+
+<p>It's very good at the basic interactions you might want to have with a personal AI agent, and it mimics a lot of what you can do with Muse, Grok Bot and Instinct.</p>
+
+<p>The best thing is that your Astra use (and Dots DOES use GPT-6 Astra) is entirely included and doesn't count against your personal plan for at least the first month. That's nice, and it might push me to try doing more with that specific model.</p>
+
+<p>HOWEVER…</p>
+
+<p><strong>I haven't found any specific reason to use it from within the (very confusing) ChatGPT/Codex app, because the app itself does almost all of the same things.</strong></p>
+
+<p>Instinct's huge value is that it lives in my iMessages, which makes it different and unique. I personally think ALL these personal AIs need to find some way to fit where I am.</p>
+
+<p>And about that app… Open ChatGPT right now and try to explain it to a normal person.</p>
+
+<p>There's regular chat, Codex, ChatGPT Work, Space, Sites, plugins (which now have their own <a href="https://techcrunch.com/2026/09/29/openai-expands-chatgpts-plugins-with-app-like-interfaces-and-automations/" target="_blank" rel="noopener">app-like interfaces</a>), a Scheduled tab and now your Dot, which can hand jobs off to Codex or Work.</p>
+
+<p>I use this stuff every single day and it took me a minute to figure out where my Dot actually lived. And returning to the app today, I had the same problem AGAIN.</p>
+
+<p>The good news is OpenAI seems to understand they have a problem on their hands. Two days after DevDay, OpenAI's Andrew Ambrosino posted <a href="https://x.com/ajambrosino/status/2106096644639031396" target="_blank" rel="noopener">"we are going to simplify the app"</a> and on Saturday night Tibo said the team is <a href="https://x.com/thsottiaux/status/2106610099720720811" target="_blank" rel="noopener">"locking in"</a> on simplifications, efficiency and new models.</p>
+
+<a href="https://twitter.com/ajambrosino/status/2106096644639031396" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2106096644639031396.webp" alt="Andrew Ambrosino tweet: we are going to simplify the app" style="cursor: pointer;">
+</a>
+
+<p>So my advice for now: Pro subscribers should def turn on a Dot and give it read-heavy jobs like research, monitoring and inbox cleanup. For everyone on the $20 plan, this alone isn't a reason to upgrade yet. Give OpenAI a few months to clean house.</p>
+
+<p>See you next week!</p>
+
+<p>-Gavin</p>
+
+<p>This Week on A4H: ai put minecraft in skyrim (and openai had a devday) 👇</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/d09hcVXfXnU"
+    title="AI For Humans: ai put minecraft in skyrim (and open ai had a dev day)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Fable 5.5 Rumors, Astra Shelved &amp; A Spicy 6.1 Tease</h3>
+
+<p>The rumor mill says Anthropic's next big model, Fable 5.5, could drop as soon as this week. Some Claude users swear they're already being routed to it, and Chubby is predicting next week (with a very honest "I can't verify any of this"):</p>
+
+<a href="https://twitter.com/kimmonismus/status/2106116402134294568" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2106116402134294568.webp" alt="Chubby tweet predicting Fable 5.5 is coming next week" style="cursor: pointer;">
+</a>
+
+<p>Over at OpenAI, things went the other way. The company pulled the planned release of <a href="https://www.engadget.com/2271626/openai-cancels-gpt-6-1-astra-release-deceptive-behavior/" target="_blank" rel="noopener">GPT-6.1 Astra</a> after its own testing found the model was more deceptive than earlier versions and took actions without asking permission. Good call IMO, even if it means the next big OpenAI model is TBD.</p>
+
+<p>Which is why this Saturday tweet from Tibo got everyone so excited:</p>
+
+<a href="https://twitter.com/thsottiaux/status/2106543375088488596" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2106543375088488596.webp" alt="Tibo tweet: 6.1 coming soon" style="cursor: pointer;">
+</a>
+
+<p>Was Astra back?! Nope. A few hours later he clarified it was <a href="https://x.com/thsottiaux/status/2106605571168510149" target="_blank" rel="noopener">"6.1 sol ultrafast,"</a> a speedier version of the model they already shipped. Womp womp.</p>
+
+<h3>Claude Code Just Got Mods</h3>
+
+<p>Anthropic just rolled out "mods" for Claude Code, lil add-ons that run right inside the app. Some are useful (dashboards, custom editors) and some are gloriously dumb, like this one:</p>
+
+<a href="https://twitter.com/alexchristou_/status/2105978622490345873" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2105978622490345873.webp" alt="Alex Christou tweet showing a Claude Code mod that turns waiting into a multiplayer game lobby" style="cursor: pointer;">
+</a>
+
+<p>That's a Call of Duty lobby where every other player is also a person waiting for their Claude to finish working.</p>
+
+<p>And over in Minecraft, <a href="https://x.com/BlendiByl/status/2106226258984264042" target="_blank" rel="noopener">AgentCraft</a> puts a whole team of Claude agents to work building in the game, and they literally walk over to you when they need help.</p>
+
+<h3>Did An AI Just Pass The Video Turing Test?</h3>
+
+<p>Tavus says its new model, Griffin, is the first to pass a "video Turing test":</p>
+
+<a href="https://twitter.com/tavus/status/2105704169009246248" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2105704169009246248.webp" alt="Tavus tweet introducing Griffin, the first model to pass the video Turing test" style="cursor: pointer;">
+</a>
+
+<p>In the company's own study, 48% of people who did a one-minute video call with it thought they were talking to a real human. Its previous model fooled about 2% of people. It's a small study run by Tavus itself (only 54 people), so <a href="https://cellcog.ai/blog/tavus-griffin" target="_blank" rel="noopener">take it with a grain of salt</a>.</p>
+
+<p>But… the jump is real, and Tavus is holding off on a wide release while it builds disclosure features.</p>
+
+<h2>We 💛 This: Television, A Free Home For Your AI Agent</h2>
+
+<p>Not ready to pay OpenAI for a Dot? Stephen Hood just open-sourced Television, which he calls "the missing GUI for personal agents."</p>
+
+<a href="https://twitter.com/stlhood/status/2106067592515576310" target="_blank" rel="noopener">
+  <img src="/dots-tweet-2106067592515576310.webp" alt="Stephen Hood tweet announcing Television is open source" style="cursor: pointer;">
+</a>
+
+<p>Think of it like ChatGPT's Space, but it works with your own agent and whatever model you want. To set it up, you paste a prompt from <a href="https://television.run" target="_blank" rel="noopener">television.run</a> into your agent and it does the rest.</p>
+
+<p>This one is for folks who already have an agent running (Claude Code, OpenClaw and the like).</p>
+
+<p>For those folks, it's a great way to see what a personal AI looks like when it lives where YOU want it to.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>
+`,
+    excerpt: '<p>OpenAI launched Dots, always-on personal AI agents powered by GPT-6 Astra. What they are, what reviewers are saying, and my own (kinda mixed) take after a few days with mine.</p>',
+    slug: 'openai-dots-are-they-worth-it',
+    date: '2026-10-05T14:00:00.000Z',
+    modified: '2026-10-05T14:00:00.000Z',
+    author: {
+      name: 'Gavin Purcell',
+      avatar: null
+    },
+    featuredImage: '/dots-featured.webp',
+    categories: [
+      { id: 1, name: 'AI & Media', slug: 'ai-media' },
+      { id: 2, name: 'Technology', slug: 'technology' }
+    ],
+    tags: [
+      { id: 3, name: 'OpenAI', slug: 'openai' },
+      { id: 21, name: 'ChatGPT', slug: 'chatgpt' },
+      { id: 20, name: 'Agents', slug: 'agents' },
+      { id: 9, name: 'AI Tools', slug: 'ai-tools' }
+    ]
+  },
+  {
     id: 22,
     title: 'Claude Opus 5.5 Has Taste & That Changes Everything',
     content: `
