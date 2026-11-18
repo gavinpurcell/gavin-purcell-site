@@ -129,3 +129,23 @@ test('the homepage markdown keeps the FAQ questions, not only the answers', () =
   const md = readFileSync(join(DIST, 'index.md'), 'utf8');
   assert.match(md, /^#### What does an engagement cost\?/m);
 });
+
+test('the Beehiiv sync turns newsletter email HTML into clean post HTML', async () => {
+  const { cleanBody } = await import('../scripts/sync-beehiiv.mjs');
+  const html = cleanBody(`<div class='beehiiv'><style>.x{}</style><div class='beehiiv__body'>
+    <div class="section" style="x"><p class="paragraph"><span><b>Today on AI For Humans:</b></span><br>Stuff</p></div>
+    <p class="paragraph" style="text-align:left;">Hello <a class="link" href="https://example.com/a?utm_source=news&amp;x=1">there</a>.</p>
+    <hr class="content_break"><p class="paragraph">Support AI For Humans By Visiting Our Sponsors!</p><h3 class="heading">Buy this</h3><hr class="content_break">
+    <h1 class="heading">Big</h1><h4 class="heading">Small</h4>
+    <blockquote align="center" class="twitter-tweet"><a href="https://twitter.com/someone/status/123?utm_source=x"></a></blockquote><p> Twitter tweet </p>
+    <iframe allow="x" src="https://youtube.com/embed/abcdefghijk"></iframe>
+    <div class="section"><p class="paragraph">Are you a creative or brand looking to go deeper with AI?</p></div>
+    </div><div class='beehiiv__footer'><hr>Powered by beehiiv</div></div>`);
+  assert.doesNotMatch(html, /Today on AI For Humans|Sponsors|Buy this|creative or brand|Powered by|utm_|style=|class="paragraph"|<h1|<h4|Twitter tweet/);
+  assert.match(html, /<p>Hello <a href="https:\/\/example\.com\/a\?x=1" target="_blank" rel="noopener noreferrer">there<\/a>\.<\/p>/);
+  assert.match(html, /<h2>Big<\/h2>/);
+  assert.match(html, /<h3>Small<\/h3>/);
+  assert.match(html, /<p class="post-embed">\s*<a href="https:\/\/x\.com\/someone\/status\/123"[^>]*>See the post from @someone on X<\/a>/);
+  assert.match(html, /<div class="post-video">\s*<iframe src="https:\/\/www\.youtube-nocookie\.com\/embed\/abcdefghijk"/);
+  assert.equal((html.match(/<div/g) || []).length, (html.match(/<\/div>/g) || []).length);
+});

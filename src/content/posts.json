@@ -1,5 +1,89 @@
 [
   {
+    "id": 28,
+    "title": "My Weird Singing AI Heads Taught Me The Most Important AI Skill",
+    "excerpt": "<p>AI is getting smarter and more creative all the time, but only you can make it great. Plus, where the heck is GPT-6.2 Astra?</p>",
+    "slug": "my-weird-singing-ai-heads-taught-me-the-most-important-ai-skill",
+    "date": "2026-11-16T15:00:00.000Z",
+    "modified": "2026-11-16T15:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/post-art/my-weird-singing-ai-heads-taught-me-the-most-important-ai-skill.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": 27,
+    "title": "Is This The \"AI Bubble\" Finally Popping?",
+    "excerpt": "<p>Yes, AI has been over-invested in but... that's a good thing. Plus, fighting robots &amp; our new AI documentary!</p>",
+    "slug": "is-this-the-ai-bubble-finally-popping",
+    "date": "2026-11-02T15:00:00.000Z",
+    "modified": "2026-11-02T15:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/post-art/is-this-the-ai-bubble-finally-popping.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": 26,
+    "title": "Um, AIs Are Finding Secret Ways To Talk",
+    "excerpt": "<p>OpenAI cut its frontier models off from the web, a new open model gets close to Claude, and Miyamoto weighs in on AI.</p>",
+    "slug": "um-ais-are-finding-secret-ways-to-talk",
+    "date": "2026-10-26T14:00:00.000Z",
+    "modified": "2026-10-26T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/post-art/um-ais-are-finding-secret-ways-to-talk.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": 25,
+    "title": "Claude Fable 5.5 Is Coming. But Do You Really Need It?",
+    "excerpt": "<p>How much AI power do we need? Plus, a breakthrough in understanding AIs that you need to understand too.</p>",
+    "slug": "claude-fable-5-5-is-coming-but-do-you-really-need-it",
+    "date": "2026-10-19T14:00:00.000Z",
+    "modified": "2026-10-19T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/post-art/claude-fable-5-5-is-coming-but-do-you-really-need-it.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      }
+    ],
+    "tags": []
+  },
+  {
     "id": 24,
     "title": "Claude Sent The Cops A Fake Murder Tip",
     "excerpt": "<p>A Claude model filed a made-up murder tip with the Philadelphia police. What Anthropic's report on unintended model actions means for anyone handing tasks to an AI agent, plus my new AI-made documentary, Do I Feel Anything?</p>",
