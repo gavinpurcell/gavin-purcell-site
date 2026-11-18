@@ -1,6 +1,25 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import DitherPlate from './signal/DitherPlate';
+import './signal/signal.css';
 import './Page.css';
+
+function AboutPortrait() {
+  const [active, setActive] = useState(false);
+  return (
+    <div onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(true)} onPointerLeave={() => setActive(false)}>
+      <DitherPlate
+        image="/gavin-photo.webp"
+        alt="Gavin Purcell, smiling, in a grey jacket at a TV panel."
+        aspect="6 / 5"
+        gamma={0.9}
+        focusY={0}
+        active={active}
+      />
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -15,14 +34,17 @@ export default function AboutPage() {
       </Helmet>
 
       <div className="page-inner">
-        <span className="page-eyebrow">About</span>
-        <h1 className="page-title">Gavin Purcell</h1>
-        <hr className="page-rule" />
-
-        <p className="page-lede">
-          Emmy-winning showrunner turned creative technologist. I help media,
-          entertainment, and creative teams actually use AI, not just talk about it.
-        </p>
+        <div className="page-head">
+          <div>
+            <span className="page-eyebrow">About</span>
+            <h1 className="page-title">Gavin Purcell</h1>
+            <p className="page-lede">
+              Emmy-winning showrunner turned creative technologist. I help media,
+              entertainment, and creative teams actually use AI, not just talk about it.
+            </p>
+          </div>
+          <AboutPortrait />
+        </div>
 
         <div className="page-body">
           <h2>What I do now</h2>

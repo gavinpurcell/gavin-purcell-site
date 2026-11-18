@@ -14,7 +14,7 @@ const profileSchema = {
   name: 'Gavin Purcell | Creative Technologist',
   isPartOf: { '@id': 'https://gavinpurcell.com/#website' },
   mainEntity: { '@id': 'https://gavinpurcell.com/#person' },
-  dateModified: '2026-09-25',
+  dateModified: '2026-11-18',
 };
 
 function Home() {

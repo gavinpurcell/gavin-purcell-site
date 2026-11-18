@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import DitherPlate from './signal/DitherPlate';
+import './signal/signal.css';
 import './Page.css';
 import './WorkPage.css';
 
@@ -22,11 +25,13 @@ const caseStudies = [
     vitals: [
       { label: 'Role', value: 'Showrunner, with Fig as director' },
       { label: 'Stack', value: 'Claude Opus 5.5, Seedance 2.5 on Runway, Lyria 3' },
-      { label: 'Status', value: 'Out now, 27 minutes' },
+      { label: 'Status', value: 'Out now, 27 minutes. Two more Imogen films have followed.' },
     ],
     links: [
       { label: 'About the film', href: '/the-last-invention' },
-      { label: 'Watch on YouTube', href: 'https://www.youtube.com/watch?v=cyeTIEy2qus' },
+      { label: 'Watch The Last Invention', href: 'https://www.youtube.com/watch?v=cyeTIEy2qus' },
+      { label: 'Film two: Do I Feel Anything?', href: 'https://www.youtube.com/watch?v=NE84ZYfnniU' },
+      { label: 'Film three: What Do You Want To Be?', href: 'https://www.youtube.com/watch?v=TzT9lNPaVXI' },
     ],
   },
   {
@@ -137,6 +142,72 @@ const jsonLd = {
   })),
 };
 
+// The same loops the homepage prints, keyed by case study.
+const media = {
+  thelastinvention: { video: '/loops/imogen.mp4', poster: '/loops/imogen.jpg', focusY: 0.3 },
+  kingoftheprompts: { video: '/loops/kotp.mp4', poster: '/loops/kotp.jpg' },
+  figmoss: { video: '/loops/figmoss.mp4', poster: '/loops/figmoss.jpg' },
+  // A still, shown at its own shape so the speech bubble and name tags are whole.
+  fishbowl: { image: '/fishbowl-screenshot.jpg', gamma: 1.1, aspect: '1200 / 605' },
+  andthen: { video: '/loops/andthen.mp4', poster: '/loops/andthen.jpg' },
+};
+
+const isInternal = (href) => href.startsWith('/');
+const linkProps = (href) => (isInternal(href) ? {} : { target: '_blank', rel: 'noopener noreferrer' });
+
+function CaseStudy({ study }) {
+  const [active, setActive] = useState(false);
+  const plate = media[study.id] || { image: study.image, gamma: 1.1 };
+  return (
+    <article id={study.id} className="study">
+      <div
+        className="study-top"
+        onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(true)}
+        onPointerLeave={() => setActive(false)}
+      >
+        <a href={study.links[0].href} {...linkProps(study.links[0].href)} className="study-picture" tabIndex={-1} aria-hidden="true">
+          <DitherPlate aspect="16 / 10" {...plate} alt={study.imageAlt} active={active} />
+        </a>
+        <div className="study-intro">
+          <p className="study-tag">{study.tag}</p>
+          <h2 className="study-name">{study.name}</h2>
+          <p className="study-tagline">{study.tagline}</p>
+          <dl className="study-vitals">
+            {study.vitals.map((v) => (
+              <div key={v.label}>
+                <dt>{v.label}</dt>
+                <dd>{v.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="study-links">
+            {study.links.map((link) => (
+              <a key={link.href} href={link.href} {...linkProps(link.href)}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="study-body">
+        <div>
+          <h3>The problem</h3>
+          <p>{study.problem}</p>
+        </div>
+        <div>
+          <h3>What I built</h3>
+          <p>{study.built}</p>
+        </div>
+        <div>
+          <h3>Shipped</h3>
+          <p>{study.shipped}</p>
+        </div>
+      </div>
+      <blockquote className="study-lesson">{study.lesson}</blockquote>
+    </article>
+  );
+}
+
 export default function WorkPage() {
   return (
     <main id="main" className="page">
@@ -151,8 +222,7 @@ export default function WorkPage() {
       </Helmet>
 
       <div className="page-inner work-inner">
-        <span className="page-eyebrow">Creative Technologist</span>
-        <h1 className="page-title">The Work</h1>
+        <h1 className="page-title">The work</h1>
         <hr className="page-rule" />
 
         <p className="page-lede">
@@ -163,66 +233,7 @@ export default function WorkPage() {
 
         <div className="work-list">
           {caseStudies.map((study) => (
-            <article key={study.id} id={study.id} className="page-card work-card">
-              <div className="work-card-grid">
-                <div className="work-card-content">
-                  <p className="work-card-tag">{study.tag}</p>
-                  <h2 className="work-card-name">{study.name}</h2>
-                  <p className="work-card-tagline">{study.tagline}</p>
-
-                  <h3>The problem</h3>
-                  <p>{study.problem}</p>
-
-                  <h3>What I built</h3>
-                  <p>{study.built}</p>
-
-                  <h3>Shipped</h3>
-                  <p>{study.shipped}</p>
-
-                  <h3>Lesson</h3>
-                  <p>{study.lesson}</p>
-
-                  <div className="work-card-links">
-                    {study.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        {...(link.href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                        className="page-cta work-card-link"
-                      >
-                        {link.label} →
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="work-card-visual">
-                  <a
-                    href={study.links[0].href}
-                    {...(study.links[0].href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                    className="work-card-image-link"
-                  >
-                    <img
-                      src={study.image}
-                      alt={study.imageAlt}
-                      loading="lazy"
-                      className="work-card-image"
-                    />
-                  </a>
-                  <dl className="work-card-vitals">
-                    {study.vitals.map((v) => (
-                      <div key={v.label}>
-                        <dt>{v.label}</dt>
-                        <dd>{v.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                  <blockquote className="work-card-pullquote">
-                    &ldquo;{study.lesson}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-            </article>
+            <CaseStudy key={study.id} study={study} />
           ))}
         </div>
 

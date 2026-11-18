@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import IntakeForm from './IntakeForm';
 import './Page.css';
 
 export default function ContactPage() {
@@ -19,7 +20,7 @@ export default function ContactPage() {
         <hr className="page-rule" />
 
         <p className="page-lede">
-          The fastest way to reach me about work is the intake form. It goes straight to my
+          The fastest way to reach me about work is the form below. It goes straight to my
           inbox and tells me enough to give you a useful answer instead of a scheduling email.
         </p>
 
@@ -27,13 +28,11 @@ export default function ContactPage() {
           <div className="page-card">
             <h2>Start a project</h2>
             <p>
-              The intake form on the homepage covers what I need to know: what you are trying
-              to do, what your team looks like, and your rough budget range. It is the right
-              path for consulting, workshops, fractional engagements, and keynote inquiries.
+              Tell me what you are trying to do, who is on the team, and a rough budget range.
+              This is the right path for consulting, workshops, fractional engagements, and
+              keynote inquiries.
             </p>
-            <p>
-              <a className="page-cta" href="/#contact">Open the intake form</a>
-            </p>
+            <IntakeForm />
           </div>
 
           <h2>Email</h2>

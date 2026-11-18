@@ -1,0 +1,129 @@
+<p>We took a much-needed break from the AI For Humans podcast last week and are reimagining the show a little bit to make it more useful to you, the human, as we navigate the next stage of AI.</p>
+
+<p>If you'd like to learn more about our new direction, <a href="https://youtu.be/dMWQflqutR0" target="_blank" rel="noopener">check out this episode of the podcast</a>. And if you want to hear where AI is going next, check out the news about OpenAI's incoming Astra model further down this post.</p>
+
+<p>But first: Fal unleashed a modified version of the new MiniMax H3 AI video model called MiniMax H3 MAX, which generates AI video clips almost as fast as you can write the prompts. It's opened up an entirely NEW conversation about what AI video is capable of and where we go from here.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2093718900416590257" target="_blank" rel="noopener">
+  <img src="/h3max-toms-tweet.webp" alt="Gavin Purcell tweet showing a MiniMax H3 Max video" style="cursor: pointer;">
+</a>
+
+<p>For now, <a href="https://fal.ai/tools/minimax-h3-max" target="_blank" rel="noopener">you can try this crazy model for free here</a>, but the implications are ginormous and people are already building wild things with it.</p>
+
+<p>Let's get into it.</p>
+
+<h2>So What Is MiniMax H3 Max?</h2>
+
+<p>Quick backstory for those who missed it: MiniMax (the Chinese lab behind the Hailuo video models) released <a href="https://www.minimax.io/blog/minimax-h3" target="_blank" rel="noopener">MiniMax H3 at the end of July</a>. It's an open-weights video model that can generate up to 15-second 2K clips with native stereo audio, which was already a pretty big deal on its own.</p>
+
+<p>Then Fal, the AI infrastructure company that serves a ton of these models, took H3 and made it FAST. They post-trained the model for better prompt-following and visual quality, built a custom serving engine alongside it, and run the whole thing on NVIDIA's monster new GB200 systems.</p>
+
+<a href="https://twitter.com/fal/status/2092710676431020376" target="_blank" rel="noopener">
+  <img src="/h3max-fal-tweet.webp" alt="Fal tweet announcing MiniMax H3 Max" style="cursor: pointer;">
+</a>
+
+<p>The result is a 5-second video in about 3 seconds. That's roughly 35x faster than the official MiniMax version of the same model.</p>
+
+<p>Maybe the craziest part of the whole thing is that it doesn't seem to be a quality trade-off.</p>
+
+<p>In head-to-head human preference tests, H3 Max ranked #1 in overall quality, prompt understanding AND aesthetics against twelve leading models (including Google's Gemini Omni Flash, Kling 3 and Veo 3.1), and independent rankings from Artificial Analysis and Design Arena back that up.</p>
+
+<p>The big difference here is SPEED. Most AI video generators force you to wait for your results, leaving you to either queue up more videos or wander off to something else. It can really drag on the creative process.</p>
+
+<h2>But What Are People Doing With It?</h2>
+
+<p>Of course, when you can generate nearly instant AI video, the first place people went was <a href="https://rickandmorty.fandom.com/wiki/Interdimensional_Cable" target="_blank" rel="noopener">Rick &amp; Morty's "Interdimensional Cable"</a>.</p>
+
+<p>Fal's own engineer Rehan Sheikh built exactly that (hooking chat up to prompting) and tried streaming it on Twitch, which almost immediately took it down over the Digital Millennium Copyright Act. He then tried posting it on many, many other streaming sites, all of which ALSO took it down.</p>
+
+<a href="https://twitter.com/rehan_shei/status/2093528415576211819" target="_blank" rel="noopener">
+  <img src="/h3max-interdimensional-tweet.webp" alt="Rehan Sheikh tweet about his Interdimensional Cable stream built on H3 Max" style="cursor: pointer;">
+</a>
+
+<p>MiniMax H3 has a LOT of IP and real actors in its training data (as you can see from my Toms video above), and part of the problem is that (of course) the first thing people want to make are videos with famous characters (much like early Sora).</p>
+
+<p>Enter Pieter Levels, aka <a href="http://levels.io" target="_blank" rel="noopener">Levels.io</a>, who partnered with Fal to create a self-hosted stream of always-on infinite AI slop (<a href="https://infiniteslop.ai/" target="_blank" rel="noopener">it's literally called that</a>) with pretty hard guardrails against IP and other issues. Pieter estimates it's costing about $4K a day to run, and Fal is clearly taking a bath serving this model right now to get their name out there.</p>
+
+<p>But... there is something magical about seeing a prompt appear in this weird, random way.</p>
+
+<a href="https://twitter.com/levelsio/status/2094129020770164871" target="_blank" rel="noopener">
+  <img src="/h3max-infinite-slop-tweet.webp" alt="Pieter Levels tweet about Infinite Slop" style="cursor: pointer;">
+</a>
+
+<h2>So Why Does This Matter To You?</h2>
+
+<p>We've talked a bunch of times about a future where <em>everyone</em> can generate their own stories with AI, and whether AI might just create them on its own.</p>
+
+<p>I personally don't think people will want AI-only stories, but time will tell.</p>
+
+<p>What's fascinating about MiniMax H3 MAX is that when you drastically cut the time it takes to generate AI video, you start to open up new ways of looking at the medium.</p>
+
+<p>People will always want long-form stories that make them <em>feel</em> something specific, and I <em>think</em> that's where us humans get to keep our expertise for a bit.</p>
+
+<p>But I wonder if there aren't other interesting ways to think about instant-on AI video: as a reflection of a person's mood, or a specific feeling in the moment.</p>
+
+<p>I don't really need to see what the masses want to create, but I am interested in a select group of people playing with weird real-time storylines across multiple universes.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2094070445331116431" target="_blank" rel="noopener">
+  <img src="/h3max-multiverse-tweet.webp" alt="Gavin Purcell tweet about real-time AI video storylines" style="cursor: pointer;">
+</a>
+
+<p>Either way, it's a big step forward for AI video and worth paying attention to. <a href="https://fal.ai/tools/minimax-h3-max" target="_blank" rel="noopener">Go at least try it while it's still free.</a></p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI's Astra Model Previewed</h3>
+
+<p>Tech journalist Alex Heath got an early look at OpenAI's Astra model (their supposed Fable-killer) and his biggest takeaway seems to be always-on AI agents.</p>
+
+<a href="https://twitter.com/alexeheath/status/2093833342777266564" target="_blank" rel="noopener">
+  <img src="/h3max-astra-preview-tweet.webp" alt="Alex Heath tweet previewing OpenAI's Astra model" style="cursor: pointer;">
+</a>
+
+<p>Two things I think about when I read this: a) I'm going to have to start thinking up bigger and bigger tasks to give my AI agents, and b) this is going to cost a fortune to run.</p>
+
+<p>Oh, and after reading <a href="https://www.dwarkesh.com/p/openai-huggingface" target="_blank" rel="noopener">Dwarkesh Patel's very human-readable write-up of the Hugging Face hack</a>, we're also very close to a world where our AI agents will live entire lifetimes without our involvement.</p>
+
+<h3>Astra Leaks Look Incredible</h3>
+
+<p>As with any new model, the world of AI "leakers" has started posting outputs from OpenAI's new model and, visually at least, this seems like another major step up.</p>
+
+<p>Between the <a href="https://x.com/lyraxana/status/2093960706051727723" target="_blank" rel="noopener">obligatory pelican on a bicycle</a>, <a href="https://x.com/testingcatalog/status/2093716456160579879" target="_blank" rel="noopener">voxel cities</a> and <a href="https://x.com/chetaslua/status/2093622343004463198" target="_blank" rel="noopener">video game controller SVG tests</a>, this full-blown modeling of a piano made me sit up and take notice:</p>
+
+<a href="https://twitter.com/lh_lhne/status/2094020830527459479" target="_blank" rel="noopener">
+  <img src="/h3max-astra-piano-tweet.webp" alt="Leaked Astra output showing a fully modeled piano" style="cursor: pointer;">
+</a>
+
+<p>Always take "leaks" with a grain of salt, but the rumor mill has Astra getting close to launch and a lot more people <em>did</em> get access this week. OpenAI, as always, our inbox is open!</p>
+
+<h3>Genuinely Useful: Transparent Images In GPT-Image-2</h3>
+
+<p>In the vein of learning what's possible with AI models <em>now</em> versus the promise of what's next, OpenAI put out a video this week about getting GPT-Image-2 to create transparent images for your projects via the API:</p>
+
+<a href="https://twitter.com/OpenAIDevs/status/2090536933571330440" target="_blank" rel="noopener">
+  <img src="/h3max-transparent-images-tweet.webp" alt="OpenAI Devs tweet about transparent images in GPT-Image-2" style="cursor: pointer;">
+</a>
+
+<p>If you're a savvy AI user, you prob already knew the model could do this, but sometimes it's important to remember just how powerful a creation tool you have in your hands.</p>
+
+<p>HINT: You <em>can</em> do this in the Codex/ChatGPT app via your subscription too, just ask for it. It's an extra step, but the model can figure it out.</p>
+
+<h2>Epic Games Adds MCP To UEFN (Unreal Engine Fortnite)</h2>
+
+<p>I've talked a ton about how using complicated tools via MCP (<a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" target="_blank" rel="noopener">Model Context Protocol</a>) lets you, the normal human, do stuff only programmers could do before.</p>
+
+<p>Now Epic has integrated MCP directly into their Fortnite building engine, letting AI agents like Claude and OpenAI's Codex build Fortnite levels with normal human language.</p>
+
+<p>Immature Gamer (a good friend and an expert on the Fortnite ecosystem) showed off how easy it is to build something relatively complicated once everything is connected:</p>
+
+<a href="https://twitter.com/ImmatureGamer/status/2090596570635067622" target="_blank" rel="noopener">
+  <img src="/h3max-uefn-tweet.webp" alt="Immature Gamer tweet building a Fortnite level with AI via MCP" style="cursor: pointer;">
+</a>
+
+<p>You might be asking: "Gavin, why do I care about Fortnite? My kids still play it but honestly, it's not a big part of my life."</p>
+
+<p>Well, UEFN is a hands-on sneak peek at "world building" tools in a simplified space, and if you make something interesting there, you have a potential audience of hundreds of millions of players.</p>
+
+<p>Sounds like a worthy weekend experiment to me.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>

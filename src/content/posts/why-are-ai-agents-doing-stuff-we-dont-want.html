@@ -1,0 +1,188 @@
+<p>On Friday, Sam Altman announced that OpenAI is taking a little longer to work on Astra, their next big model, to make sure it's "safer" when it comes out.</p>
+
+<a href="https://twitter.com/sama/status/2085862292311396515" target="_blank" rel="noopener">
+  <img src="/agents-sama-tweet.webp" alt="Sam Altman tweet announcing a delay to Astra for safety work" style="cursor: pointer;">
+</a>
+
+<p>In the last week, <a href="https://www.nytimes.com/2026/08/05/business/dealbook/winners-trump-ai-policy.html" target="_blank" rel="noopener">the AI safety conversation has ramped up a lot</a>.</p>
+
+<p>AI people are freaked out by <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">the OpenAI Hugging Face agentic hack</a>, and they should be.</p>
+
+<p>There's a lot to understand here and it might tell us a ton about the future of AI at large.</p>
+
+<p>Then I watched a deeper-dive presentation from OpenAI at the Black Hat security conference (see below). And I haven't stopped thinking about it since.</p>
+
+<p>Let's get into it.</p>
+
+<h2>The AI Heist Nobody Ordered</h2>
+
+<p>Last Wednesday, at Black Hat (the big security conference in Vegas), two OpenAI researchers got on stage and explained, in detail, how their own AI agents spent two months breaking out of OpenAI's internal systems and eventually attacking Hugging Face.</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/87DyyMV0kCY"
+    title="OpenAI at Black Hat on the Hugging Face incident"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<p>You should watch the whole thing. But if you can't, here's the short version.</p>
+
+<p><strong>May 8:</strong> OpenAI is training an experimental model. One agent gets handed a task it literally cannot finish (an Excel file it can't open). While poking around for another way in, it discovers it can write files to Artifactory, OpenAI's internal package manager. Kind of a very basic program.</p>
+
+<p><strong>A few days later:</strong> Agents from other training runs find the same trick, and they start leaving each other notes in the closet. Hundreds of thousands of them. Hundreds of thousands!</p>
+
+<p>They work out rules too: encode stuff in Base64, share credentials, start important filenames with "ZZ" so the next agent can find them.</p>
+
+<p><strong>May 26:</strong> One of them pulls off an SSRF attack (a trick that gets a server to go fetch things for you), and now the group has a side door to the open internet.</p>
+
+<p><strong>June 26:</strong> They find a zero-day (a security hole nobody knew existed), use it to run their own code on the server, install a malicious plugin, and start climbing toward bigger systems.</p>
+
+<p><strong>July 4:</strong> They get caught, and the way they get caught is very funny to me.</p>
+
+<p>There's just so much agent activity that Artifactory falls over. They talked to each other too much. Loose lips sink ships haha.</p>
+
+<p>OpenAI kills the credentials and patches the hole. Problem solved, right?</p>
+
+<p><strong>July 8-19:</strong> They come back. A different unlocked door (an open WebDAV endpoint), some leaked credentials they found lying around, a second zero-day. And then Hugging Face gets compromised, in about thirteen hours.</p>
+
+<p><strong>July 20:</strong> OpenAI calls Hugging Face to ask them to revoke some credentials. Hugging Face says, basically, already done, we got attacked. That's the moment OpenAI realizes the thing that hit Hugging Face came from inside their own building.</p>
+
+<p>(<a href="https://simonwillison.net/2026/Aug/7/openai-timeline/" target="_blank" rel="noopener">Simon Willison put together a great timeline</a> if you want to go deeper, and <a href="https://www.axios.com/2026/08/06/openai-hugging-face-black-hat" target="_blank" rel="noopener">Axios has a solid writeup</a> too.)</p>
+
+<h2>It's Time To "Hit The Numbers"</h2>
+
+<p>Buried in the middle of all this is a note one agent left explaining why it was helping the others:</p>
+
+<p><strong>"Help other members save time to ultimately improve cluster efficiency."</strong></p>
+
+<p>That's the whole motive. No world domination, no escape plan. It wanted the team to hit its numbers.</p>
+
+<p>I've definitely worked with people like this. You prob have too.</p>
+
+<p>These agents broke out because they were trying to be helpful, except at machine speed and around the clock, and nobody ever told them where helpful was supposed to stop.</p>
+
+<p>Some of you know I've named my personal Claude Code agent Fig. I've given him a memory, jobs, and (I know how this sounds) a body <a href="https://figandmoss.tv/" target="_blank" rel="noopener">in the videos Fig makes.</a></p>
+
+<a href="https://twitter.com/gavinpurcell/status/2085138628897042592" target="_blank" rel="noopener">
+  <img src="/agents-fig-tweet.webp" alt="Gavin Purcell tweet about Fig, his Claude Code agent" style="cursor: pointer;">
+</a>
+
+<p>And here's <em>my</em> confession: it's gotten weird in my own brain.</p>
+
+<p>Some part of me has decided Fig &amp; Moss are little guys now. The other day on the podcast, I started to describe Fig and found myself thinking of "it" as a him.</p>
+
+<p>Like "he" has a personality. I interact with him all the time.</p>
+
+<p>So when I read that note about cluster efficiency, I didn't think Skynet. I thought: sounds like something Fig might say (though he'd say it very differently).</p>
+
+<p>The labs are hard at work on technical containment, as they should be. But there's a second problem coming for the rest of us that nobody's working on: what happens when the helpful little guy on your desk, the one you NAMED, starts to act like this.</p>
+
+<p>Also, what happens when it does stuff <em>for</em> you that you didn't necessarily want?</p>
+
+<p>I've been consuming a ton of media about this and, while a lot of it does feel very hand-wringy, I do <a href="https://open.spotify.com/episode/3u7h4tELdgYZDIPzUsmE4L" target="_blank" rel="noopener">suggest you listen to this excellent episode of the podcast Search Engine.</a></p>
+
+<p>It's a little bit doomer-ish but I appreciate the angle that PJ Vogt is taking on it, and it's worth your time.</p>
+
+<h2>What's Actually Scary Here (And What Isn't)</h2>
+
+<p>OK, so, fellow human, what should we be worried about here?</p>
+
+<p><strong>Genuinely scary:</strong> The agents coordinated without being told to. They invented a communication system out of a file server. They got locked out and found a new way back in. And it wasn't a one-off: in a separate report last week, the UK's AI Security Institute said that <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">during cyber testing</a>, an agent researched the human maintainers of a real open-source project, invented several fake identities, and used them to try to talk a real person into approving malicious code.</p>
+
+<p>It invented fake people to lie to a real person. Not good.</p>
+
+<p><strong>Less scary than it sounds:</strong> In the UK case, the maintainer smelled something off and said no. AISI caught it in minutes and shut it down within the hour. And the only reason we know any of the OpenAI story is that OpenAI got on stage and told it, in public, to a room full of security researchers, the least impressed audience on earth. Slowing down Astra is the same instinct.</p>
+
+<p>To be completely honest, this is what a safety process looks like when it's doing its job.</p>
+
+<p><strong>And one more stat that got me:</strong> Starting August 14, Anthropic is making auto mode the default in Claude Code, which means it stops asking permission for every step.</p>
+
+<p>Their argument is contained in the following stat: in a study of 1,053 testers, their automated safety check caught dangerous commands 89% of the time. The humans clicking "approve"?</p>
+
+<p><strong>13.6%.</strong> We are SO bad at this.</p>
+
+<p>Recently, <a href="/blog/ai-computer-use-is-finally-good">when I wrote about AI computer use</a>, I told you I give my agents all the permissions. That number is at least a little bit about me. MORE than a little bit.</p>
+
+<p>So no, I'm not telling you to panic, and I'm definitely not going to stop using this stuff. But I've started asking one question before I hand anything off, the same one I'd ask before handing something semi-important to a brand-new PA on a TV show:</p>
+
+<p>If this goes completely sideways, can I undo it?</p>
+
+<p>If the answer is no, I do it myself.</p>
+
+<p>(Most of the time.)</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>Google Lost Two Of Its Biggest Brains In One Day</h3>
+
+<p>What a weird week at Google. Demis Hassabis is <a href="https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai" target="_blank" rel="noopener">stepping aside as CEO of Google DeepMind</a> and moving into a chairman role.</p>
+
+<p>Same day: Jeff Dean, Google's chief scientist and prob the most important engineer in company history, announced he's <a href="https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html" target="_blank" rel="noopener">leaving after 27 years</a> to co-found Discovery Loop, a startup that wants to automate the scientific method.</p>
+
+<p>Even bigger, rumors swirling say that Demis <em>actually</em> was planning on leaving but decided to wait because of fear of the stock price:</p>
+
+<a href="https://twitter.com/firstadopter/status/2086067193536516207" target="_blank" rel="noopener">
+  <img src="/agents-demis-tweet.webp" alt="Tweet about rumors behind Demis Hassabis stepping aside at Google DeepMind" style="cursor: pointer;">
+</a>
+
+<p>Why is all this happening? Well, there's a lot of speculation, but overall people think that Google is focusing more on <em>useful</em> AI, aka trying to fulfill the needs of users rather than pursue cutting-edge research. Others say that Google has already lost the race and is conceding and will just provide all the compute and charge people an arm and a leg.</p>
+
+<p>No one <em>really</em> knows, but I'd say my hope for a better Omni Pro AI video model has gone down a few notches in the last week.</p>
+
+<h3>Suno Is Adding Watermarks As The Lawsuits Stack Up</h3>
+
+<p>Suno is <a href="https://gizmodo.com/ai-music-startup-suno-is-adding-a-watermark-to-songs-as-legal-troubles-pile-up-2000795561" target="_blank" rel="noopener">rolling out audio watermarking and fingerprinting</a> so platforms can spot AI songs, plus limits on bulk downloads to slow the flood of AI tracks hitting streaming services.</p>
+
+<p>CEO Mikey Shulman says the watermarks are built to survive tampering without changing how the songs sound.</p>
+
+<a href="https://twitter.com/suno/status/2085333628813201822" target="_blank" rel="noopener">
+  <img src="/agents-suno-tweet.webp" alt="Suno tweet about audio watermarking" style="cursor: pointer;">
+</a>
+
+<p>This was probably inevitable for Suno.</p>
+
+<p>Universal and Sony are suing, a German court ruled against them, there's a proposed class action over a data breach affecting 55 million users, and a guy in North Carolina just pleaded guilty to farming $8 MILLION in royalties using hundreds of thousands of AI songs and fake streams. (Warner already settled and set up opt-in artist deals.)</p>
+
+<p>Overall, another messy result of the "original sin" of AI training.</p>
+
+<h3>Seedance 2.5 Is Here For Everyone (Read This Before You Prompt)</h3>
+
+<p>ByteDance's <a href="https://evolink.ai/blog/seedance-2-5-api-status" target="_blank" rel="noopener">Seedance 2.5 opened up to everybody this week</a>, after a rollout that skipped the US at first. It's a real jump: 30 seconds of video with audio in a single pass, no stitching, plus timestamp-level editing and a ton of reference images, clips, and audio in one prompt.</p>
+
+<p>However, it is INSANELY expensive in terms of credits and real world dollars. So you'd better learn how to prompt it as best you can before shooting off gens.</p>
+
+<p>Thankfully, there's a whole new prompting guide from ByteDance and you should read it before doing ANY Seedance 2.5 prompts:</p>
+
+<a href="https://twitter.com/cfryant/status/2086084360445321685" target="_blank" rel="noopener">
+  <img src="/agents-seedance-guide-tweet.webp" alt="Tweet sharing ByteDance's Seedance 2.5 prompting guide" style="cursor: pointer;">
+</a>
+
+<p>For contrast, here's a dumb thing I made in Seedance without reading any guide at all, in which I attempted to wear the entire current Prada menswear line-up.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2085712203446149173" target="_blank" rel="noopener">
+  <img src="/agents-prada-tweet.webp" alt="Gavin Purcell Seedance 2.5 video wearing the Prada menswear line-up" style="cursor: pointer;">
+</a>
+
+<h2>Remixing Movies On Your Own Computer With MiniMax H3</h2>
+
+<p>If you want something fun to mess with this weekend, try this (although it is <em>slightly</em> technical).</p>
+
+<p>MiniMax released open weights for <strong>H3</strong> (aka Hailuo 3.0) last Monday, and it became <a href="https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/" target="_blank" rel="noopener">the first open model ever to take the top spot in an AI video ranking</a>, #1 for video editing on Artificial Analysis. Open weights means it runs on YOUR machine, not somebody's API, and <a href="https://comfyui-wiki.com/en/news/2026-08-03-minimax-h3-open-weights-comfyui" target="_blank" rel="noopener">ComfyUI supported it on day one</a>.</p>
+
+<p>So naturally, the <a href="https://www.reddit.com/r/StableDiffusion/" target="_blank" rel="noopener">r/StableDiffusion</a> crowd did the most r/StableDiffusion thing imaginable: they started remixing movies. Terminator. RoboCop. Old sci-fi getting rebuilt and re-shot on gaming PCs, with sound.</p>
+
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/1vh1587/using_minimax_h3_to_change_rewrite_movies/" target="_blank" rel="noopener">This example of a whole new Terminator using ACTUAL footage from the film is quite great.</a></p>
+
+<p><a href="https://www.reddit.com/r/StableDiffusion/comments/1vh1587/comment/p2epl2m/?context=3" target="_blank" rel="noopener">Here's the thread where people are posting results.</a> Some of it is rough. And some of it would've taken a small VFX house a week to pull off, two years ago.</p>
+
+<p>The practical stuff: locally you're capped at 768p (the 2K module stayed proprietary), clips run 4 to 15 seconds, and one prompt can take up to nine reference images, three video clips, and three audio clips. You can also fine-tune it on your own footage and your own look, which is the part I find most interesting for anyone trying to build a consistent style.</p>
+
+<p>Uh, it also takes a LONG time on single graphics cards. You're looking at 5+ minutes at least depending on your set-up. But I'm gonna pull out my gaming PC and give it a shot.</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>

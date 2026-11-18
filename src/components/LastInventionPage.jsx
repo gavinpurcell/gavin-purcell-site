@@ -19,19 +19,54 @@ const chapters = [
   ['27:00', 1620, 'Credits'],
 ];
 
+// The two films that followed, same host, same way of working.
+const sequels = [
+  {
+    id: 'NE84ZYfnniU',
+    title: 'Do I Feel Anything?',
+    uploadDate: '2026-10-12',
+    duration: 'PT29M14S',
+    line: '29 minutes. An AI hosts a documentary about whether AI can feel, and has to ask it about herself.',
+  },
+  {
+    id: 'TzT9lNPaVXI',
+    title: 'What Do You Want To Be?',
+    uploadDate: '2026-11-02',
+    duration: 'PT36M19S',
+    line: '36 minutes. One school year of a kid, a chatbot, and an essay, and what AI is doing to learning.',
+  },
+];
+
+const creator = { '@type': 'Person', '@id': 'https://gavinpurcell.com/#person', name: 'Gavin Purcell', url: 'https://gavinpurcell.com' };
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'VideoObject',
-  name: 'The Last Invention',
-  description:
-    'A 27-minute documentary about artificial intelligence, hosted by a presenter who does not exist. A (mostly) autonomous TV show Gavin Purcell co-created with his AI agent, Fig.',
-  thumbnailUrl: ['https://gavinpurcell.com/last-invention-thumb.jpg'],
-  uploadDate: '2026-09-28',
-  duration: 'PT27M38S',
-  contentUrl: YT,
-  embedUrl: `https://www.youtube.com/embed/${VIDEO_ID}`,
-  url: 'https://gavinpurcell.com/the-last-invention',
-  creator: { '@type': 'Person', name: 'Gavin Purcell', url: 'https://gavinpurcell.com' },
+  '@graph': [
+    {
+      '@type': 'VideoObject',
+      name: 'The Last Invention',
+      description:
+        'A 27-minute documentary about artificial intelligence, hosted by a presenter who does not exist. A (mostly) autonomous TV show Gavin Purcell co-created with his AI agent, Fig.',
+      thumbnailUrl: ['https://gavinpurcell.com/last-invention-thumb.jpg'],
+      uploadDate: '2026-09-28',
+      duration: 'PT27M38S',
+      contentUrl: YT,
+      embedUrl: `https://www.youtube.com/embed/${VIDEO_ID}`,
+      url: 'https://gavinpurcell.com/the-last-invention',
+      creator,
+    },
+    ...sequels.map((film) => ({
+      '@type': 'VideoObject',
+      name: film.title,
+      description: `${film.line} An AI-made documentary hosted by Dr Imogen Ashby, a presenter who does not exist, co-created by Gavin Purcell and his AI agent, Fig.`,
+      thumbnailUrl: [`https://i.ytimg.com/vi/${film.id}/maxresdefault.jpg`],
+      uploadDate: film.uploadDate,
+      duration: film.duration,
+      contentUrl: `https://www.youtube.com/watch?v=${film.id}`,
+      embedUrl: `https://www.youtube.com/embed/${film.id}`,
+      creator,
+    })),
+  ],
 };
 
 export default function LastInventionPage() {
@@ -50,7 +85,7 @@ export default function LastInventionPage() {
       </Helmet>
 
       <div className="page-inner">
-        <span className="page-eyebrow">AI documentary · 27 minutes</span>
+        <span className="page-eyebrow">AI documentary, 27 minutes</span>
         <h1 className="page-title">The Last Invention</h1>
         <hr className="page-rule" />
 
@@ -60,7 +95,9 @@ export default function LastInventionPage() {
           autonomous TV show I co-created with my AI agent, Fig.
         </p>
 
-        <VideoFacade videoId={VIDEO_ID} label="Play The Last Invention" frameTitle="The Last Invention" />
+        <div className="page-film">
+          <VideoFacade videoId={VIDEO_ID} label="Play The Last Invention" frameTitle="The Last Invention" />
+        </div>
 
         <div className="page-body">
           <h2>What it is</h2>
@@ -105,6 +142,17 @@ export default function LastInventionPage() {
             ))}
           </ul>
 
+          <h2>Imogen came back</h2>
+          <div className="film-row">
+            {sequels.map((film) => (
+              <div key={film.id}>
+                <VideoFacade videoId={film.id} label={`Play ${film.title}`} frameTitle={film.title} />
+                <h3>{film.title}</h3>
+                <p>{film.line}</p>
+              </div>
+            ))}
+          </div>
+
           <h2>The lesson</h2>
           <p>
             Consistency is the whole game. One believable host across 137 lines and four days of
@@ -113,7 +161,7 @@ export default function LastInventionPage() {
 
           <p>
             <a href={YT} target="_blank" rel="noopener noreferrer" className="page-cta">
-              Watch on YouTube →
+              Watch on YouTube
             </a>
           </p>
           <p className="page-meta">

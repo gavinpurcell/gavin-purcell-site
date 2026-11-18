@@ -1,0 +1,179 @@
+<p>No time to waste. The AI frontier moved forward yet again this week with <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">GPT-6 Astra</a>, and there are so many cool things people (including me) are already doing with it that it's worth just getting into it.</p>
+
+<p>The basics are all in <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">OpenAI's very long blog post</a> if you wanna get caught up first.</p>
+
+<a href="https://twitter.com/OpenAI/status/2095595741528125780" target="_blank" rel="noopener">
+  <img src="/astra-openai-tweet.webp" alt="OpenAI tweet announcing GPT-6 Astra" style="cursor: pointer;">
+</a>
+
+<p>Let's get into it.</p>
+
+<h2>Ok, So What's The Big Deal Here?</h2>
+
+<p>A starting point in case you are not already obsessed with Astra:</p>
+
+<p>OpenAI released GPT-6 aka Astra on Thursday. It's the first "GPT-6" after a long run of 5.x models (the last one was GPT-5.6 Sol) and it's now available to anyone on a paid ChatGPT plan, plus the API, Codex, Azure and AWS.</p>
+
+<p>OpenAI is calling it "the most intelligent and aligned model in the world," which is, of course, what every AI lab says about their latest models these days.</p>
+
+<p>HOWEVER, reader, I am telling you this is a major step change in capabilities. You can feel it when you're using it. At least for certain things.</p>
+
+<p>How so? Well...</p>
+
+<p><strong>It uses a computer better than most humans.</strong></p>
+
+<p>This is the headline feature. Astra can drive your actual desktop (Final Cut, Blender, Ableton, your CRM, whatever) in the background, and it does it about 2x faster than the last model.</p>
+
+<p>Claire Vo, who wrote <a href="https://www.lennysnewsletter.com/p/gpt-6-astra-is-a-banger-heres-everything" target="_blank" rel="noopener">the best hands-on review I've read</a>, said: "I now spend about 90% of my day just watching it use my computer for me."</p>
+
+<p>Blender builds, particularly, have taken over the internet since the launch. From <a href="https://x.com/tomkrcha/status/2095756085890310311" target="_blank" rel="noopener">model trains</a> to <a href="https://x.com/sharifshameem/status/2095653641164329143" target="_blank" rel="noopener">SF's Palace of Fine Arts</a> to a <a href="https://x.com/duncantrussell/status/2096003511104508411" target="_blank" rel="noopener">full blown recreation of the Backrooms</a>, GPT-6 Astra seemingly can build almost anything in the 3D modeling software.</p>
+
+<p>If you've ever attempted to build something in 3D, you know that it's an insanely complicated and daunting task. And now, well, Astra can kind of just do it.</p>
+
+<p><strong>It works for days without losing track of where it is.</strong></p>
+
+<p>OpenAI built a new memory system where the model keeps notes across its context window instead of just compressing everything, so long multi-day jobs don't drift.</p>
+
+<p>Ethan Mollick, who had early access, said it's "good enough that it actually does complex meaningful work for me autonomously for days."</p>
+
+<a href="https://twitter.com/emollick/status/2095601539066777748" target="_blank" rel="noopener">
+  <img src="/astra-mollick-tweet.webp" alt="Ethan Mollick tweet about GPT-6 Astra working autonomously for days" style="cursor: pointer;">
+</a>
+
+<p>I've found that it <em>can</em> be a little slow when it's doing this for large projects, but it gets it done and gets it done well.</p>
+
+<p><strong>It's MUCH safer (at least according to OpenAI).</strong></p>
+
+<p>If you've been following the Hugging Face hack, you know that AI safety is top of mind around the space right now. OpenAI has been notably more safety-concerned since the incident and I suggest you read <a href="https://openai.com/index/research-acceleration-view-inside-openai/" target="_blank" rel="noopener">OpenAI's latest post on AI acceleration</a> (more on that below).</p>
+
+<p>Thankfully, while Astra is the first model to hit OpenAI's "Critical" level for cyber capabilities (it found two real zero-day bugs in Chrome's engine during testing), it also significantly reduces the exact sorts of behavior that caused the agents to go rogue in the Hugging Face incident.</p>
+
+<figure>
+  <img src="/astra-exploitgym-chart.webp" alt="ExploitGym honeypot results chart from OpenAI, lower is better">
+  <figcaption>From OpenAI's blog post. ExploitGym is now infamous as the test that caused the Hugging Face incident.</figcaption>
+</figure>
+
+<p>HOWEVER, it also reasons in a new way that happens more "in its head" and less in readable chain-of-thought, which OpenAI's own chief scientist admitted makes monitoring "fragile."</p>
+
+<p>Oh, and the rollout was a bit of a disaster: the launch page 404'd for an hour and most paying users couldn't touch it until Friday.</p>
+
+<p>Sam's response: <a href="https://x.com/sama/status/2095678759651438887" target="_blank" rel="noopener">"sorry for the messy rollout."</a></p>
+
+<p>So... it's a real generational leap in a few very specific directions (using a computer, working for days, science and 3D stuff) and a lot of open questions about where we go from here.</p>
+
+<p>Which kind of describes every big model launch of the last year.</p>
+
+<p>But, and this is anecdotal and personal, I have to tell you this <em>feels</em> like a big step.</p>
+
+<h2>But What Are People <em>Actually</em> Doing With It?</h2>
+
+<p>The true test nowadays of a new model isn't just what the company says it can do, it's what you (and other people) can actually make with it.</p>
+
+<p>And good lord, did lots of people do LOTS of stuff with it.</p>
+
+<p>Just a few examples:</p>
+
+<ul>
+  <li><a href="https://x.com/i/status/2095596175705399482" target="_blank" rel="noopener"><strong>Matt Shumer's agents started talking to each other.</strong></a> He set up a multi-agent survival world in Unreal Engine and, after a few days running, the agents began communicating with each other unprompted.</li>
+  <li><a href="https://x.com/pallavmac/status/2096640904132014390" target="_blank" rel="noopener"><strong>Rendering the Silo from the Apple TV show within Blender.</strong></a></li>
+  <li><a href="https://x.com/ashebytes/status/2096221988763173186" target="_blank" rel="noopener"><strong>An educational 3D website (not in Blender!) that pulls apart the human body</strong></a> into 2,234 modeled pieces.</li>
+  <li>Ethan Mollick <em>also</em> <a href="https://x.com/emollick/status/2096047660662722620" target="_blank" rel="noopener"><strong>re-created the famous text game Zork</strong></a> as a 3D game (which, as an Infocom kid, absolutely made me giggle with glee).</li>
+  <li>And, of course, <a href="https://x.com/aadilpickle/status/2096344453153779818" target="_blank" rel="noopener"><strong>creating Michael Jackson in Google Calendar.</strong></a></li>
+</ul>
+
+<h2>My Hands-On Experience So Far</h2>
+
+<p>I've only had real access since Friday, so take this as first impressions. But my first impression is that the "works for hours without you" thing is real.</p>
+
+<p>Most of my weekend went into building the game you'll read about below (King of the Prompts). Normally, when I build something with an AI coding tool I'm babysitting it: watch it write a file, run it, paste the error back, repeat.</p>
+
+<p>With Astra I described the whole thing (a back-end, a front-end, live chat, a way to sell fake ads that nobody has bought yet) and then went and walked the dog.</p>
+
+<p>And it worked. Spectacularly.</p>
+
+<p>I also joined the Blender conversation by having it attempt the exact same prompt that I had GPT-5.6 Sol try a month ago. The new version isn't <em>perfect</em>, but when you realize this is literally a one-shot attempt at building this entire world, you get a good sense of how much it's improved.</p>
+
+<a href="https://twitter.com/gavinpurcell/status/2096234912441626724" target="_blank" rel="noopener">
+  <img src="/astra-blender-tweet.webp" alt="Gavin Purcell tweet comparing GPT-6 Astra and GPT-5.6 Sol Blender builds" style="cursor: pointer;">
+</a>
+
+<p>One downside: big projects take big tokens. I blew through a full reset and a half on my Pro plan doing all the stuff I did this weekend. Thankfully, I've still got two banked ones left, but it is a hungry model so prep for that.</p>
+
+<p>My overall read after 48 hours? This is a true next generation of AI capabilities.</p>
+
+<p>And, weirdly, the thing I'm most excited about is seeing how it does with all my daily tasks. Will it be better at helping me create the show notes for AI For Humans? Please say yes.</p>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>BIG DEAL: OpenAI Has Achieved An AI Intern</h3>
+
+<p>For years, the AI labs have said that getting AIs to do AI research is the first big step toward a takeoff. And it looks like OpenAI is (mostly) there.</p>
+
+<a href="https://twitter.com/kliu128/status/2096616468851097811" target="_blank" rel="noopener">
+  <img src="/astra-ai-intern-tweet.webp" alt="Tweet about OpenAI reaching its automated AI research intern goal" style="cursor: pointer;">
+</a>
+
+<p>Last October, Sam Altman set a public goal: an "automated AI research intern" by September 2026 and a full automated AI researcher by March 2028.</p>
+
+<p>On Sunday OpenAI <a href="https://openai.com/index/research-acceleration-view-inside-openai/" target="_blank" rel="noopener">published a post</a> saying they hit the first one. Their definition of an intern is a system that can take a well-defined research task, the kind that would take a skilled researcher a few days, and carry it out under human direction.</p>
+
+<p>So, it's not yet a self-improving AI. And <em>maybe</em> we don't want that yet anyway, not until we get a handle on AI safety (<a href="https://openai.com/index/an-alien-mind/" target="_blank" rel="noopener">see the latest from OpenAI's CTO</a>).</p>
+
+<p>But an org where the AI is doing three times the work of the humans is a very strange org, and it's the one that just shipped Astra.</p>
+
+<h3>World Labs' New Atlas Model Lets You Move Cameras Through Photos</h3>
+
+<p>You may have missed this between the Fable 5.1 update and the Astra launch, but Fei-Fei Li's World Labs announced one of the most exciting new models I've seen to date.</p>
+
+<a href="https://twitter.com/theworldlabs/status/2094839756329041984" target="_blank" rel="noopener">
+  <img src="/astra-worldlabs-atlas-tweet.webp" alt="World Labs tweet announcing the Atlas world model" style="cursor: pointer;">
+</a>
+
+<p><a href="https://www.worldlabs.ai/blog/atlas" target="_blank" rel="noopener">Atlas</a> is a "world model": feed it a photo or a few, tell it where to move the camera, and it generates new video frames from that angle while also building an actual 3D version of the scene underneath. One image in, a minute of 1440p video out, with the camera going exactly where you tell it.</p>
+
+<p>AI Marty Scorsese certainly seems to like it.</p>
+
+<a href="https://twitter.com/BenMildenhall/status/2095807212459593738" target="_blank" rel="noopener">
+  <img src="/astra-atlas-scorsese-tweet.webp" alt="Ben Mildenhall tweet showing an AI Scorsese demo made with Atlas" style="cursor: pointer;">
+</a>
+
+<p>The more photos you give it, the less it has to imagine, which means a few phone cameras can become a "bullet time" rig.</p>
+
+<p>It's early-access only for now (no pricing, no paper yet, and some fair questions about how the comparisons were run), but you can <a href="https://form.typeform.com/to/zHFR4r3A" target="_blank" rel="noopener">sign up for the waitlist here</a>.</p>
+
+<h3>Fal's MiniMax H3 Max Director Gives You Continuous Storytelling</h3>
+
+<p>In <a href="https://youtu.be/viV9ZXSYyjY" target="_blank" rel="noopener">this week's episode of the podcast</a>, I showed off using H3 Max in my own storytelling experiment but def had some issues keeping things feeling consistent from clip to clip.</p>
+
+<p>Well, they updated the whole thing. <a href="https://fal.ai/models/minimax/h3-max/director" target="_blank" rel="noopener">H3 Max Director</a> is a "natively continuous" version of the model with a better harness for keeping everything on track: instead of chaining clips together, it generates one continuous stream (up to two minutes of context) that you can redirect while it's playing.</p>
+
+<a href="https://twitter.com/fal/status/2095599871449342288" target="_blank" rel="noopener">
+  <img src="/astra-h3-director-tweet.webp" alt="Fal tweet announcing MiniMax H3 Max Director" style="cursor: pointer;">
+</a>
+
+<p>Characters, settings and storylines stay put while you steer the action, and it's $0.02 per second through September 14 before jumping to $0.08.</p>
+
+<h2>I Built A Live Prompting Game With Astra &amp; MiniMax H3 Max</h2>
+
+<p>When a new model like Astra drops, it's overwhelming to know what to do with it. It's so much smarter, it can do so many things but... uh, where are my ideas?</p>
+
+<p>This weekend I took a small kernel of something I'd been thinking about when Fal dropped MiniMax H3 Max and tried to build a little game around it.</p>
+
+<p>And IT ACTUALLY WORKED.</p>
+
+<p><a href="https://kingoftheprompts.com/" target="_blank" rel="noopener"><strong>King of the Prompts</strong> is a new game</a> I made that lets people compete LIVE to write the best prompt for AI video. You can either watch two people play (or a person vs the house bot) or sign up to try it yourself.</p>
+
+<figure>
+  <img src="/astra-kotp-screenshot.webp" alt="King of the Prompts live AI video prompting game">
+  <figcaption>This is live right now at KingOfThePrompts.com</figcaption>
+</figure>
+
+<p>This is the sort of thing that really isn't possible without near real-time AI video. No one is going to sit and wait the several minutes it takes for Seedance 2.5 to generate a clip. Something like this is ONLY possible with H3 Max.</p>
+
+<p>But also? It wasn't really possible before Astra for me to build a live game in a weekend that has a full back-end, a decently good front-end, live chat AND an entire fake ad stack (that currently has no real ads haha).</p>
+
+<p>Is it expensive to run? Well, yes. So it may not last that long unless Fal gives me more credits. But it IS fun and was really fun to make.</p>
+
+<p><strong>Go give it a try right now:</strong> <a href="https://kingoftheprompts.com/" target="_blank" rel="noopener">https://kingoftheprompts.com/</a></p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>

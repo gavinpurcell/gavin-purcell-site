@@ -14,6 +14,31 @@
       "source": "/home",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/ai.txt",
+      "destination": "/llms.txt",
+      "statusCode": 301
+    },
+    {
+      "source": "/llms-full-text.txt",
+      "destination": "/llms-full.txt",
+      "statusCode": 301
+    },
+    {
+      "source": "/agents",
+      "destination": "/llms.txt",
+      "statusCode": 301
+    },
+    {
+      "source": "/agents.md",
+      "destination": "/llms.txt",
+      "statusCode": 301
+    },
+    {
+      "source": "/.well-known/llms.txt",
+      "destination": "/llms.txt",
+      "statusCode": 301
     }
   ],
   "headers": [
@@ -23,6 +48,10 @@
         {
           "key": "Vary",
           "value": "Accept, Accept-Encoding"
+        },
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
         }
       ]
     },

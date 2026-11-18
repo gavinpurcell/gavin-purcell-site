@@ -92,7 +92,7 @@ export default function IntakeForm() {
         </p>
       )}
       <button type="submit" className="btn btn-large intake-submit" disabled={status === 'sending'}>
-        {status === 'sending' ? 'Sending…' : 'Start the Conversation'}
+        {status === 'sending' ? 'Sending…' : 'Send it'}
       </button>
       <p className="intake-alt">
         I read every inquiry myself and reply within two business days. Prefer email?{' '}

@@ -1,79 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { fetchPosts } from '../services/wordpress';
+import { formatDate, plainExcerpt, posts } from '../content/posts';
+import DitherPlate from './signal/DitherPlate';
+import './signal/signal.css';
+import './Page.css';
 import './Blog.css';
 
-function Blog() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    loadPosts(currentPage);
-  }, [currentPage]);
-
-  const loadPosts = async (page) => {
-    try {
-      setLoading(true);
-      const data = await fetchPosts(page, 10);
-      setPosts(data.posts);
-      setTotalPages(data.totalPages);
-      setError(null);
-    } catch (err) {
-      setError('Failed to load blog posts. Please try again later.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const stripHtml = (html) => {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || '';
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  if (loading) {
-    return (
-      <div id="main" className="blog-container">
-        <div className="blog-loading">
-          <div className="loading-spinner"></div>
-          <p>Loading posts...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div id="main" className="blog-container">
-        <div className="blog-error">
-          <h2>Oops!</h2>
-          <p>{error}</p>
-          <button onClick={() => loadPosts(currentPage)} className="retry-button">
-            Try Again
-          </button>
-        </div>
-      </div>
-    );
-  }
-
+function LeadPost({ post }) {
+  const [active, setActive] = useState(false);
   return (
-    <>
+    <article
+      className="blog-lead"
+      onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(true)}
+      onPointerLeave={() => setActive(false)}
+    >
+      {post.featuredImage && (
+        <Link to={`/blog/${post.slug}`} tabIndex={-1} aria-hidden="true">
+          <DitherPlate image={post.featuredImage} aspect="3 / 2" gamma={1} active={active} />
+        </Link>
+      )}
+      <div>
+        <time dateTime={post.date}>{formatDate(post.date)}</time>
+        <h2 className="blog-lead-title">
+          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+        </h2>
+        <p>{plainExcerpt(post)}</p>
+      </div>
+    </article>
+  );
+}
+
+function Blog() {
+  const [latest, ...rest] = posts;
+  return (
+    <main id="main" className="page">
       <Helmet>
         <title>Blog - Gavin Purcell | AI & Media Insights</title>
         <meta
@@ -85,100 +46,25 @@ function Blog() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <div id="main" className="blog-container">
-        <motion.div
-          className="blog-header"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="blog-title">Blog</h1>
-          <p className="blog-subtitle">
-            Thoughts on AI, media, and the future of creative technology
-          </p>
-        </motion.div>
+      <h1 className="page-title">Writing</h1>
+      <p className="page-lede">
+        Field notes on new AI models and tools, from the weekly AI For Humans newsletter.
+      </p>
 
-        <div className="blog-grid">
-          {posts.map((post, index) => (
-            <motion.article
-              key={post.id}
-              className="blog-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {post.featuredImage && (
-                <Link to={`/blog/${post.slug}`} className="blog-card-image-link">
-                  <div className="blog-card-image">
-                    <img src={post.featuredImage} alt={post.title} loading="lazy" width="1600" height="1067" />
-                  </div>
-                </Link>
-              )}
+      <LeadPost post={latest} />
 
-              <div className="blog-card-content">
-                <div className="blog-card-meta">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
-                  {post.categories.length > 0 && (
-                    <span className="blog-card-category">
-                      {post.categories[0].name}
-                    </span>
-                  )}
-                </div>
-
-                <h2 className="blog-card-title">
-                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                </h2>
-
-                <div className="blog-card-excerpt">
-                  {stripHtml(post.excerpt)}
-                </div>
-
-                <div className="blog-card-footer">
-                  <div className="blog-card-author">
-                    {post.author.avatar && (
-                      <img
-                        src={post.author.avatar}
-                        alt={post.author.name}
-                        className="author-avatar"
-                      />
-                    )}
-                    <span>{post.author.name}</span>
-                  </div>
-
-                  <Link to={`/blog/${post.slug}`} className="read-more-link">
-                    Read More →
-                  </Link>
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-
-        {totalPages > 1 && (
-          <div className="blog-pagination">
-            <button
-              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="pagination-button"
-            >
-              ← Previous
-            </button>
-
-            <span className="pagination-info">
-              Page {currentPage} of {totalPages}
-            </span>
-
-            <button
-              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="pagination-button"
-            >
-              Next →
-            </button>
-          </div>
-        )}
-      </div>
-    </>
+      <ul className="blog-list">
+        {rest.map((post) => (
+          <li key={post.id}>
+            <Link to={`/blog/${post.slug}`}>
+              <time dateTime={post.date}>{formatDate(post.date, 'short')}</time>
+              <span className="blog-row-title">{post.title}</span>
+              <span className="blog-row-excerpt">{plainExcerpt(post)}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 

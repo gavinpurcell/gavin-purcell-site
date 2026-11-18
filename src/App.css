@@ -7,3 +7,8 @@
 main {
   flex: 1;
 }
+
+/* Holds the page open while a route chunk loads, so the footer does not jump up. */
+.route-loading {
+  min-height: 100svh;
+}

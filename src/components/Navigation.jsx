@@ -13,6 +13,7 @@ const navLinks = [
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [overHero, setOverHero] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -24,6 +25,9 @@ export default function Navigation() {
     const onScroll = () => {
       const heroH = document.querySelector('.hero')?.offsetHeight || window.innerHeight;
       setOverHero(window.scrollY < heroH - 80);
+      // The hero can be taller than a phone screen; once it moves, the bar needs
+      // its own ink or the hero's type scrolls straight through the logo.
+      setScrolled(window.scrollY > 8);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -65,7 +69,7 @@ export default function Navigation() {
   const onBlue = isHomePage && overHero && !mobileMenuOpen;
 
   return (
-    <nav className={`nav ${onBlue ? 'nav-on-blue' : 'nav-on-paper'} ${mobileMenuOpen ? 'nav-open' : ''}`}>
+    <nav className={`nav ${onBlue ? 'nav-on-blue' : 'nav-on-paper'} ${onBlue && scrolled ? 'nav-solid' : ''} ${mobileMenuOpen ? 'nav-open' : ''}`}>
       <div className="nav-container">
         <a href="/" onClick={handleLogoClick} className="nav-logo">
           Gavin Purcell

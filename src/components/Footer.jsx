@@ -71,7 +71,10 @@ export default function Footer() {
       </nav>
       <div className="footer-base">
         <p>© {new Date().getFullYear()} Gavin Purcell. Creative technologist, Emmy-winning showrunner.</p>
-        <Link to="/privacy">Privacy</Link>
+        <span className="footer-base-links">
+          <a href="/llms.txt">For AI agents</a>
+          <Link to="/privacy">Privacy</Link>
+        </span>
       </div>
     </footer>
   );

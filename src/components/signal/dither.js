@@ -152,3 +152,11 @@ export function hash(a, b) {
   h ^= h >>> 12;
   return (h >>> 0) / 4294967296;
 }
+
+// Interleaved gradient noise: a fixed threshold per cell. Error diffusion
+// (Atkinson, above) crawls when the picture moves; a fixed screen holds
+// still frame to frame, so dithered video reads as print rather than fizz.
+export function ign(x, y) {
+  const v = 52.9829189 * ((0.06711056 * x + 0.00583715 * y) % 1);
+  return v - Math.floor(v);
+}

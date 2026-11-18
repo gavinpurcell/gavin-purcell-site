@@ -68,6 +68,8 @@ try {
     req.url().includes('/api/') ? req.abort() : req.continue()
   );
 
+  const markdownByRoute = new Map();
+
   for (const route of routes) {
     // Hand-authored static pages (the unlisted newsletter pages under public/)
     // are already complete HTML and have no React root to wait for. Visiting one
@@ -102,6 +104,15 @@ try {
         .querySelectorAll('script[src*="/_vercel/insights"]')
         .forEach((el) => el.remove());
     });
+    // Point agents at this page's markdown twin from the HTML itself.
+    await page.evaluate((href) => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.type = 'text/markdown';
+      link.href = href;
+      link.title = 'This page as Markdown';
+      document.head.appendChild(link);
+    }, `${route === '/' ? '' : route}/index.md`);
     const html = await page.content();
     const outDir = route === '/' ? DIST : join(DIST, route);
     mkdirSync(outDir, { recursive: true });
@@ -116,8 +127,31 @@ try {
       `https://gavinpurcell.com${route}`
     );
     writeFileSync(join(outDir, 'index.md'), md);
+    markdownByRoute.set(route, md);
     console.log(`prerendered ${route} (${(html.length / 1024).toFixed(0)}KB html, ${(md.length / 1024).toFixed(1)}KB md)`);
   }
+
+  // llms-full.txt: the main pages as one markdown file, built from the same
+  // markdown twins the pages serve. It used to be a hand-written summary and
+  // went stale within a month; generated, it cannot disagree with the site.
+  const posts = JSON.parse(readFileSync(new URL('../src/content/posts.json', import.meta.url), 'utf8'));
+  const strip = (html) => html.replace(/<[^>]+>/g, '').trim();
+  const fullText = [
+    '# Gavin Purcell: full text of gavinpurcell.com',
+    '> The main pages of gavinpurcell.com as one Markdown file, generated from the live pages at build time. For the short guide, see https://gavinpurcell.com/llms.txt',
+    ...['/', '/about', '/work', '/the-last-invention', '/contact']
+      .filter((route) => markdownByRoute.has(route))
+      .map((route) => `---\n\n${markdownByRoute.get(route).trim()}`),
+    '---',
+    '# Writing',
+    '> Every post is available in full as Markdown at its URL plus /index.md.',
+    posts
+      .map((p) => `- [${p.title}](https://gavinpurcell.com/blog/${p.slug}) (${p.date.slice(0, 10)}): ${strip(p.excerpt)}`)
+      .join('\n'),
+    '',
+  ].join('\n\n');
+  writeFileSync(join(DIST, 'llms-full.txt'), fullText);
+  console.log(`wrote llms-full.txt (${(fullText.length / 1024).toFixed(0)}KB)`);
 
   // A real 404 body. Vercel serves dist/404.html with an HTTP 404 status for any
   // path that does not match a file, which is what replaces the old SPA rewrite
@@ -144,9 +178,8 @@ try {
       'This URL is not a page on this site. Nothing was moved or removed here, the path simply never existed.',
       '## Where to go instead',
       '- Sitemap: https://gavinpurcell.com/sitemap.xml',
-      '- Content policy for AI systems: https://gavinpurcell.com/llms.txt',
-      '- Full site summary: https://gavinpurcell.com/llms-full-text.txt',
-      '- Background and expertise: https://gavinpurcell.com/ai.txt',
+      '- Guide for AI systems and agents: https://gavinpurcell.com/llms.txt',
+      '- Full text of the main pages: https://gavinpurcell.com/llms-full.txt',
       '- Homepage: https://gavinpurcell.com/',
       '- Writing: https://gavinpurcell.com/blog',
       '- About: https://gavinpurcell.com/about',

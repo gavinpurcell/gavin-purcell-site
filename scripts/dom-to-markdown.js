@@ -15,7 +15,12 @@ export function domToMarkdownSource() {
           out += c.textContent.replace(/\s+/g, ' ');
           return;
         }
-        if (c.nodeType !== 1 || BLOCK_SKIP.has(c.tagName)) return;
+        if (c.nodeType !== 1) return;
+        if (c.getAttribute('aria-hidden') === 'true') return;
+        // A disclosure button's label is content (the FAQ questions live in
+        // them); every other button is interface.
+        const disclosure = c.tagName === 'BUTTON' && c.hasAttribute('aria-expanded');
+        if (BLOCK_SKIP.has(c.tagName) && !disclosure) return;
         const text = inline(c);
         switch (c.tagName) {
           case 'A': {

@@ -64,3 +64,8 @@
     row-gap: 40px;
   }
 }
+
+.footer-base-links {
+  display: flex;
+  gap: 22px;
+}

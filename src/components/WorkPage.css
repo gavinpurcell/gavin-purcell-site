@@ -1,156 +1,139 @@
-/* Extends Page.css. Case-study cards for /work, same neo-brutalist tokens
-   (3px borders, hard offset shadows) as the rest of the site. */
-
-.work-inner {
-  max-width: 1080px;
-}
+/* Case studies for /work. Extends Page.css. Each study opens with its plate
+   and vitals, then three short columns, then the lesson at poster scale. */
 
 .work-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  margin: var(--space-md) 0;
+  border-top: 1px solid var(--blue);
 }
 
-.work-card {
-  margin-bottom: 0;
-  scroll-margin-top: 6rem;
-  padding: var(--space-md);
+.study {
+  padding: clamp(36px, 5vw, 72px) 0 clamp(44px, 6vw, 90px);
+  border-bottom: 1px solid var(--blue);
+  scroll-margin-top: 80px;
 }
 
-.work-card-grid {
+.study-top {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: var(--space-lg);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 64px);
+  align-items: end;
 }
 
-.work-card-tag {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
+/* Alternate which side the picture sits on, so the page does not ladder. */
+.study:nth-child(even) .study-picture {
+  order: 2;
+}
+
+.study-tag {
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--color-primary);
-  margin: 0 0 0.3rem;
 }
 
-.work-card-name {
-  margin: 0 0 0.2rem;
+.study-name {
+  margin: 0 0 14px -0.04em;
+  font-size: clamp(2.4rem, 5.6vw, 6rem);
+  font-weight: 820;
+  font-stretch: 125%;
+  line-height: 0.86;
+  letter-spacing: -0.05em;
 }
 
-.work-card-tagline {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--color-text-light);
-  margin: 0 0 var(--space-sm);
+.study-tagline {
+  max-width: 28ch;
+  margin: 0 0 22px;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: 540;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
-.work-card-links {
+.study-vitals {
+  margin: 0;
+  border-top: 1px solid var(--blue);
+}
+
+.study-vitals div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--blue);
+}
+
+.study-vitals dt {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding-top: 0.2em;
+}
+
+.study-vitals dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.study-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: var(--space-sm);
+  gap: 8px 22px;
+  margin-top: 18px;
 }
 
-.work-card-link {
-  padding: 0.6rem 1.2rem;
+.study-links a {
+  font-weight: 650;
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
-.work-card-visual {
-  position: sticky;
-  top: 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+.study-links a:hover {
+  text-decoration-thickness: 2px;
 }
 
-.work-card-image-link {
-  display: block;
-  border: var(--border-width) var(--border-style);
-  box-shadow: var(--shadow-sm);
-  line-height: 0;
-  background: #000;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.study-body {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 48px);
+  margin-top: clamp(30px, 4vw, 56px);
 }
 
-.work-card-image-link:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-md);
-}
-
-.work-card-image {
-  width: 100%;
-  object-fit: contain;
-  display: block;
-  aspect-ratio: 4 / 3;
-}
-
-.work-card-vitals {
-  margin: 0;
-  border: var(--border-width) var(--border-style);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.work-card-vitals > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--space-sm);
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid rgba(26, 24, 22, 0.15);
-}
-
-.work-card-vitals > div:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.work-card-vitals dt {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
+.study-body h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--color-text-light);
-  white-space: nowrap;
+  font-stretch: 100%;
 }
 
-.work-card-vitals dd {
+.study-body p {
   margin: 0;
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-align: right;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
-.work-card-pullquote {
-  margin: 0;
-  padding: 0.2rem 0 0.2rem var(--space-sm);
-  border-left: 4px solid var(--color-primary);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.4;
-  color: var(--color-text);
+.study-lesson {
+  max-width: 24ch;
+  margin: clamp(32px, 4.4vw, 64px) 0 0;
+  font-size: clamp(1.7rem, 3.3vw, 3.2rem);
+  font-weight: 560;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
 }
 
 .work-credibility {
-  border-top: 1px solid rgba(26, 24, 22, 0.15);
-  padding-top: var(--space-md);
+  margin-top: clamp(48px, 6vw, 90px);
 }
 
-@media (max-width: 720px) {
-  .work-card-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 899px) {
+  .study-top,
+  .study-body {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .work-card-visual {
-    position: static;
-    order: -1;
+  .study:nth-child(even) .study-picture {
+    order: 0;
   }
 }

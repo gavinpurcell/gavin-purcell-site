@@ -85,3 +85,47 @@ test('vercel.json no longer rewrites every path to the app shell', () => {
     'Vary: Accept header is not configured'
   );
 });
+
+test('the sitemap is generated from the posts index, one url per post', () => {
+  const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+  const posts = JSON.parse(readFileSync(new URL('../src/content/posts.json', import.meta.url).pathname, 'utf8'));
+  for (const post of posts) {
+    assert.ok(xml.includes(`https://gavinpurcell.com/blog/${post.slug}<`), `${post.slug} missing from sitemap`);
+    assert.ok(existsSync(join(DIST, 'blog', post.slug, 'index.html')), `${post.slug} was not prerendered`);
+  }
+});
+
+test('every prerendered post carries its body, not just its headline', () => {
+  const posts = JSON.parse(readFileSync(new URL('../src/content/posts.json', import.meta.url).pathname, 'utf8'));
+  for (const post of posts) {
+    const md = readFileSync(join(DIST, 'blog', post.slug, 'index.md'), 'utf8');
+    assert.ok(md.length > 2500, `${post.slug} markdown is only ${md.length} chars: the lazy body did not load before the snapshot`);
+  }
+});
+
+test('robots.txt names the crawlers that decide AI search visibility', () => {
+  const txt = readFileSync(join(DIST, 'robots.txt'), 'utf8');
+  for (const bot of ['OAI-SearchBot', 'GPTBot', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Googlebot', 'Bingbot']) {
+    assert.match(txt, new RegExp(`User-agent: ${bot}\\b`), `${bot} is not named`);
+  }
+  assert.doesNotMatch(txt, /Disallow: \/\s*$/m, 'something is disallowed site-wide');
+  assert.match(txt, /Sitemap: https:\/\/gavinpurcell\.com\/sitemap\.xml/);
+});
+
+test('llms-full.txt is generated from the pages and mentions all three films', () => {
+  const txt = readFileSync(join(DIST, 'llms-full.txt'), 'utf8');
+  for (const term of ['The Last Invention', 'Do I Feel Anything?', 'What Do You Want To Be?', 'Fractional Creative Technologist']) {
+    assert.ok(txt.includes(term), `llms-full.txt never mentions ${term}`);
+  }
+  assert.doesNotMatch(txt, /Fractional AI Creative Officer/, 'the retired job title is back');
+});
+
+test('each page links its own markdown twin', () => {
+  const about = readFileSync(join(DIST, 'about', 'index.html'), 'utf8');
+  assert.match(about, /rel="alternate"[^>]+href="\/about\/index\.md"/);
+});
+
+test('the homepage markdown keeps the FAQ questions, not only the answers', () => {
+  const md = readFileSync(join(DIST, 'index.md'), 'utf8');
+  assert.match(md, /^#### What does an engagement cost\?/m);
+});

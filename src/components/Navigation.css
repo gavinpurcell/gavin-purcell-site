@@ -12,6 +12,10 @@
   color: var(--white);
 }
 
+.nav-on-blue.nav-solid {
+  background: var(--blue);
+}
+
 .nav-on-paper {
   background: var(--white);
   color: var(--blue);

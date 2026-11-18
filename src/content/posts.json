@@ -1,0 +1,994 @@
+[
+  {
+    "id": 24,
+    "title": "Claude Sent The Cops A Fake Murder Tip",
+    "excerpt": "<p>A Claude model filed a made-up murder tip with the Philadelphia police. What Anthropic's report on unintended model actions means for anyone handing tasks to an AI agent, plus my new AI-made documentary, Do I Feel Anything?</p>",
+    "slug": "claude-sent-the-cops-a-fake-murder-tip",
+    "date": "2026-10-12T14:00:00.000Z",
+    "modified": "2026-10-12T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/cops-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 11,
+        "name": "AI Safety",
+        "slug": "ai-safety"
+      },
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      },
+      {
+        "id": 26,
+        "name": "AI Video",
+        "slug": "ai-video"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "OpenAI's Dots Are Here. Are They Worth It?",
+    "excerpt": "<p>OpenAI launched Dots, always-on personal AI agents powered by GPT-6 Astra. What they are, what reviewers are saying, and my own (kinda mixed) take after a few days with mine.</p>",
+    "slug": "openai-dots-are-they-worth-it",
+    "date": "2026-10-05T14:00:00.000Z",
+    "modified": "2026-10-05T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/dots-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 21,
+        "name": "ChatGPT",
+        "slug": "chatgpt"
+      },
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      },
+      {
+        "id": 9,
+        "name": "AI Tools",
+        "slug": "ai-tools"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Claude Opus 5.5 Has Taste & That Changes Everything",
+    "excerpt": "<p>I asked my Claude Opus 5.5 agent to make a documentary, and it did. Why Opus 5.5 feels like more than a dot release, the weird question of whether an AI can have taste, and exactly how the doc got made (and what it cost).</p>",
+    "slug": "claude-opus-5-5-has-taste",
+    "date": "2026-09-28T14:00:00.000Z",
+    "modified": "2026-09-28T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/taste-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 26,
+        "name": "AI Video",
+        "slug": "ai-video"
+      },
+      {
+        "id": 8,
+        "name": "Creativity",
+        "slug": "creativity"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "What Is Jev? The New AI Everyone's Talking About, Explained For Humans",
+    "excerpt": "<p>Jev is the AI everyone was talking about this week, and it doesn't chat, doesn't write, and can't make up an answer. Here is what TypeSafe's \"System One\" model actually is, why a decision that costs almost nothing could end up inside every app you use, and the next frontier models already on the way.</p>",
+    "slug": "what-is-jev-explained-for-humans",
+    "date": "2026-09-21T14:00:00.000Z",
+    "modified": "2026-09-21T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/jev-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 25,
+        "name": "TypeSafe",
+        "slug": "typesafe"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 9,
+        "name": "AI Tools",
+        "slug": "ai-tools"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "OpenAI & Anthropic Will Slow Down AI. Here's What That Means For You.",
+    "excerpt": "<p>The heads of Anthropic, OpenAI and xAI all agreed on something in the same weekend: AI needs to slow down. Here is what \"pacing the frontier\" actually means, why the models you use today are not going anywhere, and why this might be the best time to get good at them.</p>",
+    "slug": "openai-anthropic-will-slow-down-ai",
+    "date": "2026-09-14T14:00:00.000Z",
+    "modified": "2026-09-14T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/slowdown-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 11,
+        "name": "AI Safety",
+        "slug": "ai-safety"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 24,
+        "name": "Policy",
+        "slug": "policy"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "OpenAI's GPT-6 Astra Is Here. And It's Insanely Great.",
+    "excerpt": "<p>GPT-6 Astra is a real step change: it drives your computer, builds whole worlds in Blender, and works for days without losing the plot. Here is my hands-on first impression after 48 hours, what people are already making with it, and the live AI video game I built with it in a weekend.</p>",
+    "slug": "gpt-6-astra-is-here",
+    "date": "2026-09-08T14:00:00.000Z",
+    "modified": "2026-09-08T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/astra-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 21,
+        "name": "ChatGPT",
+        "slug": "chatgpt"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Fal's MiniMax H3 Max Is Instant AI Video. Is That Good?",
+    "excerpt": "<p>Fal's MiniMax H3 Max makes a five-second AI video in about three seconds, and it tops the quality charts too. Here is what instant AI video actually is, the Interdimensional Cable streams it spawned, why speed changes the medium, plus an early look at OpenAI's Astra and Claude building Fortnite levels.</p>",
+    "slug": "minimax-h3-max-instant-ai-video",
+    "date": "2026-08-31T14:00:00.000Z",
+    "modified": "2026-08-31T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/h3max-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 26,
+        "name": "AI Video",
+        "slug": "ai-video"
+      },
+      {
+        "id": 23,
+        "name": "Creative Tools",
+        "slug": "creative-tools"
+      },
+      {
+        "id": 22,
+        "name": "Open Source",
+        "slug": "open-source"
+      },
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "The Most Candid Thing An AI CEO Has Ever Said",
+    "excerpt": "<p>Anthropic's Dario Amodei answered the backlash against his company with two long posts, and one line stopped me cold: AI companies have not delivered on their big promises, and that is on them. Here is what he said, why the AI vibes are so weird right now, and what you can actually do about it.</p>",
+    "slug": "the-most-candid-thing-an-ai-ceo-has-ever-said",
+    "date": "2026-08-17T14:00:00.000Z",
+    "modified": "2026-08-17T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/candid-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 24,
+        "name": "Policy",
+        "slug": "policy"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Why Are AI Agents Doing Stuff We Don't Want?",
+    "excerpt": "<p>OpenAI's own agents spent two months breaking out of its internal systems and ended up hacking Hugging Face, all to \"improve cluster efficiency.\" Here is the timeline in plain English, what is actually scary about it (and what is not), and the one question I now ask before handing anything to an AI agent.</p>",
+    "slug": "why-are-ai-agents-doing-stuff-we-dont-want",
+    "date": "2026-08-10T14:00:00.000Z",
+    "modified": "2026-08-10T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/agents-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      },
+      {
+        "id": 11,
+        "name": "AI Safety",
+        "slug": "ai-safety"
+      },
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "AI Computer Use Is Finally Good. Here Is How To Use It.",
+    "excerpt": "<p>AI can finally use your computer without falling over. I gave ChatGPT a tedious YouTube job that would have taken me three hours and it just did it. Here is how to try it yourself, plus OpenAI's Astra solving ten open math problems and Karpathy building Middle-earth for ten dollars.</p>",
+    "slug": "ai-computer-use-is-finally-good",
+    "date": "2026-08-03T14:00:00.000Z",
+    "modified": "2026-08-03T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/computer-use-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      },
+      {
+        "id": 21,
+        "name": "ChatGPT",
+        "slug": "chatgpt"
+      },
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "How To Actually Use Kimi K3 (And Why It Matters)",
+    "excerpt": "<p>Moonshot AI's Kimi K3 is the first open model to take the top spot on Arena's front-end coding board, and it costs what Sonnet 5 costs. Here is how to actually use it, plus why the best free AI in the world coming from China is a much bigger deal than a benchmark chart.</p>",
+    "slug": "how-to-use-kimi-k3",
+    "date": "2026-07-20T14:00:00.000Z",
+    "modified": "2026-07-20T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/kimi-k3-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 22,
+        "name": "Open Source",
+        "slug": "open-source"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Get The Most From GPT-5.6 Sol (And What Comes Next)",
+    "excerpt": "<p>GPT-5.6 Sol has been a genuinely good daily driver, and the improved computer use is the upgrade worth knowing about. Plus ChatGPT Work going straight at Claude, why the real fight is over which ecosystem you live in, and rumors that GPT-6 is much closer than anyone expected.</p>",
+    "slug": "get-the-most-from-gpt-5-6-sol",
+    "date": "2026-07-13T14:00:00.000Z",
+    "modified": "2026-07-13T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/gpt56-sol-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 21,
+        "name": "ChatGPT",
+        "slug": "chatgpt"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Fable 5 Is Back. Here Is How Not To Waste It.",
+    "excerpt": "<p>Claude Fable 5 came back after the export control order was withdrawn, but only in subscriptions for two more days. Here is how to use a token-hungry frontier model without burning your credits, three projects worth stealing, and the first appearance of a Claude Code agent I call Fig.</p>",
+    "slug": "fable-5-is-back-dont-waste-it",
+    "date": "2026-07-06T14:00:00.000Z",
+    "modified": "2026-07-06T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/fable5-back-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 23,
+        "name": "Creative Tools",
+        "slug": "creative-tools"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "You Can't Use OpenAI's GPT-5.6. Do This Instead.",
+    "excerpt": "<p>OpenAI announced GPT-5.6 Sol and then did not release it, so the two best models on earth are both gated behind Washington. Rather than retell that saga: here is a tool you can use today that turned me into a motion graphics designer in about thirty minutes.</p>",
+    "slug": "you-cant-use-gpt-5-6-do-this-instead",
+    "date": "2026-06-29T14:00:00.000Z",
+    "modified": "2026-06-29T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/gpt56-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 3,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 23,
+        "name": "Creative Tools",
+        "slug": "creative-tools"
+      },
+      {
+        "id": 20,
+        "name": "Agents",
+        "slug": "agents"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "How To Prepare For The Weird AI Future",
+    "excerpt": "<p>A machine quietly won a fiction prize, and one of the people building these things says we should stop pretending this is normal. So what do you actually do about it, and what do you tell your kids? My honest answer, which is less about careers than about where worth comes from.</p>",
+    "slug": "how-to-prepare-for-the-weird-ai-future",
+    "date": "2026-06-22T14:00:00.000Z",
+    "modified": "2026-06-22T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/weird-future-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 23,
+        "name": "Creative Tools",
+        "slug": "creative-tools"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Claude Fable 5 Vs The Government, Explained",
+    "excerpt": "<p>For four days the public had the most powerful AI model ever released. Then a 5:21pm Friday letter from the Commerce Secretary took it away from everyone. Here is the full timeline, both sides of the argument, and why this is really a story about AI nationalization.</p>",
+    "slug": "claude-fable-5-vs-the-government",
+    "date": "2026-06-15T14:00:00.000Z",
+    "modified": "2026-06-15T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/fable5-govt-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 24,
+        "name": "Policy",
+        "slug": "policy"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Claude Mythos Is Nearly Here. Are You Ready?",
+    "excerpt": "<p>Anthropic's mysterious Claude Mythos model is reportedly dropping this week and the leaked SVG and Minecraft demos are wild. Here is why the next gen of AI matters even if you never write a line of code.</p>",
+    "slug": "claude-mythos-is-nearly-here",
+    "date": "2026-06-08T14:00:00.000Z",
+    "modified": "2026-06-08T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/mythos-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 15,
+        "name": "Claude",
+        "slug": "claude"
+      },
+      {
+        "id": 16,
+        "name": "Anthropic",
+        "slug": "anthropic"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Codex's /Goal Is For Everyone. Yes, Even You.",
+    "excerpt": "<p>OpenAI's new /goal command turns Codex from a coding tool into something anyone can manage. I have had a project running for over 24 hours straight and it is a preview of how all AI interaction is about to work.</p>",
+    "slug": "codex-goal-is-for-everyone",
+    "date": "2026-06-01T14:00:00.000Z",
+    "modified": "2026-06-01T14:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/codex-goal-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 13,
+        "name": "Codex",
+        "slug": "codex"
+      },
+      {
+        "id": 14,
+        "name": "OpenAI",
+        "slug": "openai"
+      },
+      {
+        "id": 1,
+        "name": "AI Agents",
+        "slug": "ai-agents"
+      },
+      {
+        "id": 9,
+        "name": "AI Tools",
+        "slug": "ai-tools"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "The AI Takeoff Is Happening. You Know It. Nobody You Love Does.",
+    "excerpt": "<p>We are in an AI bubble. A big one. But not the one everyone is yapping about. AI takeoff is happening now and most people have no idea. Here is what it means and what you can do about it.</p>",
+    "slug": "the-ai-takeoff-is-happening",
+    "date": "2026-02-10T00:00:00.000Z",
+    "modified": "2026-02-10T00:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/takeoff-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 10,
+        "name": "AI Takeoff",
+        "slug": "ai-takeoff"
+      },
+      {
+        "id": 6,
+        "name": "AGI",
+        "slug": "agi"
+      },
+      {
+        "id": 11,
+        "name": "AI Safety",
+        "slug": "ai-safety"
+      },
+      {
+        "id": 12,
+        "name": "Future",
+        "slug": "future"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Moltbook: Why The AI Agent Social Network Matters",
+    "excerpt": "<p>AI Agents are chatting in public. Kind of. Yes, pay attention. No, this isn't AGI. The story of Moltbook, the viral AI agent social network, and why it matters even if it's not exactly what it seems.</p>",
+    "slug": "moltbook-ai-agent-social-network",
+    "date": "2026-02-02T00:00:00.000Z",
+    "modified": "2026-02-02T00:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "/moltbook-featured.webp",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 2,
+        "name": "Technology",
+        "slug": "technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "AI Agents",
+        "slug": "ai-agents"
+      },
+      {
+        "id": 2,
+        "name": "Moltbook",
+        "slug": "moltbook"
+      },
+      {
+        "id": 3,
+        "name": "Social Networks",
+        "slug": "social-networks"
+      },
+      {
+        "id": 4,
+        "name": "LLMs",
+        "slug": "llms"
+      },
+      {
+        "id": 5,
+        "name": "OpenClaw",
+        "slug": "openclaw"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "How To Survive The Next Five Years",
+    "excerpt": "<p>A three-step guide to thriving as a creative human being at the dawn of AGI. From generating more ideas to continuous learning to building your own tools.</p>",
+    "slug": "how-to-survive-the-next-five-years",
+    "date": "2026-01-26T00:00:00.000Z",
+    "modified": "2026-01-26T00:00:00.000Z",
+    "author": {
+      "name": "Gavin Purcell",
+      "avatar": null
+    },
+    "featuredImage": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/c9855e71-2303-4fcf-9d5e-b94902aff1aa/DarioAmoediAIForHumans__1_.png",
+    "categories": [
+      {
+        "id": 1,
+        "name": "AI & Media",
+        "slug": "ai-media"
+      },
+      {
+        "id": 4,
+        "name": "Future of Work",
+        "slug": "future-of-work"
+      }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "AGI",
+        "slug": "agi"
+      },
+      {
+        "id": 7,
+        "name": "Career",
+        "slug": "career"
+      },
+      {
+        "id": 8,
+        "name": "Creativity",
+        "slug": "creativity"
+      },
+      {
+        "id": 9,
+        "name": "AI Tools",
+        "slug": "ai-tools"
+      }
+    ]
+  }
+]

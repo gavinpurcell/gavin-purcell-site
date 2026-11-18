@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import './FAQ.css';
 
 export default function FAQ() {
@@ -44,40 +43,33 @@ export default function FAQ() {
 
   return (
     <div className="faq-section">
-      <div className="faq-header">
-        <h3 className="faq-title">Frequently asked questions</h3>
-      </div>
+      <h3 className="faq-title">The practical questions</h3>
 
       <div className="faq-list">
         {faqs.map((faq, index) => (
           <div key={index} className="faq-item">
-            <button
-              className={`faq-question ${openIndex === index ? 'active' : ''}`}
-              onClick={() => toggleFAQ(index)}
-              aria-expanded={openIndex === index}
-              aria-controls={`faq-answer-${index}`}
-            >
-              <span className="faq-question-text">{faq.question}</span>
-              <span className="faq-icon" aria-hidden="true">{openIndex === index ? '−' : '+'}</span>
-            </button>
+            <h4 className="faq-heading">
+              <button
+                className={`faq-question ${openIndex === index ? 'active' : ''}`}
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
+              >
+                <span className="faq-question-text">{faq.question}</span>
+                <span className="faq-icon" aria-hidden="true">{openIndex === index ? '−' : '+'}</span>
+              </button>
+            </h4>
 
             {/* The answer stays mounted whether or not the item is open. It used
                 to be conditionally rendered, which meant the text did not exist in
                 the DOM until someone clicked, so it never reached the prerendered
                 HTML and no crawler or AI search system could read it. These
                 answers are the most citation-worthy copy on the site. Collapsing
-                is now purely visual. */}
-            <motion.div
-              className="faq-answer"
+                is now purely visual: a CSS grid row that goes from 0fr to 1fr. */}
+            <div
+              className={`faq-answer ${openIndex === index ? 'is-open' : ''}`}
               id={`faq-answer-${index}`}
-              initial={false}
-              animate={{
-                height: openIndex === index ? 'auto' : 0,
-                opacity: openIndex === index ? 1 : 0,
-              }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-              style={{ overflow: 'hidden' }}
-              aria-hidden={openIndex !== index}
+              inert={openIndex !== index}
             >
               <div className="faq-answer-content">
                 {faq.answer && <p>{faq.answer}</p>}
@@ -90,7 +82,7 @@ export default function FAQ() {
                 )}
                 {faq.closing && <p>{faq.closing}</p>}
               </div>
-            </motion.div>
+            </div>
           </div>
         ))}
       </div>

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FAQ from '../FAQ';
 import IntakeForm from '../IntakeForm';
-import { fetchPosts } from '../../services/wordpress';
+import { formatDate, plainExcerpt, posts as allPosts } from '../../content/posts';
 import latestEpisode from '../../data/latest-episode.json';
-import DitherPreview from './DitherPreview';
+import DitherPlate from './DitherPlate';
 import VideoFacade from './VideoFacade';
 
 /* ------------------------------------------------------------------ */
@@ -129,21 +129,11 @@ export function AIForHumansBlock() {
 
 /* ------------------------------------------------------------------ */
 
+const shortDate = (iso) => formatDate(iso, 'short');
+
 export function Writing() {
-  const [posts, setPosts] = useState([]);
-  const [active, setActive] = useState(null);
-  const [point, setPoint] = useState({ x: 0, y: 0 });
-  const [canHover] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches
-  );
-
-  useEffect(() => {
-    fetchPosts(1, 4)
-      .then((data) => setPosts((data.posts || []).slice(0, 4)))
-      .catch(() => {});
-  }, []);
-
-  if (!posts.length) return null;
+  const [latest, ...rest] = allPosts.slice(0, 5);
+  const [active, setActive] = useState(false);
 
   return (
     <section id="latest-post" className="section-block writing">
@@ -151,26 +141,36 @@ export function Writing() {
         <h2 className="block-title">Writing</h2>
         <p className="block-note">Field notes on new models and tools. <Link to="/blog">All posts</Link></p>
       </div>
-      <ul className="post-list" onMouseLeave={() => setActive(null)}>
-        {posts.map((p) => (
-          <li key={p.slug}>
-            <Link
-              to={`/blog/${p.slug}`}
-              onMouseEnter={(e) => {
-                setPoint({ x: e.clientX, y: e.clientY });
-                if (p.featuredImage) setActive({ id: p.slug, image: p.featuredImage, aspect: 0.667 });
-              }}
-              onMouseMove={(e) => setPoint({ x: e.clientX, y: e.clientY })}
-            >
-              <time dateTime={p.date}>
-                {new Date(p.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-              </time>
-              <span className="post-title">{p.title}</span>
+      <div className="writing-grid">
+        <article
+          className="post-lead"
+          onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(true)}
+          onPointerLeave={() => setActive(false)}
+          onFocus={() => setActive(true)}
+          onBlur={() => setActive(false)}
+        >
+          {latest.featuredImage && (
+            <Link to={`/blog/${latest.slug}`} tabIndex={-1} aria-hidden="true">
+              <DitherPlate image={latest.featuredImage} aspect="3 / 2" gamma={1} active={active} />
             </Link>
-          </li>
-        ))}
-      </ul>
-      {canHover && <DitherPreview item={active} point={point} />}
+          )}
+          <time dateTime={latest.date}>{shortDate(latest.date)}</time>
+          <h3 className="post-lead-title">
+            <Link to={`/blog/${latest.slug}`}>{latest.title}</Link>
+          </h3>
+          <p className="post-lead-excerpt">{plainExcerpt(latest)}</p>
+        </article>
+        <ul className="post-list">
+          {rest.map((p) => (
+            <li key={p.slug}>
+              <Link to={`/blog/${p.slug}`}>
+                <time dateTime={p.date}>{shortDate(p.date)}</time>
+                <span className="post-title">{p.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
@@ -227,15 +227,18 @@ export function Consulting() {
           <article key={o.title} className="offer">
             <p className="offer-kind">{o.kind}</p>
             <h3 className="offer-title">{o.title}</h3>
-            <p className="offer-desc">{o.description}</p>
-            <ul className="offer-list">
-              {o.includes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <div className="offer-body">
+              <p className="offer-desc">{o.description}</p>
+              <ul className="offer-list">
+                {o.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </article>
         ))}
       </div>
+      <a href="#contact" className="btn btn-large offers-cta">Tell me what you're working on</a>
       <div className="faq-wrap">
         <FAQ />
       </div>

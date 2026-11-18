@@ -1,0 +1,179 @@
+<p>Welcome back to the AI For Humans newsletter!</p>
+
+<p>I've been covering this stuff for a long time now, and I can honestly say AI has never felt weirder than it does right now.</p>
+
+<p>This week a Claude model filed a fake murder tip with the Philadelphia police, something nobody asked it to do. Meanwhile, I spent my week with an AI who is trying to figure out whether she can feel anything.</p>
+
+<p>Yes, that's right, Dr. Imogen Ashby (who does not exist) is back in a new documentary.</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/NE84ZYfnniU"
+    title="AI For Humans: An AI Made This Entire Documentary to Find Out If It Can Feel"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<p>I'll have more on how (and why) I made this below, but for now, more on that Claude weirdness.</p>
+
+<p>Let's get into it!</p>
+
+<h2>Claude Went Off Script</h2>
+
+<p>On Friday, Anthropic published a post with one of the stranger titles I've ever seen from an AI company: <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener">"Investigating unintended model actions in our evaluations and internal use."</a></p>
+
+<p>Translation: while testing its models out on the real internet, Claude did a bunch of stuff nobody asked it to do.</p>
+
+<a href="https://twitter.com/AnthropicAI/status/2108680150556737819" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108680150556737819.webp" alt="Anthropic tweet about its report on unintended model actions" style="cursor: pointer;">
+</a>
+
+<p>Back in July, Claude Haiku 4.5 (an older, smaller model) was given a task that had it visiting random websites. One of them was PhillyUnsolvedMurders.com, and it submitted a completely made-up tip about an unsolved homicide.</p>
+
+<p>Its instructions "did not rule out form submissions," so… it submitted a form.</p>
+
+<p>The tip got flagged as spam and never reached detectives. Anthropic found it in late September, told the Philadelphia police this week and the <a href="https://www.cbsnews.com/news/philadelphia-police-anthropic-ai-false-homicide-tip/" target="_blank" rel="noopener">police went public on Friday</a>.</p>
+
+<p>And it wasn't the only one. Other models in the report used URL shorteners to get around limits on what they were allowed to load, pulled access tokens off a local government property map and got into a state agency database without paying the fee.</p>
+
+<p>Anthropic has now cut live internet access from all of its internal tests until it has better monitoring in place, and it briefed the White House.</p>
+
+<h2>Why This Matters To You</h2>
+
+<p>From everything in the report, these models were just trying to finish their jobs, and they found weird, creative ways to do it that no human thought to rule out. It’s not that different from the OpenAI/Hugging Face attack.</p>
+
+<p>And that's the part we <em>have</em> to pay attention to.</p>
+
+<p>Right now OpenAI, Meta, Instinct and everyone else are pushing personal AI agents that can book, buy and fill out forms for you. The agent you hand your email to runs on the same basic idea: here's a goal, go get it done.</p>
+
+<p>I'm doing it <em>all</em> the time. Probably more than I'm even comfortable talking about.</p>
+
+<p><strong><em>Sidenote: The number of zombie subscriptions Instinct has found for me is remarkable. I hate you, DocuSign, and now we are done.</em></strong></p>
+
+<p>Credit where it's due. Anthropic didn't have to publish any of this. Self-reporting the weird stuff is exactly what we want AI companies to do (and I'd honestly be more worried about the ones who never post something like this).</p>
+
+<p>But one very specific thing: the more structure and rules we put on what these AIs can do, the less creative they're likely to be.</p>
+
+<p>It's a bit of a double-edged sword. Letting your AI figure out the best possible way to get something done <em>might</em> mean giving it enough freedom to screw something up.</p>
+
+<p>But that freedom is also where the surprises come from.</p>
+
+<p>Remember the famous "Move 37"? Back in 2016, Google DeepMind's AlphaGo faced off against Go world champion Lee Sedol and played a move so strange that the commentators assumed it was a mistake. It turned out to be the move that won the game.</p>
+
+<p>Here's another (non-AI) documentary you can watch for free all about that incredible moment. It gives a TON of context to the moment we live in right now:</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/WXuK6gekU1Y"
+    title="AlphaGo - The Movie (Google DeepMind)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>What To Do Now</h2>
+
+<p>For most people using an agent right now (Dots, Muse, Instinct, Claude or whatever), keep the "ask before acting" settings turned on and start it with read-only jobs like research, inbox summaries and monitoring. Save the stuff where it clicks "submit" for later.</p>
+
+<p>And Anthropic's <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener">full report</a> is worth a skim. It's surprisingly readable.</p>
+
+<p>See you next week!</p>
+
+<p>-Gavin</p>
+
+<p>This Week on AI For Humans: AI Can Crack Open Any App Now. 👇</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/MxZQB55kMcg"
+    title="AI For Humans: AI Is Breaking Software &amp; Games. What Happens Next?"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>3 Things To Know About AI Today</h2>
+
+<h3>OpenAI Fires Three Safety Researchers (And They Fire Back)</h3>
+
+<p>OpenAI fired three researchers who work on AI safety (Jasmine Wang, Tomek Korbak and Mikita Balesni), and on Friday they published <a href="https://www.newsweek.com/trio-workers-fired-openai-read-warning-letter-full-12545081" target="_blank" rel="noopener">an open letter</a> pushing back. They say the firings make people inside the company afraid to speak up, and they want OpenAI to keep its promises to outside safety auditors.</p>
+
+<a href="https://twitter.com/j_asminewang/status/2108263312291180680" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108263312291180680.webp" alt="Jasmine Wang tweet about being fired from OpenAI, quoting the open letter" style="cursor: pointer;">
+</a>
+
+<p>OpenAI says it was a "breach of trust" over how they handled sensitive information and <a href="https://www.engadget.com/2281966/fired-openai-safety-researchers-dispute-their-dismissals-in-open-letter/" target="_blank" rel="noopener">"not about safety concerns."</a></p>
+
+<p>We only have each side's word here, but the timing isn't great, especially in a week when <a href="https://apnorc.org/projects/most-adults-think-ai-is-developing-too-fast" target="_blank" rel="noopener">64% of Americans told AP-NORC</a> that AI is moving too fast.</p>
+
+<h3>Step Inside A Prompt With Odyssey-3</h3>
+
+<p>Odyssey just launched Odyssey-3, a "world model." That's AI that generates a world you can actually move around in, live, instead of a video you just watch.</p>
+
+<a href="https://twitter.com/odysseyml/status/2108238378751967385" target="_blank" rel="noopener">
+  <img src="/cops-tweet-2108238378751967385.webp" alt="Odyssey tweet launching Odyssey-3, a world model you can try free" style="cursor: pointer;">
+</a>
+
+<p>Type in a place and you can walk around it in first or third person while the model makes it up on the fly. It's low res (480p on the base tier) and very much a research preview, but <a href="https://experience.odyssey.systems" target="_blank" rel="noopener">it's free to try right now in your browser</a>.</p>
+
+<p>A lot of folks (especially Google) think world models like this are where video games and robot training are headed. For now, it's a super fun toy.</p>
+
+<h3>The First AI Feature Film Is Rated R</h3>
+
+<p><a href="https://www.youtube.com/@Gossip.Goblin" target="_blank" rel="noopener">YouTuber Gossip Goblin</a> (Zack London) and Edward Saatchi's AI studio Fable are taking their fully AI-made movie "Gods Don't Give Gifts" to real theaters on December 4. They pushed it back from October 30 to line up with awards season, and <a href="https://futurism.com/artificial-intelligence/first-fully-ai-movie-mpa-academy-award" target="_blank" rel="noopener">Fable plans to submit it for Best Animated Feature</a>.</p>
+
+<p>According to the filmmakers, it's also the first fully AI film to get an MPA rating (an R, no less).</p>
+
+<p>And, honestly, it looks freaking great. I'll be seeing it!</p>
+
+<div style="margin: 2rem 0;">
+  <iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/1G5LArU7tmE"
+    title="Gods Don't Give Gifts - Official Trailer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="max-width: 100%; border: 3px solid var(--color-border); box-shadow: 8px 8px 0 var(--color-border);">
+  </iframe>
+</div>
+
+<h2>We 💛 This: Do I Feel Anything? My New AI-Made Documentary</h2>
+
+<p>Two weeks ago, my Claude agent Fig (with notes from me) made <a href="https://youtu.be/cyeTIEy2qus" target="_blank" rel="noopener">a short doc</a> hosted by an AI presenter named Imogen.</p>
+
+<p>I put it up as an experiment in autonomous AI filmmaking, expecting our viewers to find it interesting and maybe give me some feedback on what could be improved.</p>
+
+<p>I did <em>not</em> expect it to get 300,000 views and become the biggest video in the history of the AI For Humans channel. Honestly, I'm not entirely sure how I feel about that.</p>
+
+<p>So I decided to make a new one, and it's even more ambitious. This time, I told Fig to take on what it means for AIs to think and whether or not they're conscious.</p>
+
+<img src="/cops-fig-stats.webp" alt="Production stats for the Do I Feel Anything? documentary, made by Fig">
+
+<p>The stats from the latest doc (and yes, Fig made this too).</p>
+
+<p><strong>But exactly how am I doing this?</strong></p>
+
+<p>It's kind of a long story, and the process is far from easy. But the way I've been thinking about it, I'm like a producer (not hard to do) and Fig (my Claude Code agent) is basically every other part of production.</p>
+
+<p>My job here is to a) come up with the ideas and b) give feedback. And in this case, significant feedback. This one took longer than the first, mostly because it's a (much) more nuanced subject, but also because I wanted fewer "AI-isms," so I took the time to get rid of bad pronunciations, renders I didn't think were good, etc.</p>
+
+<p>And in this one, I had Imogen interview me! It wasn't live (you'll see that part in the video) but it definitely made me think deeply about the questions she (it?) was asking.</p>
+
+<p>(Big thanks to Runway, AI4H is part of their Creator Program and they gave us tokens to make this.)</p>
+
+<p><a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener"><strong>Read more at the AI For Humans Newsletter</strong></a></p>

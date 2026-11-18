@@ -1,79 +1,49 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { fetchPostBySlug } from '../services/wordpress';
+import { formatDate, getPost, loadPostBody, plainExcerpt, posts } from '../content/posts';
+import DitherPlate from './signal/DitherPlate';
+import './signal/signal.css';
+import './Page.css';
 import './BlogPost.css';
 
 function BlogPost() {
   const { slug } = useParams();
-  const navigate = useNavigate();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const post = getPost(slug);
+  // The body is its own chunk; remember which slug it belongs to so a stale
+  // body never shows under the next post's title.
+  const [loaded, setLoaded] = useState({ slug: null, html: '', failed: false });
 
   useEffect(() => {
-    loadPost();
-  }, [slug]);
+    if (!post) return undefined;
+    let cancelled = false;
+    loadPostBody(slug)
+      .then((html) => !cancelled && setLoaded({ slug, html, failed: false }))
+      .catch(() => !cancelled && setLoaded({ slug, html: '', failed: true }));
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, post]);
 
-  const loadPost = async () => {
-    try {
-      setLoading(true);
-      const data = await fetchPostBySlug(slug);
-      setPost(data);
-      setError(null);
-
-      // Scroll to top when post loads
-      window.scrollTo(0, 0);
-    } catch (err) {
-      setError('Post not found or failed to load.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  const stripHtml = (html) => {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || '';
-  };
-
-  if (loading) {
-    return (
-      <div id="main" className="blog-post-container">
-        <div className="blog-post-loading">
-          <div className="loading-spinner"></div>
-          <p>Loading post...</p>
-        </div>
-      </div>
-    );
-  }
+  const body = loaded.slug === slug ? loaded : { html: '', failed: false };
+  const error = body.failed ? 'This post failed to load. Try refreshing.' : null;
+  const description = post ? plainExcerpt(post).substring(0, 155) : '';
+  const [active, setActive] = useState(false);
+  // The neighbours in time: the next newer post and the two before it.
+  const at = posts.findIndex((p) => p.slug === slug);
+  const more = at < 0 ? [] : [posts[at - 1], posts[at + 1], posts[at + 2]].filter(Boolean);
 
   if (error || !post) {
     return (
-      <div id="main" className="blog-post-container">
+      <main id="main" className="page">
         <Helmet>
           <title>Post Not Found - Gavin Purcell</title>
           <meta name="robots" content="noindex" />
         </Helmet>
-        <div className="blog-post-error">
-          <h2>404</h2>
-          <p>{error || 'Post not found'}</p>
-          <Link to="/blog" className="back-button">
-            ← Back to Blog
-          </Link>
-        </div>
-      </div>
+        <h1 className="page-title">Not here</h1>
+        <p className="page-lede">{error || 'There is no post at this address.'}</p>
+        <Link to="/blog" className="page-cta">All writing</Link>
+      </main>
     );
   }
 
@@ -81,10 +51,10 @@ function BlogPost() {
     <>
       <Helmet>
         <title>{post.title} - Gavin Purcell</title>
-        <meta name="description" content={stripHtml(post.excerpt).substring(0, 155)} />
+        <meta name="description" content={description} />
         <link rel="canonical" href={`https://gavinpurcell.com/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={stripHtml(post.excerpt).substring(0, 155)} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://gavinpurcell.com/blog/${post.slug}`} />
         {post.featuredImage && (
@@ -104,7 +74,7 @@ function BlogPost() {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": post.title,
-            "description": stripHtml(post.excerpt).substring(0, 155),
+            "description": description,
             "image": post.featuredImage
               ? (post.featuredImage.startsWith('/') ? `https://gavinpurcell.com${post.featuredImage}` : post.featuredImage)
               : "https://gavinpurcell.com/gavinpurcellheadshot.jpeg",
@@ -133,93 +103,60 @@ function BlogPost() {
         </script>
       </Helmet>
 
-      <article id="main" className="blog-post-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Link to="/blog" className="back-link">
-            ← Back to Blog
-          </Link>
+      <article id="main" className="page post">
+        <header className="post-head">
+          <p className="post-meta">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            {post.tags.slice(0, 4).map((tag) => (
+              <span key={tag.id}>{tag.name}</span>
+            ))}
+          </p>
+          <h1 className="post-title">{post.title}</h1>
+        </header>
 
-          <header className="blog-post-header">
-            {post.categories.length > 0 && (
-              <div className="blog-post-categories">
-                {post.categories.map(cat => (
-                  <span key={cat.id} className="category-tag">
-                    {cat.name}
-                  </span>
-                ))}
-              </div>
-            )}
+        {post.featuredImage && (
+          <div
+            className="post-plate"
+            onPointerEnter={(e) => e.pointerType === 'mouse' && setActive(true)}
+            onPointerLeave={() => setActive(false)}
+          >
+            <DitherPlate image={post.featuredImage} alt={post.title} aspect="3 / 2" gamma={1} active={active} />
+          </div>
+        )}
 
-            <h1 className="blog-post-title">{post.title}</h1>
-
-            <div className="blog-post-meta">
-              <div className="post-author">
-                {post.author.avatar && (
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="author-avatar-large"
-                  />
-                )}
-                <div>
-                  <div className="author-name">{post.author.name}</div>
-                  <time dateTime={post.date} className="post-date">
-                    {formatDate(post.date)}
-                  </time>
-                </div>
-              </div>
-
-              {post.tags.length > 0 && (
-                <div className="blog-post-tags">
-                  {post.tags.map(tag => (
-                    <span key={tag.id} className="tag">
-                      #{tag.name}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </header>
-
-          {post.featuredImage && (
-            <div className="blog-post-featured-image">
-              <img src={post.featuredImage} alt={post.title} width="1600" height="1067" />
-            </div>
-          )}
-
+        <div className="post-layout">
+          <aside className="post-aside">
+            <p>
+              By <Link to="/about">{post.author.name}</Link>, from the{' '}
+              <a href="https://aiforhumans.beehiiv.com/" target="_blank" rel="noopener noreferrer">
+                AI For Humans newsletter
+              </a>
+              .
+            </p>
+            <Link to="/blog">All writing</Link>
+          </aside>
           <div
             className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            aria-busy={!body.html}
+            dangerouslySetInnerHTML={{ __html: body.html }}
           />
+        </div>
 
-          <footer className="blog-post-footer">
-            <div className="post-footer-divider"></div>
-
-            <div className="post-footer-content">
-              <div className="post-author-bio">
-                {post.author.avatar && (
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="author-avatar-large"
-                  />
-                )}
-                <div>
-                  <h3>Written by {post.author.name}</h3>
-                  <p>AI media expert, host of AI For Humans podcast</p>
-                </div>
-              </div>
-
-              <Link to="/blog" className="back-to-blog-button">
-                ← Back to All Posts
-              </Link>
-            </div>
-          </footer>
-        </motion.div>
+        {more.length > 0 && (
+          <nav className="post-more" aria-label="More writing">
+            <h2>Keep reading</h2>
+            <ul>
+              {more.map((p) => (
+                <li key={p.slug}>
+                  <Link to={`/blog/${p.slug}`}>
+                    <time dateTime={p.date}>{formatDate(p.date, 'short')}</time>
+                    <span>{p.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </article>
     </>
   );
